@@ -38,7 +38,7 @@ const {
   stopSpinner,
   exit,
   loadModule
-} = require('@vue/cli-shared-utils')
+} = require('@svel/cli-shared-utils')
 
 const isManualMode = answers => answers.preset === '__manual__'
 
@@ -89,11 +89,11 @@ module.exports = class Creator extends EventEmitter {
     // clone before mutating
     preset = cloneDeep(preset)
     // inject core service
-    preset.plugins['@vue/cli-service'] = Object.assign({
+    preset.plugins['@svel/cli-service'] = Object.assign({
       projectName: name
     }, preset)
     if (cliOptions.bare) {
-      preset.plugins['@vue/cli-service'].bare = true
+      preset.plugins['@svel/cli-service'].bare = true
     }
 
     const packageManager = (
@@ -123,12 +123,12 @@ module.exports = class Creator extends EventEmitter {
         return
       }
 
-      // Note: the default creator includes no more than `@vue/cli-*` & `@vue/babel-preset-env`,
-      // so it is fine to only test `@vue` prefix.
-      // Other `@vue/*` packages' version may not be in sync with the cli itself.
+      // Note: the default creator includes no more than `@svel/cli-*` & `@svel/babel-preset-env`,
+      // so it is fine to only test `@svel` prefix.
+      // Other `@svel/*` packages' version may not be in sync with the cli itself.
       pkg.devDependencies[dep] = (
         preset.plugins[dep].version ||
-        ((/^@vue/.test(dep)) ? `^${latestMinor}` : `latest`)
+        ((/^@svel/.test(dep)) ? `^${latestMinor}` : `latest`)
       )
     })
     // write package.json
@@ -328,7 +328,7 @@ module.exports = class Creator extends EventEmitter {
   // { id: options } => [{ id, apply, options }]
   async resolvePlugins (rawPlugins) {
     // ensure cli-service is invoked first
-    rawPlugins = sortObject(rawPlugins, ['@vue/cli-service'], true)
+    rawPlugins = sortObject(rawPlugins, ['@svel/cli-service'], true)
     const plugins = []
     for (const id of Object.keys(rawPlugins)) {
       const apply = loadModule(`${id}/generator`, this.context) || (() => {})

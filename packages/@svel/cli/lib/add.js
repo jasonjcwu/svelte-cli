@@ -10,14 +10,14 @@ const {
   resolvePluginId,
   resolveModule,
   loadModule
-} = require('@vue/cli-shared-utils')
+} = require('@svel/cli-shared-utils')
 
 async function add (pluginName, options = {}, context = process.cwd()) {
   // special internal "plugins"
-  if (/^(@vue\/)?router$/.test(pluginName)) {
+  if (/^(@svel\/)?router$/.test(pluginName)) {
     return addRouter(context)
   }
-  if (/^(@vue\/)?vuex$/.test(pluginName)) {
+  if (/^(@svel\/)?vuex$/.test(pluginName)) {
     return addVuex(context)
   }
 
@@ -50,7 +50,7 @@ async function addRouter (context) {
   }])
   invoke.runGenerator(context, {
     id: 'core:router',
-    apply: loadModule('@vue/cli-service/generator/router', context),
+    apply: loadModule('@svel/cli-service/generator/router', context),
     options
   })
 }
@@ -58,7 +58,7 @@ async function addRouter (context) {
 async function addVuex (context) {
   invoke.runGenerator(context, {
     id: 'core:vuex',
-    apply: loadModule('@vue/cli-service/generator/vuex', context)
+    apply: loadModule('@svel/cli-service/generator/vuex', context)
   })
 }
 

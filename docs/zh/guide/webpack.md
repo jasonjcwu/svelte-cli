@@ -144,7 +144,7 @@ module.exports = {
 
 ## 审查项目的 webpack 配置
 
-因为 `@vue/cli-service` 对 webpack 配置进行了抽象，所以理解配置中包含的东西会比较困难，尤其是当你打算自行对其调整的时候。
+因为 `@svel/cli-service` 对 webpack 配置进行了抽象，所以理解配置中包含的东西会比较困难，尤其是当你打算自行对其调整的时候。
 
 `vue-cli-service` 暴露了 `inspect` 命令用于审查解析好的 webpack 配置。那个全局的 `vue` 可执行程序同样提供了 `inspect` 命令，这个命令只是简单的把 `vue-cli-service inspect` 代理到了你的项目中。
 
@@ -184,7 +184,7 @@ vue inspect --plugins
 有些外部工具可能需要通过一个文件访问解析好的 webpack 配置，比如那些需要提供 webpack 配置路径的 IDE 或 CLI。在这种情况下你可以使用如下路径：
 
 ```
-<projectRoot>/node_modules/@vue/cli-service/webpack.config.js
+<projectRoot>/node_modules/@svel/cli-service/webpack.config.js
 ```
 
 该文件会动态解析并输出 `vue-cli-service` 命令中使用的相同的 webpack 配置，包括那些来自插件甚至是你自定义的配置。

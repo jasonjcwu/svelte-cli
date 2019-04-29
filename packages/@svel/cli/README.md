@@ -1,7 +1,7 @@
-# @vue/cli
+# @svel/cli
 
 ``` sh
-npm install -g @vue/cli
+npm install -g @svel/cli
 vue create my-project
 ```
 

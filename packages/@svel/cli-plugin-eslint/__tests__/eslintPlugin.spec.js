@@ -1,8 +1,8 @@
 jest.setTimeout(35000)
 
 const path = require('path')
-const { linkBin } = require('@vue/cli/lib/util/linkBin')
-const create = require('@vue/cli-test-utils/createTestProject')
+const { linkBin } = require('@svel/cli/lib/util/linkBin')
+const create = require('@svel/cli-test-utils/createTestProject')
 
 const runSilently = fn => {
   const log = console.log
@@ -15,8 +15,8 @@ const runSilently = fn => {
 test('should work', async () => {
   const project = await create('eslint', {
     plugins: {
-      '@vue/cli-plugin-babel': {},
-      '@vue/cli-plugin-eslint': {
+      '@svel/cli-plugin-babel': {},
+      '@svel/cli-plugin-eslint': {
         config: 'airbnb',
         lintOn: 'commit'
       }
@@ -94,8 +94,8 @@ test('should work', async () => {
 test('should not fix with --no-fix option', async () => {
   const project = await create('eslint-nofix', {
     plugins: {
-      '@vue/cli-plugin-babel': {},
-      '@vue/cli-plugin-eslint': {
+      '@svel/cli-plugin-babel': {},
+      '@svel/cli-plugin-eslint': {
         config: 'airbnb',
         lintOn: 'commit'
       }
@@ -125,8 +125,8 @@ test('should not fix with --no-fix option', async () => {
 test('should not throw when src folder is ignored by .eslintignore', async () => {
   const project = await create('eslint-ignore', {
     plugins: {
-      '@vue/cli-plugin-babel': {},
-      '@vue/cli-plugin-eslint': {
+      '@svel/cli-plugin-babel': {},
+      '@svel/cli-plugin-eslint': {
         config: 'airbnb',
         lintOn: 'commit'
       }

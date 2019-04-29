@@ -1,4 +1,4 @@
-# @vue/cli-plugin-pwa
+# @svel/cli-plugin-pwa
 
 > pwa plugin for vue-cli
 
@@ -114,7 +114,7 @@ module.exports = {
 ## Installing in an Already Created Project
 
 ``` sh
-vue add @vue/pwa
+vue add @svel/pwa
 ```
 
 ## Injected webpack-chain Rules

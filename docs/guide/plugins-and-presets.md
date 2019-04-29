@@ -2,7 +2,7 @@
 
 ## Plugins
 
-Vue CLI uses a plugin-based architecture. If you inspect a newly created project's `package.json`, you will find dependencies that start with `@vue/cli-plugin-`. Plugins can modify the internal webpack configuration and inject commands to `vue-cli-service`. Most of the features listed during the project creation process are implemented as plugins.
+Vue CLI uses a plugin-based architecture. If you inspect a newly created project's `package.json`, you will find dependencies that start with `@svel/cli-plugin-`. Plugins can modify the internal webpack configuration and inject commands to `vue-cli-service`. Most of the features listed during the project creation process are implemented as plugins.
 
 The plugin based architecture makes Vue CLI flexible and extensible. If you are interested in developing a plugin, check out the [Plugin Development Guide](../dev-guide/plugin-dev.md).
 
@@ -15,7 +15,7 @@ You can install and manage Plugins using the GUI with the `vue ui` command.
 Each CLI plugin ships with a generator (which creates files) and a runtime plugin (which tweaks the core webpack config and injects commands). When you use `vue create` to create a new project, some plugins will be pre-installed for you based on your feature selection. In case you want to install a plugin into an already created project, you can do so with the `vue add` command:
 
 ``` bash
-vue add @vue/eslint
+vue add @svel/eslint
 ```
 
 ::: tip
@@ -26,14 +26,14 @@ vue add @vue/eslint
 It is recommended to commit your project's current state before running `vue add`, since the command will invoke the plugin's file generator and potentially make changes to your existing files.
 :::
 
-The command resolves `@vue/eslint` to the full package name `@vue/cli-plugin-eslint`, installs it from npm, and invokes its generator.
+The command resolves `@svel/eslint` to the full package name `@svel/cli-plugin-eslint`, installs it from npm, and invokes its generator.
 
 ``` bash
 # these are equivalent to the previous usage
-vue add @vue/cli-plugin-eslint
+vue add @svel/cli-plugin-eslint
 ```
 
-Without the `@vue` prefix, the command will resolve to an unscoped package instead. For example, to install the 3rd party plugin `vue-cli-plugin-apollo`:
+Without the `@svel` prefix, the command will resolve to an unscoped package instead. For example, to install the 3rd party plugin `vue-cli-plugin-apollo`:
 
 ``` bash
 # installs and invokes vue-cli-plugin-apollo
@@ -49,7 +49,7 @@ vue add @foo/bar
 You can pass generator options to the installed plugin (this will skip the prompts):
 
 ``` bash
-vue add @vue/eslint --config airbnb --lintOn save
+vue add @svel/eslint --config airbnb --lintOn save
 ```
 
 `vue-router` and `vuex` are special cases - they do not have their own plugins, but you can add them nonetheless:
@@ -116,8 +116,8 @@ Here's an example preset:
   "vuex": true,
   "cssPreprocessor": "sass",
   "plugins": {
-    "@vue/cli-plugin-babel": {},
-    "@vue/cli-plugin-eslint": {
+    "@svel/cli-plugin-babel": {},
+    "@svel/cli-plugin-eslint": {
       "config": "airbnb",
       "lintOn": ["save", "commit"]
     }
@@ -149,7 +149,7 @@ You can explicitly specify versions of the plugins being used:
 ``` json
 {
   "plugins": {
-    "@vue/cli-plugin-eslint": {
+    "@svel/cli-plugin-eslint": {
       "version": "^3.0.0",
       // ... other options for this plugin
     }
@@ -170,7 +170,7 @@ For such scenarios you can specify `"prompts": true` in a plugin's options to al
 ``` json
 {
   "plugins": {
-    "@vue/cli-plugin-eslint": {
+    "@svel/cli-plugin-eslint": {
       // let the users pick their own ESLint config
       "prompts": true
     }

@@ -1,4 +1,4 @@
-const { clientAddonConfig } = require('@vue/cli-ui')
+const { clientAddonConfig } = require('@svel/cli-ui')
 
 module.exports = {
   ...clientAddonConfig({

@@ -1,4 +1,4 @@
-# @vue/cli-ui
+# @svel/cli-ui
 
 ### Local development
 
@@ -6,7 +6,7 @@ Before starting a local cli-ui instance,
 consider following the [contributing guide](https://github.com/vuejs/vue-cli/blob/dev/.github/CONTRIBUTING.md)
 in order to download all required dependencies of vue-cli's packages.
 
-Just after, you should build once then serve `@vue/cli-ui-addon-webpack` by running:
+Just after, you should build once then serve `@svel/cli-ui-addon-webpack` by running:
 ```bash
 cd ../cli-ui-addon-webpack
 yarn build # just do once

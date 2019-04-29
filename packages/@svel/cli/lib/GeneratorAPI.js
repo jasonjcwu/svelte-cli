@@ -7,7 +7,7 @@ const isBinary = require('isbinaryfile')
 const mergeDeps = require('./util/mergeDeps')
 const stringifyJS = require('./util/stringifyJS')
 const ConfigTransform = require('./ConfigTransform')
-const { getPluginLink, toShortPluginId } = require('@vue/cli-shared-utils')
+const { getPluginLink, toShortPluginId } = require('@svel/cli-shared-utils')
 
 const isString = val => typeof val === 'string'
 const isFunction = val => typeof val === 'function'
@@ -28,7 +28,7 @@ class GeneratorAPI {
     this.rootOptions = rootOptions
 
     this.pluginsData = generator.plugins
-      .filter(({ id }) => id !== `@vue/cli-service`)
+      .filter(({ id }) => id !== `@svel/cli-service`)
       .map(({ id }) => ({
         name: toShortPluginId(id),
         link: getPluginLink(id)
@@ -74,7 +74,7 @@ class GeneratorAPI {
   /**
    * Check if the project has a given plugin.
    *
-   * @param {string} id - Plugin id, can omit the (@vue/|vue-|@scope/vue)-cli-plugin- prefix
+   * @param {string} id - Plugin id, can omit the (@svel/|vue-|@scope/vue)-cli-plugin- prefix
    * @return {boolean}
    */
   hasPlugin (id) {
@@ -105,7 +105,7 @@ class GeneratorAPI {
       !options.file
     ) {
       if (hasReserved) {
-        const { warn } = require('@vue/cli-shared-utils')
+        const { warn } = require('@svel/cli-shared-utils')
         warn(`Reserved config transform '${key}'`)
       }
       return

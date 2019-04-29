@@ -1,9 +1,9 @@
 const fs = require('fs')
 const cloneDeep = require('lodash.clonedeep')
 const { getRcPath } = require('./util/rcPath')
-const { exit } = require('@vue/cli-shared-utils/lib/exit')
-const { error } = require('@vue/cli-shared-utils/lib/logger')
-const { createSchema, validate } = require('@vue/cli-shared-utils/lib/validate')
+const { exit } = require('@svel/cli-shared-utils/lib/exit')
+const { error } = require('@svel/cli-shared-utils/lib/logger')
+const { createSchema, validate } = require('@svel/cli-shared-utils/lib/validate')
 
 const rcPath = exports.rcPath = getRcPath('.vuerc')
 
@@ -37,8 +37,8 @@ exports.defaultPreset = {
   useConfigFiles: false,
   cssPreprocessor: undefined,
   plugins: {
-    '@vue/cli-plugin-babel': {},
-    '@vue/cli-plugin-eslint': {
+    '@svel/cli-plugin-babel': {},
+    '@svel/cli-plugin-eslint': {
       config: 'base',
       lintOn: ['save']
     }

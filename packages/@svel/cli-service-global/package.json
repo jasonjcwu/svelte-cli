@@ -1,5 +1,5 @@
 {
-  "name": "@vue/cli-service-global",
+  "name": "@svel/cli-service-global",
   "version": "3.7.0",
   "description": "vue-cli-service global addon for vue-cli",
   "main": "index.js",
@@ -8,8 +8,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vuejs/vue-cli.git",
-    "directory": "packages/@vue/cli-service-global"
+    "url": "git+https://github.com/wmzy/svelte-cli.git",
+    "directory": "packages/@svel/cli-service-global"
   },
   "keywords": [
     "vue",
@@ -18,14 +18,14 @@
   "author": "Evan You",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vuejs/vue-cli/issues"
+    "url": "https://github.com/wmzy/svelte-cli/issues"
   },
-  "homepage": "https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/cli-build#readme",
+  "homepage": "https://github.com/wmzy/svelte-cli/tree/dev/packages/@svel/cli-build#readme",
   "dependencies": {
-    "@vue/babel-preset-app": "^3.7.0",
-    "@vue/cli-plugin-babel": "^3.7.0",
-    "@vue/cli-plugin-eslint": "^3.7.0",
-    "@vue/cli-service": "^3.7.0",
+    "@svel/babel-preset-app": "^3.7.0",
+    "@svel/cli-plugin-babel": "^3.7.0",
+    "@svel/cli-plugin-eslint": "^3.7.0",
+    "@svel/cli-service": "^3.7.0",
     "babel-eslint": "^10.0.1",
     "chalk": "^2.4.2",
     "eslint": "^4.19.1",

@@ -3,7 +3,7 @@ export default function ({
   field,
   zoom
 }) {
-  // @vue/component
+  // @svel/component
   return {
     data () {
       return {

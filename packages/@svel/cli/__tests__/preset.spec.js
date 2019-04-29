@@ -3,7 +3,7 @@ const { expectPrompts } = require('inquirer')
 
 const path = require('path')
 const fs = require('fs-extra')
-const create = require('@vue/cli/lib/create')
+const create = require('@svel/cli/lib/create')
 
 test('fetching local preset with prompts and generator', async () => {
   const cwd = path.resolve(__dirname, '../../../test')
@@ -28,7 +28,7 @@ test('fetching local preset with prompts and generator', async () => {
   expect(testFile).toBe('true')
 
   const pkg = require(path.resolve(cwd, name, 'package.json'))
-  expect(pkg.devDependencies).toHaveProperty('@vue/cli-plugin-babel')
+  expect(pkg.devDependencies).toHaveProperty('@svel/cli-plugin-babel')
 })
 
 test('should recognize generator/index.js in a local preset directory', async () => {
@@ -54,5 +54,5 @@ test('should recognize generator/index.js in a local preset directory', async ()
   expect(testFile).toBe('true\n')
 
   const pkg = require(path.resolve(cwd, name, 'package.json'))
-  expect(pkg.devDependencies).toHaveProperty('@vue/cli-plugin-babel')
+  expect(pkg.devDependencies).toHaveProperty('@svel/cli-plugin-babel')
 })

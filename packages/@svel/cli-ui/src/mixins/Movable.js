@@ -3,7 +3,7 @@ export default function movable ({
   field,
   zoom
 }) {
-  // @vue/component
+  // @svel/component
   return {
     data () {
       return {

@@ -1,7 +1,7 @@
 jest.mock('fs')
 jest.mock('inquirer')
 
-const assertPromptModule = require('@vue/cli-test-utils/assertPromptModule')
+const assertPromptModule = require('@svel/cli-test-utils/assertPromptModule')
 
 const moduleToTest = require('../e2e')
 
@@ -21,7 +21,7 @@ test('cypress', async () => {
 
   const expectedOptions = {
     plugins: {
-      '@vue/cli-plugin-e2e-cypress': {}
+      '@svel/cli-plugin-e2e-cypress': {}
     }
   }
 
@@ -49,7 +49,7 @@ test('nightwatch', async () => {
 
   const expectedOptions = {
     plugins: {
-      '@vue/cli-plugin-e2e-nightwatch': {}
+      '@svel/cli-plugin-e2e-nightwatch': {}
     }
   }
 

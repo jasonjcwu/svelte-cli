@@ -1,6 +1,6 @@
 const extendJSConfig = require('./extendJSConfig')
 const stringifyJS = require('./stringifyJS')
-const { loadModule } = require('@vue/cli-shared-utils')
+const { loadModule } = require('@svel/cli-shared-utils')
 const merge = require('deepmerge')
 
 const mergeArrayWithDedupe = (a, b) => Array.from(new Set([...a, ...b]))

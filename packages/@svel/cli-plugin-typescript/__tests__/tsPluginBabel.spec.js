@@ -1,14 +1,14 @@
 jest.setTimeout(30000)
 
-const Service = require('@vue/cli-service/lib/Service')
+const Service = require('@svel/cli-service/lib/Service')
 const { assertServe, assertBuild } = require('./tsPlugin.helper')
 
 test('using correct loader', () => {
   const service = new Service('/', {
     pkg: {},
     plugins: [
-      { id: '@vue/cli-plugin-typescript', apply: require('../index') },
-      { id: '@vue/cli-plugin-babel', apply: require('@vue/cli-plugin-babel') }
+      { id: '@svel/cli-plugin-typescript', apply: require('../index') },
+      { id: '@svel/cli-plugin-babel', apply: require('@svel/cli-plugin-babel') }
     ]
   })
 
@@ -22,8 +22,8 @@ test('using correct loader', () => {
 
 const creatorOptions = {
   plugins: {
-    '@vue/cli-plugin-typescript': {},
-    '@vue/cli-plugin-babel': {}
+    '@svel/cli-plugin-typescript': {},
+    '@svel/cli-plugin-babel': {}
   }
 }
 

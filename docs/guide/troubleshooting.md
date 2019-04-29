@@ -4,7 +4,7 @@ This document covers some common Vue CLI issues and how to resolve them. You sho
 
 ## Running installation with `sudo` or as `root`
 
-If you install `@vue/cli-service` as `root` user or with `sudo`, there might be issues when running package `postinstall` scripts.
+If you install `@svel/cli-service` as `root` user or with `sudo`, there might be issues when running package `postinstall` scripts.
 
 This is a security feature of npm. You should always avoid running npm with root privileges because install scripts can be unintentionally malicious.
 

@@ -1,7 +1,7 @@
 // these prompts are used if the plugin is late-installed into an existing
 // project and invoked by `vue invoke`.
 
-const { chalk, hasGit } = require('@vue/cli-shared-utils')
+const { chalk, hasGit } = require('@svel/cli-shared-utils')
 
 const prompts = module.exports = [
   {
@@ -43,6 +43,6 @@ const prompts = module.exports = [
 // below, so this is a temporary compatibility hack until we release stable.
 // TODO just export the function in 3.0.0
 module.exports.getPrompts = pkg => {
-  prompts[2].when = () => !('@vue/cli-plugin-eslint' in (pkg.devDependencies || {}))
+  prompts[2].when = () => !('@svel/cli-plugin-eslint' in (pkg.devDependencies || {}))
   return prompts
 }

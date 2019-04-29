@@ -1,5 +1,5 @@
 {
-  "name": "@vue/eslint-config-standard",
+  "name": "@svel/eslint-config-standard",
   "version": "4.0.0",
   "description": "eslint-config-standard for vue-cli",
   "main": "index.js",
@@ -8,8 +8,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vuejs/vue-cli.git",
-    "directory": "packages/@vue/eslint-config-standard"
+    "url": "git+https://github.com/wmzy/svelte-cli.git",
+    "directory": "packages/@svel/eslint-config-standard"
   },
   "keywords": [
     "vue",
@@ -18,9 +18,9 @@
   "author": "Evan You",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vuejs/vue-cli/issues"
+    "url": "https://github.com/wmzy/svelte-cli/issues"
   },
-  "homepage": "https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/eslint-config-standard#readme",
+  "homepage": "https://github.com/wmzy/svelte-cli/tree/dev/packages/@svel/eslint-config-standard#readme",
   "dependencies": {
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.16.0",

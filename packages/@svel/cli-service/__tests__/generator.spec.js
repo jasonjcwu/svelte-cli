@@ -1,9 +1,9 @@
-const generateWithPlugin = require('@vue/cli-test-utils/generateWithPlugin')
+const generateWithPlugin = require('@svel/cli-test-utils/generateWithPlugin')
 
 test('node sass (legacy)', async () => {
   const { pkg, files } = await generateWithPlugin([
     {
-      id: '@vue/cli-service',
+      id: '@svel/cli-service',
       apply: require('../generator'),
       options: {
         cssPreprocessor: 'sass'
@@ -18,7 +18,7 @@ test('node sass (legacy)', async () => {
 test('node sass', async () => {
   const { pkg, files } = await generateWithPlugin([
     {
-      id: '@vue/cli-service',
+      id: '@svel/cli-service',
       apply: require('../generator'),
       options: {
         cssPreprocessor: 'node-sass'
@@ -33,7 +33,7 @@ test('node sass', async () => {
 test('dart sass', async () => {
   const { pkg, files } = await generateWithPlugin([
     {
-      id: '@vue/cli-service',
+      id: '@svel/cli-service',
       apply: require('../generator'),
       options: {
         cssPreprocessor: 'dart-sass'

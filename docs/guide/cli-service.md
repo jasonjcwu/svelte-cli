@@ -2,7 +2,7 @@
 
 ## Using the Binary
 
-Inside a Vue CLI project, `@vue/cli-service` installs a binary named `vue-cli-service`. You can access the binary directly as `vue-cli-service` in npm scripts, or as `./node_modules/.bin/vue-cli-service` from the terminal.
+Inside a Vue CLI project, `@svel/cli-service` installs a binary named `vue-cli-service`. You can access the binary directly as `vue-cli-service` in npm scripts, or as `./node_modules/.bin/vue-cli-service` from the terminal.
 
 This is what you will see in the `package.json` of a project using the default preset:
 
@@ -106,7 +106,7 @@ You can use `vue-cli-service inspect` to inspect the webpack config inside a Vue
 
 ## Checking All Available Commands
 
-Some CLI plugins  will inject additional commands to `vue-cli-service`. For example, `@vue/cli-plugin-eslint` injects the `vue-cli-service lint` command. You can see all injected commands by running:
+Some CLI plugins  will inject additional commands to `vue-cli-service`. For example, `@svel/cli-plugin-eslint` injects the `vue-cli-service lint` command. You can see all injected commands by running:
 
 ``` bash
 npx vue-cli-service help
@@ -126,7 +126,7 @@ npx vue-cli-service help [command]
 
 ## Git Hooks
 
-When installed, `@vue/cli-service` also installs [yorkie](https://github.com/yyx990803/yorkie), which allows you to easily specify Git hooks using the `gitHooks` field in your `package.json`:
+When installed, `@svel/cli-service` also installs [yorkie](https://github.com/yyx990803/yorkie), which allows you to easily specify Git hooks using the `gitHooks` field in your `package.json`:
 
 ``` json
 {

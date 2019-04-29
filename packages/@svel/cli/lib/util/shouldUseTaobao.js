@@ -1,6 +1,6 @@
 const chalk = require('chalk')
 const execa = require('execa')
-const { hasYarn, request } = require('@vue/cli-shared-utils')
+const { hasYarn, request } = require('@svel/cli-shared-utils')
 const inquirer = require('inquirer')
 const registries = require('./registries')
 const { loadOptions, saveOptions } = require('../options')

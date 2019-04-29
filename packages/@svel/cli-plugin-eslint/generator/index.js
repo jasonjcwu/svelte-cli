@@ -40,21 +40,21 @@ module.exports = (api, { config, lintOn = [] }, _, invoking) => {
   }
 
   if (config === 'airbnb') {
-    eslintConfig.extends.push('@vue/airbnb')
+    eslintConfig.extends.push('@svel/airbnb')
     Object.assign(pkg.devDependencies, {
-      '@vue/eslint-config-airbnb': '^4.0.0'
+      '@svel/eslint-config-airbnb': '^4.0.0'
     })
     injectEditorConfig('airbnb')
   } else if (config === 'standard') {
-    eslintConfig.extends.push('@vue/standard')
+    eslintConfig.extends.push('@svel/standard')
     Object.assign(pkg.devDependencies, {
-      '@vue/eslint-config-standard': '^4.0.0'
+      '@svel/eslint-config-standard': '^4.0.0'
     })
     injectEditorConfig('standard')
   } else if (config === 'prettier') {
-    eslintConfig.extends.push('@vue/prettier')
+    eslintConfig.extends.push('@svel/prettier')
     Object.assign(pkg.devDependencies, {
-      '@vue/eslint-config-prettier': '^4.0.1'
+      '@svel/eslint-config-prettier': '^4.0.1'
     })
     // prettier & default config do not have any style rules
     // so no need to generate an editorconfig file
@@ -92,10 +92,10 @@ module.exports = (api, { config, lintOn = [] }, _, invoking) => {
   if (invoking) {
     if (api.hasPlugin('unit-mocha')) {
       // eslint-disable-next-line node/no-extraneous-require
-      require('@vue/cli-plugin-unit-mocha/generator').applyESLint(api)
+      require('@svel/cli-plugin-unit-mocha/generator').applyESLint(api)
     } else if (api.hasPlugin('unit-jest')) {
       // eslint-disable-next-line node/no-extraneous-require
-      require('@vue/cli-plugin-unit-jest/generator').applyESLint(api)
+      require('@svel/cli-plugin-unit-jest/generator').applyESLint(api)
     }
   }
 
@@ -110,13 +110,13 @@ module.exports = (api, { config, lintOn = [] }, _, invoking) => {
 const applyTS = module.exports.applyTS = api => {
   api.extendPackage({
     eslintConfig: {
-      extends: ['@vue/typescript'],
+      extends: ['@svel/typescript'],
       parserOptions: {
         parser: '@typescript-eslint/parser'
       }
     },
     devDependencies: {
-      '@vue/eslint-config-typescript': '^4.0.0'
+      '@svel/eslint-config-typescript': '^4.0.0'
     }
   })
 }

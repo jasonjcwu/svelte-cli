@@ -42,10 +42,10 @@ module.exports = api => {
     if (inspectPos !== -1) {
       nodeArgs = rawArgv.splice(inspectPos, inspectPos + 1)
     }
-    // for @vue/babel-preset-app
+    // for @svel/babel-preset-app
     process.env.VUE_CLI_BABEL_TARGET_NODE = true
     // start runner
-    const { execa } = require('@vue/cli-shared-utils')
+    const { execa } = require('@svel/cli-shared-utils')
     const bin = require.resolve('mocha-webpack/bin/mocha-webpack')
     const hasInlineFilesGlob = args._ && args._.length
     const argv = [
@@ -55,7 +55,7 @@ module.exports = api => {
       '--require',
       require.resolve('./setup.js'),
       '--webpack-config',
-      require.resolve('@vue/cli-service/webpack.config.js'),
+      require.resolve('@svel/cli-service/webpack.config.js'),
       ...rawArgv,
       ...(hasInlineFilesGlob ? [] : [
         api.hasPlugin('typescript')

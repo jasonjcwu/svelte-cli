@@ -1,4 +1,4 @@
-const { hasProjectYarn, hasProjectPnpm, execa } = require('@vue/cli-shared-utils')
+const { hasProjectYarn, hasProjectPnpm, execa } = require('@svel/cli-shared-utils')
 
 const severity = {
   critical: 0,

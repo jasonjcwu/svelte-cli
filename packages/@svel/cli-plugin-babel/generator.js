@@ -7,7 +7,7 @@ module.exports = api => {
 
   api.extendPackage({
     babel: {
-      presets: ['@vue/app']
+      presets: ['@svel/app']
     },
     dependencies: {
       'core-js': '^2.6.5'

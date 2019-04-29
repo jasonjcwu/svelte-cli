@@ -3,7 +3,7 @@ jest.mock('inquirer')
 
 const invoke = require('../lib/invoke')
 const { expectPrompts } = require('inquirer')
-const create = require('@vue/cli-test-utils/createTestProject')
+const create = require('@svel/cli-test-utils/createTestProject')
 
 const parseJS = file => {
   const res = {}
@@ -11,7 +11,7 @@ const parseJS = file => {
   return res.exports
 }
 
-const baseESLintConfig = Object.assign({}, require('@vue/cli-plugin-eslint/eslintOptions').config({
+const baseESLintConfig = Object.assign({}, require('@svel/cli-plugin-eslint/eslintOptions').config({
   hasPlugin: () => false
 }), {
   rules: {
@@ -23,12 +23,12 @@ const baseESLintConfig = Object.assign({}, require('@vue/cli-plugin-eslint/eslin
 async function createAndInstall (name) {
   const project = await create(name, {
     plugins: {
-      '@vue/cli-plugin-babel': {}
+      '@svel/cli-plugin-babel': {}
     }
   })
   // mock install
   const pkg = JSON.parse(await project.read('package.json'))
-  pkg.devDependencies['@vue/cli-plugin-eslint'] = '*'
+  pkg.devDependencies['@svel/cli-plugin-eslint'] = '*'
   await project.write('package.json', JSON.stringify(pkg, null, 2))
   return project
 }
@@ -43,7 +43,7 @@ async function assertUpdates (project) {
 
   const eslintrc = parseJS(await project.read('.eslintrc.js'))
   expect(eslintrc).toEqual(Object.assign({}, baseESLintConfig, {
-    extends: ['plugin:vue/essential', '@vue/airbnb']
+    extends: ['plugin:vue/essential', '@svel/airbnb']
   }))
 
   const lintedMain = await project.read('src/main.js')
@@ -80,13 +80,13 @@ test('invoke with ts', async () => {
   const project = await create(`invoke-existing`, {
     useConfigFiles: true,
     plugins: {
-      '@vue/cli-plugin-babel': {},
-      '@vue/cli-plugin-eslint': { config: 'base' }
+      '@svel/cli-plugin-babel': {},
+      '@svel/cli-plugin-eslint': { config: 'base' }
     }
   })
   // mock install
   const pkg = JSON.parse(await project.read('package.json'))
-  pkg.devDependencies['@vue/cli-plugin-typescript'] = '*'
+  pkg.devDependencies['@svel/cli-plugin-typescript'] = '*'
   await project.write('package.json', JSON.stringify(pkg, null, 2))
 
   // mock existing vue.config.js
@@ -101,7 +101,7 @@ test('invoke with ts', async () => {
 
   const updatedESLintrc = parseJS(await project.read('.eslintrc.js'))
   expect(updatedESLintrc).toEqual(Object.assign({}, baseESLintConfig, {
-    extends: ['plugin:vue/essential', 'eslint:recommended', '@vue/typescript'],
+    extends: ['plugin:vue/essential', 'eslint:recommended', '@svel/typescript'],
     parserOptions: {
       parser: '@typescript-eslint/parser'
     }
@@ -112,8 +112,8 @@ test('invoke with existing files (yaml)', async () => {
   const project = await create(`invoke-existing-yaml`, {
     useConfigFiles: true,
     plugins: {
-      '@vue/cli-plugin-babel': {},
-      '@vue/cli-plugin-eslint': {}
+      '@svel/cli-plugin-babel': {},
+      '@svel/cli-plugin-eslint': {}
     }
   })
 
@@ -137,14 +137,14 @@ extends:
 extends:
   - 'plugin:vue/essential'
   - 'eslint:recommended'
-  - '@vue/airbnb'
+  - '@svel/airbnb'
 `.trim())
 })
 
 test('invoking a plugin that renames files', async () => {
   const project = await create(`invoke-rename`, { plugins: {}})
   const pkg = JSON.parse(await project.read('package.json'))
-  pkg.devDependencies['@vue/cli-plugin-typescript'] = '*'
+  pkg.devDependencies['@svel/cli-plugin-typescript'] = '*'
   await project.write('package.json', JSON.stringify(pkg, null, 2))
   await project.run(`${require.resolve('../bin/vue')} invoke typescript -d`)
   expect(project.has('src/main.js')).toBe(false)

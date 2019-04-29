@@ -1,4 +1,4 @@
-const generateWithPlugin = require('@vue/cli-test-utils/generateWithPlugin')
+const generateWithPlugin = require('@svel/cli-test-utils/generateWithPlugin')
 
 test('base', async () => {
   const { pkg, files } = await generateWithPlugin([
@@ -52,7 +52,7 @@ test('bare', async () => {
       options: {}
     },
     {
-      id: '@vue/cli-service',
+      id: '@svel/cli-service',
       apply: () => {},
       options: { bare: true }
     }
@@ -76,7 +76,7 @@ test('TS + bare', async () => {
       options: {}
     },
     {
-      id: '@vue/cli-service',
+      id: '@svel/cli-service',
       apply: () => {},
       options: { bare: true }
     }

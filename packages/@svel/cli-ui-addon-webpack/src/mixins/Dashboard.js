@@ -1,6 +1,6 @@
 import store from '../store'
 
-// @vue/component
+// @svel/component
 export default {
   store,
 

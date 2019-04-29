@@ -42,9 +42,9 @@ footer: MIT Licensed | Copyright © 2018-present Evan You
 Install:
 
 ``` bash
-npm install -g @vue/cli
+npm install -g @svel/cli
 # OR
-yarn global add @vue/cli
+yarn global add @svel/cli
 ```
 
 Create a project:

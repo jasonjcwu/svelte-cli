@@ -5,7 +5,7 @@ const parseDiff = require('../util/parse-diff')
 // Connectors
 const cwd = require('./cwd')
 // Utils
-const { hasProjectGit } = require('@vue/cli-shared-utils')
+const { hasProjectGit } = require('@svel/cli-shared-utils')
 
 async function getNewFiles (context) {
   if (!hasProjectGit(cwd.get())) return []

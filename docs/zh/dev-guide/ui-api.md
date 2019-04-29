@@ -190,7 +190,7 @@ module.exports = {
   root: true,
   extends: [
     'plugin:vue/essential',
-    '@vue/standard'
+    '@svel/standard'
   ]
 }
 ```
@@ -225,7 +225,7 @@ api.describeConfig({
     root: true,
     extends: [
       'plugin:vue/essential',
-      '@vue/standard'
+      '@svel/standard'
     ]
   },
   vue: {
@@ -628,12 +628,12 @@ api.addTask({
 
 推荐的创建一个客户端 addon 的方式是通过 vue cli 创建一个新项目。你也可以在插件的子目录或不同的 npm 包中这样做。
 
-作为开发依赖安装 `@vue/cli-ui`。
+作为开发依赖安装 `@svel/cli-ui`。
 
 然后添加一个 `vue.config.js` 文件并附带以下内容：
 
 ```js
-const { clientAddonConfig } = require('@vue/cli-ui')
+const { clientAddonConfig } = require('@svel/cli-ui')
 
 module.exports = {
   ...clientAddonConfig({
@@ -713,7 +713,7 @@ locales.keys().forEach(key => {
 
 cli-ui 在 `window` 作用域内注册了 `Vue` 和 `ClientAddonApi` 作为全局变量。
 
-你可以在自己的组件里使用 [@vue/ui](https://github.com/vuejs/ui) 和 [@vue/cli-ui](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-ui/src/components) 所有的组件和 CSS class 以保持样式和体验的一致性。你也可以用内置的 [vue-i18n](https://github.com/kazupon/vue-i18n) 翻译字符串。
+你可以在自己的组件里使用 [@vue/ui](https://github.com/vuejs/ui) 和 [@svel/cli-ui](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-ui/src/components) 所有的组件和 CSS class 以保持样式和体验的一致性。你也可以用内置的 [vue-i18n](https://github.com/kazupon/vue-i18n) 翻译字符串。
 
 ### 注册客户端 addon
 
@@ -723,7 +723,7 @@ cli-ui 在 `window` 作用域内注册了 `Vue` 和 `ClientAddonApi` 作为全�
 api.addClientAddon({
   id: 'org.vue.webpack.client-addon',
   // 包含构建出来的 JS 文件的文件夹
-  path: '@vue/cli-ui-addon-webpack/dist'
+  path: '@svel/cli-ui-addon-webpack/dist'
 })
 ```
 
@@ -978,12 +978,12 @@ export default {
 
 IPC 就是进程间通信 (Inter-Process Communication) 的缩写。该系统允许你轻松的从子进程 (例如任务) 发送消息，并且轻量快速。
 
-> 为了在 webpack 仪表盘 UI 上展示数据，`@vue/cli-service` 的 `serve` 和 `build` 命令会在 `--dashboard` 参数被传入时向 cli-ui Node.js 服务器发送 IPC 消息。
+> 为了在 webpack 仪表盘 UI 上展示数据，`@svel/cli-service` 的 `serve` 和 `build` 命令会在 `--dashboard` 参数被传入时向 cli-ui Node.js 服务器发送 IPC 消息。
 
-在进程代码中 (可以是一个 webpack 插件或一个 Node.js 的任务脚本)，你可以使用 `@vue/cli-shared-utils` 中的 `IpcMessenger` 类：
+在进程代码中 (可以是一个 webpack 插件或一个 Node.js 的任务脚本)，你可以使用 `@svel/cli-shared-utils` 中的 `IpcMessenger` 类：
 
 ```js
-const { IpcMessenger } = require('@vue/cli-shared-utils')
+const { IpcMessenger } = require('@svel/cli-shared-utils')
 
 // 创建一个新的 IpcMessenger 实例
 const ipc = new IpcMessenger()

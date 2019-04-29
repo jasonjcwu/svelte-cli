@@ -188,7 +188,7 @@ module.exports = {
   root: true,
   extends: [
     'plugin:vue/essential',
-    '@vue/standard'
+    '@svel/standard'
   ]
 }
 ```
@@ -223,7 +223,7 @@ api.describeConfig({
     root: true,
     extends: [
       'plugin:vue/essential',
-      '@vue/standard'
+      '@svel/standard'
     ]
   },
   vue: {
@@ -630,12 +630,12 @@ api.addTask({
 
 Рекомендуемый способ создания клиентского дополнения — создать новый проект с помощью vue cli. Вы можете либо сделать это в подкаталоге вашего плагина, либо в другом npm пакете.
 
-Установите `@vue/cli-ui` в качестве зависимости для разработки (dev dependency).
+Установите `@svel/cli-ui` в качестве зависимости для разработки (dev dependency).
 
 Затем добавьте файл `vue.config.js` со следующим содержимым:
 
 ```js
-const { clientAddonConfig } = require('@vue/cli-ui')
+const { clientAddonConfig } = require('@svel/cli-ui')
 
 module.exports = {
   ...clientAddonConfig({
@@ -713,7 +713,7 @@ locales.keys().forEach(key => {
 
 Также cli-ui регистрирует `Vue` и `ClientAddonApi` глобальными переменными в `window`.
 
-В компонентах можно использовать все компоненты и CSS классы [@vue/ui](https://github.com/vuejs/ui) и [@vue/cli-ui](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-ui/src/components), чтобы обеспечить одинаковый внешний вид. Переводить тексты можно с помощью [vue-i18n](https://github.com/kazupon/vue-i18n), который используется по умолчанию.
+В компонентах можно использовать все компоненты и CSS классы [@vue/ui](https://github.com/vuejs/ui) и [@svel/cli-ui](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-ui/src/components), чтобы обеспечить одинаковый внешний вид. Переводить тексты можно с помощью [vue-i18n](https://github.com/kazupon/vue-i18n), который используется по умолчанию.
 
 ### Регистрация клиентского дополнения
 
@@ -723,7 +723,7 @@ locales.keys().forEach(key => {
 api.addClientAddon({
   id: 'org.vue.webpack.client-addon',
   // Каталог содержащий все собранные JS файлы
-  path: '@vue/cli-ui-addon-webpack/dist'
+  path: '@svel/cli-ui-addon-webpack/dist'
 })
 ```
 
@@ -978,12 +978,12 @@ export default {
 
 IPC означает коммуникацию между процессами. Эта система позволяет легко отправлять сообщения из дочерних процессов (например, задач!). И это довольно быстро и просто.
 
-> Для отображения данных в UI на панели управления webpack, команды `serve` и `build` из `@vue/cli-service` отправляют IPC-сообщения на сервер cli-ui nodejs, когда передаётся аргумент `--dashboard`.
+> Для отображения данных в UI на панели управления webpack, команды `serve` и `build` из `@svel/cli-service` отправляют IPC-сообщения на сервер cli-ui nodejs, когда передаётся аргумент `--dashboard`.
 
-В коде процесса (который может быть Webpack-плагином или скриптом задачи для nodejs), можно использовать класс `IpcMessenger` из `@vue/cli-shared-utils`:
+В коде процесса (который может быть Webpack-плагином или скриптом задачи для nodejs), можно использовать класс `IpcMessenger` из `@svel/cli-shared-utils`:
 
 ```js
-const { IpcMessenger } = require('@vue/cli-shared-utils')
+const { IpcMessenger } = require('@svel/cli-shared-utils')
 
 // Создание нового экземпляра IpcMessenger
 const ipc = new IpcMessenger()

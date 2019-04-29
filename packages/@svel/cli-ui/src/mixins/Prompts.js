@@ -7,7 +7,7 @@ export default function ({
   updateQuery = null,
   update = null
 }) {
-  // @vue/component
+  // @svel/component
   return {
     computed: {
       configurationValid () {

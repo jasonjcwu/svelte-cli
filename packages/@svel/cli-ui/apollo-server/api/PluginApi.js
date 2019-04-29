@@ -10,7 +10,7 @@ const app = require('../connectors/app')
 // Utils
 const ipc = require('../util/ipc')
 const { notify } = require('../util/notification')
-const { matchesPluginId } = require('@vue/cli-shared-utils')
+const { matchesPluginId } = require('@svel/cli-shared-utils')
 const { log } = require('../util/logger')
 // Validators
 const { validateConfiguration } = require('./configuration')

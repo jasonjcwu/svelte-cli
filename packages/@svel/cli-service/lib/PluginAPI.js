@@ -1,7 +1,7 @@
 const path = require('path')
 const hash = require('hash-sum')
 const semver = require('semver')
-const { matchesPluginId } = require('@vue/cli-shared-utils')
+const { matchesPluginId } = require('@svel/cli-shared-utils')
 
 // Note: if a plugin-registered command needs to run in a specific default mode,
 // the plugin needs to expose it via `module.exports.defaultModes` in the form
@@ -37,7 +37,7 @@ class PluginAPI {
     if (semver.satisfies(this.version, range)) return
 
     throw new Error(
-      `Require @vue/cli-service "${range}", but was loaded with "${this.version}".`
+      `Require @svel/cli-service "${range}", but was loaded with "${this.version}".`
     )
   }
 
@@ -61,7 +61,7 @@ class PluginAPI {
   /**
    * Check if the project has a given plugin.
    *
-   * @param {string} id - Plugin id, can omit the (@vue/|vue-|@scope/vue)-cli-plugin- prefix
+   * @param {string} id - Plugin id, can omit the (@svel/|vue-|@scope/vue)-cli-plugin- prefix
    * @return {boolean}
    */
   hasPlugin (id) {

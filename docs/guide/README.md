@@ -7,14 +7,14 @@ sidebarDepth: 0
 <Bit/>
 
 ::: warning
-This documentation is for `@vue/cli` version **3.x**. For the old `vue-cli`, see [here](https://github.com/vuejs/vue-cli/tree/v2#vue-cli--).
+This documentation is for `@svel/cli` version **3.x**. For the old `vue-cli`, see [here](https://github.com/vuejs/vue-cli/tree/v2#vue-cli--).
 :::
 
 Vue CLI is a full system for rapid Vue.js development, providing:
 
-- Interactive project scaffolding via `@vue/cli`.
-- Zero config rapid prototyping via `@vue/cli` + `@vue/cli-service-global`.
-- A runtime dependency (`@vue/cli-service`) that is:
+- Interactive project scaffolding via `@svel/cli`.
+- Zero config rapid prototyping via `@svel/cli` + `@svel/cli-service-global`.
+- A runtime dependency (`@svel/cli-service`) that is:
   - Upgradeable;
   - Built on top of webpack, with sensible defaults;
   - Configurable via in-project config file;
@@ -30,11 +30,11 @@ There are several moving parts of Vue CLI - if you look at the [source code](htt
 
 ### CLI
 
-The CLI (`@vue/cli`) is a globally installed npm package and provides the `vue` command in your terminal. It provides the ability to quickly scaffold a new project via `vue create`, or instantly prototype new ideas via `vue serve`. You can also manage your projects using a graphical user interface via `vue ui`. We will walk through what it can do in the next few sections of the guide.
+The CLI (`@svel/cli`) is a globally installed npm package and provides the `vue` command in your terminal. It provides the ability to quickly scaffold a new project via `vue create`, or instantly prototype new ideas via `vue serve`. You can also manage your projects using a graphical user interface via `vue ui`. We will walk through what it can do in the next few sections of the guide.
 
 ### CLI Service
 
-The CLI Service (`@vue/cli-service`) is a development dependency. It's an npm package installed locally into every project created by `@vue/cli`.
+The CLI Service (`@svel/cli-service`) is a development dependency. It's an npm package installed locally into every project created by `@svel/cli`.
 
 The CLI Service is built on top of [webpack](http://webpack.js.org/) and [webpack-dev-server](https://github.com/webpack/webpack-dev-server). It contains:
 
@@ -42,13 +42,13 @@ The CLI Service is built on top of [webpack](http://webpack.js.org/) and [webpac
 - An internal webpack config that is optimized for most apps;
 - The `vue-cli-service` binary inside the project, which comes with the basic `serve`, `build` and `inspect` commands.
 
-If you are familiar with [create-react-app](https://github.com/facebookincubator/create-react-app), `@vue/cli-service` is roughly the equivalent of `react-scripts`, although the feature set is different.
+If you are familiar with [create-react-app](https://github.com/facebookincubator/create-react-app), `@svel/cli-service` is roughly the equivalent of `react-scripts`, although the feature set is different.
 
 The section on [CLI Service](./cli-service.md) covers its detailed usage.
 
 ### CLI Plugins
 
-CLI Plugins are npm packages that provide optional features to your Vue CLI projects, such as Babel/TypeScript transpilation, ESLint integration, unit testing, and end-to-end testing. It's easy to spot a Vue CLI plugin as their names start with either `@vue/cli-plugin-` (for built-in plugins) or `vue-cli-plugin-` (for community plugins).
+CLI Plugins are npm packages that provide optional features to your Vue CLI projects, such as Babel/TypeScript transpilation, ESLint integration, unit testing, and end-to-end testing. It's easy to spot a Vue CLI plugin as their names start with either `@svel/cli-plugin-` (for built-in plugins) or `vue-cli-plugin-` (for community plugins).
 
 When you run the `vue-cli-service` binary inside your project, it automatically resolves and loads all CLI Plugins listed in your project's `package.json`.
 

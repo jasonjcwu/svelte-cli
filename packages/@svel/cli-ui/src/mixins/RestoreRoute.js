@@ -7,7 +7,7 @@ export default function ({
 } = {}) {
   let lastRoute
 
-  // @vue/component
+  // @svel/component
   return {
     apollo: {
       projectCurrent: PROJECT_CURRENT

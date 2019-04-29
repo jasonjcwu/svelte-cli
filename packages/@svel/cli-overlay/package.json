@@ -1,5 +1,5 @@
 {
-  "name": "@vue/cli-overlay",
+  "name": "@svel/cli-overlay",
   "version": "3.7.0",
   "description": "error overlay & dev server middleware for vue-cli",
   "main": "dist/client.js",
@@ -8,8 +8,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vuejs/vue-cli.git",
-    "directory": "packages/@vue/cli-overlay"
+    "url": "git+https://github.com/wmzy/svelte-cli.git",
+    "directory": "packages/@svel/cli-overlay"
   },
   "keywords": [
     "vue",
@@ -19,9 +19,9 @@
   "author": "Evan You",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vuejs/vue-cli/issues"
+    "url": "https://github.com/wmzy/svelte-cli/issues"
   },
-  "homepage": "https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/cli-overlay#readme",
+  "homepage": "https://github.com/wmzy/svelte-cli/tree/dev/packages/@svel/cli-overlay#readme",
   "publishConfig": {
     "access": "public"
   }

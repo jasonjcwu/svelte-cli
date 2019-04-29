@@ -22,7 +22,7 @@ module.exports = api => {
         label: 'org.vue.eslint.suggestions.open-eslintrc.label',
         handler () {
           const file = config.foundFiles.eslint.path
-          const { launch } = require('@vue/cli-shared-utils')
+          const { launch } = require('@svel/cli-shared-utils')
           launch(file)
           return {
             keep: true

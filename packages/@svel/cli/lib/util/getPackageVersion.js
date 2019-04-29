@@ -1,4 +1,4 @@
-const { request } = require('@vue/cli-shared-utils')
+const { request } = require('@svel/cli-shared-utils')
 
 module.exports = async function getPackageVersion (id, range = '') {
   const registry = (await require('./shouldUseTaobao')())

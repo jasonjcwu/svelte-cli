@@ -19,7 +19,7 @@ const {
   stopSpinner,
   resolvePluginId,
   loadModule
-} = require('@vue/cli-shared-utils')
+} = require('@svel/cli-shared-utils')
 
 async function readFiles (context) {
   const files = await globby(['**'], {
@@ -60,7 +60,7 @@ async function invoke (pluginName, options = {}, context = process.cwd()) {
     if (!deps) return
     let name
     // official
-    if (deps[(name = `@vue/cli-plugin-${pluginName}`)]) {
+    if (deps[(name = `@svel/cli-plugin-${pluginName}`)]) {
       return name
     }
     // full id, scoped short, or default short

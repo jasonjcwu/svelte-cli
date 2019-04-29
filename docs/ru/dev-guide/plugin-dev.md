@@ -8,8 +8,8 @@ sidebarDepth: 3
 
 Существуют две основные части системы:
 
-- `@vue/cli`: установленный глобально, предоставляет команду `vue create <app>`;
-- `@vue/cli-service`: установленный локально, предоставляет команду `vue-cli-service`.
+- `@svel/cli`: установленный глобально, предоставляет команду `vue create <app>`;
+- `@svel/cli-service`: установленный локально, предоставляет команду `vue-cli-service`.
 
 Обе части используют архитектуру, основанную на плагинах.
 
@@ -23,7 +23,7 @@ sidebarDepth: 3
 
 ### Плагин для CLI (CLI Plugin)
 
-Плагин для CLI — это npm-пакет, который может добавлять дополнительные возможности в проект `@vue/cli`. Он должен всегда содержать [плагин для сервиса](#service-plugin) в качестве основного экспорта, и может опционально содержать [Generator](#generator) и [файл подсказок](#prompts-for-3rd-party-plugins).
+Плагин для CLI — это npm-пакет, который может добавлять дополнительные возможности в проект `@svel/cli`. Он должен всегда содержать [плагин для сервиса](#service-plugin) в качестве основного экспорта, и может опционально содержать [Generator](#generator) и [файл подсказок](#prompts-for-3rd-party-plugins).
 
 Типичная структура каталогов плагина для CLI выглядит следующим образом:
 
@@ -40,9 +40,9 @@ sidebarDepth: 3
 
 Сервисные плагины загружаются автоматически при создании экземпляра сервиса — т.е. каждый раз когда команда `vue-cli-service` вызывается внутри проекта.
 
-Обратите внимание, что концепция «плагина для сервиса», которую мы обсуждаем здесь, несколько уже, чем концепция «плагина для CLI», который публикуется как npm-пакет. Первый относится только к модулю, который будет загружен `@vue/cli-service` когда он инициализирован, и обычно является частью последнего.
+Обратите внимание, что концепция «плагина для сервиса», которую мы обсуждаем здесь, несколько уже, чем концепция «плагина для CLI», который публикуется как npm-пакет. Первый относится только к модулю, который будет загружен `@svel/cli-service` когда он инициализирован, и обычно является частью последнего.
 
-Кроме того, [встроенные команды][commands] и [конфигурация модулей][config] `@vue/cli-service` также реализованы как плагины для сервиса.
+Кроме того, [встроенные команды][commands] и [конфигурация модулей][config] `@svel/cli-service` также реализованы как плагины для сервиса.
 
 Плагин для сервиса должен экспортировать функцию, которая принимает два аргумента:
 
@@ -159,14 +159,14 @@ module.exports = {
       "presets" : {
         "foo": {
           "plugins": {
-            "@vue/cli-plugin-foo": { "option": "bar" }
+            "@svel/cli-plugin-foo": { "option": "bar" }
           }
         }
       }
     }
     ```
 
-    И если пользователь создаёт проект с использованием пресета `foo`, тогда генератор `@vue/cli-plugin-foo` получит `{ option: 'bar' }` в качестве второго аргумента.
+    И если пользователь создаёт проект с использованием пресета `foo`, тогда генератор `@svel/cli-plugin-foo` получит `{ option: 'bar' }` в качестве второго аргумента.
 
     Для стороннего плагина эти параметры будут получены из интерактивного выбора пользователем или аргументов командной строки, когда выполняется команда `vue invoke` (см. [Интерактивные подсказки для сторонних плагинов](#интерактивные-подсказки-дnя-сторонних-пnагинов)).
 
@@ -200,7 +200,7 @@ module.exports = (api, options, rootOptions) => {
 
 ``` ejs
 ---
-extend: '@vue/cli-service/generator/template/src/App.vue'
+extend: '@svel/cli-service/generator/template/src/App.vue'
 replace: !!js/regexp /<script>[^]*?<\/script>/
 ---
 
@@ -215,7 +215,7 @@ export default {
 
 ``` ejs
 ---
-extend: '@vue/cli-service/generator/template/src/App.vue'
+extend: '@svel/cli-service/generator/template/src/App.vue'
 replace:
   - !!js/regexp /Welcome to Your Vue\.js App/
   - !!js/regexp /<script>[^]*?<\/script>/
@@ -261,7 +261,7 @@ _variables.scss
 
 #### Интерактивные подсказки для встроенных плагинов
 
-Только встроенные плагины имеют возможность настраивать исходные подсказки при создании нового проекта, а модули подсказок расположены [внутри пакета `@vue/cli`][prompt-modules].
+Только встроенные плагины имеют возможность настраивать исходные подсказки при создании нового проекта, а модули подсказок расположены [внутри пакета `@svel/cli`][prompt-modules].
 
 Модуль подсказок должен экспортировать функцию, которая получает экземпляр [PromptModuleAPI][prompt-api]. Подсказки представлены с помощью [inquirer](https://github.com/SBoudrias/Inquirer.js) под капотом:
 
@@ -308,7 +308,7 @@ vue invoke my-plugin --mode awesome
 
 Чтобы CLI-плагин мог использоваться другими разработчиками, он должен быть опубликован на npm придерживаясь соглашения по именованию `vue-cli-plugin-<name>`. Следуя соглашению по именованию позволит вашему плагину быть:
 
-- Легко находимым с помощью `@vue/cli-service`;
+- Легко находимым с помощью `@svel/cli-service`;
 - Легко находимым другими разработчиками через поиск;
 - Устанавливаться через `vue add <name>` или `vue invoke <name>`.
 
@@ -318,17 +318,17 @@ vue invoke my-plugin --mode awesome
 Этот раздел применим только в случае, если вы работаете над встроенным плагином непосредственно внутри `vuejs/vue-cli` репозитория.
 :::
 
-Плагин с генератором, который внедряет дополнительные зависимости, отличные от пакетов в репозитории (например, `chai` внедряется `@vue/cli-plugin-unit-mocha/generator/index.js`) должен перечислять эти зависимости в собственном поле `devDependencies`. Это гарантирует:
+Плагин с генератором, который внедряет дополнительные зависимости, отличные от пакетов в репозитории (например, `chai` внедряется `@svel/cli-plugin-unit-mocha/generator/index.js`) должен перечислять эти зависимости в собственном поле `devDependencies`. Это гарантирует:
 
 1. что пакет всегда существует в корневом `node_modules` репозитория, поэтому нам не нужно их переустанавливать при каждом тестировании.
 
 2. что `yarn.lock` остаётся постоянным, поэтому CI сможет лучше применять его кэширование.
 
-[creator-class]: https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/cli/lib/Creator.js
-[service-class]: https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/cli-service/lib/Service.js
-[generator-api]: https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/cli/lib/GeneratorAPI.js
-[commands]: https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/cli-service/lib/commands
-[config]: https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/cli-service/lib/config
-[plugin-api]: https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/cli-service/lib/PluginAPI.js
-[prompt-modules]: https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/cli/lib/promptModules
-[prompt-api]: https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/cli/lib/PromptModuleAPI.js
+[creator-class]: https://github.com/vuejs/vue-cli/tree/dev/packages/@svel/cli/lib/Creator.js
+[service-class]: https://github.com/vuejs/vue-cli/tree/dev/packages/@svel/cli-service/lib/Service.js
+[generator-api]: https://github.com/vuejs/vue-cli/tree/dev/packages/@svel/cli/lib/GeneratorAPI.js
+[commands]: https://github.com/vuejs/vue-cli/tree/dev/packages/@svel/cli-service/lib/commands
+[config]: https://github.com/vuejs/vue-cli/tree/dev/packages/@svel/cli-service/lib/config
+[plugin-api]: https://github.com/vuejs/vue-cli/tree/dev/packages/@svel/cli-service/lib/PluginAPI.js
+[prompt-modules]: https://github.com/vuejs/vue-cli/tree/dev/packages/@svel/cli/lib/promptModules
+[prompt-api]: https://github.com/vuejs/vue-cli/tree/dev/packages/@svel/cli/lib/PromptModuleAPI.js

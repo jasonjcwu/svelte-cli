@@ -1,4 +1,4 @@
-# @vue/eslint-config-typescript
+# @svel/eslint-config-typescript
 
 > eslint-config-typescript for vue-cli
 

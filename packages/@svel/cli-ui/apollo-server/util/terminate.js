@@ -5,7 +5,7 @@ const {
   isWindows,
   isLinux,
   isMacintosh
-} = require('@vue/cli-shared-utils')
+} = require('@svel/cli-shared-utils')
 
 const execFile = util.promisify(cp.execFile)
 const spawn = util.promisify(cp.spawn)

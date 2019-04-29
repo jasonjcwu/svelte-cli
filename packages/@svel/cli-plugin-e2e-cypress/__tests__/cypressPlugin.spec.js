@@ -1,13 +1,13 @@
 jest.setTimeout(process.env.APPVEYOR ? 120000 : 60000)
 
-const create = require('@vue/cli-test-utils/createTestProject')
+const create = require('@svel/cli-test-utils/createTestProject')
 
 test('should work', async () => {
   const project = await create('e2e-cypress', {
     plugins: {
-      '@vue/cli-plugin-babel': {},
-      '@vue/cli-plugin-e2e-cypress': {},
-      '@vue/cli-plugin-eslint': {
+      '@svel/cli-plugin-babel': {},
+      '@svel/cli-plugin-e2e-cypress': {},
+      '@svel/cli-plugin-eslint': {
         config: 'airbnb',
         lintOn: 'save'
       }
@@ -28,12 +28,12 @@ test('should work', async () => {
 test('should work with TS', async () => {
   const project = await create('e2e-cypress-ts', {
     plugins: {
-      '@vue/cli-plugin-typescript': {
+      '@svel/cli-plugin-typescript': {
         'classComponent': true,
         'tsLint': true,
         'lintOn': ['save']
       },
-      '@vue/cli-plugin-e2e-cypress': {}
+      '@svel/cli-plugin-e2e-cypress': {}
     }
   })
 

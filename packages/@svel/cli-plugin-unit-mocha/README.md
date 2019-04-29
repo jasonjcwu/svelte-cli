@@ -1,4 +1,4 @@
-# @vue/cli-plugin-unit-mocha
+# @svel/cli-plugin-unit-mocha
 
 > unit-mocha plugin for vue-cli
 
@@ -32,5 +32,5 @@
 ## Installing in an Already Created Project
 
 ``` sh
-vue add @vue/unit-mocha
+vue add @svel/unit-mocha
 ```

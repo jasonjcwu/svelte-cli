@@ -6,7 +6,7 @@ const fs = require('fs')
 const path = require('path')
 const Service = require('../lib/Service')
 
-const { logs } = require('@vue/cli-shared-utils')
+const { logs } = require('@svel/cli-shared-utils')
 
 const mockPkg = json => {
   fs.writeFileSync('/package.json', JSON.stringify(json, null, 2))
@@ -64,12 +64,12 @@ test('loading plugins from package.json', () => {
   mockPkg({
     devDependencies: {
       'bar': '^1.0.0',
-      '@vue/cli-plugin-babel': '^3.7.0',
+      '@svel/cli-plugin-babel': '^3.7.0',
       'vue-cli-plugin-foo': '^1.0.0'
     }
   })
   const service = new Service('/') // this one needs to read from package.json
-  expect(service.plugins.some(({ id }) => id === '@vue/cli-plugin-babel')).toBe(true)
+  expect(service.plugins.some(({ id }) => id === '@svel/cli-plugin-babel')).toBe(true)
   expect(service.plugins.some(({ id }) => id === 'vue-cli-plugin-foo')).toBe(true)
   expect(service.plugins.some(({ id }) => id === 'bar')).toBe(false)
 })
@@ -179,7 +179,7 @@ test('api: assertVersion', () => {
       expect(() => api.assertVersion('>= 3')).not.toThrow()
 
       expect(() => api.assertVersion(3.1)).toThrow('Expected string or integer value')
-      expect(() => api.assertVersion('^100')).toThrow('Require @vue/cli-service "^100"')
+      expect(() => api.assertVersion('^100')).toThrow('Require @svel/cli-service "^100"')
     }
   }
   createMockService([plugin], true /* init */)
@@ -293,7 +293,7 @@ test('api: configureWebpack preserve ruleNames', () => {
   const service = createMockService([
     {
       id: 'babel',
-      apply: require('@vue/cli-plugin-babel')
+      apply: require('@svel/cli-plugin-babel')
     },
     {
       id: 'test',
@@ -359,11 +359,11 @@ test('api: hasPlugin', () => {
       id: 'vue-cli-plugin-foo',
       apply: api => {
         expect(api.hasPlugin('bar')).toBe(true)
-        expect(api.hasPlugin('@vue/cli-plugin-bar')).toBe(true)
+        expect(api.hasPlugin('@svel/cli-plugin-bar')).toBe(true)
       }
     },
     {
-      id: '@vue/cli-plugin-bar',
+      id: '@svel/cli-plugin-bar',
       apply: api => {
         expect(api.hasPlugin('foo')).toBe(true)
         expect(api.hasPlugin('vue-cli-plugin-foo')).toBe(true)

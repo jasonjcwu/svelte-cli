@@ -1,6 +1,6 @@
 jest.setTimeout(process.env.APPVEYOR ? 850000 : 50000)
 
-const create = require('@vue/cli-test-utils/createTestProject')
+const create = require('@svel/cli-test-utils/createTestProject')
 
 // temporarily disabled on AppVeyor
 // due to Cypress upstream issue
@@ -10,8 +10,8 @@ if (!process.env.APPVEYOR) {
     const project = await create('ts-e2e-cypress-router', {
       router: true,
       plugins: {
-        '@vue/cli-plugin-typescript': {},
-        '@vue/cli-plugin-e2e-cypress': {}
+        '@svel/cli-plugin-typescript': {},
+        '@svel/cli-plugin-e2e-cypress': {}
       }
     })
     const config = JSON.parse(await project.read('cypress.json'))
@@ -25,8 +25,8 @@ if (!process.env.CIRCLECI) {
   test('nightwatch', async () => {
     const project = await create('ts-e2e-nightwatch', {
       plugins: {
-        '@vue/cli-plugin-typescript': {},
-        '@vue/cli-plugin-e2e-nightwatch': {}
+        '@svel/cli-plugin-typescript': {},
+        '@svel/cli-plugin-e2e-nightwatch': {}
       }
     })
     await project.run(`vue-cli-service test:e2e`)

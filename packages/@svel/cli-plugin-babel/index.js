@@ -1,5 +1,5 @@
 const path = require('path')
-const { isWindows } = require('@vue/cli-shared-utils')
+const { isWindows } = require('@svel/cli-shared-utils')
 
 function genTranspileDepRegex (transpileDependencies) {
   const deps = transpileDependencies.map(dep => {
@@ -17,7 +17,7 @@ function genTranspileDepRegex (transpileDependencies) {
 
 module.exports = (api, options) => {
   const useThreads = process.env.NODE_ENV === 'production' && !!options.parallel
-  const cliServicePath = require('path').dirname(require.resolve('@vue/cli-service'))
+  const cliServicePath = require('path').dirname(require.resolve('@svel/cli-service'))
   const transpileDepRegex = genTranspileDepRegex(options.transpileDependencies)
 
   api.chainWebpack(webpackConfig => {
@@ -48,7 +48,7 @@ module.exports = (api, options) => {
           .loader('cache-loader')
           .options(api.genCacheConfig('babel-loader', {
             '@babel/core': require('@babel/core/package.json').version,
-            '@vue/babel-preset-app': require('@vue/babel-preset-app/package.json').version,
+            '@svel/babel-preset-app': require('@svel/babel-preset-app/package.json').version,
             'babel-loader': require('babel-loader/package.json').version,
             modern: !!process.env.VUE_CLI_MODERN_BUILD,
             browserslist: api.service.pkg.browserslist

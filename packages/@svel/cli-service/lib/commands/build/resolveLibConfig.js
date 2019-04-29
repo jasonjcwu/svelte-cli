@@ -2,7 +2,7 @@ const fs = require('fs')
 const path = require('path')
 
 module.exports = (api, { entry, name, formats, filename }, options) => {
-  const { log, error } = require('@vue/cli-shared-utils')
+  const { log, error } = require('@svel/cli-shared-utils')
   const abort = msg => {
     log()
     error(msg)

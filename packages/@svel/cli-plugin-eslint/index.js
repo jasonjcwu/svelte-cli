@@ -4,7 +4,7 @@ module.exports = (api, options) => {
   if (options.lintOnSave) {
     const extensions = require('./eslintOptions').extensions(api)
     // Use loadModule to allow users to customize their ESLint dependency version.
-    const { resolveModule, loadModule } = require('@vue/cli-shared-utils')
+    const { resolveModule, loadModule } = require('@svel/cli-shared-utils')
     const cwd = api.getCwd()
     const eslintPkg =
       loadModule('eslint/package.json', cwd, true) ||
@@ -43,7 +43,7 @@ module.exports = (api, options) => {
           .pre()
           .exclude
             .add(/node_modules/)
-            .add(require('path').dirname(require.resolve('@vue/cli-service')))
+            .add(require('path').dirname(require.resolve('@svel/cli-service')))
             .end()
           .test(/\.(vue|(j|t)sx?)$/)
           .use('eslint-loader')

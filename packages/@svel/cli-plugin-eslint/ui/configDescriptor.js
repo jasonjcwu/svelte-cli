@@ -96,7 +96,7 @@ function getEslintPrompts (data, rules) {
 }
 
 function onRead ({ data, cwd }) {
-  const { loadModule } = require('@vue/cli-shared-utils')
+  const { loadModule } = require('@svel/cli-shared-utils')
   const rules = loadModule('eslint-plugin-vue', cwd, true).rules
 
   return {

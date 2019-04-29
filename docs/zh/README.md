@@ -24,9 +24,9 @@ footer: MIT Licensed | Copyright © 2018-present Evan You
 安装：
 
 ``` bash
-npm install -g @vue/cli
+npm install -g @svel/cli
 # OR
-yarn global add @vue/cli
+yarn global add @svel/cli
 ```
 
 创建一个项目：

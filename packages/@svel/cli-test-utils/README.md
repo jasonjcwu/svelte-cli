@@ -1,3 +1,3 @@
-# @vue/cli-test-utils
+# @svel/cli-test-utils
 
 > test-utils for vue-cli

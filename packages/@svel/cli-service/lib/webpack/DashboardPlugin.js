@@ -7,7 +7,7 @@
 const path = require('path')
 const fs = require('fs-extra')
 const webpack = require('webpack')
-const { IpcMessenger } = require('@vue/cli-shared-utils')
+const { IpcMessenger } = require('@svel/cli-shared-utils')
 const { analyzeBundle } = require('./analyzeBundle')
 
 const ID = 'vue-cli-dashboard-plugin'

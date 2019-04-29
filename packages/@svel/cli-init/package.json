@@ -1,5 +1,5 @@
 {
-  "name": "@vue/cli-init",
+  "name": "@svel/cli-init",
   "version": "3.7.0",
   "description": "init addon for vue-cli",
   "main": "index.js",
@@ -8,8 +8,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vuejs/vue-cli.git",
-    "directory": "packages/@vue/cli-init"
+    "url": "git+https://github.com/wmzy/svelte-cli.git",
+    "directory": "packages/@svel/cli-init"
   },
   "keywords": [
     "vue",
@@ -18,9 +18,9 @@
   "author": "Evan You",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vuejs/vue-cli/issues"
+    "url": "https://github.com/wmzy/svelte-cli/issues"
   },
-  "homepage": "https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/cli-init#readme",
+  "homepage": "https://github.com/wmzy/svelte-cli/tree/dev/packages/@svel/cli-init#readme",
   "dependencies": {
     "execa": "^1.0.0",
     "vue-cli": "^2.9.2"

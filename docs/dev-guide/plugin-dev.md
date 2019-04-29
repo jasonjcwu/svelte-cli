@@ -8,8 +8,8 @@ sidebarDepth: 3
 
 A CLI plugin is an npm package that can add additional features to the project using Vue CLI. These features can include:
 
-- changing project webpack config - for example, you can add a new webpack resolve rule for a certain file extension, if your plugin is supposed to work with this type of files. Say, `@vue/cli-plugin-typescript` adds such rule to resolve `.ts` and `.tsx` extensions;
-- adding new vue-cli-service command - for example, `@vue/cli-plugin-unit-jest` adds a new command `test:unit` that allows developer to run unit tests;
+- changing project webpack config - for example, you can add a new webpack resolve rule for a certain file extension, if your plugin is supposed to work with this type of files. Say, `@svel/cli-plugin-typescript` adds such rule to resolve `.ts` and `.tsx` extensions;
+- adding new vue-cli-service command - for example, `@svel/cli-plugin-unit-jest` adds a new command `test:unit` that allows developer to run unit tests;
 - extending `package.json` - a useful option when your plugin adds some dependencies to the project and you need to add them to package dependencies section;
 - creating new files in the project and/or modifying old ones. Sometimes it's a good idea to create an example component or modify a main file to add some imports;
 - prompting user to select certain options - for example, you can ask user if they want to create the example component mentioned above.
@@ -38,7 +38,7 @@ So, typical CLI plugin folder structure looks like the following:
 
 For a CLI plugin to be usable in a Vue CLI project, it must follow the name convention `vue-cli-plugin-<name>` or `@scope/vue-cli-plugin-<name>`. It allows your plugin to be:
 
-- Discoverable by `@vue/cli-service`;
+- Discoverable by `@svel/cli-service`;
 - Discoverable by other developers via searching;
 - Installable via `vue add <name>` or `vue invoke <name>`.
 
@@ -93,14 +93,14 @@ A generator should export a function which receives three arguments:
   "presets" : {
     "foo": {
       "plugins": {
-        "@vue/cli-plugin-foo": { "option": "bar" }
+        "@svel/cli-plugin-foo": { "option": "bar" }
       }
     }
   }
 }
 ```
 
-And if the user creates a project using the `foo` preset, then the generator of `@vue/cli-plugin-foo` will receive `{ option: 'bar' }` as its second argument.
+And if the user creates a project using the `foo` preset, then the generator of `@svel/cli-plugin-foo` will receive `{ option: 'bar' }` as its second argument.
 
 For a 3rd party plugin, the options will be resolved from the prompts or command line arguments when the user executes `vue invoke` (see [Prompts for 3rd party plugins](#prompts-for-3rd-party-plugins)).
 
@@ -134,7 +134,7 @@ In addition, you can inherit and replace parts of an existing template file (eve
 
 ``` ejs
 ---
-extend: '@vue/cli-service/generator/template/src/App.vue'
+extend: '@svel/cli-service/generator/template/src/App.vue'
 replace: !!js/regexp /<script>[^]*?<\/script>/
 ---
 
@@ -149,7 +149,7 @@ It's also possible to do multiple replaces, although you will need to wrap your 
 
 ``` ejs
 ---
-extend: '@vue/cli-service/generator/template/src/App.vue'
+extend: '@svel/cli-service/generator/template/src/App.vue'
 replace:
   - !!js/regexp /Welcome to Your Vue\.js App/
   - !!js/regexp /<script>[^]*?<\/script>/

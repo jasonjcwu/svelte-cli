@@ -1,5 +1,5 @@
-const generateWithPlugin = require('@vue/cli-test-utils/generateWithPlugin')
-const create = require('@vue/cli-test-utils/createTestProject')
+const generateWithPlugin = require('@svel/cli-test-utils/generateWithPlugin')
+const create = require('@svel/cli-test-utils/createTestProject')
 
 test('base', async () => {
   const { pkg } = await generateWithPlugin({
@@ -29,12 +29,12 @@ test('airbnb', async () => {
   expect(pkg.scripts.lint).toBeTruthy()
   expect(pkg.eslintConfig.extends).toEqual([
     'plugin:vue/essential',
-    '@vue/airbnb'
+    '@svel/airbnb'
   ])
   expect(pkg.eslintConfig.parserOptions).toEqual({
     parser: 'babel-eslint'
   })
-  expect(pkg.devDependencies).toHaveProperty('@vue/eslint-config-airbnb')
+  expect(pkg.devDependencies).toHaveProperty('@svel/eslint-config-airbnb')
 })
 
 test('standard', async () => {
@@ -49,12 +49,12 @@ test('standard', async () => {
   expect(pkg.scripts.lint).toBeTruthy()
   expect(pkg.eslintConfig.extends).toEqual([
     'plugin:vue/essential',
-    '@vue/standard'
+    '@svel/standard'
   ])
   expect(pkg.eslintConfig.parserOptions).toEqual({
     parser: 'babel-eslint'
   })
-  expect(pkg.devDependencies).toHaveProperty('@vue/eslint-config-standard')
+  expect(pkg.devDependencies).toHaveProperty('@svel/eslint-config-standard')
 })
 
 test('prettier', async () => {
@@ -69,12 +69,12 @@ test('prettier', async () => {
   expect(pkg.scripts.lint).toBeTruthy()
   expect(pkg.eslintConfig.extends).toEqual([
     'plugin:vue/essential',
-    '@vue/prettier'
+    '@svel/prettier'
   ])
   expect(pkg.eslintConfig.parserOptions).toEqual({
     parser: 'babel-eslint'
   })
-  expect(pkg.devDependencies).toHaveProperty('@vue/eslint-config-prettier')
+  expect(pkg.devDependencies).toHaveProperty('@svel/eslint-config-prettier')
 })
 
 test('typescript', async () => {
@@ -88,7 +88,7 @@ test('typescript', async () => {
     },
     {
       id: 'typescript',
-      apply: require('@vue/cli-plugin-typescript/generator'),
+      apply: require('@svel/cli-plugin-typescript/generator'),
       options: {}
     }
   ])
@@ -96,14 +96,14 @@ test('typescript', async () => {
   expect(pkg.scripts.lint).toBeTruthy()
   expect(pkg.eslintConfig.extends).toEqual([
     'plugin:vue/essential',
-    '@vue/prettier',
-    '@vue/typescript'
+    '@svel/prettier',
+    '@svel/typescript'
   ])
   expect(pkg.eslintConfig.parserOptions).toEqual({
     parser: '@typescript-eslint/parser'
   })
-  expect(pkg.devDependencies).toHaveProperty('@vue/eslint-config-prettier')
-  expect(pkg.devDependencies).toHaveProperty('@vue/eslint-config-typescript')
+  expect(pkg.devDependencies).toHaveProperty('@svel/eslint-config-prettier')
+  expect(pkg.devDependencies).toHaveProperty('@svel/eslint-config-typescript')
 })
 
 test('lint on save', async () => {
@@ -150,12 +150,12 @@ test('generate .editorconfig for new projects', async () => {
 test('append to existing .editorconfig', async () => {
   const { dir, read, write } = await create('eslint-editorconfig', {
     plugins: {
-      '@vue/cli-plugin-eslint': {}
+      '@svel/cli-plugin-eslint': {}
     }
   }, null, true)
   await write('.editorconfig', 'root = true\n')
 
-  const invoke = require('@vue/cli/lib/invoke')
+  const invoke = require('@svel/cli/lib/invoke')
   await invoke(`eslint`, { config: 'airbnb' }, dir)
 
   const editorconfig = await read('.editorconfig')
@@ -166,14 +166,14 @@ test('append to existing .editorconfig', async () => {
 test('airbnb config + typescript + unit-mocha', async () => {
   await create('eslint-airbnb-typescript', {
     plugins: {
-      '@vue/cli-plugin-eslint': {
+      '@svel/cli-plugin-eslint': {
         config: 'airbnb',
         lintOn: 'commit'
       },
-      '@vue/cli-plugin-typescript': {
+      '@svel/cli-plugin-typescript': {
         classComponent: true
       },
-      '@vue/cli-plugin-unit-mocha': {}
+      '@svel/cli-plugin-unit-mocha': {}
     }
   })
 }, 30000)

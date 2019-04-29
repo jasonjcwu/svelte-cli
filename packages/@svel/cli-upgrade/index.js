@@ -10,9 +10,9 @@ const {
   hasYarn,
   logWithSpinner,
   stopSpinner
-} = require('@vue/cli-shared-utils')
-const { loadOptions } = require('@vue/cli/lib/options')
-const { installDeps } = require('@vue/cli/lib/util/installDeps')
+} = require('@svel/cli-shared-utils')
+const { loadOptions } = require('@svel/cli/lib/options')
+const { installDeps } = require('@svel/cli/lib/util/installDeps')
 /* eslint-enable node/no-extraneous-require */
 
 const getPackageJson = require('./get-package-json')
@@ -28,8 +28,8 @@ const projectPath = process.cwd()
 
 function isCorePackage (packageName) {
   return (
-    packageName === '@vue/cli-service' ||
-    packageName.startsWith('@vue/cli-plugin-')
+    packageName === '@svel/cli-service' ||
+    packageName.startsWith('@svel/cli-plugin-')
   )
 }
 
@@ -54,7 +54,7 @@ function shouldUseYarn () {
 
 module.exports = async function vueCliUpgrade (semverLevel = 'minor') {
   // get current deps
-  // filter @vue/cli-service & @vue/cli-plugin-*
+  // filter @svel/cli-service & @svel/cli-plugin-*
   const pkg = getPackageJson(projectPath)
   const upgradableDepMaps = new Map([
     ['dependencies', new Map()],

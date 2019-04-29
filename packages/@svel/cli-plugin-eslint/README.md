@@ -1,4 +1,4 @@
-# @vue/cli-plugin-eslint
+# @svel/cli-plugin-eslint
 
 > eslint plugin for vue-cli
 
@@ -63,7 +63,7 @@ module.exports = {
 ## Installing in an Already Created Project
 
 ``` sh
-vue add @vue/eslint
+vue add @svel/eslint
 ```
 
 ## Injected webpack-chain Rules

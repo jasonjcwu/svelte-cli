@@ -2,7 +2,7 @@
 
 ## 使用命令
 
-在一个 Vue CLI 项目中，`@vue/cli-service` 安装了一个名为 `vue-cli-service` 的命令。你可以在 npm scripts 中以 `vue-cli-service`、或者从终端中以 `./node_modules/.bin/vue-cli-service` 访问这个命令。
+在一个 Vue CLI 项目中，`@svel/cli-service` 安装了一个名为 `vue-cli-service` 的命令。你可以在 npm scripts 中以 `vue-cli-service`、或者从终端中以 `./node_modules/.bin/vue-cli-service` 访问这个命令。
 
 这是你使用默认 preset 的项目的 `package.json`：
 
@@ -100,7 +100,7 @@ npx vue-cli-service serve
 
 ## 查看所有的可用命令
 
-有些 CLI 插件会向 `vue-cli-service` 注入额外的命令。例如 `@vue/cli-plugin-eslint` 会注入 `vue-cli-service lint` 命令。你可以运行以下命令查看所有注入的命令：
+有些 CLI 插件会向 `vue-cli-service` 注入额外的命令。例如 `@svel/cli-plugin-eslint` 会注入 `vue-cli-service lint` 命令。你可以运行以下命令查看所有注入的命令：
 
 ``` bash
 npx vue-cli-service help
@@ -120,7 +120,7 @@ npx vue-cli-service help [command]
 
 ## Git Hook
 
-在安装之后，`@vue/cli-service` 也会安装 [yorkie](https://github.com/yyx990803/yorkie)，它会让你在 `package.json` 的 `gitHooks` 字段中方便地指定 Git hook：
+在安装之后，`@svel/cli-service` 也会安装 [yorkie](https://github.com/yyx990803/yorkie)，它会让你在 `package.json` 的 `gitHooks` 字段中方便地指定 Git hook：
 
 ``` json
 {

@@ -1,12 +1,12 @@
 {
-  "name": "@vue/cli-plugin-babel",
+  "name": "@svel/cli-plugin-babel",
   "version": "3.7.0",
   "description": "babel plugin for vue-cli",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vuejs/vue-cli.git",
-    "directory": "packages/@vue/cli-plugin-babel"
+    "url": "git+https://github.com/wmzy/svelte-cli.git",
+    "directory": "packages/@svel/cli-plugin-babel"
   },
   "keywords": [
     "vue",
@@ -16,13 +16,13 @@
   "author": "Evan You",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vuejs/vue-cli/issues"
+    "url": "https://github.com/wmzy/svelte-cli/issues"
   },
-  "homepage": "https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/cli-plugin-babel#readme",
+  "homepage": "https://github.com/wmzy/svelte-cli/tree/dev/packages/@svel/cli-plugin-babel#readme",
   "dependencies": {
     "@babel/core": "^7.0.0",
-    "@vue/babel-preset-app": "^3.7.0",
-    "@vue/cli-shared-utils": "^3.7.0",
+    "@svel/babel-preset-app": "^3.7.0",
+    "@svel/cli-shared-utils": "^3.7.0",
     "babel-loader": "^8.0.5",
     "webpack": ">=4 < 4.29"
   },

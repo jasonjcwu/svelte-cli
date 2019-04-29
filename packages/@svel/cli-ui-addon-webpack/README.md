@@ -1,6 +1,6 @@
 # Webpack dashboard
 
-> Dashboard & analyzer components for @vue/cli-ui
+> Dashboard & analyzer components for @svel/cli-ui
 
 ```
 yarn serve

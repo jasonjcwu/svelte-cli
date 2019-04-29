@@ -1,7 +1,7 @@
 jest.mock('fs')
 jest.mock('inquirer')
 
-const assertPromptModule = require('@vue/cli-test-utils/assertPromptModule')
+const assertPromptModule = require('@svel/cli-test-utils/assertPromptModule')
 
 const moduleToTest = require('../unit')
 
@@ -21,7 +21,7 @@ test('mocha', async () => {
 
   const expectedOptions = {
     plugins: {
-      '@vue/cli-plugin-unit-mocha': {}
+      '@svel/cli-plugin-unit-mocha': {}
     }
   }
 
@@ -49,7 +49,7 @@ test('jest', async () => {
 
   const expectedOptions = {
     plugins: {
-      '@vue/cli-plugin-unit-jest': {}
+      '@svel/cli-plugin-unit-jest': {}
     }
   }
 

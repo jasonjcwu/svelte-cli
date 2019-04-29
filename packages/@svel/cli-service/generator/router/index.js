@@ -31,7 +31,7 @@ module.exports = (api, options = {}) => {
 
     if (api.hasPlugin('typescript')) {
       /* eslint-disable-next-line node/no-extraneous-require */
-      const convertFiles = require('@vue/cli-plugin-typescript/generator/convert')
+      const convertFiles = require('@svel/cli-plugin-typescript/generator/convert')
       convertFiles(api)
     }
   }

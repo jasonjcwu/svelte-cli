@@ -1,7 +1,7 @@
 jest.mock('fs')
 jest.mock('inquirer')
 
-const assertPromptModule = require('@vue/cli-test-utils/assertPromptModule')
+const assertPromptModule = require('@svel/cli-test-utils/assertPromptModule')
 
 const moduleToTest = require('../linter')
 
@@ -26,7 +26,7 @@ test('base', async () => {
 
   const expectedOptions = {
     plugins: {
-      '@vue/cli-plugin-eslint': {
+      '@svel/cli-plugin-eslint': {
         config: 'base',
         lintOn: ['save', 'commit']
       }
@@ -58,7 +58,7 @@ test('airbnb', async () => {
 
   const expectedOptions = {
     plugins: {
-      '@vue/cli-plugin-eslint': {
+      '@svel/cli-plugin-eslint': {
         config: 'airbnb',
         lintOn: ['commit']
       }
@@ -90,7 +90,7 @@ test('standard', async () => {
 
   const expectedOptions = {
     plugins: {
-      '@vue/cli-plugin-eslint': {
+      '@svel/cli-plugin-eslint': {
         config: 'standard',
         lintOn: []
       }
@@ -122,7 +122,7 @@ test('prettier', async () => {
 
   const expectedOptions = {
     plugins: {
-      '@vue/cli-plugin-eslint': {
+      '@svel/cli-plugin-eslint': {
         config: 'prettier',
         lintOn: ['save']
       }

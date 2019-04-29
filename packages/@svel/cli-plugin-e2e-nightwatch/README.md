@@ -1,4 +1,4 @@
-# @vue/cli-plugin-e2e-nightwatch
+# @svel/cli-plugin-e2e-nightwatch
 
 > e2e-nightwatch plugin for vue-cli
 
@@ -33,5 +33,5 @@ Consult Nightwatch docs for [configuration options](http://nightwatchjs.org/gett
 ## Installing in an Already Created Project
 
 ``` sh
-vue add @vue/e2e-nightwatch
+vue add @svel/e2e-nightwatch
 ```

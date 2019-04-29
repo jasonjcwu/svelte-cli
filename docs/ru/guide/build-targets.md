@@ -14,7 +14,7 @@
 ## Библиотека (Library)
 
 ::: tip Примечание о совместимости с IE
-В режиме библиотеки публичный путь [определяется динамически](https://github.com/vuejs/vue-cli/blob/dev/packages/@vue/cli-service/lib/commands/build/setPublicPath.js) по URL-адресу, по которому загружается основной js-файл (для включения динамической загрузки ресурсов). Но эта функциональность использует `document.currentScript`, который отсутствует в IE. Поэтому рекомендуем добавлять [current-script-polyfill](https://www.npmjs.com/package/current-script-polyfill) в финальную веб-страницу перед импортом библиотеки, если требуется поддержка IE.
+В режиме библиотеки публичный путь [определяется динамически](https://github.com/vuejs/vue-cli/blob/dev/packages/@svel/cli-service/lib/commands/build/setPublicPath.js) по URL-адресу, по которому загружается основной js-файл (для включения динамической загрузки ресурсов). Но эта функциональность использует `document.currentScript`, который отсутствует в IE. Поэтому рекомендуем добавлять [current-script-polyfill](https://www.npmjs.com/package/current-script-polyfill) в финальную веб-страницу перед импортом библиотеки, если требуется поддержка IE.
 :::
 
 ::: tip Примечание о зависимости Vue

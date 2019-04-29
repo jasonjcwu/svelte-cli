@@ -2,7 +2,7 @@ jest.mock('fs')
 jest.mock('inquirer')
 
 const { defaults } = require('../lib/options')
-const assertPromptModule = require('@vue/cli-test-utils/assertPromptModule')
+const assertPromptModule = require('@svel/cli-test-utils/assertPromptModule')
 
 test('default', async () => {
   const epxectedPrompts = [

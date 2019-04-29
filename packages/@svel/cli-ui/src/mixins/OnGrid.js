@@ -2,7 +2,7 @@ export default function ({
   gridSize,
   field
 }) {
-  // @vue/component
+  // @svel/component
   return {
     computed: {
       mainStyle () {

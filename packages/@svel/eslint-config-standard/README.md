@@ -1,4 +1,4 @@
-# @vue/eslint-config-standard
+# @svel/eslint-config-standard
 
 > eslint-config-standard for vue-cli
 

@@ -41,7 +41,7 @@ module.exports = async function getVersions () {
 // fetch the latest version and save it on disk
 // so that it is available immediately next time
 async function getAndCacheLatestVersion (cached) {
-  const { request } = require('@vue/cli-shared-utils')
+  const { request } = require('@svel/cli-shared-utils')
 
   try {
     const { version } = await request.get('https://raw.githubusercontent.com/wmzy/svelte-cli/dev/lerna.json')

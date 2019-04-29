@@ -2,7 +2,7 @@ import PROGRESS from '@/graphql/progress/progress.gql'
 import PROGRESS_CHANGED from '@/graphql/progress/progressChanged.gql'
 import PROGRESS_REMOVED from '@/graphql/progress/progressRemoved.gql'
 
-// @vue/component
+// @svel/component
 export default {
   props: {
     progressId: {

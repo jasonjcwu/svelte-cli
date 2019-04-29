@@ -13,7 +13,7 @@ const inquirer = require('inquirer')
 const readline = require('readline')
 
 const externalVueScopedPackages = {
-  '@svel/test-utils': true,
+  '@vue/test-utils': true,
   '@svel/eslint-config': true
 }
 const localPackageRE = /'(@svel\/(?:cli|eslint|babel)[\w-]+)': '\^([\w-.]+)'/g

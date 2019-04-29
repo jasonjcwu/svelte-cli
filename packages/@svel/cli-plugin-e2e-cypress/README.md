@@ -1,10 +1,10 @@
-# @vue/cli-plugin-e2e-cypress
+# @svel/cli-plugin-e2e-cypress
 
 > e2e-cypress plugin for vue-cli
 
 This adds E2E testing support using [Cypress](https://www.cypress.io/).
 
-Cypress offers a rich interactive interface for running E2E tests, but currently only supports running the tests in Chromium. If you have a hard requirement on E2E testing in multiple browsers, consider using the Selenium-based [@vue/cli-plugin-e2e-nightwatch](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-e2e-nightwatch).
+Cypress offers a rich interactive interface for running E2E tests, but currently only supports running the tests in Chromium. If you have a hard requirement on E2E testing in multiple browsers, consider using the Selenium-based [@svel/cli-plugin-e2e-nightwatch](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-e2e-nightwatch).
 
 ## Injected Commands
 
@@ -44,5 +44,5 @@ Cypress doesn't load .env files for your test files the same way as `vue-cli` do
 ## Installing in an Already Created Project
 
 ``` sh
-vue add @vue/e2e-cypress
+vue add @svel/e2e-cypress
 ```

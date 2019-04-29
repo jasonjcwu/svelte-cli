@@ -1,7 +1,7 @@
 jest.mock('fs')
 jest.mock('inquirer')
 
-const assertPromptModule = require('@vue/cli-test-utils/assertPromptModule')
+const assertPromptModule = require('@svel/cli-test-utils/assertPromptModule')
 
 const moduleToTest = require('../typescript')
 const linterModule = require('../linter')
@@ -35,7 +35,7 @@ test('with TSLint', async () => {
 
   const expectedOptions = {
     plugins: {
-      '@vue/cli-plugin-typescript': {
+      '@svel/cli-plugin-typescript': {
         classComponent: true,
         tsLint: true,
         lintOn: ['save', 'commit'],
@@ -81,11 +81,11 @@ test('with ESLint', async () => {
 
   const expectedOptions = {
     plugins: {
-      '@vue/cli-plugin-eslint': {
+      '@svel/cli-plugin-eslint': {
         config: 'airbnb',
         lintOn: ['save', 'commit']
       },
-      '@vue/cli-plugin-typescript': {
+      '@svel/cli-plugin-typescript': {
         classComponent: true,
         useTsWithBabel: true
       }

@@ -12,21 +12,21 @@ const logs = require('./logs')
 // Context
 const getContext = require('../context')
 // Utils
-const { isPlugin, hasYarn, resolveModule } = require('@vue/cli-shared-utils')
-const getPackageVersion = require('@vue/cli/lib/util/getPackageVersion')
+const { isPlugin, hasYarn, resolveModule } = require('@svel/cli-shared-utils')
+const getPackageVersion = require('@svel/cli/lib/util/getPackageVersion')
 const {
   progress: installProgress,
   installPackage,
   uninstallPackage,
   updatePackage
-} = require('@vue/cli/lib/util/installDeps')
+} = require('@svel/cli/lib/util/installDeps')
 const { getCommand } = require('../util/command')
 const { resolveModuleRoot } = require('../util/resolve-path')
 const { notify } = require('../util/notification')
 const { log } = require('../util/logger')
 
 const PROGRESS_ID = 'dependency-installation'
-const CLI_SERVICE = '@vue/cli-service'
+const CLI_SERVICE = '@svel/cli-service'
 
 // Caches
 const metadataCache = new LRU({

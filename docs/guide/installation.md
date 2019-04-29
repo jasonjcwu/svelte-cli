@@ -1,7 +1,7 @@
 # Installation
 
 ::: warning Warning regarding Previous Versions
-The package name changed from `vue-cli` to `@vue/cli`.
+The package name changed from `vue-cli` to `@svel/cli`.
 If you have the previous `vue-cli` (1.x or 2.x) package installed globally, you need to uninstall it first with `npm uninstall vue-cli -g` or `yarn global remove vue-cli`.
 :::
 
@@ -12,9 +12,9 @@ Vue CLI requires [Node.js](https://nodejs.org/) version 8.9 or above (8.11.0+ re
 To install the new package, use one of the following commands. You need administrator privileges to execute these unless npm was installed on your system through a Node.js version manager (e.g. n or nvm).
 
 ``` bash
-npm install -g @vue/cli
+npm install -g @svel/cli
 # OR
-yarn global add @vue/cli
+yarn global add @svel/cli
 ```
 
 After installation, you will have access to the `vue` binary in your command line. You can verify that it is properly installed by simply running `vue`, which should present you with a help message listing all available commands.

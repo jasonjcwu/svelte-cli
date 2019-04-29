@@ -1,7 +1,7 @@
 const chalk = require('chalk')
 const semver = require('semver')
 const getVersions = require('./getVersions')
-const { clearConsole } = require('@vue/cli-shared-utils')
+const { clearConsole } = require('@svel/cli-shared-utils')
 
 exports.generateTitle = async function (checkUpdate) {
   const { current, latest } = await getVersions()

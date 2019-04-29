@@ -35,8 +35,8 @@ const minimist = require('minimist')
 // enter debug mode when creating test repo
 if (
   slash(process.cwd()).indexOf('/packages/test') > 0 && (
-    fs.existsSync(path.resolve(process.cwd(), '../@vue')) ||
-    fs.existsSync(path.resolve(process.cwd(), '../../@vue'))
+    fs.existsSync(path.resolve(process.cwd(), '../@svel')) ||
+    fs.existsSync(path.resolve(process.cwd(), '../../@svel'))
   )
 ) {
   process.env.VUE_CLI_DEBUG = true
@@ -114,7 +114,7 @@ program
   .option('-o, --open', 'Open browser')
   .option('-c, --copy', 'Copy local url to clipboard')
   .action((entry, cmd) => {
-    loadCommand('serve', '@vue/cli-service-global').serve(entry, cleanArgs(cmd))
+    loadCommand('serve', '@svel/cli-service-global').serve(entry, cleanArgs(cmd))
   })
 
 program
@@ -124,7 +124,7 @@ program
   .option('-n, --name <name>', 'name for lib or web-component mode (default: entry filename)')
   .option('-d, --dest <dir>', 'output directory (default: dist)')
   .action((entry, cmd) => {
-    loadCommand('build', '@vue/cli-service-global').build(entry, cleanArgs(cmd))
+    loadCommand('build', '@svel/cli-service-global').build(entry, cleanArgs(cmd))
   })
 
 program
@@ -142,11 +142,11 @@ program
 
 program
   .command('init <template> <app-name>')
-  .description('generate a project from a remote template (legacy API, requires @vue/cli-init)')
+  .description('generate a project from a remote template (legacy API, requires @svel/cli-init)')
   .option('-c, --clone', 'Use git clone when fetching remote template')
   .option('--offline', 'Use cached template')
   .action(() => {
-    loadCommand('init', '@vue/cli-init')
+    loadCommand('init', '@svel/cli-init')
   })
 
 program
@@ -165,7 +165,7 @@ program
   .command('upgrade [semverLevel]')
   .description('upgrade vue cli service / plugins (default semverLevel: minor)')
   .action((semverLevel, cmd) => {
-    loadCommand('upgrade', '@vue/cli-upgrade')(semverLevel, cleanArgs(cmd))
+    loadCommand('upgrade', '@svel/cli-upgrade')(semverLevel, cleanArgs(cmd))
   })
 
 program
@@ -178,8 +178,8 @@ program
         System: ['OS', 'CPU'],
         Binaries: ['Node', 'Yarn', 'npm'],
         Browsers: ['Chrome', 'Edge', 'Firefox', 'Safari'],
-        npmPackages: '/**/{typescript,*vue*,@vue/*/}',
-        npmGlobalPackages: ['@vue/cli']
+        npmPackages: '/**/{typescript,*vue*,@svel/*/}',
+        npmGlobalPackages: ['@svel/cli']
       },
       {
         showNotFound: true,

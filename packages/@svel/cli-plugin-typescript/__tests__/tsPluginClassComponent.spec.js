@@ -4,7 +4,7 @@ const { assertServe, assertBuild } = require('./tsPlugin.helper')
 
 const options = {
   plugins: {
-    '@vue/cli-plugin-typescript': {
+    '@svel/cli-plugin-typescript': {
       classComponent: true
     }
   }

@@ -8,8 +8,8 @@ sidebarDepth: 3
 
 系统里有两个主要的部分：
 
-- `@vue/cli`：全局安装的，暴露 `vue create <app>` 命令；
-- `@vue/cli-service`：局部安装，暴露 `vue-cli-service` 命令。
+- `@svel/cli`：全局安装的，暴露 `vue create <app>` 命令；
+- `@svel/cli-service`：局部安装，暴露 `vue-cli-service` 命令。
 
 两者皆应用了基于插件的架构。
 
@@ -23,7 +23,7 @@ sidebarDepth: 3
 
 ### CLI 插件
 
-CLI 插件是一个可以为 `@vue/cli` 项目添加额外特性的 npm 包。它应该始终包含一个 [Service 插件](#service-插件)作为其主要导出，且可选的包含一个 [Generator](#generator) 和一个 [Prompt 文件](#第三方插件的对话)。
+CLI 插件是一个可以为 `@svel/cli` 项目添加额外特性的 npm 包。它应该始终包含一个 [Service 插件](#service-插件)作为其主要导出，且可选的包含一个 [Generator](#generator) 和一个 [Prompt 文件](#第三方插件的对话)。
 
 一个典型的 CLI 插件的目录结构看起来是这样的：
 
@@ -40,9 +40,9 @@ CLI 插件是一个可以为 `@vue/cli` 项目添加额外特性的 npm 包。�
 
 Service 插件会在一个 Service 实例被创建时自动加载——比如每次 `vue-cli-service` 命令在项目中被调用时。
 
-注意我们这里讨论的“service 插件”的概念要比发布为一个 npm 包的“CLI 插件”的要更窄。前者涉及一个会被 `@vue/cli-service` 在初始化时加载的模块，也经常是后者的一部分。
+注意我们这里讨论的“service 插件”的概念要比发布为一个 npm 包的“CLI 插件”的要更窄。前者涉及一个会被 `@svel/cli-service` 在初始化时加载的模块，也经常是后者的一部分。
 
-此外，`@vue/cli-service` 的[内建命令][commands]和[配置模块][config]也是全部以 service 插件实现的。
+此外，`@svel/cli-service` 的[内建命令][commands]和[配置模块][config]也是全部以 service 插件实现的。
 
 一个 service 插件应该导出一个函数，这个函数接受两个参数：
 
@@ -159,14 +159,14 @@ module.exports = {
       "presets" : {
         "foo": {
           "plugins": {
-            "@vue/cli-plugin-foo": { "option": "bar" }
+            "@svel/cli-plugin-foo": { "option": "bar" }
           }
         }
       }
     }
     ```
 
-    如果用户使用 preset `foo` 创建了一个项目，那么 `@vue/cli-plugin-foo` 的 generator 就会收到 `{ option: 'bar' }` 作为第二个参数。
+    如果用户使用 preset `foo` 创建了一个项目，那么 `@svel/cli-plugin-foo` 的 generator 就会收到 `{ option: 'bar' }` 作为第二个参数。
 
     对于一个第三方插件来说，该选项将会解析自对话或用户执行 `vue invoke` 时的命令行参数中 (详见[第三方插件的对话](#第三方插件的对话))。
 
@@ -200,7 +200,7 @@ module.exports = (api, options, rootOptions) => {
 
 ``` ejs
 ---
-extend: '@vue/cli-service/generator/template/src/App.vue'
+extend: '@svel/cli-service/generator/template/src/App.vue'
 replace: !!js/regexp /<script>[^]*?<\/script>/
 ---
 
@@ -215,7 +215,7 @@ export default {
 
 ``` ejs
 ---
-extend: '@vue/cli-service/generator/template/src/App.vue'
+extend: '@svel/cli-service/generator/template/src/App.vue'
 replace:
   - !!js/regexp /欢迎来到你的 Vue\.js 应用/
   - !!js/regexp /<script>[^]*?<\/script>/
@@ -265,7 +265,7 @@ _variables.scss
 
 #### 内建插件的对话
 
-只有内建插件可以定制创建新项目时的初始化对话，且这些对话模块放置在 [`@vue/cli` 包的内部][prompt-modules]。
+只有内建插件可以定制创建新项目时的初始化对话，且这些对话模块放置在 [`@svel/cli` 包的内部][prompt-modules]。
 
 一个对话模块应该导出一个函数，这个函数接收一个 [PromptModuleAPI][prompt-api] 实例。这些对话的底层使用 [inquirer](https://github.com/SBoudrias/Inquirer.js) 进行展示：
 
@@ -312,7 +312,7 @@ vue invoke my-plugin --mode awesome
 
 为了让一个 CLI 插件能够被其它开发者使用，你必须遵循 `vue-cli-plugin-<name>` 的命名约定将其发布到 npm 上。插件遵循命名约定之后就可以：
 
-- 被 `@vue/cli-service` 发现；
+- 被 `@svel/cli-service` 发现；
 - 被其它开发者搜索到；
 - 通过 `vue add <name>` 或 `vue invoke <name>` 安装下来。
 
@@ -322,17 +322,17 @@ vue invoke my-plugin --mode awesome
 这个章节只用于 `vuejs/vue-cli` 仓库内部的内建插件工作。
 :::
 
-一个带有为本仓库注入额外依赖的 generator 的插件 (比如 `chai` 会通过 `@vue/cli-plugin-unit-mocha/generator/index.js` 被注入) 应该将这些依赖列入其自身的 `devDependencies` 字段。这会确保：
+一个带有为本仓库注入额外依赖的 generator 的插件 (比如 `chai` 会通过 `@svel/cli-plugin-unit-mocha/generator/index.js` 被注入) 应该将这些依赖列入其自身的 `devDependencies` 字段。这会确保：
 
 1. 这个包始终存在于该仓库的根 `node_modules` 中，因此我们不必在每次测试的时候重新安装它们。
 
 2. `yarn.lock` 会保持其一致性，因此 CI 程序可以更好地利用缓存。
 
-[creator-class]: https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/cli/lib/Creator.js
-[service-class]: https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/cli-service/lib/Service.js
-[generator-api]: https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/cli/lib/GeneratorAPI.js
-[commands]: https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/cli-service/lib/commands
-[config]: https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/cli-service/lib/config
-[plugin-api]: https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/cli-service/lib/PluginAPI.js
-[prompt-modules]: https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/cli/lib/promptModules
-[prompt-api]: https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/cli/lib/PromptModuleAPI.js
+[creator-class]: https://github.com/vuejs/vue-cli/tree/dev/packages/@svel/cli/lib/Creator.js
+[service-class]: https://github.com/vuejs/vue-cli/tree/dev/packages/@svel/cli-service/lib/Service.js
+[generator-api]: https://github.com/vuejs/vue-cli/tree/dev/packages/@svel/cli/lib/GeneratorAPI.js
+[commands]: https://github.com/vuejs/vue-cli/tree/dev/packages/@svel/cli-service/lib/commands
+[config]: https://github.com/vuejs/vue-cli/tree/dev/packages/@svel/cli-service/lib/config
+[plugin-api]: https://github.com/vuejs/vue-cli/tree/dev/packages/@svel/cli-service/lib/PluginAPI.js
+[prompt-modules]: https://github.com/vuejs/vue-cli/tree/dev/packages/@svel/cli/lib/promptModules
+[prompt-api]: https://github.com/vuejs/vue-cli/tree/dev/packages/@svel/cli/lib/PromptModuleAPI.js

@@ -1,5 +1,5 @@
 export default function () {
-  // @vue/component
+  // @svel/component
   return {
     mounted () {
       window.addEventListener('resize', this.onWindowResize)

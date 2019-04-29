@@ -1,7 +1,7 @@
 import CONNECTED from '@/graphql/connected/connected.gql'
 import DARK_MODE from '@/graphql/dark-mode/darkMode.gql'
 
-// @vue/component
+// @svel/component
 export default {
   beforeCreate () {
     if (this.$options.clientState) {

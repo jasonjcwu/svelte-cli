@@ -4,7 +4,7 @@ const {
   hasProjectPnpm,
   openBrowser,
   IpcMessenger
-} = require('@vue/cli-shared-utils')
+} = require('@svel/cli-shared-utils')
 
 const defaults = {
   host: '0.0.0.0',
@@ -122,7 +122,7 @@ module.exports = (api, options) => {
           ? 'webpack/hot/only-dev-server'
           : 'webpack/hot/dev-server')
         // TODO custom overlay client
-        // `@vue/cli-overlay/dist/client`
+        // `@svel/cli-overlay/dist/client`
       ]
       if (process.env.APPVEYOR) {
         devClients.push(`webpack/hot/poll?500`)
@@ -155,7 +155,7 @@ module.exports = (api, options) => {
       proxy: proxySettings,
       before (app, server) {
         // launch editor support.
-        // this works with vue-devtools & @vue/cli-overlay
+        // this works with vue-devtools & @svel/cli-overlay
         app.use('/__open-in-editor', launchEditorMiddleware(() => console.log(
           `To specify an editor, sepcify the EDITOR env variable or ` +
           `add "editor" field to your Vue project config.\n`

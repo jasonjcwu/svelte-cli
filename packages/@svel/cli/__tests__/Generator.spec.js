@@ -3,7 +3,7 @@ jest.mock('fs')
 const fs = require('fs-extra')
 const path = require('path')
 const Generator = require('../lib/Generator')
-const { logs } = require('@vue/cli-shared-utils')
+const { logs } = require('@svel/cli-shared-utils')
 const stringifyJS = require('../lib/util/stringifyJS')
 
 // prepare template fixtures
@@ -408,7 +408,7 @@ test('api: hasPlugin', () => {
         expect(api.hasPlugin('bar')).toBe(true)
         expect(api.hasPlugin('baz')).toBe(true)
         expect(api.hasPlugin('vue-cli-plugin-bar')).toBe(true)
-        expect(api.hasPlugin('@vue/cli-plugin-baz')).toBe(true)
+        expect(api.hasPlugin('@svel/cli-plugin-baz')).toBe(true)
       }
     },
     {
@@ -416,7 +416,7 @@ test('api: hasPlugin', () => {
       apply: () => {}
     },
     {
-      id: '@vue/cli-plugin-baz',
+      id: '@svel/cli-plugin-baz',
       apply: () => {}
     }
   ] })
@@ -618,7 +618,7 @@ test('extract config files', async () => {
       lintOnSave: false
     },
     babel: {
-      presets: ['@vue/app']
+      presets: ['@svel/app']
     },
     postcss: {
       autoprefixer: {}

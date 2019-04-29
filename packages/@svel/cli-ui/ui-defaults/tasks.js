@@ -397,7 +397,7 @@ module.exports = api => {
     // Webpack dashboard
     api.addClientAddon({
       id: 'org.vue.webpack.client-addon',
-      path: '@vue/cli-ui-addon-webpack/dist'
+      path: '@svel/cli-ui-addon-webpack/dist'
     })
   }
 

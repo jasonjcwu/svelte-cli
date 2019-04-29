@@ -1,12 +1,12 @@
 jest.setTimeout(20000)
 
-const create = require('@vue/cli-test-utils/createTestProject')
+const create = require('@svel/cli-test-utils/createTestProject')
 
 test('should work', async () => {
   const project = await create('unit-jest', {
     plugins: {
-      '@vue/cli-plugin-babel': {},
-      '@vue/cli-plugin-unit-jest': {}
+      '@svel/cli-plugin-babel': {},
+      '@svel/cli-plugin-unit-jest': {}
     }
   })
   await project.run(`vue-cli-service test:unit`)
@@ -15,8 +15,8 @@ test('should work', async () => {
 test('should respect jest testMatch config', async () => {
   const project = await create('unit-jest-package.json', {
     plugins: {
-      '@vue/cli-plugin-babel': {},
-      '@vue/cli-plugin-unit-jest': {}
+      '@svel/cli-plugin-babel': {},
+      '@svel/cli-plugin-unit-jest': {}
     }
   })
   const config = JSON.parse(await project.read('package.json'))
@@ -37,8 +37,8 @@ test('should respect jest testMatch config', async () => {
 test('should respect jest.config.js testMatch config', async () => {
   const project = await create('unit-jest-jest.config.js', {
     plugins: {
-      '@vue/cli-plugin-babel': {},
-      '@vue/cli-plugin-unit-jest': {}
+      '@svel/cli-plugin-babel': {},
+      '@svel/cli-plugin-unit-jest': {}
     },
     useConfigFiles: true
   })
@@ -61,7 +61,7 @@ test('should respect jest.config.js testMatch config', async () => {
 test('should work without Babel', async () => {
   const project = await create('jest-without-babel', {
     plugins: {
-      '@vue/cli-plugin-unit-jest': {}
+      '@svel/cli-plugin-unit-jest': {}
     },
     useConfigFiles: true
   })
@@ -71,12 +71,12 @@ test('should work without Babel', async () => {
 test('should work with tsx', async () => {
   const { write, run } = await create('jest-with-tsx', {
     plugins: {
-      '@vue/cli-plugin-babel': {},
-      '@vue/cli-plugin-typescript': {
+      '@svel/cli-plugin-babel': {},
+      '@svel/cli-plugin-typescript': {
         useTsWithBabel: true,
         classComponent: true
       },
-      '@vue/cli-plugin-unit-jest': {}
+      '@svel/cli-plugin-unit-jest': {}
     },
     useConfigFiles: true
   })

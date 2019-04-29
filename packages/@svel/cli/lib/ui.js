@@ -1,5 +1,5 @@
-const { log, error, openBrowser } = require('@vue/cli-shared-utils')
-const { portfinder, server } = require('@vue/cli-ui/server')
+const { log, error, openBrowser } = require('@svel/cli-shared-utils')
+const { portfinder, server } = require('@svel/cli-ui/server')
 const shortid = require('shortid')
 
 async function ui (options = {}, context = process.cwd()) {
@@ -40,12 +40,12 @@ async function ui (options = {}, context = process.cwd()) {
     timeout: 1000000,
     quiet: true,
     paths: {
-      typeDefs: require.resolve('@vue/cli-ui/apollo-server/type-defs.js'),
-      resolvers: require.resolve('@vue/cli-ui/apollo-server/resolvers.js'),
-      context: require.resolve('@vue/cli-ui/apollo-server/context.js'),
-      pubsub: require.resolve('@vue/cli-ui/apollo-server/pubsub.js'),
-      server: require.resolve('@vue/cli-ui/apollo-server/server.js'),
-      directives: require.resolve('@vue/cli-ui/apollo-server/directives.js')
+      typeDefs: require.resolve('@svel/cli-ui/apollo-server/type-defs.js'),
+      resolvers: require.resolve('@svel/cli-ui/apollo-server/resolvers.js'),
+      context: require.resolve('@svel/cli-ui/apollo-server/context.js'),
+      pubsub: require.resolve('@svel/cli-ui/apollo-server/pubsub.js'),
+      server: require.resolve('@svel/cli-ui/apollo-server/server.js'),
+      directives: require.resolve('@svel/cli-ui/apollo-server/directives.js')
     }
   }
 

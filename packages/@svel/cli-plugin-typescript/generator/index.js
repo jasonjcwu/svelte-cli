@@ -62,17 +62,17 @@ module.exports = (api, {
   if (invoking) {
     if (api.hasPlugin('unit-mocha')) {
       // eslint-disable-next-line node/no-extraneous-require
-      require('@vue/cli-plugin-unit-mocha/generator').applyTS(api)
+      require('@svel/cli-plugin-unit-mocha/generator').applyTS(api)
     }
 
     if (api.hasPlugin('unit-jest')) {
       // eslint-disable-next-line node/no-extraneous-require
-      require('@vue/cli-plugin-unit-jest/generator').applyTS(api)
+      require('@svel/cli-plugin-unit-jest/generator').applyTS(api)
     }
 
     if (api.hasPlugin('eslint')) {
       // eslint-disable-next-line node/no-extraneous-require
-      require('@vue/cli-plugin-eslint/generator').applyTS(api)
+      require('@svel/cli-plugin-eslint/generator').applyTS(api)
     }
   }
 

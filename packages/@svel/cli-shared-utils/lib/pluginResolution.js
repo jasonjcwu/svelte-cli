@@ -1,6 +1,6 @@
-const pluginRE = /^(@vue\/|vue-|@[\w-]+\/vue-)cli-plugin-/
+const pluginRE = /^(@svel\/|vue-|@[\w-]+\/vue-)cli-plugin-/
 const scopeRE = /^@[\w-]+\//
-const officialRE = /^@vue\//
+const officialRE = /^@svel\//
 
 exports.isPlugin = id => pluginRE.test(id)
 
@@ -10,18 +10,18 @@ exports.toShortPluginId = id => id.replace(pluginRE, '')
 
 exports.resolvePluginId = id => {
   // already full id
-  // e.g. vue-cli-plugin-foo, @vue/cli-plugin-foo, @bar/vue-cli-plugin-foo
+  // e.g. vue-cli-plugin-foo, @svel/cli-plugin-foo, @bar/vue-cli-plugin-foo
   if (pluginRE.test(id)) {
     return id
   }
   // scoped short
-  // e.g. @vue/foo, @bar/foo
+  // e.g. @svel/foo, @bar/foo
   if (id.charAt(0) === '@') {
     const scopeMatch = id.match(scopeRE)
     if (scopeMatch) {
       const scope = scopeMatch[0]
       const shortId = id.replace(scopeRE, '')
-      return `${scope}${scope === '@vue/' ? `` : `vue-`}cli-plugin-${shortId}`
+      return `${scope}${scope === '@svel/' ? `` : `vue-`}cli-plugin-${shortId}`
     }
   }
   // default short

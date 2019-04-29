@@ -1,7 +1,7 @@
 // using this requires mocking fs & inquirer
 
-const Creator = require('@vue/cli/lib/Creator')
-const { loadOptions } = require('@vue/cli/lib/options')
+const Creator = require('@svel/cli/lib/Creator')
+const { loadOptions } = require('@svel/cli/lib/options')
 const { expectPrompts } = require('inquirer') // from mock
 
 module.exports = async function assertPromptModule (

@@ -19,7 +19,7 @@ window.addEventListener('blur', () => {
   vm.documentFocus = false
 })
 
-// @vue/component
+// @svel/component
 export default {
   computed: {
     documentVisible () {

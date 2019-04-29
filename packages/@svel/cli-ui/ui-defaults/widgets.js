@@ -9,7 +9,7 @@ module.exports = api => {
   } else {
     api.addClientAddon({
       id: 'org.vue.widgets.client-addon',
-      path: '@vue/cli-ui-addon-widgets/dist'
+      path: '@svel/cli-ui-addon-widgets/dist'
     })
   }
 
@@ -153,7 +153,7 @@ module.exports = api => {
     maxHeight: 1,
     needsUserConfig: true,
     onConfigOpen: async ({ context }) => {
-      const tasks = require('@vue/cli-ui/apollo-server/connectors/tasks')
+      const tasks = require('@svel/cli-ui/apollo-server/connectors/tasks')
       return {
         prompts: [
           {

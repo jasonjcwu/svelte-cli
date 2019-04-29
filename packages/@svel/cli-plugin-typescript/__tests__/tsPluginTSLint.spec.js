@@ -1,11 +1,11 @@
 jest.setTimeout(30000)
 
-const create = require('@vue/cli-test-utils/createTestProject')
+const create = require('@svel/cli-test-utils/createTestProject')
 
 test('should work', async () => {
   const project = await create('ts-tslint', {
     plugins: {
-      '@vue/cli-plugin-typescript': {
+      '@svel/cli-plugin-typescript': {
         tsLint: true
       }
     }
@@ -36,7 +36,7 @@ test('should work', async () => {
 test('should not fix with --no-fix option', async () => {
   const project = await create('ts-tslint-nofix', {
     plugins: {
-      '@vue/cli-plugin-typescript': {
+      '@svel/cli-plugin-typescript': {
         tsLint: true
       }
     }
@@ -71,7 +71,7 @@ test('should not fix with --no-fix option', async () => {
 test('should ignore issues in node_modules', async () => {
   const project = await create('ts-lint-node_modules', {
     plugins: {
-      '@vue/cli-plugin-typescript': {
+      '@svel/cli-plugin-typescript': {
         tsLint: true
       }
     }
@@ -92,7 +92,7 @@ test('should ignore issues in node_modules', async () => {
 test('should be able to fix mixed line endings', async () => {
   const project = await create('ts-lint-mixed-line-endings', {
     plugins: {
-      '@vue/cli-plugin-typescript': {
+      '@svel/cli-plugin-typescript': {
         tsLint: true
       }
     }

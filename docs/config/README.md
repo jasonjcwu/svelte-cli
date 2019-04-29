@@ -8,7 +8,7 @@ sidebar: auto
 
 ## Global CLI Config
 
-Some global configurations for `@vue/cli`, such as your preferred package manager and your locally saved presets, are stored in a JSON file named `.vuerc` in your home directory. You can edit this file directly with your editor of choice to change the saved options.
+Some global configurations for `@svel/cli`, such as your preferred package manager and your locally saved presets, are stored in a JSON file named `.vuerc` in your home directory. You can edit this file directly with your editor of choice to change the saved options.
 
 You can also use the `vue config` command to inspect or modify the global CLI config.
 
@@ -18,7 +18,7 @@ See the [Browser Compatibility](../guide/browser-compatibility.md#browserslist) 
 
 ## vue.config.js
 
-`vue.config.js` is an optional config file that will be automatically loaded by `@vue/cli-service` if it's present in your project root (next to `package.json`). You can also use the `vue` field in `package.json`, but do note in that case you will be limited to JSON-compatible values only.
+`vue.config.js` is an optional config file that will be automatically loaded by `@svel/cli-service` if it's present in your project root (next to `package.json`). You can also use the `vue` field in `package.json`, but do note in that case you will be limited to JSON-compatible values only.
 
 The file should export an object containing options:
 
@@ -143,7 +143,7 @@ Deprecated since Vue CLI 3.3, please use [`publicPath`](#publicPath) instead.
 - Type: `boolean | 'warning' | 'default' | 'error'`
 - Default: `true`
 
-  Whether to perform lint-on-save during development using [eslint-loader](https://github.com/webpack-contrib/eslint-loader). This value is respected only when [`@vue/cli-plugin-eslint`](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint) is installed.
+  Whether to perform lint-on-save during development using [eslint-loader](https://github.com/webpack-contrib/eslint-loader). This value is respected only when [`@svel/cli-plugin-eslint`](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint) is installed.
 
   When set to `true` or `'warning'`, `eslint-loader` will emit lint errors as warnings. By default, warnings are only logged to the terminal and does not fail the compilation, so this is a good default for development.
 
@@ -395,7 +395,7 @@ Babel can be configured via `babel.config.js`.
 Vue CLI uses `babel.config.js` which is a new config format in Babel 7. Unlike `.babelrc` or the `babel` field in `package.json`, this config file does not use a file-location based resolution, and is applied consistently to any file under project root, including dependencies inside `node_modules`. It is recommended to always use `babel.config.js` instead of other formats in Vue CLI projects.
 :::
 
-All Vue CLI apps use `@vue/babel-preset-app`, which includes `babel-preset-env`, JSX support and optimized configuration for minimal bundle size overhead. See [its docs](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/babel-preset-app) for details and preset options.
+All Vue CLI apps use `@svel/babel-preset-app`, which includes `babel-preset-env`, JSX support and optimized configuration for minimal bundle size overhead. See [its docs](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/babel-preset-app) for details and preset options.
 
 Also see the [Polyfills](../guide/browser-compatibility.md#polyfills) section in guide.
 
@@ -403,30 +403,30 @@ Also see the [Polyfills](../guide/browser-compatibility.md#polyfills) section in
 
 ESLint can be configured via `.eslintrc` or `eslintConfig` field in `package.json`.
 
-See [@vue/cli-plugin-eslint](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint) for more details.
+See [@svel/cli-plugin-eslint](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint) for more details.
 
 ## TypeScript
 
 TypeScript can be configured via `tsconfig.json`.
 
-See [@vue/cli-plugin-typescript](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-typescript) for more details.
+See [@svel/cli-plugin-typescript](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-typescript) for more details.
 
 ## Unit Testing
 
 ### Jest
 
-See [@vue/cli-plugin-unit-jest](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-unit-jest) for more details.
+See [@svel/cli-plugin-unit-jest](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-unit-jest) for more details.
 
 ### Mocha (via `mocha-webpack`)
 
-See [@vue/cli-plugin-unit-mocha](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-unit-mocha) for more details.
+See [@svel/cli-plugin-unit-mocha](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-unit-mocha) for more details.
 
 ## E2E Testing
 
 ### Cypress
 
-See [@vue/cli-plugin-e2e-cypress](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-e2e-cypress) for more details.
+See [@svel/cli-plugin-e2e-cypress](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-e2e-cypress) for more details.
 
 ### Nightwatch
 
-See [@vue/cli-plugin-e2e-nightwatch](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-e2e-nightwatch) for more details.
+See [@svel/cli-plugin-e2e-nightwatch](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-e2e-nightwatch) for more details.

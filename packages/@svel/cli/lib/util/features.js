@@ -1,5 +1,5 @@
 const chalk = require('chalk')
-const { toShortPluginId } = require('@vue/cli-shared-utils')
+const { toShortPluginId } = require('@svel/cli-shared-utils')
 
 exports.getFeatures = (preset) => {
   const features = []
@@ -13,7 +13,7 @@ exports.getFeatures = (preset) => {
     features.push(preset.cssPreprocessor)
   }
   const plugins = Object.keys(preset.plugins).filter(dep => {
-    return dep !== '@vue/cli-service'
+    return dep !== '@svel/cli-service'
   })
   features.push.apply(features, plugins)
   return features

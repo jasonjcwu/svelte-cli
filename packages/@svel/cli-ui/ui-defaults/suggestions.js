@@ -1,5 +1,5 @@
-const { loadModule } = require('@vue/cli-shared-utils')
-const invoke = require('@vue/cli/lib/invoke')
+const { loadModule } = require('@svel/cli-shared-utils')
+const invoke = require('@svel/cli/lib/invoke')
 
 const ROUTER = 'org.vue.vue-router-add'
 const VUEX = 'org.vue.vuex-add'
@@ -52,7 +52,7 @@ module.exports = api => {
           handler () {
             const file = config.foundFiles.vue.path
             console.log('open', file)
-            const { launch } = require('@vue/cli-shared-utils')
+            const { launch } = require('@svel/cli-shared-utils')
             launch(file)
             return {
               keep: true
@@ -81,7 +81,7 @@ async function install (api, id) {
   try {
     await invoke.runGenerator(context, {
       id: `core:${name}`,
-      apply: loadModule(`@vue/cli-service/generator/${name}`, context)
+      apply: loadModule(`@svel/cli-service/generator/${name}`, context)
     })
   } catch (e) {
     error = e

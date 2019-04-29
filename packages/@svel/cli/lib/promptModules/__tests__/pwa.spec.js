@@ -1,7 +1,7 @@
 jest.mock('fs')
 jest.mock('inquirer')
 
-const assertPromptModule = require('@vue/cli-test-utils/assertPromptModule')
+const assertPromptModule = require('@svel/cli-test-utils/assertPromptModule')
 
 const moduleToTest = require('../pwa')
 
@@ -16,7 +16,7 @@ test('pwa', async () => {
 
   const expectedOptions = {
     plugins: {
-      '@vue/cli-plugin-pwa': {}
+      '@svel/cli-plugin-pwa': {}
     }
   }
 

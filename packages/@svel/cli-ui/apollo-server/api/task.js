@@ -1,4 +1,4 @@
-const { createSchema, validateSync } = require('@vue/cli-shared-utils')
+const { createSchema, validateSync } = require('@svel/cli-shared-utils')
 
 const schema = joi => ({
   description: joi.string(),

@@ -1,12 +1,12 @@
 {
-  "name": "@vue/cli-shared-utils",
+  "name": "@svel/cli-shared-utils",
   "version": "3.7.0",
   "description": "shared utilities for vue-cli packages",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vuejs/vue-cli.git",
-    "directory": "packages/@vue/cli-shared-utils"
+    "url": "git+https://github.com/wmzy/svelte-cli.git",
+    "directory": "packages/@svel/cli-shared-utils"
   },
   "keywords": [
     "vue",
@@ -16,9 +16,9 @@
   "author": "Evan You",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vuejs/vue-cli/issues"
+    "url": "https://github.com/wmzy/svelte-cli/issues"
   },
-  "homepage": "https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/cli-shared-utils#readme",
+  "homepage": "https://github.com/wmzy/svelte-cli/tree/dev/packages/@svel/cli-shared-utils#readme",
   "dependencies": {
     "chalk": "^2.4.1",
     "execa": "^1.0.0",

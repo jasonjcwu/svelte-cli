@@ -29,9 +29,9 @@ module.exports = cli => {
 
   cli.onPromptComplete((answers, options) => {
     if (answers.e2e === 'cypress') {
-      options.plugins['@vue/cli-plugin-e2e-cypress'] = {}
+      options.plugins['@svel/cli-plugin-e2e-cypress'] = {}
     } else if (answers.e2e === 'nightwatch') {
-      options.plugins['@vue/cli-plugin-e2e-nightwatch'] = {}
+      options.plugins['@svel/cli-plugin-e2e-nightwatch'] = {}
     }
   })
 }

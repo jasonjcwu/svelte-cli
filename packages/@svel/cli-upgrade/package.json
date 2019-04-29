@@ -1,12 +1,12 @@
 {
-  "name": "@vue/cli-upgrade",
+  "name": "@svel/cli-upgrade",
   "version": "3.7.0",
   "description": "utility to upgrade vue cli service / plugins in vue apps",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vuejs/vue-cli.git",
-    "directory": "packages/@vue/cli-upgrade"
+    "url": "git+https://github.com/wmzy/svelte-cli.git",
+    "directory": "packages/@svel/cli-upgrade"
   },
   "keywords": [
     "vue",
@@ -17,9 +17,9 @@
   "author": "Haoqun Jiang <haoqunjiang+npm@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vuejs/vue-cli/issues"
+    "url": "https://github.com/wmzy/svelte-cli/issues"
   },
-  "homepage": "https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/cli-upgrade#readme",
+  "homepage": "https://github.com/wmzy/svelte-cli/tree/dev/packages/@svel/cli-upgrade#readme",
   "dependencies": {
     "chalk": "^2.4.1",
     "cli-table": "^0.3.1",

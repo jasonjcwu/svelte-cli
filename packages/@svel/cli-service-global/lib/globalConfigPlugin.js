@@ -4,7 +4,7 @@ const { findExisting } = require('./util')
 
 module.exports = function createConfigPlugin (context, entry, asLib) {
   return {
-    id: '@vue/cli-service-global-config',
+    id: '@svel/cli-service-global-config',
     apply: (api, options) => {
       api.chainWebpack(config => {
         // entry is *.vue file, create alias for built-in js entry
@@ -58,7 +58,7 @@ module.exports = function createConfigPlugin (context, entry, asLib) {
             .add(entry)
 
         const babelOptions = {
-          presets: [require.resolve('@vue/babel-preset-app')]
+          presets: [require.resolve('@svel/babel-preset-app')]
         }
 
         // set inline babel options
@@ -69,7 +69,7 @@ module.exports = function createConfigPlugin (context, entry, asLib) {
               .end()
             .exclude
               .add(/node_modules/)
-              .add(/@vue\/cli-service/)
+              .add(/@svel\/cli-service/)
               .end()
             .uses
               .delete('cache-loader')

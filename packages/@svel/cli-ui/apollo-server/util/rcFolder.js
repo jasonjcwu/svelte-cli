@@ -1,7 +1,7 @@
 const fs = require('fs-extra')
 const path = require('path')
 
-const { getRcPath } = require('@vue/cli/lib/util/rcPath')
+const { getRcPath } = require('@svel/cli/lib/util/rcPath')
 
 let folder
 

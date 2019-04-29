@@ -1,5 +1,5 @@
 {
-  "name": "@vue/eslint-config-typescript",
+  "name": "@svel/eslint-config-typescript",
   "version": "4.0.0",
   "description": "eslint-config-typescript for vue-cli",
   "main": "index.js",
@@ -8,8 +8,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vuejs/vue-cli.git",
-    "directory": "packages/@vue/eslint-config-typescript"
+    "url": "git+https://github.com/wmzy/svelte-cli.git",
+    "directory": "packages/@svel/eslint-config-typescript"
   },
   "keywords": [
     "vue",
@@ -18,9 +18,9 @@
   "author": "Evan You",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vuejs/vue-cli/issues"
+    "url": "https://github.com/wmzy/svelte-cli/issues"
   },
-  "homepage": "https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/eslint-config-typescript#readme",
+  "homepage": "https://github.com/wmzy/svelte-cli/tree/dev/packages/@svel/eslint-config-typescript#readme",
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^1.6.0",
     "@typescript-eslint/parser": "^1.6.0"

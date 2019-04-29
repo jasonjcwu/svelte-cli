@@ -1,14 +1,14 @@
 jest.setTimeout(60000)
 
-const create = require('@vue/cli-test-utils/createTestProject')
+const create = require('@svel/cli-test-utils/createTestProject')
 
 test('should work', async () => {
   const project = await create('ts-eslint', {
     plugins: {
-      '@vue/cli-plugin-eslint': {
+      '@svel/cli-plugin-eslint': {
         config: 'prettier'
       },
-      '@vue/cli-plugin-typescript': {
+      '@svel/cli-plugin-typescript': {
         classComponent: true
       }
     }

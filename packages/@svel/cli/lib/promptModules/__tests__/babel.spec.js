@@ -1,7 +1,7 @@
 jest.mock('fs')
 jest.mock('inquirer')
 
-const assertPromptModule = require('@vue/cli-test-utils/assertPromptModule')
+const assertPromptModule = require('@svel/cli-test-utils/assertPromptModule')
 
 const moduleToTest = require('../babel')
 
@@ -15,7 +15,7 @@ test('should pass', async () => {
 
   const expectedOptions = {
     plugins: {
-      '@vue/cli-plugin-babel': {}
+      '@svel/cli-plugin-babel': {}
     }
   }
 
@@ -44,7 +44,7 @@ test('with TS', async () => {
 
   const expectedOptions = {
     plugins: {
-      '@vue/cli-plugin-babel': {}
+      '@svel/cli-plugin-babel': {}
     }
   }
 

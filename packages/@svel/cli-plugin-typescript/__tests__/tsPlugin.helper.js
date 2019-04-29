@@ -1,9 +1,9 @@
 const path = require('path')
 const portfinder = require('portfinder')
 const { createServer } = require('http-server')
-const create = require('@vue/cli-test-utils/createTestProject')
-const serve = require('@vue/cli-test-utils/serveWithPuppeteer')
-const launchPuppeteer = require('@vue/cli-test-utils/launchPuppeteer')
+const create = require('@svel/cli-test-utils/createTestProject')
+const serve = require('@svel/cli-test-utils/serveWithPuppeteer')
+const launchPuppeteer = require('@svel/cli-test-utils/launchPuppeteer')
 
 const sleep = n => new Promise(resolve => setTimeout(resolve, n))
 

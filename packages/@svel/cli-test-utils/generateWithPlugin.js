@@ -1,4 +1,4 @@
-const Generator = require('@vue/cli/lib/Generator')
+const Generator = require('@svel/cli/lib/Generator')
 
 module.exports = async function generateWithPlugin (plugin, pkg) {
   process.env.VUE_CLI_SKIP_WRITE = true

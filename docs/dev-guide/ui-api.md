@@ -188,7 +188,7 @@ module.exports = {
   root: true,
   extends: [
     'plugin:vue/essential',
-    '@vue/standard'
+    '@svel/standard'
   ]
 }
 ```
@@ -223,7 +223,7 @@ Then the `data` object will be:
     root: true,
     extends: [
       'plugin:vue/essential',
-      '@vue/standard'
+      '@svel/standard'
     ]
   },
   vue: {
@@ -630,12 +630,12 @@ A Client addon is a JS bundle which is dynamically loaded into the cli-ui. It is
 
 The recommended way to create a Client addon is by creating a new project using vue cli. You can either do this in a subfolder of your plugin or in a different npm package.
 
-Install `@vue/cli-ui` as a dev dependency.
+Install `@svel/cli-ui` as a dev dependency.
 
 Then add a `vue.config.js` file with the following content:
 
 ```js
-const { clientAddonConfig } = require('@vue/cli-ui')
+const { clientAddonConfig } = require('@svel/cli-ui')
 
 module.exports = {
   ...clientAddonConfig({
@@ -713,7 +713,7 @@ Make sure to namespace the ids correctly, since they must be unique across all p
 
 The cli-ui registers `Vue` and `ClientAddonApi` as global variables in the `window` scope.
 
-In your components, you can use all the components and the CSS classes of [@vue/ui](https://github.com/vuejs/ui) and [@vue/cli-ui](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-ui/src/components) in order to keep the look and feel consistent. You can also translate the strings with [vue-i18n](https://github.com/kazupon/vue-i18n) which is included.
+In your components, you can use all the components and the CSS classes of [@vue/ui](https://github.com/vuejs/ui) and [@svel/cli-ui](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-ui/src/components) in order to keep the look and feel consistent. You can also translate the strings with [vue-i18n](https://github.com/kazupon/vue-i18n) which is included.
 
 ### Register the client addon
 
@@ -723,7 +723,7 @@ Back to the `ui.js` file, use the `api.addClientAddon` method with a require que
 api.addClientAddon({
   id: 'org.vue.webpack.client-addon',
   // Folder containing the built JS files
-  path: '@vue/cli-ui-addon-webpack/dist'
+  path: '@svel/cli-ui-addon-webpack/dist'
 })
 ```
 
@@ -978,12 +978,12 @@ export default {
 
 IPC stands for Inter-Process Communication. This system allows you to easily send messages from child processes (for example, tasks!). And it's pretty fast and lightweight.
 
-> To display the data in the webpack dashboard UI, the `serve` and `build` commands from `@vue/cli-service` send IPC messages to the cli-ui nodejs server when the `--dashboard` argument is passed in.
+> To display the data in the webpack dashboard UI, the `serve` and `build` commands from `@svel/cli-service` send IPC messages to the cli-ui nodejs server when the `--dashboard` argument is passed in.
 
-In you process code (which can be a Webpack plugin or a nodejs task script), you can use the `IpcMessenger` class from `@vue/cli-shared-utils`:
+In you process code (which can be a Webpack plugin or a nodejs task script), you can use the `IpcMessenger` class from `@svel/cli-shared-utils`:
 
 ```js
-const { IpcMessenger } = require('@vue/cli-shared-utils')
+const { IpcMessenger } = require('@svel/cli-shared-utils')
 
 // Create a new IpcMessenger instance
 const ipc = new IpcMessenger()

@@ -1,4 +1,4 @@
-const { launch } = require('@vue/cli-shared-utils')
+const { launch } = require('@svel/cli-shared-utils')
 const path = require('path')
 // Connectors
 const cwd = require('./cwd')

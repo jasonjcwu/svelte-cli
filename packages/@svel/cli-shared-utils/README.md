@@ -1,3 +1,3 @@
-# @vue/cli-shared-utils
+# @svel/cli-shared-utils
 
 > shared-utils for vue-cli

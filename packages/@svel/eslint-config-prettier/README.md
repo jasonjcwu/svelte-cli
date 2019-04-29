@@ -1,4 +1,4 @@
-# @vue/eslint-config-prettier
+# @svel/eslint-config-prettier
 
 > eslint-config-prettier for vue-cli
 

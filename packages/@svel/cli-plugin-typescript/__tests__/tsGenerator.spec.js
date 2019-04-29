@@ -1,10 +1,10 @@
-const generateWithPlugin = require('@vue/cli-test-utils/generateWithPlugin')
+const generateWithPlugin = require('@svel/cli-test-utils/generateWithPlugin')
 
 test('generate files', async () => {
   const { files } = await generateWithPlugin([
     {
       id: 'core',
-      apply: require('@vue/cli-service/generator'),
+      apply: require('@svel/cli-service/generator'),
       options: {}
     },
     {
@@ -46,7 +46,7 @@ test('use with Babel', async () => {
   const { files } = await generateWithPlugin([
     {
       id: 'babel',
-      apply: require('@vue/cli-plugin-babel/generator'),
+      apply: require('@svel/cli-plugin-babel/generator'),
       options: {}
     },
     {
@@ -58,7 +58,7 @@ test('use with Babel', async () => {
     }
   ])
 
-  expect(files['babel.config.js']).toMatch(`presets: [\n    '@vue/app'\n  ]`)
+  expect(files['babel.config.js']).toMatch(`presets: [\n    '@svel/app'\n  ]`)
   expect(files['tsconfig.json']).toMatch(`"target": "esnext"`)
 })
 
@@ -116,12 +116,12 @@ test('tsconfig.json should be valid json', async () => {
 test('compat with unit-mocha', async () => {
   const { pkg, files } = await generateWithPlugin([
     {
-      id: '@vue/cli-plugin-unit-mocha',
-      apply: require('@vue/cli-plugin-unit-mocha/generator'),
+      id: '@svel/cli-plugin-unit-mocha',
+      apply: require('@svel/cli-plugin-unit-mocha/generator'),
       options: {}
     },
     {
-      id: '@vue/cli-plugin-typescript',
+      id: '@svel/cli-plugin-typescript',
       apply: require('../generator'),
       options: {
         lint: true,
@@ -139,12 +139,12 @@ test('compat with unit-mocha', async () => {
 test('compat with unit-jest', async () => {
   const { pkg, files } = await generateWithPlugin([
     {
-      id: '@vue/cli-plugin-unit-jest',
-      apply: require('@vue/cli-plugin-unit-jest/generator'),
+      id: '@svel/cli-plugin-unit-jest',
+      apply: require('@svel/cli-plugin-unit-jest/generator'),
       options: {}
     },
     {
-      id: '@vue/cli-plugin-typescript',
+      id: '@svel/cli-plugin-typescript',
       apply: require('../generator'),
       options: {
         lint: true,

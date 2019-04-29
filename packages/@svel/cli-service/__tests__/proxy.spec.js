@@ -1,10 +1,10 @@
 jest.setTimeout(30000)
 
 const request = require('request-promise-native')
-const { defaultPreset } = require('@vue/cli/lib/options')
-const create = require('@vue/cli-test-utils/createTestProject')
-const serve = require('@vue/cli-test-utils/serveWithPuppeteer')
-const createJSONServer = require('@vue/cli-test-utils/createJSONServer')
+const { defaultPreset } = require('@svel/cli/lib/options')
+const create = require('@svel/cli-test-utils/createTestProject')
+const serve = require('@svel/cli-test-utils/serveWithPuppeteer')
+const createJSONServer = require('@svel/cli-test-utils/createJSONServer')
 
 let mockServer1
 let mockServer2

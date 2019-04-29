@@ -14,7 +14,7 @@ Resolve a path for the current project
 ## hasPlugin
 
 - **Arguments**
-  - `{string} id` - plugin id, can omit the (@vue/|vue-|@scope/vue)-cli-plugin- prefix
+  - `{string} id` - plugin id, can omit the (@svel/|vue-|@scope/vue)-cli-plugin- prefix
 
 - **Returns**
   - `{boolean}`

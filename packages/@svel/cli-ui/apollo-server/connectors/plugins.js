@@ -29,20 +29,20 @@ const {
   loadModule,
   clearModule,
   execa
-} = require('@vue/cli-shared-utils')
+} = require('@svel/cli-shared-utils')
 const {
   progress: installProgress,
   installPackage,
   uninstallPackage,
   updatePackage
-} = require('@vue/cli/lib/util/installDeps')
+} = require('@svel/cli/lib/util/installDeps')
 const { getCommand } = require('../util/command')
 const ipc = require('../util/ipc')
 const { log } = require('../util/logger')
 const { notify } = require('../util/notification')
 
 const PROGRESS_ID = 'plugin-installation'
-const CLI_SERVICE = '@vue/cli-service'
+const CLI_SERVICE = '@svel/cli-service'
 
 // Caches
 const logoCache = new LRU({
@@ -441,7 +441,7 @@ function runInvoke (id, context) {
       args: [id]
     })
 
-    clearModule('@vue/cli-service/webpack.config.js', cwd.get())
+    clearModule('@svel/cli-service/webpack.config.js', cwd.get())
 
     currentPluginId = id
     // Allow plugins that don't have a generator

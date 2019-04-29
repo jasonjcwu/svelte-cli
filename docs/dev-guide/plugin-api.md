@@ -4,13 +4,13 @@
 
 Type: `string`
 
-The version string for the `@vue/cli-service` version that is loading the plugin.
+The version string for the `@svel/cli-service` version that is loading the plugin.
 
 
 ## assertVersion(range)
 
 - **Arguments**
-  - `{integer | string} range` - a semver range that `@vue/cli-service` needs to satisfy
+  - `{integer | string} range` - a semver range that `@svel/cli-service` needs to satisfy
 
 - **Usage**
 
@@ -38,7 +38,7 @@ Resolve a path for the current project
 ## hasPlugin
 
 - **Arguments**
-  - `{string} id` - plugin id, can omit the (@vue/|vue-|@scope/vue)-cli-plugin- prefix
+  - `{string} id` - plugin id, can omit the (@svel/|vue-|@scope/vue)-cli-plugin- prefix
 
 - **Returns**
   - `{boolean}`

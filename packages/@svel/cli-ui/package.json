@@ -1,10 +1,10 @@
 {
-  "name": "@vue/cli-ui",
+  "name": "@svel/cli-ui",
   "version": "3.7.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vuejs/vue-cli.git",
-    "directory": "packages/@vue/cli-ui"
+    "url": "git+https://github.com/wmzy/svelte-cli.git",
+    "directory": "packages/@svel/cli-ui"
   },
   "scripts": {
     "serve": "cross-env VUE_APP_CLI_UI_URL=ws://localhost:4030/graphql VUE_APP_GRAPHQL_PORT=4030 vue-cli-service serve",
@@ -34,7 +34,7 @@
   ],
   "dependencies": {
     "@akryum/winattr": "^3.0.0",
-    "@vue/cli-shared-utils": "^3.7.0",
+    "@svel/cli-shared-utils": "^3.7.0",
     "chalk": "^2.4.1",
     "clone": "^2.1.1",
     "deepmerge": "^3.2.0",
@@ -64,11 +64,11 @@
     "watch": "^1.0.2"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.7.0",
-    "@vue/cli-plugin-e2e-cypress": "^3.7.0",
-    "@vue/cli-plugin-eslint": "^3.7.0",
-    "@vue/cli-service": "^3.7.0",
-    "@vue/eslint-config-standard": "^4.0.0",
+    "@svel/cli-plugin-babel": "^3.7.0",
+    "@svel/cli-plugin-e2e-cypress": "^3.7.0",
+    "@svel/cli-plugin-eslint": "^3.7.0",
+    "@svel/cli-service": "^3.7.0",
+    "@svel/eslint-config-standard": "^4.0.0",
     "@vue/ui": "^0.9.1",
     "ansi_up": "^3.0.0",
     "cross-env": "^5.1.5",

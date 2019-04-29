@@ -58,7 +58,7 @@ module.exports = (api, options) => {
           keepAlive: true
         }), api, options)
         // spawn sub-process of self for modern build
-        const { execa } = require('@vue/cli-shared-utils')
+        const { execa } = require('@svel/cli-shared-utils')
         const cliBin = require('path').resolve(__dirname, '../../../bin/vue-cli-service.js')
         await execa(cliBin, ['build', ...rawArgs], {
           stdio: 'inherit',
@@ -76,7 +76,7 @@ module.exports = (api, options) => {
       delete process.env.VUE_CLI_MODERN_MODE
     } else {
       if (args.modern) {
-        const { warn } = require('@vue/cli-shared-utils')
+        const { warn } = require('@svel/cli-shared-utils')
         warn(
           `Modern mode only works with default target (app). ` +
           `For libraries or web components, use the browserslist ` +
@@ -102,7 +102,7 @@ async function build (args, api, options) {
     info,
     logWithSpinner,
     stopSpinner
-  } = require('@vue/cli-shared-utils')
+  } = require('@svel/cli-shared-utils')
 
   log()
   const mode = api.service.mode

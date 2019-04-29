@@ -11,7 +11,7 @@ module.exports = function loadCommand (commandName, moduleName) {
       } catch (err2) {
         if (isNotFoundError(err2)) {
           const chalk = require('chalk')
-          const { hasYarn, hasPnpm3OrLater } = require('@vue/cli-shared-utils')
+          const { hasYarn, hasPnpm3OrLater } = require('@svel/cli-shared-utils')
           let installCommand = `npm install -g`
           if (hasYarn()) {
             installCommand = `yarn global add`

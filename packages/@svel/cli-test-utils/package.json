@@ -1,11 +1,11 @@
 {
-  "name": "@vue/cli-test-utils",
+  "name": "@svel/cli-test-utils",
   "version": "3.7.0",
   "description": "test utilities for vue-cli packages",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vuejs/vue-cli.git",
-    "directory": "packages/@vue/cli-test-utils"
+    "url": "git+https://github.com/wmzy/svelte-cli.git",
+    "directory": "packages/@svel/cli-test-utils"
   },
   "keywords": [
     "vue",
@@ -15,9 +15,9 @@
   "author": "Evan You",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vuejs/vue-cli/issues"
+    "url": "https://github.com/wmzy/svelte-cli/issues"
   },
-  "homepage": "https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/cli-test-utils#readme",
+  "homepage": "https://github.com/wmzy/svelte-cli/tree/dev/packages/@svel/cli-test-utils#readme",
   "publishConfig": {
     "access": "public"
   },

@@ -9,7 +9,7 @@ const PluginAPI = require('./PluginAPI')
 const dotenv = require('dotenv')
 const dotenvExpand = require('dotenv-expand')
 const defaultsDeep = require('lodash.defaultsdeep')
-const { warn, error, isPlugin, loadModule } = require('@vue/cli-shared-utils')
+const { warn, error, isPlugin, loadModule } = require('@svel/cli-shared-utils')
 
 const { defaults, validate } = require('./options')
 

@@ -1,5 +1,5 @@
 export default function (count = 10) {
-  // @vue/component
+  // @svel/component
   return {
     data () {
       return {

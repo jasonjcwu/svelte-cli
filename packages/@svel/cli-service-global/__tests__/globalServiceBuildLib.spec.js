@@ -5,10 +5,10 @@ const path = require('path')
 const portfinder = require('portfinder')
 const { createServer } = require('http-server')
 const execa = require('execa')
-const launchPuppeteer = require('@vue/cli-test-utils/launchPuppeteer')
+const launchPuppeteer = require('@svel/cli-test-utils/launchPuppeteer')
 
 const cwd = path.resolve(__dirname, 'temp')
-const binPath = require.resolve('@vue/cli/bin/vue')
+const binPath = require.resolve('@svel/cli/bin/vue')
 const write = (file, content) => fs.writeFile(path.join(cwd, file), content)
 
 const entryVue = fs.readFileSync(path.resolve(__dirname, 'entry.vue'), 'utf-8')

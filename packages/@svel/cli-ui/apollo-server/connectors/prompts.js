@@ -1,5 +1,5 @@
 // Utils
-const { get, set, unset } = require('@vue/cli-shared-utils')
+const { get, set, unset } = require('@svel/cli-shared-utils')
 const { log } = require('../util/logger')
 
 let answers = {}

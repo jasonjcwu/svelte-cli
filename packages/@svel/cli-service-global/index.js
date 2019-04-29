@@ -1,11 +1,11 @@
 const fs = require('fs')
 const path = require('path')
 const chalk = require('chalk')
-const Service = require('@vue/cli-service')
+const Service = require('@svel/cli-service')
 const { toPlugin, findExisting } = require('./lib/util')
 
-const babelPlugin = toPlugin('@vue/cli-plugin-babel')
-const eslintPlugin = toPlugin('@vue/cli-plugin-eslint')
+const babelPlugin = toPlugin('@svel/cli-plugin-babel')
+const eslintPlugin = toPlugin('@svel/cli-plugin-eslint')
 const globalConfigPlugin = require('./lib/globalConfigPlugin')
 
 const context = process.cwd()

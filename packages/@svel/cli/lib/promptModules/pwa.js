@@ -9,7 +9,7 @@ module.exports = cli => {
 
   cli.onPromptComplete((answers, options) => {
     if (answers.features.includes('pwa')) {
-      options.plugins['@vue/cli-plugin-pwa'] = {}
+      options.plugins['@svel/cli-plugin-pwa'] = {}
     }
   })
 }

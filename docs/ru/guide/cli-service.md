@@ -2,7 +2,7 @@
 
 ## Использование Binary
 
-Внутри проекта Vue CLI, `@vue/cli-service` устанавливает бинарник `vue-cli-service`. К нему можно получить доступ через `vue-cli-service` в npm-скриптах, или через `./node_modules/.bin/vue-cli-service` из терминала.
+Внутри проекта Vue CLI, `@svel/cli-service` устанавливает бинарник `vue-cli-service`. К нему можно получить доступ через `vue-cli-service` в npm-скриптах, или через `./node_modules/.bin/vue-cli-service` из терминала.
 
 Это то, что вы увидите в `package.json` проекта с пресетом настроек по умолчанию:
 
@@ -98,7 +98,7 @@ npx vue-cli-service serve
 
 ## Список всех доступных команд
 
-Некоторые плагины CLI добавляют собственные команды в `vue-cli-service`. Например, `@vue/cli-plugin-eslint` внедряет команду `vue-cli-service lint`. Вы можете посмотреть весь список команд запустив:
+Некоторые плагины CLI добавляют собственные команды в `vue-cli-service`. Например, `@svel/cli-plugin-eslint` внедряет команду `vue-cli-service lint`. Вы можете посмотреть весь список команд запустив:
 
 ``` bash
 npx vue-cli-service help
@@ -118,7 +118,7 @@ npx vue-cli-service help [command]
 
 ## Git хуки
 
-После установки `@vue/cli-service` также добавляется [yorkie](https://github.com/yyx990803/yorkie), который позволяет легко использовать Git хуки используя поле `gitHooks` в файле `package.json`:
+После установки `@svel/cli-service` также добавляется [yorkie](https://github.com/yyx990803/yorkie), который позволяет легко использовать Git хуки используя поле `gitHooks` в файле `package.json`:
 
 ``` json
 {

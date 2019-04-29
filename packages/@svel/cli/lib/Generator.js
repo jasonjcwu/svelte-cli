@@ -6,10 +6,10 @@ const writeFileTree = require('./util/writeFileTree')
 const inferRootOptions = require('./util/inferRootOptions')
 const normalizeFilePaths = require('./util/normalizeFilePaths')
 const injectImportsAndOptions = require('./util/injectImportsAndOptions')
-const { toShortPluginId, matchesPluginId } = require('@vue/cli-shared-utils')
+const { toShortPluginId, matchesPluginId } = require('@svel/cli-shared-utils')
 const ConfigTransform = require('./ConfigTransform')
 
-const logger = require('@vue/cli-shared-utils/lib/logger')
+const logger = require('@svel/cli-shared-utils/lib/logger')
 const logTypes = {
   log: logger.log,
   info: logger.info,
@@ -93,7 +93,7 @@ module.exports = class Generator {
     // exit messages
     this.exitLogs = []
 
-    const cliService = plugins.find(p => p.id === '@vue/cli-service')
+    const cliService = plugins.find(p => p.id === '@svel/cli-service')
     const rootOptions = cliService
       ? cliService.options
       : inferRootOptions(pkg)

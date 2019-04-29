@@ -8,7 +8,7 @@ See [here][browserslist] for how to specify browser ranges.
 
 ## Polyfills
 
-A default Vue CLI project uses [@vue/babel-preset-app][babel-preset-app], which uses `@babel/preset-env` and the `browserslist` config to determine the Polyfills needed for your project.
+A default Vue CLI project uses [@svel/babel-preset-app][babel-preset-app], which uses `@babel/preset-env` and the `browserslist` config to determine the Polyfills needed for your project.
 
 ### useBuiltIns: 'usage'
 
@@ -18,13 +18,13 @@ If one of your dependencies need polyfills, you have a few options:
 
 1. **If the dependency is written in an ES version that your target environments do not support:** Add that dependency to the [`transpileDependencies`](../config/#transpiledependencies) option in `vue.config.js`. This would enable both syntax transforms and usage-based polyfill detection for that dependency.
 
-2. **If the dependency ships ES5 code and explicitly lists the polyfills needed:** you can pre-include the needed polyfills using the [polyfills](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/babel-preset-app#polyfills) option for `@vue/babel-preset-app`. **Note that `es6.promise` is included by default because it's very common for libs to depend on Promises.**
+2. **If the dependency ships ES5 code and explicitly lists the polyfills needed:** you can pre-include the needed polyfills using the [polyfills](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/babel-preset-app#polyfills) option for `@svel/babel-preset-app`. **Note that `es6.promise` is included by default because it's very common for libs to depend on Promises.**
 
     ``` js
     // babel.config.js
     module.exports = {
       presets: [
-        ['@vue/app', {
+        ['@svel/app', {
           polyfills: [
             'es6.promise',
             'es6.symbol'
@@ -44,7 +44,7 @@ See [@babel-preset/env docs](https://new.babeljs.io/docs/en/next/babel-preset-en
 
 ### Polyfills when Building as Library or Web Components
 
-When using Vue CLI to [build a library or Web Components](./build-targets.md), it is recommended to pass `useBuiltIns: false` to `@vue/babel-preset-app` to disable automatic polyfill injection. This ensures you don't include unnecessary polyfills in your code, as it should be the responsibility of the consuming app to include polyfills.
+When using Vue CLI to [build a library or Web Components](./build-targets.md), it is recommended to pass `useBuiltIns: false` to `@svel/babel-preset-app` to disable automatic polyfill injection. This ensures you don't include unnecessary polyfills in your code, as it should be the responsibility of the consuming app to include polyfills.
 
 ## Modern Mode
 

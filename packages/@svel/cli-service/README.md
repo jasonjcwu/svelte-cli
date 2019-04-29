@@ -1,4 +1,4 @@
-# @vue/cli-service
+# @svel/cli-service
 
 > service for vue-cli
 

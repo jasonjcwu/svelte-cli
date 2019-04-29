@@ -1,4 +1,4 @@
-# @vue/cli-plugin-unit-jest
+# @svel/cli-plugin-unit-jest
 
 > unit-jest plugin for vue-cli
 
@@ -26,7 +26,7 @@ If you want to debug your tests via the Node inspector, you can run the followin
 node --inspect-brk ./node_modules/.bin/vue-cli-service test:unit
 
 # Windows
-node --inspect-brk ./node_modules/@vue/cli-service/bin/vue-cli-service.js test:unit
+node --inspect-brk ./node_modules/@svel/cli-service/bin/vue-cli-service.js test:unit
 ```
 
 ## Configuration
@@ -36,7 +36,7 @@ Jest can be configured via `jest.config.js` in your project root, or the `jest` 
 ## Installing in an Already Created Project
 
 ```sh
-vue add @vue/unit-jest
+vue add @svel/unit-jest
 ```
 
 ## Transform dependencies from `/node_modules`

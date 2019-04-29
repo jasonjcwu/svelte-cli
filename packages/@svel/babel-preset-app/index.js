@@ -34,7 +34,7 @@ module.exports = (context, options = {}) => {
 
   // JSX
   if (options.jsx !== false) {
-    presets.push([require('@vue/babel-preset-jsx'), typeof options.jsx === 'object' ? options.jsx : {}])
+    presets.push([require('@svel/babel-preset-jsx'), typeof options.jsx === 'object' ? options.jsx : {}])
   }
 
   const runtimePath = path.dirname(require.resolve('@babel/runtime/package.json'))
