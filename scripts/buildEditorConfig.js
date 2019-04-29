@@ -19,7 +19,7 @@ function convertRules (config) {
   const eslintRules = new CLIEngine({
     useEslintrc: false,
     baseConfig: {
-      extends: [require.resolve(`@vue/eslint-config-${config}`)]
+      extends: [require.resolve(`@svel/eslint-config-${config}`)]
     }
   }).getConfigForFile().rules
 
@@ -93,7 +93,7 @@ function convertRules (config) {
 exports.buildEditorConfig = function buildEditorConfig () {
   console.log('Building EditorConfig files...')
   // Get built-in eslint configs
-  const configList = fs.readdirSync(path.resolve(__dirname, '../packages/@vue/'))
+  const configList = fs.readdirSync(path.resolve(__dirname, '../packages/@svel/'))
     .map(name => {
       const matched = /eslint-config-(\w+)/.exec(name)
       return matched && matched[1]
@@ -114,7 +114,7 @@ exports.buildEditorConfig = function buildEditorConfig () {
       content += `${key} = ${value}\n`
     }
 
-    const templateDir = path.resolve(__dirname, `../packages/@vue/cli-plugin-eslint/generator/template/${config}`)
+    const templateDir = path.resolve(__dirname, `../packages/@svel/cli-plugin-eslint/generator/template/${config}`)
     if (!fs.existsSync(templateDir)) {
       fs.mkdirSync(templateDir)
     }

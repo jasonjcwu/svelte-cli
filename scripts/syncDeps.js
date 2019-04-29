@@ -13,10 +13,10 @@ const inquirer = require('inquirer')
 const readline = require('readline')
 
 const externalVueScopedPackages = {
-  '@vue/test-utils': true,
-  '@vue/eslint-config': true
+  '@svel/test-utils': true,
+  '@svel/eslint-config': true
 }
-const localPackageRE = /'(@vue\/(?:cli|eslint|babel)[\w-]+)': '\^([\w-.]+)'/g
+const localPackageRE = /'(@svel\/(?:cli|eslint|babel)[\w-]+)': '\^([\w-.]+)'/g
 
 const versionCache = {}
 
@@ -97,7 +97,7 @@ async function syncDeps ({ local, version, skipPrompt }) {
 
   if (!local) {
     console.log('Syncing remote deps...')
-    const packages = await globby(['packages/@vue/*/package.json'])
+    const packages = await globby(['packages/@svel/*/package.json'])
     const resolvedPackages = (await Promise.all(packages.filter(filePath => {
       return filePath.match(/cli-service|cli-plugin|babel-preset|eslint-config/)
     }).concat('package.json').map(async (filePath) => {
@@ -108,7 +108,7 @@ async function syncDeps ({ local, version, skipPrompt }) {
       const deps = pkg.dependencies
       const resolvedDeps = []
       for (const dep in deps) {
-        if (dep.match(/^@vue/) && !externalVueScopedPackages[dep]) {
+        if (dep.match(/^@svel/) && !externalVueScopedPackages[dep]) {
           continue
         }
         let local = deps[dep]
@@ -150,7 +150,7 @@ async function syncDeps ({ local, version, skipPrompt }) {
 
   console.log('Syncing local deps...')
   const updatedRE = new RegExp(`'(${Array.from(updatedDeps).join('|')})': '\\^(\\d+\\.\\d+\\.\\d+[^']*)'`)
-  const paths = await globby(['packages/@vue/**/*.js'])
+  const paths = await globby(['packages/@svel/**/*.js'])
   paths
     .filter(p => !/\/files\//.test(p) && !/\/node_modules/.test(p))
     .forEach(filePath => {
@@ -173,7 +173,7 @@ async function syncDeps ({ local, version, skipPrompt }) {
               return require(`../packages/${pkg}/package.json`).version
             }
 
-            if (pkg.includes('@vue/cli-plugin')) {
+            if (pkg.includes('@svel/cli-plugin')) {
               return `${semver.major(version)}.${semver.minor(version)}.0`
             }
 
@@ -186,7 +186,7 @@ async function syncDeps ({ local, version, skipPrompt }) {
       const remoteReplacer = makeReplacer(getRemoteVersionSync)
 
       const updated = fs.readFileSync(filePath, 'utf-8')
-        // update @vue packages in this repo
+        // update @svel packages in this repo
         .replace(localPackageRE, localReplacer)
         // also update vue, vue-template-compiler, vuex, vue-router
         .replace(updatedRE, remoteReplacer)

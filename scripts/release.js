@@ -3,7 +3,7 @@
 How to do a release:
 
 1. Make sure you have publish access for all packages:
-    - You must be in the CLI team in the npm @vue organization
+    - You must be in the CLI team in the npm @svel organization
     - Make sure you DO NOT have npm per-publish 2-factor / OTP enabled, as it
       does not work with Lerna (which we use for batch publishing).
 

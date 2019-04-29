@@ -2,9 +2,9 @@
 
 const fs = require('fs')
 const path = require('path')
-const baseVersion = require('../packages/@vue/cli-service/package.json').version
+const baseVersion = require('../packages/@svel/cli-service/package.json').version
 
-const packagesDir = path.resolve(__dirname, '../packages/@vue')
+const packagesDir = path.resolve(__dirname, '../packages/@svel')
 const files = fs.readdirSync(packagesDir)
 
 files.forEach(pkg => {
@@ -12,13 +12,13 @@ files.forEach(pkg => {
 
   const isPlugin = /^cli-plugin-/.test(pkg)
   const desc = isPlugin
-    ? `${pkg.replace('cli-plugin-', '')} plugin for vue-cli`
-    : `${pkg.replace('cli-', '')} for vue-cli`
+    ? `${pkg.replace('cli-plugin-', '')} plugin for svelte-cli`
+    : `${pkg.replace('cli-', '')} for svelte-cli`
 
   const pkgPath = path.join(packagesDir, pkg, `package.json`)
   if (!fs.existsSync(pkgPath)) {
     const json = {
-      'name': `@vue/${pkg}`,
+      'name': `@svel/${pkg}`,
       'version': baseVersion,
       'description': desc,
       'main': 'index.js',
@@ -27,25 +27,25 @@ files.forEach(pkg => {
       },
       'repository': {
         'type': 'git',
-        'url': 'git+https://github.com/vuejs/vue-cli.git'
+        'url': 'git+https://github.com/wmzy/svelte-cli.git'
       },
       'keywords': [
-        'vue',
+        'svelte',
         'cli'
       ],
       'author': 'Evan You',
       'license': 'MIT',
       'bugs': {
-        'url': 'https://github.com/vuejs/vue-cli/issues'
+        'url': 'https://github.com/wmzy/svelte-cli/issues'
       },
-      'homepage': `https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/${pkg}#readme`
+      'homepage': `https://github.com/wmzy/svelte-cli/tree/dev/packages/@svel/${pkg}#readme`
     }
     fs.writeFileSync(pkgPath, JSON.stringify(json, null, 2))
   }
 
   const readmePath = path.join(packagesDir, pkg, `README.md`)
   if (!fs.existsSync(readmePath)) {
-    fs.writeFileSync(readmePath, `# @vue/${pkg}\n\n> ${desc}`)
+    fs.writeFileSync(readmePath, `# @svel/${pkg}\n\n> ${desc}`)
   }
 
   const npmIgnorePath = path.join(packagesDir, pkg, `.npmignore`)

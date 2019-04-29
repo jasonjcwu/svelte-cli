@@ -12,7 +12,7 @@ test_script:
   - yarn --version
   - yarn test
   # ui tests temporarily disabled due to Cypress 3.0 issue on windows
-  # - cd "packages/@vue/cli-ui" && yarn test
+  # - cd "packages/@svel/cli-ui" && yarn test
 
 cache:
   - node_modules -> yarn.lock
