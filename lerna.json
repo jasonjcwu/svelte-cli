@@ -7,7 +7,7 @@
     "packages/@vue/cli*"
   ],
   "changelog": {
-    "repo": "vuejs/vue-cli",
+    "repo": "wmzy/svelte-cli",
     "labels": {
       "PR: New Feature": ":rocket: New Feature",
       "PR: Breaking Change": ":boom: Breaking Change",
