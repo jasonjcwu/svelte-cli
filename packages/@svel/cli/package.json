@@ -1,9 +1,9 @@
 {
   "name": "@svel/cli",
   "version": "3.7.0",
-  "description": "Command line interface for rapid Vue.js development",
+  "description": "Command line interface for rapid Svelte.js development",
   "bin": {
-    "vue": "bin/vue.js"
+    "svelte": "bin/cli.js"
   },
   "repository": {
     "type": "git",
@@ -11,7 +11,7 @@
     "directory": "packages/@svel/cli"
   },
   "keywords": [
-    "vue",
+    "svelte",
     "cli"
   ],
   "author": "Evan You",
@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/wmzy/svelte-cli/issues"
   },
-  "homepage": "https://cli.vuejs.org/",
+  "homepage": "https://github.com/wmzy/svelte-cli",
   "publishConfig": {
     "access": "public"
   },
