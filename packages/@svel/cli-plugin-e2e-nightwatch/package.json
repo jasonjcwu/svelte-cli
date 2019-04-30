@@ -29,5 +29,6 @@
     "execa": "^1.0.0",
     "nightwatch": "^0.9.21",
     "selenium-server": "^3.141.59"
-  }
+  },
+  "gitHead": "ebe466be1944d8e2b2f46e9103bd0eaf069d2e7f"
 }

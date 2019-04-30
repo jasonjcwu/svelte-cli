@@ -31,5 +31,6 @@
   },
   "optionalDependencies": {
     "eslint": "^4.19.1"
-  }
+  },
+  "gitHead": "ebe466be1944d8e2b2f46e9103bd0eaf069d2e7f"
 }

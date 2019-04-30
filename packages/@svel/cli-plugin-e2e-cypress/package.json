@@ -26,5 +26,6 @@
     "@svel/cli-shared-utils": "^0.1.0",
     "cypress": "^3.2.0",
     "eslint-plugin-cypress": "^2.2.1"
-  }
+  },
+  "gitHead": "ebe466be1944d8e2b2f46e9103bd0eaf069d2e7f"
 }
