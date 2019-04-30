@@ -1,7 +1,7 @@
 {
   "npmClient": "yarn",
   "useWorkspaces": false,
-  "version": "3.7.0",
+  "version": "0.1.0",
   "packages": [
     "packages/@svel/babel-preset-app",
     "packages/@svel/cli*"

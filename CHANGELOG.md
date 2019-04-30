@@ -1,3 +1,6 @@
+Must provide GITHUB_AUTH
+
+
 
 ## 3.7.0 (2019-04-28)
 
