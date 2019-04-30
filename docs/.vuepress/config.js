@@ -1,4 +1,5 @@
 module.exports = {
+  base: '/svelte-cli/',
   locales: {
     '/': {
       lang: 'en-US',
