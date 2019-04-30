@@ -1,6 +1,6 @@
 {
   "name": "@svel/cli-shared-utils",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "shared utilities for vue-cli packages",
   "main": "index.js",
   "repository": {
@@ -36,5 +36,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "ebe466be1944d8e2b2f46e9103bd0eaf069d2e7f"
+  "gitHead": "2feb47f18e4a4a0013813393420d41190fc5c6ec"
 }

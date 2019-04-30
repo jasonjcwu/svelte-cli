@@ -1,6 +1,6 @@
 {
   "name": "@svel/babel-preset-app",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "babel-preset-app for vue-cli",
   "main": "index.js",
   "publishConfig": {
@@ -35,5 +35,5 @@
     "babel-plugin-module-resolver": "3.2.0",
     "core-js": "^2.6.5"
   },
-  "gitHead": "ebe466be1944d8e2b2f46e9103bd0eaf069d2e7f"
+  "gitHead": "2feb47f18e4a4a0013813393420d41190fc5c6ec"
 }

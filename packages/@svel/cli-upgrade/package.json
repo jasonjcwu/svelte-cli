@@ -1,8 +1,11 @@
 {
   "name": "@svel/cli-upgrade",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "utility to upgrade vue cli service / plugins in vue apps",
   "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wmzy/svelte-cli.git",
@@ -26,5 +29,5 @@
     "execa": "^1.0.0",
     "inquirer": "^6.0.0"
   },
-  "gitHead": "ebe466be1944d8e2b2f46e9103bd0eaf069d2e7f"
+  "gitHead": "2feb47f18e4a4a0013813393420d41190fc5c6ec"
 }

@@ -1,6 +1,6 @@
 {
   "name": "@svel/cli-plugin-pwa",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "pwa plugin for vue-cli",
   "main": "index.js",
   "repository": {
@@ -23,12 +23,12 @@
     "access": "public"
   },
   "dependencies": {
-    "@svel/cli-shared-utils": "^0.1.0",
+    "@svel/cli-shared-utils": "^0.1.1",
     "webpack": ">=4 < 4.29",
     "workbox-webpack-plugin": "^3.6.3"
   },
   "devDependencies": {
     "register-service-worker": "^1.6.2"
   },
-  "gitHead": "ebe466be1944d8e2b2f46e9103bd0eaf069d2e7f"
+  "gitHead": "2feb47f18e4a4a0013813393420d41190fc5c6ec"
 }

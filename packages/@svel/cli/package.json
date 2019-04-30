@@ -1,6 +1,6 @@
 {
   "name": "@svel/cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Command line interface for rapid Svelte.js development",
   "bin": {
     "svelte": "bin/cli.js"
@@ -24,10 +24,10 @@
     "access": "public"
   },
   "dependencies": {
-    "@svel/cli-shared-utils": "^0.1.0",
-    "@svel/cli-ui": "^0.1.0",
-    "@svel/cli-ui-addon-webpack": "^0.1.0",
-    "@svel/cli-ui-addon-widgets": "^0.1.0",
+    "@svel/cli-shared-utils": "^0.1.1",
+    "@svel/cli-ui": "^0.1.1",
+    "@svel/cli-ui-addon-webpack": "^0.1.1",
+    "@svel/cli-ui-addon-widgets": "^0.1.1",
     "chalk": "^2.4.1",
     "cmd-shim": "^2.0.2",
     "commander": "^2.20.0",
@@ -59,5 +59,5 @@
   "engines": {
     "node": ">=8.9"
   },
-  "gitHead": "ebe466be1944d8e2b2f46e9103bd0eaf069d2e7f"
+  "gitHead": "2feb47f18e4a4a0013813393420d41190fc5c6ec"
 }
