@@ -46,7 +46,7 @@ When using a multipage setup, the plugin name above should be changed to match t
 Example:
 
 ``` js
-// vue.config.js
+// svelte.config.js
 module.exports = {
   chainWebpack: config => {
     // remove the prefetch plugin
@@ -77,10 +77,10 @@ Prefetch links will consume bandwidth. If you have a large app with many async c
 
 ### Disable Index Generation
 
-When using Vue CLI with an existing backend, you may need to disable the generation of `index.html` so that the generated assets can be used in a server-rendered page. To do so, the following can be added to [`vue.config.js`](../config/#vue-config-js):
+When using Vue CLI with an existing backend, you may need to disable the generation of `index.html` so that the generated assets can be used in a server-rendered page. To do so, the following can be added to [`svelte.config.js`](../config/#svelte-config-js):
 
 ``` js
-// vue.config.js
+// svelte.config.js
 module.exports = {
   // disable hashes in filenames
   filenameHashing: false,
@@ -103,7 +103,7 @@ Instead, you should consider using the [indexPath](../config/#indexpath) option 
 
 ### Building a Multi-Page App
 
-Not every app has to be an SPA. Vue CLI supports building a multi-paged app using the [`pages` option in `vue.config.js`](../config/#pages). The built app will efficiently share common chunks between multiple entries for optimal loading performance.
+Not every app has to be an SPA. Vue CLI supports building a multi-paged app using the [`pages` option in `svelte.config.js`](../config/#pages). The built app will efficiently share common chunks between multiple entries for optimal loading performance.
 
 ## Static Assets Handling
 
@@ -134,7 +134,7 @@ Internally, we use `file-loader` to determine the final file location with versi
 You can adjust the inline file size limit via [chainWebpack](../config/#chainwebpack). For example, to set the limit to 10kb instead:
 
 ``` js
-// vue.config.js
+// svelte.config.js
 module.exports = {
   chainWebpack: config => {
     config.module

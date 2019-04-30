@@ -2,10 +2,10 @@
 
 ## 简单的配置方式
 
-调整 webpack 配置最简单的方式就是在 `vue.config.js` 中的 `configureWebpack` 选项提供一个对象：
+调整 webpack 配置最简单的方式就是在 `svelte.config.js` 中的 `configureWebpack` 选项提供一个对象：
 
 ``` js
-// vue.config.js
+// svelte.config.js
 module.exports = {
   configureWebpack: {
     plugins: [
@@ -18,13 +18,13 @@ module.exports = {
 该对象将会被 [webpack-merge](https://github.com/survivejs/webpack-merge) 合并入最终的 webpack 配置。
 
 ::: warning 警告
-有些 webpack 选项是基于 `vue.config.js` 中的值设置的，所以不能直接修改。例如你应该修改 `vue.config.js` 中的 `outputDir` 选项而不是修改 `output.path`；你应该修改 `vue.config.js` 中的 `publicPath` 选项而不是修改 `output.publicPath`。这样做是因为 `vue.config.js` 中的值会被用在配置里的多个地方，以确保所有的部分都能正常工作在一起。
+有些 webpack 选项是基于 `svelte.config.js` 中的值设置的，所以不能直接修改。例如你应该修改 `svelte.config.js` 中的 `outputDir` 选项而不是修改 `output.path`；你应该修改 `svelte.config.js` 中的 `publicPath` 选项而不是修改 `output.publicPath`。这样做是因为 `svelte.config.js` 中的值会被用在配置里的多个地方，以确保所有的部分都能正常工作在一起。
 :::
 
 如果你需要基于环境有条件地配置行为，或者想要直接修改配置，那就换成一个函数 (该函数会在环境变量被设置之后懒执行)。该方法的第一个参数会收到已经解析好的配置。在函数内，你可以直接修改配置，或者返回一个将会被合并的对象：
 
 ``` js
-// vue.config.js
+// svelte.config.js
 module.exports = {
   configureWebpack: config => {
     if (process.env.NODE_ENV === 'production') {
@@ -40,7 +40,7 @@ module.exports = {
 
 Vue CLI 内部的 webpack 配置是通过 [webpack-chain](https://github.com/mozilla-neutrino/webpack-chain) 维护的。这个库提供了一个 webpack 原始配置的上层抽象，使其可以定义具名的 loader 规则和具名插件，并有机会在后期进入这些规则并对它们的选项进行修改。
 
-它允许我们更细粒度的控制其内部配置。接下来有一些常见的在 `vue.config.js` 中的 `chainWebpack` 修改的例子。
+它允许我们更细粒度的控制其内部配置。接下来有一些常见的在 `svelte.config.js` 中的 `chainWebpack` 修改的例子。
 
 ::: tip 提示
 当你打算链式访问特定的 loader 时，[vue inspect](#审查项目的-webpack-配置) 会非常有帮助。
@@ -49,7 +49,7 @@ Vue CLI 内部的 webpack 配置是通过 [webpack-chain](https://github.com/moz
 ### 修改 Loader 选项
 
 ``` js
-// vue.config.js
+// svelte.config.js
 module.exports = {
   chainWebpack: config => {
     config.module
@@ -71,7 +71,7 @@ module.exports = {
 ### 添加一个新的 Loader
 
 ``` js
-// vue.config.js
+// svelte.config.js
 module.exports = {
   chainWebpack: config => {
     // GraphQL Loader
@@ -90,7 +90,7 @@ module.exports = {
 如果你想要替换一个已有的[基础 loader](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-service/lib/config/base.js)，例如为内联的 SVG 文件使用 `vue-svg-loader` 而不是加载这个文件：
 
 ``` js
-// vue.config.js
+// svelte.config.js
 module.exports = {
   chainWebpack: config => {
     const svgRule = config.module.rule('svg')
@@ -110,7 +110,7 @@ module.exports = {
 ### 修改插件选项
 
 ``` js
-// vue.config.js
+// svelte.config.js
 module.exports = {
   chainWebpack: config => {
     config
@@ -127,7 +127,7 @@ module.exports = {
 比方说你想要将 `index.html` 默认的路径从 */Users/username/proj/public/index.html* 改为 */Users/username/proj/app/templates/index.html*。通过参考 [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin#options) 你能看到一个可以传入的选项列表。我们可以在下列配置中传入一个新的模板路径来改变它：
 
 ``` js
-// vue.config.js
+// svelte.config.js
 module.exports = {
   chainWebpack: config => {
     config

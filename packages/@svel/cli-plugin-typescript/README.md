@@ -22,7 +22,7 @@ If opted to use [TSLint](https://palantir.github.io/tslint/) during project crea
 
 ## Parallelization
 
-[thread-loader](https://github.com/webpack-contrib/thread-loader) is enabled by default when the machine has more than 1 CPU cores. This can be turned off by setting `parallel: false` in `vue.config.js`.
+[thread-loader](https://github.com/webpack-contrib/thread-loader) is enabled by default when the machine has more than 1 CPU cores. This can be turned off by setting `parallel: false` in `svelte.config.js`.
 
 ## Installing in an Already Created Project
 

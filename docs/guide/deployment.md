@@ -35,11 +35,11 @@ If you are using the PWA plugin, your app must be served over HTTPS so that [Ser
 
 ### GitHub Pages
 
-1. Set correct `publicPath` in `vue.config.js`.
+1. Set correct `publicPath` in `svelte.config.js`.
 
     If you are deploying to `https://<USERNAME>.github.io/`, you can omit `publicPath` as it defaults to `"/"`.
 
-    If you are deploying to `https://<USERNAME>.github.io/<REPO>/`, (i.e. your repository is at `https://github.com/<USERNAME>/<REPO>`), set `publicPath` to `"/<REPO>/"`. For example, if your repo name is "my-project", your `vue.config.js` should look like this:
+    If you are deploying to `https://<USERNAME>.github.io/<REPO>/`, (i.e. your repository is at `https://github.com/<USERNAME>/<REPO>`), set `publicPath` to `"/<REPO>/"`. For example, if your repo name is "my-project", your `svelte.config.js` should look like this:
 
     ``` js
     module.exports = {
@@ -105,10 +105,10 @@ pages: # the job must be named pages
     - master
 ```
 
-Typically, your static website will be hosted on https://yourUserName.gitlab.io/yourProjectName, so you will also want to create an initial `vue.config.js` file to [update the `BASE_URL`](https://github.com/vuejs/vue-cli/tree/dev/docs/config#baseurl) value to match:
+Typically, your static website will be hosted on https://yourUserName.gitlab.io/yourProjectName, so you will also want to create an initial `svelte.config.js` file to [update the `BASE_URL`](https://github.com/vuejs/vue-cli/tree/dev/docs/config#baseurl) value to match:
 
 ```javascript
-// vue.config.js file to be place in the root of your repository
+// svelte.config.js file to be place in the root of your repository
 // make sure you update `yourProjectName` with the name of your GitLab project
 
 module.exports = {
@@ -120,7 +120,7 @@ module.exports = {
 
 Please read through the docs on [GitLab Pages domains](https://docs.gitlab.com/ee/user/project/pages/getting_started_part_one.html#gitlab-pages-domain) for more info about the URL where your project website will be hosted. Be aware you can also [use a custom domain](https://docs.gitlab.com/ee/user/project/pages/getting_started_part_three.html#adding-your-custom-domain-to-gitlab-pages).
 
-Commit both the `.gitlab-ci.yml` and `vue.config.js` files before pushing to your repository. A GitLab CI pipeline will be triggered: when successful, visit your project's `Settings > Pages` to see your website link, and click on it.
+Commit both the `.gitlab-ci.yml` and `svelte.config.js` files before pushing to your repository. A GitLab CI pipeline will be triggered: when successful, visit your project's `Settings > Pages` to see your website link, and click on it.
 
 ### Netlify
 
@@ -291,7 +291,7 @@ Verify your project is successfully published by Surge by visiting `myawesomepro
 
 1. As described in the [Bitbucket documentation](https://confluence.atlassian.com/bitbucket/publishing-a-website-on-bitbucket-cloud-221449776.html) you need to create a repository named exactly `<USERNAME>.bitbucket.io`.
 
-2. It is possible to publish to a subfolder of the main repository, for instance if you want to have multiple websites. In that case set correct `publicPath` in `vue.config.js`.
+2. It is possible to publish to a subfolder of the main repository, for instance if you want to have multiple websites. In that case set correct `publicPath` in `svelte.config.js`.
 
     If you are deploying to `https://<USERNAME>.bitbucket.io/`, you can omit `publicPath` as it defaults to `"/"`.
 

@@ -61,7 +61,7 @@ test('should work', async () => {
     done = resolve
   })
   // enable lintOnSave
-  await write('vue.config.js', 'module.exports = { lintOnSave: true }')
+  await write('svelte.config.js', 'module.exports = { lintOnSave: true }')
   // write invalid file
   const app = await read('src/App.vue')
   const updatedApp = app.replace(/;/, '')

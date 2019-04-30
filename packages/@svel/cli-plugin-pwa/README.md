@@ -10,7 +10,7 @@ If you need to test a service worker locally, build the application and run a si
 
 ## Configuration
 
-Configuration is handled via the `pwa` property of either the `vue.config.js`
+Configuration is handled via the `pwa` property of either the `svelte.config.js`
 file, or the `"vue"` field in `package.json`.
 
 - **pwa.workboxPluginMode**
@@ -90,7 +90,7 @@ file, or the `"vue"` field in `package.json`.
 ### Example Configuration
 
 ```js
-// Inside vue.config.js
+// Inside svelte.config.js
 module.exports = {
   // ...other vue-cli plugin options...
   pwa: {

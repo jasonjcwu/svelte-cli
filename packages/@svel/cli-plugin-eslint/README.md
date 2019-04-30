@@ -25,7 +25,7 @@
 
 ESLint can be configured via `.eslintrc` or the `eslintConfig` field in `package.json`.
 
-Lint-on-save during development with `eslint-loader` is enabled by default. It can be disabled with the `lintOnSave` option in `vue.config.js`:
+Lint-on-save during development with `eslint-loader` is enabled by default. It can be disabled with the `lintOnSave` option in `svelte.config.js`:
 
 ``` js
 module.exports = {
@@ -40,7 +40,7 @@ To make lint errors show up in the browser overlay, you can use `lintOnSave: 'er
 Alternatively, you can configure the overlay to display both warnings and errors:
 
 ``` js
-// vue.config.js
+// svelte.config.js
 module.exports = {
   devServer: {
     overlay: {
@@ -54,7 +54,7 @@ module.exports = {
 When `lintOnSave` is a truthy value, `eslint-loader` will be applied in both development and production. If you want to disable `eslint-loader` during production build, you can use the following config:
 
 ``` js
-// vue.config.js
+// svelte.config.js
 module.exports = {
   lintOnSave: process.env.NODE_ENV !== 'production'
 }

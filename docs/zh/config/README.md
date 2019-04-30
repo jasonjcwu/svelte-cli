@@ -14,14 +14,14 @@ sidebar: auto
 
 请查阅指南中的[浏览器兼容性](../guide/browser-compatibility.md#browserslist)章节。
 
-## vue.config.js
+## svelte.config.js
 
-`vue.config.js` 是一个可选的配置文件，如果项目的 (和 `package.json` 同级的) 根目录中存在这个文件，那么它会被 `@svel/cli-service` 自动加载。你也可以使用 `package.json` 中的 `vue` 字段，但是注意这种写法需要你严格遵照 JSON 的格式来写。
+`svelte.config.js` 是一个可选的配置文件，如果项目的 (和 `package.json` 同级的) 根目录中存在这个文件，那么它会被 `@svel/cli-service` 自动加载。你也可以使用 `package.json` 中的 `vue` 字段，但是注意这种写法需要你严格遵照 JSON 的格式来写。
 
 这个文件应该导出一个包含了选项的对象：
 
 ``` js
-// vue.config.js
+// svelte.config.js
 module.exports = {
   // 选项...
 }
@@ -150,7 +150,7 @@ module.exports = {
   或者，你也可以通过设置让浏览器 overlay 同时显示警告和错误：
 
   ``` js
-  // vue.config.js
+  // svelte.config.js
   module.exports = {
     devServer: {
       overlay: {
@@ -164,7 +164,7 @@ module.exports = {
   当 `lintOnSave` 是一个 truthy 的值时，`eslint-loader` 在开发和生产构建下都会被启用。如果你想要在生产构建时禁用 `eslint-loader`，你可以用如下配置：
 
   ``` js
-  // vue.config.js
+  // svelte.config.js
   module.exports = {
     lintOnSave: process.env.NODE_ENV !== 'production'
   }
@@ -312,7 +312,7 @@ module.exports = {
 
 - Type: `string | Object`
 
-  如果你的前端应用和后端 API 服务器没有运行在同一个主机上，你需要在开发环境下将 API 请求代理到 API 服务器。这个问题可以通过 `vue.config.js` 中的 `devServer.proxy` 选项来配置。
+  如果你的前端应用和后端 API 服务器没有运行在同一个主机上，你需要在开发环境下将 API 请求代理到 API 服务器。这个问题可以通过 `svelte.config.js` 中的 `devServer.proxy` 选项来配置。
 
   `devServer.proxy` 可以是一个指向开发环境 API 服务器的字符串：
 

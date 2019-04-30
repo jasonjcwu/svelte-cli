@@ -105,7 +105,7 @@ test('build as lib with webpackConfiguration depending on target (js)', async ()
     export * from 'a-library'
   `)
 
-  await project.write('vue.config.js', `
+  await project.write('svelte.config.js', `
     const path = require('path')
     module.exports = {
       configureWebpack: config => {

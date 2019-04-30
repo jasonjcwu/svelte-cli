@@ -47,13 +47,13 @@ dist/myLib.css           0.33 kb                  0.23 kb
 
 - `dist/myLib.umd.min.js`：压缩后的 UMD 构建版本
 
-- `dist/myLib.css`：提取出来的 CSS 文件 (可以通过在 `vue.config.js` 中设置 `css: { extract: false }` 强制内联)
+- `dist/myLib.css`：提取出来的 CSS 文件 (可以通过在 `svelte.config.js` 中设置 `css: { extract: false }` 强制内联)
 
 ### Vue vs. JS/TS 入口文件
 
 当使用一个 `.vue` 文件作为入口时，你的库会直接暴露这个 Vue 组件本身，因为组件始终是默认导出的内容。
 
-然而，当你使用一个 `.js` 或 `.ts` 文件作为入口时，它可能会包含具名导出，所以库会暴露为一个模块。也就是说你的库必须在 UMD 构建中通过 `window.yourLib.default` 访问，或在 CommonJS 构建中通过 `const myLib = require('mylib').default` 访问。如果你没有任何具名导出并希望直接暴露默认导出，你可以在 `vue.config.js` 中使用以下 webpack 配置：
+然而，当你使用一个 `.js` 或 `.ts` 文件作为入口时，它可能会包含具名导出，所以库会暴露为一个模块。也就是说你的库必须在 UMD 构建中通过 `window.yourLib.default` 访问，或在 CommonJS 构建中通过 `const myLib = require('mylib').default` 访问。如果你没有任何具名导出并希望直接暴露默认导出，你可以在 `svelte.config.js` 中使用以下 webpack 配置：
 
 ``` js
 module.exports = {

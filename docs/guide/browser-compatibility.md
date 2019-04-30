@@ -16,7 +16,7 @@ By default, it passes [`useBuiltIns: 'usage'`](https://new.babeljs.io/docs/en/ne
 
 If one of your dependencies need polyfills, you have a few options:
 
-1. **If the dependency is written in an ES version that your target environments do not support:** Add that dependency to the [`transpileDependencies`](../config/#transpiledependencies) option in `vue.config.js`. This would enable both syntax transforms and usage-based polyfill detection for that dependency.
+1. **If the dependency is written in an ES version that your target environments do not support:** Add that dependency to the [`transpileDependencies`](../config/#transpiledependencies) option in `svelte.config.js`. This would enable both syntax transforms and usage-based polyfill detection for that dependency.
 
 2. **If the dependency ships ES5 code and explicitly lists the polyfills needed:** you can pre-include the needed polyfills using the [polyfills](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/babel-preset-app#polyfills) option for `@svel/babel-preset-app`. **Note that `es6.promise` is included by default because it's very common for libs to depend on Promises.**
 
@@ -86,7 +86,7 @@ Vue CLI uses two environment variables to communicate this:
 * `VUE_CLI_MODERN_MODE`: The build was started with the `--modern` flag
 * `VUE_CLI_MODERN_BUILD`: when true, the current config is for the modern build. Otherwise it's for the legacy build.
 
-**Important:** These variables are only accessible when/after `chainWebpack()` and `configureWebpack()` functions are evaluated, (so not directly in the `vue.config.js` module's root scope). That means it's also available in the postcss config file.
+**Important:** These variables are only accessible when/after `chainWebpack()` and `configureWebpack()` functions are evaluated, (so not directly in the `svelte.config.js` module's root scope). That means it's also available in the postcss config file.
 :::
 
 [autoprefixer]: https://github.com/postcss/autoprefixer

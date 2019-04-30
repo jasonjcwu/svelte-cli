@@ -2,10 +2,10 @@
 
 ## Простая конфигурация
 
-Самый простой способ изменять конфигурацию webpack — использовать объект в опции `configureWebpack` в файле `vue.config.js`:
+Самый простой способ изменять конфигурацию webpack — использовать объект в опции `configureWebpack` в файле `svelte.config.js`:
 
 ``` js
-// vue.config.js
+// svelte.config.js
 module.exports = {
   configureWebpack: {
     plugins: [
@@ -18,13 +18,13 @@ module.exports = {
 Объект будет объединён в итоговую конфигурацию webpack с помощью [webpack-merge](https://github.com/survivejs/webpack-merge).
 
 ::: warning Предупреждение
-Некоторые параметры webpack устанавливаются на основе значений из `vue.config.js` и не должны изменяться напрямую. Например, вместо изменения `output.path` нужно использовать опцию `outputDir` в `vue.config.js`; а вместо `output.publicPath` нужно использовать опцию `publicPath` в `vue.config.js`. Это связано с тем, что значения из `vue.config.js` используются в нескольких местах внутри конфигурации и необходимо гарантировать что всё вместе будет работать правильно.
+Некоторые параметры webpack устанавливаются на основе значений из `svelte.config.js` и не должны изменяться напрямую. Например, вместо изменения `output.path` нужно использовать опцию `outputDir` в `svelte.config.js`; а вместо `output.publicPath` нужно использовать опцию `publicPath` в `svelte.config.js`. Это связано с тем, что значения из `svelte.config.js` используются в нескольких местах внутри конфигурации и необходимо гарантировать что всё вместе будет работать правильно.
 :::
 
 Если необходимо условное поведение, в зависимости от окружения, или вы хотите напрямую изменять конфигурацию — используйте функцию (будет лениво выполняться после установки переменных окружения). Она получает итоговую конфигурацию в качестве аргумента. Внутри функции можно напрямую изменить конфигурацию, ИЛИ вернуть объект для объединения:
 
 ``` js
-// vue.config.js
+// svelte.config.js
 module.exports = {
   configureWebpack: config => {
     if (process.env.NODE_ENV === 'production') {
@@ -40,7 +40,7 @@ module.exports = {
 
 Внутренняя конфигурация webpack поддерживается с использованием [webpack-chain](https://github.com/mozilla-neutrino/webpack-chain). Библиотека предоставляет абстракцию над обычной конфигурацией webpack, добавляет возможность задавать именованные правила для загрузчиков и плагинов, а затем выбирать эти правила по имени и изменять их параметры.
 
-Это позволяет осуществлять более тонкий контроль над встроенной конфигурацией. Ниже вы увидите примеры изменений, выполненных с помощью опции `chainWebpack` в `vue.config.js`.
+Это позволяет осуществлять более тонкий контроль над встроенной конфигурацией. Ниже вы увидите примеры изменений, выполненных с помощью опции `chainWebpack` в `svelte.config.js`.
 
 ::: tip Совет
 Команда [vue inspect](#inspecting-the-project-s-webpack-config) пригодится, когда вы будете пробовать добраться до определённого загрузчика в цепочке.
@@ -49,7 +49,7 @@ module.exports = {
 ### Изменение настроек загрузчика
 
 ``` js
-// vue.config.js
+// svelte.config.js
 module.exports = {
   chainWebpack: config => {
     config.module
@@ -71,7 +71,7 @@ module.exports = {
 ### Добавление нового загрузчика
 
 ``` js
-// vue.config.js
+// svelte.config.js
 module.exports = {
   chainWebpack: config => {
     // Загрузчик GraphQL
@@ -90,7 +90,7 @@ module.exports = {
 Если вы хотите заменить существующий [базовый загрузчик](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-service/lib/config/base.js), например воспользоваться `vue-svg-loader` для вставки SVG-файлов инлайн вместо загрузки обычными файлами:
 
 ``` js
-// vue.config.js
+// svelte.config.js
 module.exports = {
   chainWebpack: config => {
     const svgRule = config.module.rule('svg')
@@ -111,7 +111,7 @@ module.exports = {
 ### Изменение настроек плагина
 
 ``` js
-// vue.config.js
+// svelte.config.js
 module.exports = {
   chainWebpack: config => {
     config
@@ -128,7 +128,7 @@ module.exports = {
 Например, предположим, необходимо изменить местоположение `index.html` по умолчанию с `/Users/test/proj/public/index.html` на `/Users/test/proj/app/templates/index.html`. По ссылке [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin#options) перечислен список параметров, которые можем передавать. Чтобы изменить шаблон, передадим новый путь к шаблону следующей конфигурацией:
 
 ``` js
-// vue.config.js
+// svelte.config.js
 module.exports = {
   chainWebpack: config => {
     config

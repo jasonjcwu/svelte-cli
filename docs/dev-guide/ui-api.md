@@ -99,7 +99,7 @@ If you don't specify an icon, the plugin logo will be displayed if any (see [Log
 
 ### Config files
 
-By default, a configuration UI might read and write to one or more configuration files, for example both `.eslintrc.js` and `vue.config.js`.
+By default, a configuration UI might read and write to one or more configuration files, for example both `.eslintrc.js` and `svelte.config.js`.
 
 You can provide what are the possible files to be detected in the user project:
 
@@ -115,9 +115,9 @@ api.describeConfig({
       // Will read from `package.json`
       package: 'eslintConfig'
     },
-    // vue.config.js
+    // svelte.config.js
     vue: {
-      js: ['vue.config.js']
+      js: ['svelte.config.js']
     }
   },
 })
@@ -146,7 +146,7 @@ See [Prompts](#prompts) for more info.
 
 The `data` object contains the JSON result of each config file content.
 
-For example, let's say the user has the following `vue.config.js` in his project:
+For example, let's say the user has the following `svelte.config.js` in his project:
 
 ```js
 module.exports = {
@@ -161,9 +161,9 @@ api.describeConfig({
   /* ... */
   // All possible files for this config
   files: {
-    // vue.config.js
+    // svelte.config.js
     vue: {
-      js: ['vue.config.js']
+      js: ['svelte.config.js']
     }
   },
 })
@@ -207,9 +207,9 @@ api.describeConfig({
       // Will read from `package.json`
       package: 'eslintConfig'
     },
-    // vue.config.js
+    // svelte.config.js
     vue: {
-      js: ['vue.config.js']
+      js: ['svelte.config.js']
     }
   },
 })
@@ -632,7 +632,7 @@ The recommended way to create a Client addon is by creating a new project using 
 
 Install `@svel/cli-ui` as a dev dependency.
 
-Then add a `vue.config.js` file with the following content:
+Then add a `svelte.config.js` file with the following content:
 
 ```js
 const { clientAddonConfig } = require('@svel/cli-ui')

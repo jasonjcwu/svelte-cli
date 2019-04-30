@@ -89,8 +89,8 @@ test('invoke with ts', async () => {
   pkg.devDependencies['@svel/cli-plugin-typescript'] = '*'
   await project.write('package.json', JSON.stringify(pkg, null, 2))
 
-  // mock existing vue.config.js
-  await project.write('vue.config.js', `module.exports = { lintOnSave: true }`)
+  // mock existing svelte.config.js
+  await project.write('svelte.config.js', `module.exports = { lintOnSave: true }`)
 
   const eslintrc = parseJS(await project.read('.eslintrc.js'))
   expect(eslintrc).toEqual(Object.assign({}, baseESLintConfig, {

@@ -34,7 +34,7 @@ $color: red;
 如果你想自动化导入文件 (用于颜色、变量、mixin……)，你可以使用 [style-resources-loader](https://github.com/yenshih/style-resources-loader)。这里有一个关于 Stylus 的在每个单文件组件和 Stylus 文件中导入 `./src/styles/imports.styl` 的例子：
 
 ```js
-// vue.config.js
+// svelte.config.js
 const path = require('path')
 
 module.exports = {
@@ -61,7 +61,7 @@ function addStyleResource (rule) {
 
 Vue CLI 内部使用了 PostCSS。
 
-你可以通过 `.postcssrc` 或任何 [postcss-load-config](https://github.com/michael-ciniawsky/postcss-load-config) 支持的配置源来配置 PostCSS。也可以通过 `vue.config.js` 中的 `css.loaderOptions.postcss` 配置 [postcss-loader](https://github.com/postcss/postcss-loader)。
+你可以通过 `.postcssrc` 或任何 [postcss-load-config](https://github.com/michael-ciniawsky/postcss-load-config) 支持的配置源来配置 PostCSS。也可以通过 `svelte.config.js` 中的 `css.loaderOptions.postcss` 配置 [postcss-loader](https://github.com/postcss/postcss-loader)。
 
 我们默认开启了 [autoprefixer](https://github.com/postcss/autoprefixer)。如果要配置目标浏览器，可使用 `package.json` 的 [browserslist](../guide/browser-compatibility.html#browserslist) 字段。
 
@@ -81,10 +81,10 @@ import styles from './foo.module.css'
 import sassStyles from './foo.module.scss'
 ```
 
-如果你想去掉文件名中的 `.module`，可以设置 `vue.config.js` 中的 `css.modules` 为 `true`：
+如果你想去掉文件名中的 `.module`，可以设置 `svelte.config.js` 中的 `css.modules` 为 `true`：
 
 ``` js
-// vue.config.js
+// svelte.config.js
 module.exports = {
   css: {
     modules: true
@@ -92,10 +92,10 @@ module.exports = {
 }
 ```
 
-如果你希望自定义生成的 CSS Modules 模块的类名，可以通过 `vue.config.js` 中的 `css.loaderOptions.css` 选项来实现。所有的 `css-loader` 选项在这里都是支持的，例如 `localIdentName` 和 `camelCase`：
+如果你希望自定义生成的 CSS Modules 模块的类名，可以通过 `svelte.config.js` 中的 `css.loaderOptions.css` 选项来实现。所有的 `css-loader` 选项在这里都是支持的，例如 `localIdentName` 和 `camelCase`：
 
 ``` js
-// vue.config.js
+// svelte.config.js
 module.exports = {
   css: {
     loaderOptions: {
@@ -110,10 +110,10 @@ module.exports = {
 
 ## 向预处理器 Loader 传递选项
 
-有的时候你想要向 webpack 的预处理器 loader 传递选项。你可以使用 `vue.config.js` 中的 `css.loaderOptions` 选项。比如你可以这样向所有 Sass 样式传入共享的全局变量：
+有的时候你想要向 webpack 的预处理器 loader 传递选项。你可以使用 `svelte.config.js` 中的 `css.loaderOptions` 选项。比如你可以这样向所有 Sass 样式传入共享的全局变量：
 
 ``` js
-// vue.config.js
+// svelte.config.js
 module.exports = {
   css: {
     loaderOptions: {

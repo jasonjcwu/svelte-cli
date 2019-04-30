@@ -6,7 +6,7 @@ module.exports = api => {
     link: 'https://cli.vuejs.org/config/',
     files: {
       vue: {
-        js: ['vue.config.js']
+        js: ['svelte.config.js']
       }
     },
     icon: '/public/vue-cli.png',

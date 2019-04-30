@@ -54,7 +54,7 @@ npx vue-cli-service serve
 
 Команда `vue-cli-service serve` запускает сервер для разработки (основанный на [webpack-dev-server](https://github.com/webpack/webpack-dev-server)), предоставляющий из коробки функцию горячей замены модулей.
 
-Кроме флагов командной строки, также можно настраивать сервер для разработки с помощью поля [devServer](../config/#devserver) в файле `vue.config.js`.
+Кроме флагов командной строки, также можно настраивать сервер для разработки с помощью поля [devServer](../config/#devserver) в файле `svelte.config.js`.
 
 ## vue-cli-service build
 

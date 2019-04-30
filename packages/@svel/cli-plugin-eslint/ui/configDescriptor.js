@@ -154,7 +154,7 @@ async function onWrite ({ data, api, prompts }) {
     } else if (prompt.id.indexOf('vue/') === 0) {
       eslintData[`rules.${prompt.id}`] = await api.getAnswer(prompt.id, JSON.parse)
     } else {
-      // vue.config.js
+      // svelte.config.js
       vueData[prompt.id] = await api.getAnswer(prompt.id)
     }
   }
@@ -175,7 +175,7 @@ const config = {
       package: 'eslintConfig'
     },
     vue: {
-      js: ['vue.config.js']
+      js: ['svelte.config.js']
     }
   },
   onRead,

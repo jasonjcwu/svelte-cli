@@ -53,7 +53,7 @@ const defaultConfigTransforms = {
 const reservedConfigTransforms = {
   vue: new ConfigTransform({
     file: {
-      js: ['vue.config.js']
+      js: ['svelte.config.js']
     }
   })
 }
@@ -153,7 +153,7 @@ module.exports = class Generator {
       }
     } else {
       if (!process.env.VUE_CLI_TEST) {
-        // by default, always extract vue.config.js
+        // by default, always extract svelte.config.js
         extract('vue')
       }
       // always extract babel.config.js as this is the only way to apply

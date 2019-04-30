@@ -42,13 +42,13 @@ A lib build outputs:
 
 - `dist/myLib.umd.min.js`: Minified version of the UMD build.
 
-- `dist/myLib.css`: Extracted CSS file (can be forced into inlined by setting `css: { extract: false }` in `vue.config.js`)
+- `dist/myLib.css`: Extracted CSS file (can be forced into inlined by setting `css: { extract: false }` in `svelte.config.js`)
 
 ### Vue vs. JS/TS Entry Files
 
 When using a `.vue` file as entry, your library will directly expose the Vue component itself, because the component is always the default export.
 
-However, when you are using a `.js` or `.ts` file as your entry, it may contain named exports, so your library will be exposed as a Module. This means the default export of your library must be accessed as `window.yourLib.default` in UMD builds, or as `const myLib = require('mylib').default` in CommonJS builds. If you don't have any named exports and wish to directly expose the default export, you can use the following webpack configuration in `vue.config.js`:
+However, when you are using a `.js` or `.ts` file as your entry, it may contain named exports, so your library will be exposed as a Module. This means the default export of your library must be accessed as `window.yourLib.default` in UMD builds, or as `const myLib = require('mylib').default` in CommonJS builds. If you don't have any named exports and wish to directly expose the default export, you can use the following webpack configuration in `svelte.config.js`:
 
 ``` js
 module.exports = {

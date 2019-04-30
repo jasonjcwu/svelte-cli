@@ -15474,7 +15474,7 @@ svelte-dev-helper@^1.1.9:
   resolved "https://registry.yarnpkg.com/svelte-dev-helper/-/svelte-dev-helper-1.1.9.tgz#7d187db5c6cdbbd64d75a32f91b8998bde3273c3"
   integrity sha1-fRh9tcbNu9ZNdaMvkbiZi94yc8M=
 
-svelte-loader@^15.7.0:
+svelte-loader@^2.13.3:
   version "2.13.3"
   resolved "https://registry.yarnpkg.com/svelte-loader/-/svelte-loader-2.13.3.tgz#866046f3ce85a2c4b884f14fb0ba0f205af8cc5c"
   integrity sha512-ZvNWbR77lZ04nCHqnN0XFxKCQ+fynARCy+kxwogagW3k2NTJWg2QfJwN1J9d4ch+OZwcGPgGZITVr7FGB3hPmQ==
@@ -15482,7 +15482,15 @@ svelte-loader@^15.7.0:
     loader-utils "^1.1.0"
     svelte-dev-helper "^1.1.9"
 
-svelte@^15.7.0:
+svelte-preprocess@^2.6.2:
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/svelte-preprocess/-/svelte-preprocess-2.6.2.tgz#f312cc3b03f333b4057c30658b0c3f49aa636588"
+  integrity sha512-7PS5LtKJBbSnzaS6DYKMtzAaGQuTHyJhSmqNsTc0mHF3RJOVOLfAZ/dS4aVKKUPV8OL8bTbxan3jPJT5fgcMbQ==
+  dependencies:
+    postcss-load-config "^2.0.0"
+    strip-indent "^2.0.0"
+
+svelte@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.1.0.tgz#87a4b643169037f0b3d28a6b1832c28dc0a3fbc3"
   integrity sha512-b5TyzV7Dx1ijN4QPNarhKq5rX98QHDmi18nF0G8KV3d5KX3Jj98Yu4+tzM97ktnXcfoVJmvONvPaX1ZI0mr8Dw==

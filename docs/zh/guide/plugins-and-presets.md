@@ -140,7 +140,7 @@ Preset 的数据会被插件生成器用来生成相应的项目文件。除了�
 }
 ```
 
-这些额外的配置将会根据 `useConfigFiles` 的值被合并到 `package.json` 或相应的配置文件中。例如，当 `"useConfigFiles": true` 的时候，`configs` 的值将会被合并到 `vue.config.js` 中。
+这些额外的配置将会根据 `useConfigFiles` 的值被合并到 `package.json` 或相应的配置文件中。例如，当 `"useConfigFiles": true` 的时候，`configs` 的值将会被合并到 `svelte.config.js` 中。
 
 ### Preset 插件的版本管理
 

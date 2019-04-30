@@ -9,7 +9,7 @@ const serve = require('@svel/cli-test-utils/serveWithPuppeteer')
 const launchPuppeteer = require('@svel/cli-test-utils/launchPuppeteer')
 
 async function makeProjectMultiPage (project) {
-  await project.write('vue.config.js', `
+  await project.write('svelte.config.js', `
     module.exports = {
       pages: {
         index: { entry: 'src/main.js' },

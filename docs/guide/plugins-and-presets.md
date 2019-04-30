@@ -140,7 +140,7 @@ The preset data is used by plugin generators to generate corresponding project f
 }
 ```
 
-These additional configurations will be merged into `package.json` or corresponding config files, depending on the value of `useConfigFiles`. For example, with `"useConfigFiles": true`, the value of `configs.vue` will be merged into `vue.config.js`.
+These additional configurations will be merged into `package.json` or corresponding config files, depending on the value of `useConfigFiles`. For example, with `"useConfigFiles": true`, the value of `configs.vue` will be merged into `svelte.config.js`.
 
 ### Preset Plugin Versioning
 

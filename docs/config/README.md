@@ -16,14 +16,14 @@ You can also use the `vue config` command to inspect or modify the global CLI co
 
 See the [Browser Compatibility](../guide/browser-compatibility.md#browserslist) section in guide.
 
-## vue.config.js
+## svelte.config.js
 
-`vue.config.js` is an optional config file that will be automatically loaded by `@svel/cli-service` if it's present in your project root (next to `package.json`). You can also use the `vue` field in `package.json`, but do note in that case you will be limited to JSON-compatible values only.
+`svelte.config.js` is an optional config file that will be automatically loaded by `@svel/cli-service` if it's present in your project root (next to `package.json`). You can also use the `vue` field in `package.json`, but do note in that case you will be limited to JSON-compatible values only.
 
 The file should export an object containing options:
 
 ``` js
-// vue.config.js
+// svelte.config.js
 module.exports = {
   // options...
 }
@@ -154,7 +154,7 @@ Deprecated since Vue CLI 3.3, please use [`publicPath`](#publicPath) instead.
   Alternatively, you can configure the overlay to display both warnings and errors:
 
   ``` js
-  // vue.config.js
+  // svelte.config.js
   module.exports = {
     devServer: {
       overlay: {
@@ -168,7 +168,7 @@ Deprecated since Vue CLI 3.3, please use [`publicPath`](#publicPath) instead.
   When `lintOnSave` is a truthy value, `eslint-loader` will be applied in both development and production. If you want to disable `eslint-loader` during production build, you can use the following config:
 
   ``` js
-  // vue.config.js
+  // svelte.config.js
   module.exports = {
     lintOnSave: process.env.NODE_ENV !== 'production'
   }
@@ -324,7 +324,7 @@ See [the plugin's README](https://github.com/vuejs/vue-cli/blob/dev/packages/%40
 
 - Type: `string | Object`
 
-  If your frontend app and the backend API server are not running on the same host, you will need to proxy API requests to the API server during development. This is configurable via the `devServer.proxy` option in `vue.config.js`.
+  If your frontend app and the backend API server are not running on the same host, you will need to proxy API requests to the API server during development. This is configurable via the `devServer.proxy` option in `svelte.config.js`.
 
   `devServer.proxy` can be a string pointing to the development API server:
 

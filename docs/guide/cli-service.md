@@ -59,7 +59,7 @@ If copying was successful, `(copied to clipboard)` is displayed next to the loca
 
 The `vue-cli-service serve` command starts a dev server (based on [webpack-dev-server](https://github.com/webpack/webpack-dev-server)) that comes with Hot-Module-Replacement (HMR) working out of the box.
 
-In addition to the command line flags, you can also configure the dev server using the [devServer](../config/#devserver) field in `vue.config.js`.
+In addition to the command line flags, you can also configure the dev server using the [devServer](../config/#devserver) field in `svelte.config.js`.
 
 `[entry]` in the CLI command is defined as *the entry file*, not *an additional entry file*. If you overwrite the entry in the CLI, then the entries from `config.pages` are no longer considered, which may cause an error.
 

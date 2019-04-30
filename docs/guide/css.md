@@ -42,7 +42,7 @@ Please also be aware, as it's a native module, there may be compatibility issues
 If you want to automatically import files (for colors, variables, mixins...), you can use the [style-resources-loader](https://github.com/yenshih/style-resources-loader). Here is an example for stylus that imports `./src/styles/imports.styl` in every SFC and every stylus files:
 
 ```js
-// vue.config.js
+// svelte.config.js
 const path = require('path')
 
 module.exports = {
@@ -69,7 +69,7 @@ You can also use the [vue-cli-plugin-style-resources-loader](https://www.npmjs.c
 
 Vue CLI uses PostCSS internally.
 
-You can configure PostCSS via `.postcssrc` or any config source supported by [postcss-load-config](https://github.com/michael-ciniawsky/postcss-load-config), and configure [postcss-loader](https://github.com/postcss/postcss-loader) via `css.loaderOptions.postcss` in `vue.config.js`.
+You can configure PostCSS via `.postcssrc` or any config source supported by [postcss-load-config](https://github.com/michael-ciniawsky/postcss-load-config), and configure [postcss-loader](https://github.com/postcss/postcss-loader) via `css.loaderOptions.postcss` in `svelte.config.js`.
 
 The [autoprefixer](https://github.com/postcss/autoprefixer) plugin is enabled by default. To configure the browser targets, use the [browserslist](../guide/browser-compatibility.html#browserslist) field in `package.json`.
 
@@ -89,10 +89,10 @@ import styles from './foo.module.css'
 import sassStyles from './foo.module.scss'
 ```
 
-If you want to drop the `.module` in the filenames, set `css.modules` to `true` in `vue.config.js`:
+If you want to drop the `.module` in the filenames, set `css.modules` to `true` in `svelte.config.js`:
 
 ``` js
-// vue.config.js
+// svelte.config.js
 module.exports = {
   css: {
     modules: true
@@ -100,10 +100,10 @@ module.exports = {
 }
 ```
 
-If you wish to customize the generated CSS modules class names, you can do so via `css.loaderOptions.css` in `vue.config.js`. All `css-loader` options are supported here, for example `localIdentName` and `camelCase`:
+If you wish to customize the generated CSS modules class names, you can do so via `css.loaderOptions.css` in `svelte.config.js`. All `css-loader` options are supported here, for example `localIdentName` and `camelCase`:
 
 ``` js
-// vue.config.js
+// svelte.config.js
 module.exports = {
   css: {
     loaderOptions: {
@@ -118,10 +118,10 @@ module.exports = {
 
 ## Passing Options to Pre-Processor Loaders
 
-Sometimes you may want to pass options to the pre-processor's webpack loader. You can do that using the `css.loaderOptions` option in `vue.config.js`. For example, to pass some shared global variables to all your Sass/Less styles:
+Sometimes you may want to pass options to the pre-processor's webpack loader. You can do that using the `css.loaderOptions` option in `svelte.config.js`. For example, to pass some shared global variables to all your Sass/Less styles:
 
 ``` js
-// vue.config.js
+// svelte.config.js
 module.exports = {
   css: {
     loaderOptions: {

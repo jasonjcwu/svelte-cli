@@ -42,7 +42,7 @@
 示例：
 
 ``` js
-// vue.config.js
+// svelte.config.js
 module.exports = {
   chainWebpack: config => {
     // 移除 prefetch 插件
@@ -73,10 +73,10 @@ Prefetch 链接将会消耗带宽。如果你的应用很大且有很多 async c
 
 ### 不生成 index
 
-当基于已有的后端使用 Vue CLI 时，你可能不需要生成 `index.html`，这样生成的资源可以用于一个服务端渲染的页面。这时可以向 [`vue.config.js`](../config/#vue-config-js) 加入下列代码：
+当基于已有的后端使用 Vue CLI 时，你可能不需要生成 `index.html`，这样生成的资源可以用于一个服务端渲染的页面。这时可以向 [`svelte.config.js`](../config/#svelte-config-js) 加入下列代码：
 
 ``` js
-// vue.config.js
+// svelte.config.js
 module.exports = {
   // 去掉文件名中的 hash
   filenameHashing: false,
@@ -99,7 +99,7 @@ module.exports = {
 
 ### 构建一个多页应用
 
-不是每个应用都需要是一个单页应用。Vue CLI 支持使用 [`vue.config.js` 中的 `pages` 选项](../config/#pages)构建一个多页面的应用。构建好的应用将会在不同的入口之间高效共享通用的 chunk 以获得最佳的加载性能。
+不是每个应用都需要是一个单页应用。Vue CLI 支持使用 [`svelte.config.js` 中的 `pages` 选项](../config/#pages)构建一个多页面的应用。构建好的应用将会在不同的入口之间高效共享通用的 chunk 以获得最佳的加载性能。
 
 ## 处理静态资源
 
@@ -130,7 +130,7 @@ h('img', { attrs: { src: require('./image.png') }})
 你可以通过 [chainWebpack](../config/#chainwebpack) 调整内联文件的大小限制。例如，下列代码会将其限制设置为 10kb：
 
 ``` js
-// vue.config.js
+// svelte.config.js
 module.exports = {
   chainWebpack: config => {
     config.module

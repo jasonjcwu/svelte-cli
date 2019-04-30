@@ -266,7 +266,7 @@ module.exports = class Service {
     ) {
       throw new Error(
         `Do not modify webpack output.publicPath directly. ` +
-        `Use the "publicPath" option in vue.config.js instead.`
+        `Use the "publicPath" option in svelte.config.js instead.`
       )
     }
 
@@ -290,11 +290,11 @@ module.exports = class Service {
   }
 
   loadUserOptions () {
-    // vue.config.js
+    // svelte.config.js
     let fileConfig, pkgConfig, resolved, resolvedFrom
     const configPath = (
       process.env.VUE_CLI_SERVICE_CONFIG_PATH ||
-      path.resolve(this.context, 'vue.config.js')
+      path.resolve(this.context, 'svelte.config.js')
     )
     if (fs.existsSync(configPath)) {
       try {
@@ -306,12 +306,12 @@ module.exports = class Service {
 
         if (!fileConfig || typeof fileConfig !== 'object') {
           error(
-            `Error loading ${chalk.bold('vue.config.js')}: should export an object or a function that returns object.`
+            `Error loading ${chalk.bold('svelte.config.js')}: should export an object or a function that returns object.`
           )
           fileConfig = null
         }
       } catch (e) {
-        error(`Error loading ${chalk.bold('vue.config.js')}:`)
+        error(`Error loading ${chalk.bold('svelte.config.js')}:`)
         throw e
       }
     }
@@ -330,15 +330,15 @@ module.exports = class Service {
       if (pkgConfig) {
         warn(
           `"vue" field in package.json ignored ` +
-          `due to presence of ${chalk.bold('vue.config.js')}.`
+          `due to presence of ${chalk.bold('svelte.config.js')}.`
         )
         warn(
-          `You should migrate it into ${chalk.bold('vue.config.js')} ` +
+          `You should migrate it into ${chalk.bold('svelte.config.js')} ` +
           `and remove it from package.json.`
         )
       }
       resolved = fileConfig
-      resolvedFrom = 'vue.config.js'
+      resolvedFrom = 'svelte.config.js'
     } else if (pkgConfig) {
       resolved = pkgConfig
       resolvedFrom = '"vue" field in package.json'
@@ -350,12 +350,12 @@ module.exports = class Service {
     if (typeof resolved.baseUrl !== 'undefined') {
       if (typeof resolved.publicPath !== 'undefined') {
         warn(
-          `You have set both "baseUrl" and "publicPath" in ${chalk.bold('vue.config.js')}, ` +
+          `You have set both "baseUrl" and "publicPath" in ${chalk.bold('svelte.config.js')}, ` +
           `in this case, "baseUrl" will be ignored in favor of "publicPath".`
         )
       } else {
         warn(
-          `"baseUrl" option in ${chalk.bold('vue.config.js')} ` +
+          `"baseUrl" option in ${chalk.bold('svelte.config.js')} ` +
           `is deprecated now, please use "publicPath" instead.`
         )
         resolved.publicPath = resolved.baseUrl

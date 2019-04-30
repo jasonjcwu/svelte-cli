@@ -59,7 +59,7 @@ async function assertProxy (url, title) {
 test('serve with single proxy', async () => {
   const project = await create('single-proxy', defaultPreset)
 
-  await project.write('vue.config.js', `
+  await project.write('svelte.config.js', `
     module.exports = {
       devServer: {
         proxy: 'http://localhost:3000'
@@ -77,7 +77,7 @@ test('serve with single proxy', async () => {
 test('serve with multi proxies', async () => {
   const project = await create('multi-proxy', defaultPreset)
 
-  await project.write('vue.config.js', `
+  await project.write('svelte.config.js', `
     module.exports = {
       devServer: {
         proxy: {

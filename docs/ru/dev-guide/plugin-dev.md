@@ -48,7 +48,7 @@ sidebarDepth: 3
 
 - Экземпляр [PluginAPI][plugin-api]
 
-- Объект, содержащий локальные настройки проекта, указанные в `vue.config.js`, или в поле `"vue"` в `package.json`.
+- Объект, содержащий локальные настройки проекта, указанные в `svelte.config.js`, или в поле `"vue"` в `package.json`.
 
 API позволяет плагинам для сервиса расширять / изменять внутреннюю конфигурацию webpack для разных окружений и внедрять дополнительные команды в `vue-cli-service`. Например:
 
@@ -126,7 +126,7 @@ api.registerCommand('my-build', args => {
 
 #### Пользовательские настройки для сторонних плагинов
 
-Экспорт из `vue.config.js` [валидируется по схеме](https://github.com/vuejs/vue-cli/blob/dev/packages/%40vue/cli-service/lib/options.js#L3) чтобы избежать опечаток и неправильных значений конфигурации. Тем не менее, можно настраивать поведение сторонних плагинов через поле `pluginOptions`. Например, для следующего `vue.config.js`:
+Экспорт из `svelte.config.js` [валидируется по схеме](https://github.com/vuejs/vue-cli/blob/dev/packages/%40vue/cli-service/lib/options.js#L3) чтобы избежать опечаток и неправильных значений конфигурации. Тем не менее, можно настраивать поведение сторонних плагинов через поле `pluginOptions`. Например, для следующего `svelte.config.js`:
 
 ``` js
 module.exports = {

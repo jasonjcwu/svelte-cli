@@ -39,11 +39,11 @@ serve -s dist
 
 ### GitHub Pages
  
-1. 在 `vue.config.js` 中设置正确的 `publicPath`。
+1. 在 `svelte.config.js` 中设置正确的 `publicPath`。
     
    如果打算将项目部署到 `https://<USERNAME>.github.io/` 上 , `publicPath` 将默认被设为 `"/"`，你可以忽略这个参数。
 
-   如果打算将项目部署到 `https://<USERNAME>.github.io/<REPO>/` 上, (换句话说 仓库地址为 `https://github.com/<USERNAME>/<REPO>`), 可将 `publicPath` 设为 `"/<REPO>/"` 。 举个例子， 如果仓库名字为 "my-project"，`vue.config.js` 的内容应如下所示:
+   如果打算将项目部署到 `https://<USERNAME>.github.io/<REPO>/` 上, (换句话说 仓库地址为 `https://github.com/<USERNAME>/<REPO>`), 可将 `publicPath` 设为 `"/<REPO>/"` 。 举个例子， 如果仓库名字为 "my-project"，`svelte.config.js` 的内容应如下所示:
 
     ``` js
     module.exports = {
@@ -109,10 +109,10 @@ pages: # 必须定义一个名为 pages 的 job
     - master
 ```
 
-通常, 你的静态页面将托管在 https://yourUserName.gitlab.io/yourProjectName 上, 所以你可以创建一个 initial `vue.config.js` 文件去 [更新 `BASE_URL`](https://github.com/vuejs/vue-cli/tree/dev/docs/config#baseurl) 要匹配的值 ：
+通常, 你的静态页面将托管在 https://yourUserName.gitlab.io/yourProjectName 上, 所以你可以创建一个 initial `svelte.config.js` 文件去 [更新 `BASE_URL`](https://github.com/vuejs/vue-cli/tree/dev/docs/config#baseurl) 要匹配的值 ：
 
 ```javascript
-// vue.config.js 位于仓库的根目录下
+// svelte.config.js 位于仓库的根目录下
 // 确保用 GitLab 项目的名称替换了 `YourProjectName`
 
 module.exports = {
@@ -124,7 +124,7 @@ module.exports = {
 
 请阅读在 [GitLab Pages domains](https://docs.gitlab.com/ee/user/project/pages/getting_started_part_one.html#gitlab-pages-domain) 的文档来学习更多关于页面部署 URL 的信息。注意，你也可以[使用自定义域名](https://docs.gitlab.com/ee/user/project/pages/getting_started_part_three.html#adding-your-custom-domain-to-gitlab-pages)。
 
-在推送到仓库之前提交 `.gitlab-ci.yml` 和 `vue.config.js` 文件。GitLab CI 的管道将会被触发: 当成功时候, 到 `Settings > Pages` 查看关于网站的链接。
+在推送到仓库之前提交 `.gitlab-ci.yml` 和 `svelte.config.js` 文件。GitLab CI 的管道将会被触发: 当成功时候, 到 `Settings > Pages` 查看关于网站的链接。
 
 ### Netlify
 
@@ -282,7 +282,7 @@ npm install --global surge
 
 1. 如 [Bitbucket 文档](https://confluence.atlassian.com/bitbucket/publishing-a-website-on-bitbucket-cloud-221449776.html) 创建一个命名为 `<USERNAME>.bitbucket.io` 的仓库。
 
-2. 如果你想拥有多个网站， 想要发布到主仓库的子文件夹中。这种情况下就要在 `vue.config.js` 设置 `publicPath`。
+2. 如果你想拥有多个网站， 想要发布到主仓库的子文件夹中。这种情况下就要在 `svelte.config.js` 设置 `publicPath`。
 
     如果部署到 `https://<USERNAME>.bitbucket.io/`， `publicPath` 默认将被设为 `"/"`，你可以选择忽略它。
 

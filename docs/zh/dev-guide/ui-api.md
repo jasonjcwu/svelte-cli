@@ -101,7 +101,7 @@ api.describeConfig({
 
 ### 配置文件
 
-默认情况下，配置 UI 可能会读写一个或多个配置文件，例如 `.eslintrc` 和 `vue.config.js`。
+默认情况下，配置 UI 可能会读写一个或多个配置文件，例如 `.eslintrc` 和 `svelte.config.js`。
 
 你可以提供可能需要在用户项目中检测的文件：
 
@@ -117,9 +117,9 @@ api.describeConfig({
       // 会从 `package.json` 读取
       package: 'eslintConfig'
     },
-    // vue.config.js
+    // svelte.config.js
     vue: {
-      js: ['vue.config.js']
+      js: ['svelte.config.js']
     }
   },
 })
@@ -148,7 +148,7 @@ api.describeConfig({
 
 这个 `data` 对象包含了每个配置文件内容的 JSON 结果。
 
-例如，假设用户在其项目中的 `vue.config.js` 有以下内容：
+例如，假设用户在其项目中的 `svelte.config.js` 有以下内容：
 
 ```js
 module.exports = {
@@ -163,9 +163,9 @@ api.describeConfig({
   /* ... */
   // 该配置所有可能的文件
   files: {
-    // vue.config.js
+    // svelte.config.js
     vue: {
-      js: ['vue.config.js']
+      js: ['svelte.config.js']
     }
   },
 })
@@ -209,9 +209,9 @@ api.describeConfig({
       // 会从 `package.json` 读取
       package: 'eslintConfig'
     },
-    // vue.config.js
+    // svelte.config.js
     vue: {
-      js: ['vue.config.js']
+      js: ['svelte.config.js']
     }
   },
 })
@@ -630,7 +630,7 @@ api.addTask({
 
 作为开发依赖安装 `@svel/cli-ui`。
 
-然后添加一个 `vue.config.js` 文件并附带以下内容：
+然后添加一个 `svelte.config.js` 文件并附带以下内容：
 
 ```js
 const { clientAddonConfig } = require('@svel/cli-ui')

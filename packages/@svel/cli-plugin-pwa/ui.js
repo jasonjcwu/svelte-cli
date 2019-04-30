@@ -9,7 +9,7 @@ module.exports = api => {
     link: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa#configuration',
     files: {
       vue: {
-        js: ['vue.config.js']
+        js: ['svelte.config.js']
       },
       manifest: {
         json: ['public/manifest.json']

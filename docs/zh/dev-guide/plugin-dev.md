@@ -48,7 +48,7 @@ Service 插件会在一个 Service 实例被创建时自动加载——比如每
 
 - 一个 [PluginAPI][plugin-api] 实例
 
-- 一个包含 `vue.config.js` 内指定的项目本地选项的对象，或者在 `package.json` 内的 `vue` 字段。
+- 一个包含 `svelte.config.js` 内指定的项目本地选项的对象，或者在 `package.json` 内的 `vue` 字段。
 
 这个 API 允许 service 插件针对不同的环境扩展/修改内部的 webpack 配置，并向 `vue-cli-service` 注入额外的命令。例如：
 
@@ -126,7 +126,7 @@ api.registerCommand('my-build', args => {
 
 #### 第三方插件的自定义选项
 
-`vue.config.js` 的导出将会[通过一个 schema 的验证](https://github.com/vuejs/vue-cli/blob/dev/packages/%40vue/cli-service/lib/options.js#L3)以避免笔误和错误的配置值。然而，一个第三方插件仍然允许用户通过 `pluginOptions` 字段配置其行为。例如，对于下面的 `vue.config.js`：
+`svelte.config.js` 的导出将会[通过一个 schema 的验证](https://github.com/vuejs/vue-cli/blob/dev/packages/%40vue/cli-service/lib/options.js#L3)以避免笔误和错误的配置值。然而，一个第三方插件仍然允许用户通过 `pluginOptions` 字段配置其行为。例如，对于下面的 `svelte.config.js`：
 
 ``` js
 module.exports = {

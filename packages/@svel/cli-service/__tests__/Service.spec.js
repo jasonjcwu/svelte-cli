@@ -1,5 +1,5 @@
 jest.mock('fs')
-jest.mock('/vue.config.js', () => ({ lintOnSave: false }), { virtual: true })
+jest.mock('/svelte.config.js', () => ({ lintOnSave: false }), { virtual: true })
 jest.mock('vue-cli-plugin-foo', () => () => {}, { virtual: true })
 
 const fs = require('fs')
@@ -139,34 +139,34 @@ test('keep publicPath when empty', () => {
   expect(service.projectOptions.publicPath).toBe('')
 })
 
-test('load project options from vue.config.js', () => {
-  process.env.VUE_CLI_SERVICE_CONFIG_PATH = `/vue.config.js`
-  fs.writeFileSync('/vue.config.js', `module.exports = { lintOnSave: false }`)
+test('load project options from svelte.config.js', () => {
+  process.env.VUE_CLI_SERVICE_CONFIG_PATH = `/svelte.config.js`
+  fs.writeFileSync('/svelte.config.js', `module.exports = { lintOnSave: false }`)
   mockPkg({
     vue: {
       lintOnSave: true
     }
   })
   const service = createMockService()
-  fs.unlinkSync('/vue.config.js')
+  fs.unlinkSync('/svelte.config.js')
   delete process.env.VUE_CLI_SERVICE_CONFIG_PATH
-  // vue.config.js has higher priority
+  // svelte.config.js has higher priority
   expect(service.projectOptions.lintOnSave).toBe(false)
 })
 
-test('load project options from vue.config.js', () => {
-  process.env.VUE_CLI_SERVICE_CONFIG_PATH = `/vue.config.js`
-  fs.writeFileSync('/vue.config.js', '')  // only to ensure fs.existsSync returns true
-  jest.mock('/vue.config.js', () => function () { return { lintOnSave: false } }, { virtual: true })
+test('load project options from svelte.config.js', () => {
+  process.env.VUE_CLI_SERVICE_CONFIG_PATH = `/svelte.config.js`
+  fs.writeFileSync('/svelte.config.js', '')  // only to ensure fs.existsSync returns true
+  jest.mock('/svelte.config.js', () => function () { return { lintOnSave: false } }, { virtual: true })
   mockPkg({
     vue: {
       lintOnSave: true
     }
   })
   const service = createMockService()
-  fs.unlinkSync('/vue.config.js')
+  fs.unlinkSync('/svelte.config.js')
   delete process.env.VUE_CLI_SERVICE_CONFIG_PATH
-  // vue.config.js has higher priority
+  // svelte.config.js has higher priority
   expect(service.projectOptions.lintOnSave).toBe(false)
 })
 

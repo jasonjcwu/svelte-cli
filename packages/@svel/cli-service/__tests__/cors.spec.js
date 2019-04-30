@@ -11,7 +11,7 @@ let server, browser, page
 test('build', async () => {
   const project = await create('e2e-build-cors', defaultPreset)
 
-  await project.write('vue.config.js', `
+  await project.write('svelte.config.js', `
     module.exports = {
       crossorigin: '',
       integrity: true

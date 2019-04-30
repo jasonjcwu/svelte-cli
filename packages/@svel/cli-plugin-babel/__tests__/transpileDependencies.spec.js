@@ -70,7 +70,7 @@ test('dep from node_modules should not been transpiled', async () => {
 
 test('dep from node_modules should been transpiled', async () => {
   await project.write(
-    'vue.config.js',
+    'svelte.config.js',
     `module.exports = { transpileDependencies: ['external-dep', '@scope/external-dep'] }`
   )
   await project.run('vue-cli-service build')
@@ -82,7 +82,7 @@ test('dep from node_modules should been transpiled', async () => {
 // https://github.com/vuejs/vue-cli/issues/3057
 test('only transpile package with same name specified in transpileDependencies', async () => {
   await project.write(
-    'vue.config.js',
+    'svelte.config.js',
     `module.exports = { transpileDependencies: ['babel-transpile-deps'] }`
   )
   try {

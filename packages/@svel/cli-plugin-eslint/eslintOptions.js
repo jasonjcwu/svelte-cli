@@ -3,6 +3,7 @@ exports.config = api => {
     root: true,
     env: { node: true },
     plugins: ['svelte3'],
+    extends: [],
     rules: {
       'no-console': makeJSOnlyValue(`process.env.NODE_ENV === 'production' ? 'error' : 'off'`),
       'no-debugger': makeJSOnlyValue(`process.env.NODE_ENV === 'production' ? 'error' : 'off'`)

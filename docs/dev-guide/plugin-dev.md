@@ -298,7 +298,7 @@ A service plugin should export a function which receives two arguments:
 
 - A [PluginAPI](plugin-api.md) instance
 
-- An object containing project local options specified in `vue.config.js`, or in the `"vue"` field in `package.json`.
+- An object containing project local options specified in `svelte.config.js`, or in the `"vue"` field in `package.json`.
 
 The minimal required code in the service plugin file is the following:
 
@@ -551,7 +551,7 @@ Now if you explore your project in the Vue UI, you will find your task added to 
 
 ### Display a configuration screen
 
-Sometimes your project can have custom configuration files for different features or libraries. With Vue CLI plugin you can display this config in Vue UI, change it and save (saving will change the corresponding config file in your project). By default, Vue CLI project has a main configuration screen representing `vue.config.js` settings. If you included ESLint to your project, you will see also a ESLint configuration screen:
+Sometimes your project can have custom configuration files for different features or libraries. With Vue CLI plugin you can display this config in Vue UI, change it and save (saving will change the corresponding config file in your project). By default, Vue CLI project has a main configuration screen representing `svelte.config.js` settings. If you included ESLint to your project, you will see also a ESLint configuration screen:
 
 ![UI Configuration Screen](/ui-configuration-default.png)
 

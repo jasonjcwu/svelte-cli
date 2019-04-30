@@ -99,7 +99,7 @@ api.describeConfig({
 
 ### Файлы конфигураций
 
-По умолчанию конфигурация UI может читать и записывать в один или несколько файлов, например как в `.eslintrc.js` так и в `vue.config.js`.
+По умолчанию конфигурация UI может читать и записывать в один или несколько файлов, например как в `.eslintrc.js` так и в `svelte.config.js`.
 
 Вы можете указать, какие файлы обнаруживать в проекте пользователя:
 
@@ -115,9 +115,9 @@ api.describeConfig({
       // Будет читать из `package.json`
       package: 'eslintConfig'
     },
-    // vue.config.js
+    // svelte.config.js
     vue: {
-      js: ['vue.config.js']
+      js: ['svelte.config.js']
     }
   },
 })
@@ -146,7 +146,7 @@ api.describeConfig({
 
 Объект `data` содержит JSON с результатом контента каждого файла конфигурации.
 
-Например, допустим, что у пользователя есть следующий `vue.config.js` в проекте:
+Например, допустим, что у пользователя есть следующий `svelte.config.js` в проекте:
 
 ```js
 module.exports = {
@@ -161,9 +161,9 @@ api.describeConfig({
   /* ... */
   // Все возможные файлы в этой конфигурации
   files: {
-    // vue.config.js
+    // svelte.config.js
     vue: {
-      js: ['vue.config.js']
+      js: ['svelte.config.js']
     }
   },
 })
@@ -207,9 +207,9 @@ api.describeConfig({
       // Будет читать из `package.json`
       package: 'eslintConfig'
     },
-    // vue.config.js
+    // svelte.config.js
     vue: {
-      js: ['vue.config.js']
+      js: ['svelte.config.js']
     }
   },
 })
@@ -632,7 +632,7 @@ api.addTask({
 
 Установите `@svel/cli-ui` в качестве зависимости для разработки (dev dependency).
 
-Затем добавьте файл `vue.config.js` со следующим содержимым:
+Затем добавьте файл `svelte.config.js` со следующим содержимым:
 
 ```js
 const { clientAddonConfig } = require('@svel/cli-ui')

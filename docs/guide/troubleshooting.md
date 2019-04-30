@@ -21,7 +21,7 @@ If there're dependencies installed by `npm link` or `yarn link`, ESLint (and som
 A workaround for this issue is to manually disable symlinks resolution in webpack:
 
 ```js
-// vue.config.js
+// svelte.config.js
 module.exports = {
   chainWebpack: (config) => {
     config.resolve.symlinks(false)
