@@ -1,10 +1,9 @@
 exports.getPromptModules = () => {
   return [
     'babel',
-    'typescript',
+    // 'typescript',
     'pwa',
     'router',
-    'vuex',
     'cssPreprocessors',
     'linter',
     'unit',

@@ -5,14 +5,8 @@ module.exports = (api, options) => {
 
   api.extendPackage({
     scripts: {
-      'serve': 'vue-cli-service serve',
-      'build': 'vue-cli-service build'
-    },
-    dependencies: {
-      'vue': '^2.6.10'
-    },
-    devDependencies: {
-      'vue-template-compiler': '^2.5.21'
+      'serve': 'svelte-cli-service serve',
+      'build': 'svelte-cli-service build'
     },
     'postcss': {
       'plugins': {
@@ -27,10 +21,6 @@ module.exports = (api, options) => {
 
   if (options.router) {
     require('./router')(api, options)
-  }
-
-  if (options.vuex) {
-    require('./vuex')(api, options)
   }
 
   if (options.cssPreprocessor) {

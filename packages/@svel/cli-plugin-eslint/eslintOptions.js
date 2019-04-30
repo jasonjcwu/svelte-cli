@@ -2,7 +2,7 @@ exports.config = api => {
   const config = {
     root: true,
     env: { node: true },
-    extends: ['plugin:vue/essential'],
+    plugins: ['svelte3'],
     rules: {
       'no-console': makeJSOnlyValue(`process.env.NODE_ENV === 'production' ? 'error' : 'off'`),
       'no-debugger': makeJSOnlyValue(`process.env.NODE_ENV === 'production' ? 'error' : 'off'`)
@@ -24,7 +24,7 @@ function makeJSOnlyValue (str) {
   return fn
 }
 
-const baseExtensions = ['.js', '.jsx', '.vue']
+const baseExtensions = ['.js', '.jsx', '.svelte']
 exports.extensions = api => api.hasPlugin('typescript')
   ? baseExtensions.concat('.ts', '.tsx')
   : baseExtensions

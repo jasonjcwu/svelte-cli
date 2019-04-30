@@ -38,7 +38,7 @@ module.exports = (api, options) => {
 
     webpackConfig.resolve
       .extensions
-        .merge(['.mjs', '.js', '.jsx', '.vue', '.json', '.wasm'])
+        .merge(['.mjs', '.js', '.jsx', '.svelte', '.json', '.wasm'])
         .end()
       .modules
         .add('node_modules')
@@ -47,12 +47,6 @@ module.exports = (api, options) => {
         .end()
       .alias
         .set('@', api.resolve('src'))
-        .set(
-          'vue$',
-          options.runtimeCompiler
-            ? 'vue/dist/vue.esm.js'
-            : 'vue/dist/vue.runtime.esm.js'
-        )
 
     webpackConfig.resolveLoader
       .modules
@@ -60,37 +54,24 @@ module.exports = (api, options) => {
         .add(api.resolve('node_modules'))
         .add(resolveLocal('node_modules'))
 
-    webpackConfig.module
-      .noParse(/^(vue|vue-router|vuex|vuex-router-sync)$/)
-
     // js is handled by cli-plugin-babel ---------------------------------------
 
-    // vue-loader --------------------------------------------------------------
-    const vueLoaderCacheConfig = api.genCacheConfig('vue-loader', {
-      'vue-loader': require('vue-loader/package.json').version,
-      /* eslint-disable-next-line node/no-extraneous-require */
-      '@vue/component-compiler-utils': require('@vue/component-compiler-utils/package.json').version,
-      'vue-template-compiler': require('vue-template-compiler/package.json').version
+    // svelte-loader --------------------------------------------------------------
+    const svelteLoaderCacheConfig = api.genCacheConfig('svelte-loader', {
+      'svelte-loader': require('svelte-loader/package.json').version
     })
+    const preprocess = require('svelte-preprocess')({ /* options */ })
 
     webpackConfig.module
-      .rule('vue')
-        .test(/\.vue$/)
+      .rule('svelte')
+        .test(/\.svelte$/)
         .use('cache-loader')
           .loader('cache-loader')
-          .options(vueLoaderCacheConfig)
+          .options(svelteLoaderCacheConfig)
           .end()
-        .use('vue-loader')
-          .loader('vue-loader')
-          .options(Object.assign({
-            compilerOptions: {
-              preserveWhitespace: false
-            }
-          }, vueLoaderCacheConfig))
-
-    webpackConfig
-      .plugin('vue-loader')
-      .use(require('vue-loader/lib/plugin'))
+        .use('svelte-loader')
+          .loader('svelte-loader')
+          .options({ hotReload: false, preprocess })
 
     // static assets -----------------------------------------------------------
 

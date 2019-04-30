@@ -137,7 +137,7 @@ module.exports = class Creator extends EventEmitter {
     })
 
     // intilaize git repository before installing deps
-    // so that vue-cli-service can setup git hooks.
+    // so that svelte-cli-service can setup git hooks.
     const shouldInitGit = this.shouldInitGit(cliOptions)
     if (shouldInitGit) {
       logWithSpinner(`🗃`, `Initializing git repository...`)

@@ -10,7 +10,7 @@ module.exports = (api, { config, lintOn = [] }, _, invoking) => {
 
   const pkg = {
     scripts: {
-      lint: 'vue-cli-service lint'
+      lint: 'svelte-cli-service lint'
     },
     eslintConfig,
     // TODO:
@@ -20,7 +20,7 @@ module.exports = (api, { config, lintOn = [] }, _, invoking) => {
     devDependencies: {
       'babel-eslint': '^10.0.1',
       'eslint': '^5.16.0',
-      'eslint-plugin-vue': '^5.0.0'
+      'eslint-plugin-svelte3': '^1.0.0'
     }
   }
 
@@ -42,19 +42,19 @@ module.exports = (api, { config, lintOn = [] }, _, invoking) => {
   if (config === 'airbnb') {
     eslintConfig.extends.push('@svel/airbnb')
     Object.assign(pkg.devDependencies, {
-      '@svel/eslint-config-airbnb': '^4.0.0'
+      '@svel/eslint-config-airbnb': '*'
     })
     injectEditorConfig('airbnb')
   } else if (config === 'standard') {
     eslintConfig.extends.push('@svel/standard')
     Object.assign(pkg.devDependencies, {
-      '@svel/eslint-config-standard': '^4.0.0'
+      '@svel/eslint-config-standard': '*'
     })
     injectEditorConfig('standard')
   } else if (config === 'prettier') {
     eslintConfig.extends.push('@svel/prettier')
     Object.assign(pkg.devDependencies, {
-      '@svel/eslint-config-prettier': '^4.0.1'
+      '@svel/eslint-config-prettier': '*'
     })
     // prettier & default config do not have any style rules
     // so no need to generate an editorconfig file
@@ -77,7 +77,7 @@ module.exports = (api, { config, lintOn = [] }, _, invoking) => {
       'pre-commit': 'lint-staged'
     }
     pkg['lint-staged'] = {
-      '*.{js,vue}': ['vue-cli-service lint', 'git add']
+      '*.{js,svelte}': ['svelte-cli-service lint', 'git add']
     }
   }
 
@@ -116,7 +116,7 @@ const applyTS = module.exports.applyTS = api => {
       }
     },
     devDependencies: {
-      '@svel/eslint-config-typescript': '^4.0.0'
+      '@svel/eslint-config-typescript': '*'
     }
   })
 }

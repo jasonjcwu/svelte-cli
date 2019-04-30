@@ -32,11 +32,6 @@ module.exports = (context, options = {}) => {
   const plugins = []
   const defaultEntryFiles = JSON.parse(process.env.VUE_CLI_ENTRY_FILES || '[]')
 
-  // JSX
-  if (options.jsx !== false) {
-    presets.push([require('@svel/babel-preset-jsx'), typeof options.jsx === 'object' ? options.jsx : {}])
-  }
-
   const runtimePath = path.dirname(require.resolve('@babel/runtime/package.json'))
   const {
     polyfills: userPolyfills,

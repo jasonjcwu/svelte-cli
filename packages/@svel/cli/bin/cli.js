@@ -17,7 +17,7 @@ function checkNodeVersion (wanted, id) {
   }
 }
 
-checkNodeVersion(requiredVersion, 'vue-cli')
+checkNodeVersion(requiredVersion, 'svelte-cli')
 
 if (semver.satisfies(process.version, '9.x')) {
   console.log(chalk.red(
@@ -51,7 +51,7 @@ program
 
 program
   .command('create <app-name>')
-  .description('create a new project powered by vue-cli-service')
+  .description('create a new project powered by svelte-cli-service')
   .option('-p, --preset <presetName>', 'Skip prompts and use saved or remote preset')
   .option('-d, --default', 'Skip prompts and use default preset')
   .option('-i, --inlinePreset <json>', 'Skip prompts and use inline JSON string as preset')
@@ -97,7 +97,7 @@ program
 
 program
   .command('inspect [paths...]')
-  .description('inspect the webpack config in a project with vue-cli-service')
+  .description('inspect the webpack config in a project with svelte-cli-service')
   .option('--mode <mode>')
   .option('--rule <ruleName>', 'inspect a specific module rule')
   .option('--plugin <pluginName>', 'inspect a specific plugin')
@@ -110,7 +110,7 @@ program
 
 program
   .command('serve [entry]')
-  .description('serve a .js or .vue file in development mode with zero config')
+  .description('serve a .js or .svelte file in development mode with zero config')
   .option('-o, --open', 'Open browser')
   .option('-c, --copy', 'Copy local url to clipboard')
   .action((entry, cmd) => {
@@ -119,7 +119,7 @@ program
 
 program
   .command('build [entry]')
-  .description('build a .js or .vue file in production mode with zero config')
+  .description('build a .js or .svelte file in production mode with zero config')
   .option('-t, --target <target>', 'Build target (app | lib | wc | wc-async, default: app)')
   .option('-n, --name <name>', 'name for lib or web-component mode (default: entry filename)')
   .option('-d, --dest <dir>', 'output directory (default: dist)')
@@ -129,24 +129,15 @@ program
 
 program
   .command('ui')
-  .description('start and open the vue-cli ui')
+  .description('start and open the svelte-cli ui')
   .option('-H, --host <host>', 'Host used for the UI server (default: localhost)')
   .option('-p, --port <port>', 'Port used for the UI server (by default search for available port)')
   .option('-D, --dev', 'Run in dev mode')
   .option('--quiet', `Don't output starting messages`)
   .option('--headless', `Don't open browser on start and output port`)
   .action((cmd) => {
-    checkNodeVersion('>=8.6', 'vue ui')
+    checkNodeVersion('>=8.6', 'svelte ui')
     require('../lib/ui')(cleanArgs(cmd))
-  })
-
-program
-  .command('init <template> <app-name>')
-  .description('generate a project from a remote template (legacy API, requires @svel/cli-init)')
-  .option('-c, --clone', 'Use git clone when fetching remote template')
-  .option('--offline', 'Use cached template')
-  .action(() => {
-    loadCommand('init', '@svel/cli-init')
   })
 
 program
@@ -163,7 +154,7 @@ program
 
 program
   .command('upgrade [semverLevel]')
-  .description('upgrade vue cli service / plugins (default semverLevel: minor)')
+  .description('upgrade svelte cli service / plugins (default semverLevel: minor)')
   .action((semverLevel, cmd) => {
     loadCommand('upgrade', '@svel/cli-upgrade')(semverLevel, cleanArgs(cmd))
   })
@@ -201,7 +192,7 @@ program
 // add some useful info on help
 program.on('--help', () => {
   console.log()
-  console.log(`  Run ${chalk.cyan(`vue <command> --help`)} for detailed usage of given command.`)
+  console.log(`  Run ${chalk.cyan(`svelte <command> --help`)} for detailed usage of given command.`)
   console.log()
 })
 

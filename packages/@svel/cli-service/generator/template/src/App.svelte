@@ -1,37 +1,27 @@
 <%_ if (!rootOptions.router) { _%>
-<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <%_ if (!rootOptions.bare) { _%>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <%_ } else { _%>
-    <h1>Welcome to Your Vue.js App</h1>
-    <%_ } _%>
-  </div>
-</template>
-  <%_ if (!rootOptions.bare) { _%>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
+import HelloWorld from './components/HelloWorld.svelte'
+import logo from './assets/logo.png';
 </script>
+
+<div id="app">
+  <img alt="Svelte logo" src={logo}>
+  <%_ if (!rootOptions.bare) { _%>
+  <HelloWorld message="Svelte"/>
+  <%_ } else { _%>
+  <h1>Welcome to Your Svelte.js App</h1>
+  <%_ } _%>
+</div>
+<%_ if (!rootOptions.bare) { _%>
   <%_ } _%>
 <%_ } else { _%>
-<template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <RouterLink to="/">Home</RouterLink> |
+      <RouterLink to="/about">About</RouterLink>
     </div>
-    <router-view/>
+    <RouterView/>
   </div>
-</template>
 <%_ } _%>
 <%_ if (!rootOptions.bare) { _%>
 <%_ if (rootOptions.cssPreprocessor !== 'stylus') { _%>

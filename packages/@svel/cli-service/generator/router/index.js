@@ -3,7 +3,7 @@ module.exports = (api, options = {}) => {
   api.injectRootOptions(api.entryFile, `router`)
   api.extendPackage({
     dependencies: {
-      'vue-router': '^3.0.3'
+      'svelte-router': '^2.0.0-beta.1'
     }
   })
   api.render('./template', {
@@ -13,18 +13,16 @@ module.exports = (api, options = {}) => {
 
   if (api.invoking) {
     api.postProcessFiles(files => {
-      const appFile = files[`src/App.vue`]
+      const appFile = files[`src/App.svelte`]
       if (appFile) {
-        files[`src/App.vue`] = appFile.replace(/^<template>[^]+<\/script>/, `
-<template>
+        files[`src/App.svelte`] = appFile.replace(/^<div id="app">[^]+<\/style>/, `
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <RouterLink to="/">Home</RouterLink> |
+      <RouterLink to="/about">About</RouterLink>
     </div>
-    <router-view/>
+    <RouterView/>
   </div>
-</template>
         `.trim())
       }
     })
