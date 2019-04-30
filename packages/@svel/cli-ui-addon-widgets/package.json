@@ -1,6 +1,6 @@
 {
   "name": "@svel/cli-ui-addon-widgets",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wmzy/svelte-cli.git",
@@ -18,9 +18,9 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@svel/cli-plugin-babel": "^0.1.0",
-    "@svel/cli-plugin-eslint": "^0.1.0",
-    "@svel/cli-service": "^0.1.0",
+    "@svel/cli-plugin-babel": "^0.1.1",
+    "@svel/cli-plugin-eslint": "^0.1.1",
+    "@svel/cli-service": "^0.1.1",
     "@svel/eslint-config-standard": "^4.0.0",
     "eslint": "^5.16.0",
     "stylus": "^0.54.5",
