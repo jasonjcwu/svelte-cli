@@ -1,9 +1,8 @@
 module.exports = (api, options = {}) => {
-  api.injectImports(api.entryFile, `import router from './router'`)
   api.injectRootOptions(api.entryFile, `router`)
   api.extendPackage({
     dependencies: {
-      'svelte-router': '^2.0.0-beta.1'
+      '@svel/router': '^0.2.1'
     }
   })
   api.render('./template', {
@@ -16,6 +15,7 @@ module.exports = (api, options = {}) => {
       const appFile = files[`src/App.svelte`]
       if (appFile) {
         files[`src/App.svelte`] = appFile.replace(/^<div id="app">[^]+<\/style>/, `
+<RouterProvider {router}>
   <div id="app">
     <div id="nav">
       <RouterLink to="/">Home</RouterLink> |
@@ -23,6 +23,7 @@ module.exports = (api, options = {}) => {
     </div>
     <RouterView/>
   </div>
+</RouterProvider>
         `.trim())
       }
     })

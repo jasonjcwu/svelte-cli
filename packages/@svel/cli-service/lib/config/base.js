@@ -37,6 +37,10 @@ module.exports = (api, options) => {
         .publicPath(options.publicPath)
 
     webpackConfig.resolve
+      .mainFields
+        .prepend('svelte')
+        .merge(['browser', 'module', 'main'])
+        .end()
       .extensions
         .merge(['.mjs', '.js', '.jsx', '.svelte', '.json', '.wasm'])
         .end()

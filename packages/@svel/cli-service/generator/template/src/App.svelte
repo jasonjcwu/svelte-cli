@@ -15,6 +15,12 @@ import logo from './assets/logo.png';
 <%_ if (!rootOptions.bare) { _%>
   <%_ } _%>
 <%_ } else { _%>
+<script>
+import {RouterProvider, RouterLink, RouterView} from '@svel/router'
+import router from './router'
+</script>
+
+<RouterProvider {router}>
   <div id="app">
     <div id="nav">
       <RouterLink to="/">Home</RouterLink> |
@@ -22,6 +28,7 @@ import logo from './assets/logo.png';
     </div>
     <RouterView/>
   </div>
+</RouterProvider>
 <%_ } _%>
 <%_ if (!rootOptions.bare) { _%>
 <%_ if (rootOptions.cssPreprocessor !== 'stylus') { _%>

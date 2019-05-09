@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "@svel/router": "^0.2.1",
     "@vuepress/plugin-pwa": "^1.0.0-alpha.44",
     "@vuepress/theme-vue": "1.0.0-alpha.44",
     "babel-core": "7.0.0-bridge.0",
@@ -51,6 +52,7 @@
     "eslint": "^5.16.0",
     "eslint-plugin-graphql": "^3.0.3",
     "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-svelte3": "^1.0.0",
     "eslint-plugin-vue": "^5.2.2",
     "eslint-plugin-vue-libs": "^3.0.0",
     "execa": "^1.0.0",

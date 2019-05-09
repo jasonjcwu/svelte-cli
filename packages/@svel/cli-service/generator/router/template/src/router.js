@@ -1,11 +1,8 @@
-import Router from 'svelte-router'
+import {HistoryRouter} from '@svel/router'
 import Home from './views/Home.svelte'
 
-export default new Router({
-  <%_ if (historyMode) { _%>
-  mode: 'history',
+export default new HistoryRouter({
   base: process.env.BASE_URL,
-  <%_ } _%>
   routes: [
     {
       path: '/',
@@ -18,13 +15,7 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      <%_ if (doesCompile) { _%>
       component: () => import(/* webpackChunkName: "about" */ './views/About.svelte')
-      <%_ } else { _%>
-      component: function () {
-        return import(/* webpackChunkName: "about" */ './views/About.svelte')
-      }
-      <%_ } _%>
     }
   ]
 })
