@@ -1,6 +1,6 @@
 {
-  "name": "Vue CLI",
-  "short_name": "Vue CLI",
+  "name": "Svelte CLI",
+  "short_name": "Svelte CLI",
   "icons": [
     {
       "src": "/icons/android-chrome-192x192.png",

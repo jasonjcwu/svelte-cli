@@ -6,10 +6,6 @@ actionLink: /guide/
 footer: MIT Licensed | Copyright © 2018-present Evan You
 ---
 
-<div style="text-align: center">
-  <Bit/>
-</div>
-
 <div class="features">
   <div class="feature">
     <h2>Feature Rich</h2>
@@ -21,7 +17,7 @@ footer: MIT Licensed | Copyright © 2018-present Evan You
   </div>
   <div class="feature">
     <h2>No Need to Eject</h2>
-    <p>Vue CLI is fully configurable without the need for ejecting. This allows your project to stay up-to-date for the long run.</p>
+    <p>Svelte CLI is fully configurable without the need for ejecting. This allows your project to stay up-to-date for the long run.</p>
   </div>
   <div class="feature">
     <h2>Graphical User Interface</h2>
@@ -29,11 +25,11 @@ footer: MIT Licensed | Copyright © 2018-present Evan You
   </div>
   <div class="feature">
     <h2>Instant Prototyping</h2>
-    <p>Instantly prototype new ideas with a single Vue file.</p>
+    <p>Instantly prototype new ideas with a single Svelte file.</p>
   </div>
   <div class="feature">
     <h2>Future Ready</h2>
-    <p>Effortlessly ship native ES2015 code for modern browsers, or build your vue components as native web components.</p>
+    <p>Effortlessly ship native ES2015 code for modern browsers, or build your svelte components as native web components.</p>
   </div>
 </div>
 
@@ -50,7 +46,7 @@ yarn global add @svel/cli
 Create a project:
 
 ``` bash
-vue create my-project
+svelte create my-project
 # OR
-vue ui
+svelte ui
 ```

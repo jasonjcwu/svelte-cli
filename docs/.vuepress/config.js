@@ -3,28 +3,28 @@ module.exports = {
   locales: {
     '/': {
       lang: 'en-US',
-      title: 'Vue CLI',
-      description: '🛠️ Standard Tooling for Vue.js Development'
+      title: 'Svelte CLI',
+      description: '🛠️ Standard Tooling for Svelte.js Development'
     },
     '/zh/': {
       lang: 'zh-CN',
-      title: 'Vue CLI',
-      description: '🛠️ Vue.js 开发的标准工具'
+      title: 'Svelte CLI',
+      description: '🛠️ Svelte.js 开发的非标准工具'
     },
     '/ru/': {
       lang: 'ru',
-      title: 'Vue CLI',
-      description: '🛠️ Стандартный инструментарий для разработки на Vue.js'
+      title: 'Svelte CLI',
+      description: '🛠️ Стандартный инструментарий для разработки на Svelte.js'
     }
   },
   head: [
-    ['link', { rel: 'icon', href: '/favicon.png' }],
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['link', { rel: 'manifest', href: '/manifest.json' }],
-    ['meta', { name: 'theme-color', content: '#3eaf7c' }],
+    ['meta', { name: 'theme-color', content: '#f53e03' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
     ['link', { rel: 'apple-touch-icon', href: `/icons/apple-touch-icon-152x152.png` }],
-    ['link', { rel: 'mask-icon', href: '/icons/safari-pinned-tab.svg', color: '#3eaf7c' }],
+    ['link', { rel: 'mask-icon', href: '/icons/safari-pinned-tab.svg', color: '#f53e03' }],
     ['meta', { name: 'msapplication-TileImage', content: '/icons/msapplication-icon-144x144.png' }],
     ['meta', { name: 'msapplication-TileColor', content: '#000000' }]
   ],
@@ -49,7 +49,7 @@ module.exports = {
   },
   theme: '@vuepress/theme-vue',
   themeConfig: {
-    repo: 'vuejs/vue-cli',
+    repo: 'wmzy/svelte-cli',
     docsDir: 'docs',
     docsBranch: 'docs',
     editLinks: true,
@@ -85,19 +85,19 @@ module.exports = {
           {
             text: 'Plugins',
             items: [
-              { text: 'Babel', link: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel' },
-              { text: 'TypeScript', link: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-typescript' },
-              { text: 'ESLint', link: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint' },
-              { text: 'PWA', link: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa' },
-              { text: 'Jest', link: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-unit-jest' },
-              { text: 'Mocha', link: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-unit-mocha' },
-              { text: 'Cypress', link: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-e2e-cypress' },
-              { text: 'Nightwatch', link: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-e2e-nightwatch' }
+              { text: 'Babel', link: 'https://github.com/wmzy/svelte-cli/tree/dev/packages/%40vue/cli-plugin-babel' },
+              { text: 'TypeScript', link: 'https://github.com/wmzy/svelte-cli/tree/dev/packages/%40vue/cli-plugin-typescript' },
+              { text: 'ESLint', link: 'https://github.com/wmzy/svelte-cli/tree/dev/packages/%40vue/cli-plugin-eslint' },
+              { text: 'PWA', link: 'https://github.com/wmzy/svelte-cli/tree/dev/packages/%40vue/cli-plugin-pwa' },
+              { text: 'Jest', link: 'https://github.com/wmzy/svelte-cli/tree/dev/packages/%40vue/cli-plugin-unit-jest' },
+              { text: 'Mocha', link: 'https://github.com/wmzy/svelte-cli/tree/dev/packages/%40vue/cli-plugin-unit-mocha' },
+              { text: 'Cypress', link: 'https://github.com/wmzy/svelte-cli/tree/dev/packages/%40vue/cli-plugin-e2e-cypress' },
+              { text: 'Nightwatch', link: 'https://github.com/wmzy/svelte-cli/tree/dev/packages/%40vue/cli-plugin-e2e-nightwatch' }
             ]
           },
           {
             text: 'Changelog',
-            link: 'https://github.com/vuejs/vue-cli/blob/dev/CHANGELOG.md'
+            link: 'https://github.com/wmzy/svelte-cli/blob/dev/CHANGELOG.md'
           }
         ],
         sidebar: {
@@ -177,19 +177,19 @@ module.exports = {
           {
             text: '插件',
             items: [
-              { text: 'Babel', link: 'https://github.com/vuejs/vue-docs-zh-cn/blob/master/vue-cli-plugin-babel/README.md' },
-              { text: 'TypeScript', link: 'https://github.com/vuejs/vue-docs-zh-cn/blob/master/vue-cli-plugin-typescript/README.md' },
-              { text: 'ESLint', link: 'https://github.com/vuejs/vue-docs-zh-cn/blob/master/vue-cli-plugin-eslint/README.md' },
-              { text: 'PWA', link: 'https://github.com/vuejs/vue-docs-zh-cn/blob/master/vue-cli-plugin-pwa/README.md' },
-              { text: 'Jest', link: 'https://github.com/vuejs/vue-docs-zh-cn/blob/master/vue-cli-plugin-unit-jest/README.md' },
-              { text: 'Mocha', link: 'https://github.com/vuejs/vue-docs-zh-cn/blob/master/vue-cli-plugin-unit-mocha/README.md' },
-              { text: 'Cypress', link: 'https://github.com/vuejs/vue-docs-zh-cn/blob/master/vue-cli-plugin-e2e-cypress/README.md' },
-              { text: 'Nightwatch', link: 'https://github.com/vuejs/vue-docs-zh-cn/blob/master/vue-cli-plugin-e2e-nightwatch/README.md' }
+              { text: 'Babel', link: 'https://github.com/wmzy/svelte-docs-zh-cn/blob/master/vue-cli-plugin-babel/README.md' },
+              { text: 'TypeScript', link: 'https://github.com/wmzy/svelte-docs-zh-cn/blob/master/vue-cli-plugin-typescript/README.md' },
+              { text: 'ESLint', link: 'https://github.com/wmzy/svelte-docs-zh-cn/blob/master/vue-cli-plugin-eslint/README.md' },
+              { text: 'PWA', link: 'https://github.com/wmzy/svelte-docs-zh-cn/blob/master/vue-cli-plugin-pwa/README.md' },
+              { text: 'Jest', link: 'https://github.com/wmzy/svelte-docs-zh-cn/blob/master/vue-cli-plugin-unit-jest/README.md' },
+              { text: 'Mocha', link: 'https://github.com/wmzy/svelte-docs-zh-cn/blob/master/vue-cli-plugin-unit-mocha/README.md' },
+              { text: 'Cypress', link: 'https://github.com/wmzy/svelte-docs-zh-cn/blob/master/vue-cli-plugin-e2e-cypress/README.md' },
+              { text: 'Nightwatch', link: 'https://github.com/wmzy/svelte-docs-zh-cn/blob/master/vue-cli-plugin-e2e-nightwatch/README.md' }
             ]
           },
           {
             text: '更新记录',
-            link: 'https://github.com/vuejs/vue-cli/blob/dev/CHANGELOG.md'
+            link: 'https://github.com/wmzy/svelte-cli/blob/dev/CHANGELOG.md'
           }
         ],
         sidebar: {
@@ -260,19 +260,19 @@ module.exports = {
           {
             text: 'Плагины',
             items: [
-              { text: 'Babel', link: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel' },
-              { text: 'TypeScript', link: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-typescript' },
-              { text: 'ESLint', link: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint' },
-              { text: 'PWA', link: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa' },
-              { text: 'Jest', link: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-unit-jest' },
-              { text: 'Mocha', link: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-unit-mocha' },
-              { text: 'Cypress', link: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-e2e-cypress' },
-              { text: 'Nightwatch', link: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-e2e-nightwatch' }
+              { text: 'Babel', link: 'https://github.com/wmzy/svelte-cli/tree/dev/packages/%40vue/cli-plugin-babel' },
+              { text: 'TypeScript', link: 'https://github.com/wmzy/svelte-cli/tree/dev/packages/%40vue/cli-plugin-typescript' },
+              { text: 'ESLint', link: 'https://github.com/wmzy/svelte-cli/tree/dev/packages/%40vue/cli-plugin-eslint' },
+              { text: 'PWA', link: 'https://github.com/wmzy/svelte-cli/tree/dev/packages/%40vue/cli-plugin-pwa' },
+              { text: 'Jest', link: 'https://github.com/wmzy/svelte-cli/tree/dev/packages/%40vue/cli-plugin-unit-jest' },
+              { text: 'Mocha', link: 'https://github.com/wmzy/svelte-cli/tree/dev/packages/%40vue/cli-plugin-unit-mocha' },
+              { text: 'Cypress', link: 'https://github.com/wmzy/svelte-cli/tree/dev/packages/%40vue/cli-plugin-e2e-cypress' },
+              { text: 'Nightwatch', link: 'https://github.com/wmzy/svelte-cli/tree/dev/packages/%40vue/cli-plugin-e2e-nightwatch' }
             ]
           },
           {
             text: 'История изменений',
-            link: 'https://github.com/vuejs/vue-cli/blob/dev/CHANGELOG.md'
+            link: 'https://github.com/wmzy/svelte-cli/blob/dev/CHANGELOG.md'
           }
         ],
         sidebar: {
