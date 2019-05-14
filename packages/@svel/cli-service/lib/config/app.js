@@ -15,12 +15,12 @@ function ensureRelative (outputDir, _path) {
 module.exports = (api, options) => {
   api.chainWebpack(webpackConfig => {
     // only apply when there's no alternative target
-    if (process.env.VUE_CLI_BUILD_TARGET && process.env.VUE_CLI_BUILD_TARGET !== 'app') {
+    if (process.env.SVELTE_CLI_BUILD_TARGET && process.env.SVELTE_CLI_BUILD_TARGET !== 'app') {
       return
     }
 
     const isProd = process.env.NODE_ENV === 'production'
-    const isLegacyBundle = process.env.VUE_CLI_MODERN_MODE && !process.env.VUE_CLI_MODERN_BUILD
+    const isLegacyBundle = process.env.SVELTE_CLI_MODERN_MODE && !process.env.SVELTE_CLI_MODERN_BUILD
     const outputDir = api.resolve(options.outputDir)
 
     // code splitting

@@ -1,1 +1,1 @@
-process.env.VUE_CLI_TEST = true
+process.env.SVELTE_CLI_TEST = true

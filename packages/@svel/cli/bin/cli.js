@@ -39,7 +39,7 @@ if (
     fs.existsSync(path.resolve(process.cwd(), '../../@svel'))
   )
 ) {
-  process.env.VUE_CLI_DEBUG = true
+  process.env.SVELTE_CLI_DEBUG = true
 }
 
 const program = require('commander')

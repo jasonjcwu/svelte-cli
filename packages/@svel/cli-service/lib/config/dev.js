@@ -15,7 +15,7 @@ module.exports = (api, options) => {
         .output
           .globalObject('this')
 
-      if (!process.env.VUE_CLI_TEST && options.devServer.progress !== false) {
+      if (!process.env.SVELTE_CLI_TEST && options.devServer.progress !== false) {
         webpackConfig
           .plugin('progress')
           .use(require('webpack/lib/ProgressPlugin'))

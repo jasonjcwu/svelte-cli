@@ -13,7 +13,7 @@
 
 ```
 FOO=bar
-VUE_APP_SECRET=secret
+SVELTE_APP_SECRET=secret
 ```
 
 Эти переменные будут доступны для всех команд `vue-cli-service`, плагинов и зависимостей.
@@ -51,33 +51,33 @@ VUE_APP_SECRET=secret
 Предположим, что у нас есть приложение с `.env` файлом:
 
 ```
-VUE_APP_TITLE=My App
+SVELTE_APP_TITLE=My App
 ```
 
 И следующий `.env.staging` файл:
 
 ```
 NODE_ENV=production
-VUE_APP_TITLE=My App (staging)
+SVELTE_APP_TITLE=My App (staging)
 ```
 
 - `vue-cli-service build` собирает приложение для production, загружает `.env`, `.env.production` и `.env.production.local` если они присутствуют;
 
 - `vue-cli-service build --mode staging` собирает приложение для production в режиме staging, используя `.env`, `.env.staging` и `.env.staging.local` если они присутствуют.
 
-В обоих случаях приложение собирается для production из-за установленного `NODE_ENV`, но в режиме staging, `process.env.VUE_APP_TITLE` будет перезаписываться другим значением.
+В обоих случаях приложение собирается для production из-за установленного `NODE_ENV`, но в режиме staging, `process.env.SVELTE_APP_TITLE` будет перезаписываться другим значением.
 
 ## Использование переменных окружения в клиентском коде
 
-Только переменные с префиксом `VUE_APP_` статически внедряются в клиентскую сборку используя `webpack.DefinePlugin`. К ним можно получить доступ из кода вашего приложения:
+Только переменные с префиксом `SVELTE_APP_` статически внедряются в клиентскую сборку используя `webpack.DefinePlugin`. К ним можно получить доступ из кода вашего приложения:
 
 ``` js
-console.log(process.env.VUE_APP_SECRET)
+console.log(process.env.SVELTE_APP_SECRET)
 ```
 
-На этапе сборки `process.env.VUE_APP_SECRET` будет заменяться соответствующим значением. Когда в файле указано `VUE_APP_SECRET=secret` — после сборки значением будет `"secret"`.
+На этапе сборки `process.env.SVELTE_APP_SECRET` будет заменяться соответствующим значением. Когда в файле указано `SVELTE_APP_SECRET=secret` — после сборки значением будет `"secret"`.
 
-В дополнение к переменным `VUE_APP_*` также есть две специальные переменные, которые всегда доступны в коде вашего приложения:
+В дополнение к переменным `SVELTE_APP_*` также есть две специальные переменные, которые всегда доступны в коде вашего приложения:
 
 - `NODE_ENV` — значение будет `"development"`, `"production"` или `"test"` в зависимости от [режима работы](#режимы-работы) в котором работает приложение.
 - `BASE_URL` — соответствует опции `publicPath` в `svelte.config.js` и определяет базовый путь по которому опубликовано ваше приложение.
@@ -85,7 +85,7 @@ console.log(process.env.VUE_APP_SECRET)
 Все разрешённые переменные окружения также будут доступны внутри `public/index.html` как обсуждалось ранее в разделе [HTML - Интерполяции](./html-and-static-assets.md#интерпоnяции).
 
 ::: tip Совет
-Можно добавлять вычисляемые переменные окружения в `svelte.config.js`. Они по-прежнему должны именоваться с префикса `VUE_APP_`. Это может пригодиться например для получения информации о версии `process.env.VUE_APP_VERSION = require('./package.json').version`
+Можно добавлять вычисляемые переменные окружения в `svelte.config.js`. Они по-прежнему должны именоваться с префикса `SVELTE_APP_`. Это может пригодиться например для получения информации о версии `process.env.SVELTE_APP_VERSION = require('./package.json').version`
 :::
 
 ## Переменные только для локального окружения

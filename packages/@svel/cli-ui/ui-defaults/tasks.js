@@ -387,7 +387,7 @@ module.exports = api => {
     }
   })
 
-  if (process.env.VUE_APP_CLI_UI_DEV) {
+  if (process.env.SVELTE_APP_CLI_UI_DEV) {
     // Add dynamic components in dev mode (webpack dashboard & analyzer)
     api.addClientAddon({
       id: 'org.vue.webpack.client-addon.dev',

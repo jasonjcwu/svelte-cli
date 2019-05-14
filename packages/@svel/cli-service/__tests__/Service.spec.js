@@ -47,7 +47,7 @@ test('env loading', () => {
 })
 
 test('env loading for custom mode', () => {
-  process.env.VUE_CLI_TEST_TESTING_ENV = true
+  process.env.SVELTE_CLI_TEST_TESTING_ENV = true
   fs.writeFileSync('/.env', 'FOO=1')
   fs.writeFileSync('/.env.staging', 'FOO=2\nNODE_ENV=production')
   createMockService([], true, 'staging')
@@ -55,7 +55,7 @@ test('env loading for custom mode', () => {
   expect(process.env.FOO).toBe('2')
   expect(process.env.NODE_ENV).toBe('production')
 
-  process.env.VUE_CLI_TEST_TESTING_ENV = false
+  process.env.SVELTE_CLI_TEST_TESTING_ENV = false
   fs.unlinkSync('/.env')
   fs.unlinkSync('/.env.staging')
 })
@@ -140,7 +140,7 @@ test('keep publicPath when empty', () => {
 })
 
 test('load project options from svelte.config.js', () => {
-  process.env.VUE_CLI_SERVICE_CONFIG_PATH = `/svelte.config.js`
+  process.env.SVELTE_CLI_SERVICE_CONFIG_PATH = `/svelte.config.js`
   fs.writeFileSync('/svelte.config.js', `module.exports = { lintOnSave: false }`)
   mockPkg({
     vue: {
@@ -149,13 +149,13 @@ test('load project options from svelte.config.js', () => {
   })
   const service = createMockService()
   fs.unlinkSync('/svelte.config.js')
-  delete process.env.VUE_CLI_SERVICE_CONFIG_PATH
+  delete process.env.SVELTE_CLI_SERVICE_CONFIG_PATH
   // svelte.config.js has higher priority
   expect(service.projectOptions.lintOnSave).toBe(false)
 })
 
 test('load project options from svelte.config.js', () => {
-  process.env.VUE_CLI_SERVICE_CONFIG_PATH = `/svelte.config.js`
+  process.env.SVELTE_CLI_SERVICE_CONFIG_PATH = `/svelte.config.js`
   fs.writeFileSync('/svelte.config.js', '')  // only to ensure fs.existsSync returns true
   jest.mock('/svelte.config.js', () => function () { return { lintOnSave: false } }, { virtual: true })
   mockPkg({
@@ -165,7 +165,7 @@ test('load project options from svelte.config.js', () => {
   })
   const service = createMockService()
   fs.unlinkSync('/svelte.config.js')
-  delete process.env.VUE_CLI_SERVICE_CONFIG_PATH
+  delete process.env.SVELTE_CLI_SERVICE_CONFIG_PATH
   // svelte.config.js has higher priority
   expect(service.projectOptions.lintOnSave).toBe(false)
 })
@@ -311,7 +311,7 @@ test('api: configureWebpack preserve ruleNames', () => {
   expect(config.module.rules[0].__ruleNames).toEqual(['js'])
 })
 
-test('internal: should correctly set VUE_CLI_ENTRY_FILES', () => {
+test('internal: should correctly set SVELTE_CLI_ENTRY_FILES', () => {
   const service = createMockService([{
     id: 'test',
     apply: api => {
@@ -325,7 +325,7 @@ test('internal: should correctly set VUE_CLI_ENTRY_FILES', () => {
   }])
 
   service.resolveWebpackConfig()
-  expect(process.env.VUE_CLI_ENTRY_FILES).toEqual(
+  expect(process.env.SVELTE_CLI_ENTRY_FILES).toEqual(
     JSON.stringify([
       path.resolve('/', './src/page1.js'),
       path.resolve('/', './src/page2.js')

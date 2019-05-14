@@ -177,7 +177,7 @@ module.exports = (api, options) => {
 
     // on appveyor, killing the process with SIGTERM causes execa to
     // throw error
-    if (process.env.VUE_CLI_TEST) {
+    if (process.env.SVELTE_CLI_TEST) {
       process.stdin.on('data', data => {
         if (data.toString() === 'close') {
           console.log('got close signal!')
@@ -267,7 +267,7 @@ module.exports = (api, options) => {
             server,
             url: urls.localUrlForBrowser
           })
-        } else if (process.env.VUE_CLI_TEST) {
+        } else if (process.env.SVELTE_CLI_TEST) {
           // signal for test to check HMR
           console.log('App updated')
         }

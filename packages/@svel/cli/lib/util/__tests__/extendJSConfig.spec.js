@@ -67,12 +67,12 @@ test(`with extra assignment expression`, () => {
     foo: true
   }
   const source =
-`process.env.VUE_APP_TEST = 'test'
+`process.env.SVELTE_APP_TEST = 'test'
 module.exports = {
   bar: 123
 }`
   expect(extend(value, source)).toMatch(
-    `process.env.VUE_APP_TEST = 'test'
+    `process.env.SVELTE_APP_TEST = 'test'
 module.exports = {
   bar: 123,
   foo: true

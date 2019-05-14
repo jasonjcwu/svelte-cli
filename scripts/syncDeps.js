@@ -218,7 +218,7 @@ async function syncDeps ({ local, version, skipPrompt }) {
 
 exports.syncDeps = syncDeps
 
-if (!process.env.VUE_CLI_RELEASE) {
+if (!process.env.SVELTE_CLI_RELEASE) {
   const args = require('minimist')(process.argv.slice(2))
   syncDeps(args).catch(err => {
     console.log(err)

@@ -65,7 +65,7 @@ async function addVuex (context) {
 module.exports = (...args) => {
   return add(...args).catch(err => {
     error(err)
-    if (!process.env.VUE_CLI_TEST) {
+    if (!process.env.SVELTE_CLI_TEST) {
       process.exit(1)
     }
   })

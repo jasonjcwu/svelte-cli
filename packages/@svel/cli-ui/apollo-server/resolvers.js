@@ -17,7 +17,7 @@ const stats = require('./util/stats')
 // Start ipc server
 require('./util/ipc')
 
-process.env.VUE_CLI_API_MODE = true
+process.env.SVELTE_CLI_API_MODE = true
 
 const resolvers = [{
   JSON: GraphQLJSON,

@@ -13,7 +13,7 @@
 
 ```
 FOO=bar
-VUE_APP_SECRET=secret
+SVELTE_APP_SECRET=secret
 ```
 
 被载入的变量将会对 `vue-cli-service` 的所有命令、插件和依赖可用。
@@ -52,33 +52,33 @@ VUE_APP_SECRET=secret
 假设我们有一个应用包含以下 `.env` 文件：
 
 ```
-VUE_APP_TITLE=My App
+SVELTE_APP_TITLE=My App
 ```
 
 和 `.env.staging` 文件：
 
 ```
 NODE_ENV=production
-VUE_APP_TITLE=My App (staging)
+SVELTE_APP_TITLE=My App (staging)
 ```
 
 - `vue-cli-service build` 会加载可能存在的 `.env`、`.env.production` 和 `.env.production.local` 文件然后构建出生产环境应用；
 
 - `vue-cli-service build --mode staging` 会在 staging 模式下加载可能存在的 `.env`、`.env.staging` 和 `.env.staging.local` 文件然后构建出生产环境应用。
 
-这两种情况下，根据 `NODE_ENV`，构建出的应用都是生产环境应用，但是在 staging 版本中，`process.env.VUE_APP_TITLE` 被覆写成了另一个值。
+这两种情况下，根据 `NODE_ENV`，构建出的应用都是生产环境应用，但是在 staging 版本中，`process.env.SVELTE_APP_TITLE` 被覆写成了另一个值。
 
 ## 在客户端侧代码中使用环境变量
 
-只有以 `VUE_APP_` 开头的变量会被 `webpack.DefinePlugin` 静态嵌入到客户端侧的包中。你可以在应用的代码中这样访问它们：
+只有以 `SVELTE_APP_` 开头的变量会被 `webpack.DefinePlugin` 静态嵌入到客户端侧的包中。你可以在应用的代码中这样访问它们：
 
 ``` js
-console.log(process.env.VUE_APP_SECRET)
+console.log(process.env.SVELTE_APP_SECRET)
 ```
 
-在构建过程中，`process.env.VUE_APP_SECRET` 将会被相应的值所取代。在 `VUE_APP_SECRET=secret` 的情况下，它会被替换为 `"sercet"`。
+在构建过程中，`process.env.SVELTE_APP_SECRET` 将会被相应的值所取代。在 `SVELTE_APP_SECRET=secret` 的情况下，它会被替换为 `"sercet"`。
 
-除了 `VUE_APP_*` 变量之外，在你的应用代码中始终可用的还有两个特殊的变量：
+除了 `SVELTE_APP_*` 变量之外，在你的应用代码中始终可用的还有两个特殊的变量：
 
 - `NODE_ENV` - 会是 `"development"`、`"production"` 或 `"test"` 中的一个。具体的值取决于应用运行的[模式](#模式)。
 - `BASE_URL` - 会和 `svelte.config.js` 中的 `publicPath` 选项相符，即你的应用会部署到的基础路径。
@@ -86,7 +86,7 @@ console.log(process.env.VUE_APP_SECRET)
 所有解析出来的环境变量都可以在 `public/index.html` 中以 [HTML 插值](./html-and-static-assets.md#插值)中介绍的方式使用。
 
 ::: tip 提示
-你可以在 `svelte.config.js` 文件中计算环境变量。它们仍然需要以 `VUE_APP_` 前缀开头。这可以用于版本信息 `process.env.VUE_APP_VERSION = require('./package.json').version`。
+你可以在 `svelte.config.js` 文件中计算环境变量。它们仍然需要以 `SVELTE_APP_` 前缀开头。这可以用于版本信息 `process.env.SVELTE_APP_VERSION = require('./package.json').version`。
 :::
 
 ## 只在本地有效的变量

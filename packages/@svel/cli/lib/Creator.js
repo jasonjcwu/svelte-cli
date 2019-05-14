@@ -47,7 +47,7 @@ module.exports = class Creator extends EventEmitter {
     super()
 
     this.name = name
-    this.context = process.env.VUE_CLI_CONTEXT = context
+    this.context = process.env.SVELTE_CLI_CONTEXT = context
     const { presetPrompt, featurePrompt } = this.resolveIntroPrompts()
     this.presetPrompt = presetPrompt
     this.featurePrompt = featurePrompt
@@ -63,7 +63,7 @@ module.exports = class Creator extends EventEmitter {
   }
 
   async create (cliOptions = {}, preset = null) {
-    const isTestOrDebug = process.env.VUE_CLI_TEST || process.env.VUE_CLI_DEBUG
+    const isTestOrDebug = process.env.SVELTE_CLI_TEST || process.env.SVELTE_CLI_DEBUG
     const { run, name, context, createCompleteCbs } = this
 
     if (!preset) {

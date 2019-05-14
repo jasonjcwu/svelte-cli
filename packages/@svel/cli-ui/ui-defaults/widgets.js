@@ -1,7 +1,7 @@
 module.exports = api => {
   const { registerWidget, onAction, setSharedData } = api.namespace('org.vue.widgets.')
 
-  if (process.env.VUE_APP_CLI_UI_DEV) {
+  if (process.env.SVELTE_APP_CLI_UI_DEV) {
     api.addClientAddon({
       id: 'org.vue.widgets.client-addon.dev',
       url: 'http://localhost:8097/index.js'

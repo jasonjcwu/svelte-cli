@@ -1,4 +1,4 @@
-const prefixRE = /^VUE_APP_/
+const prefixRE = /^SVELTE_APP_/
 
 module.exports = function resolveClientEnv (options, raw) {
   const env = {}

@@ -152,7 +152,7 @@ module.exports = class Generator {
         extract(key)
       }
     } else {
-      if (!process.env.VUE_CLI_TEST) {
+      if (!process.env.SVELTE_CLI_TEST) {
         // by default, always extract svelte.config.js
         extract('vue')
       }

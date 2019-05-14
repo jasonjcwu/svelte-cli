@@ -7,7 +7,7 @@ exports.validate = (obj, schema, cb) => {
   require('joi').validate(obj, schema, {}, err => {
     if (err) {
       cb(err.message)
-      if (process.env.VUE_CLI_TEST) {
+      if (process.env.SVELTE_CLI_TEST) {
         throw err
       } else {
         exit(1)

@@ -15,9 +15,9 @@ import { getForcedTheme } from './util/theme'
 // Install the vue plugin
 Vue.use(VueApollo)
 
-let endpoint = process.env.VUE_APP_CLI_UI_URL
+let endpoint = process.env.SVELTE_APP_CLI_UI_URL
 if (typeof endpoint === 'undefined') {
-  endpoint = `ws://localhost:${process.env.VUE_APP_GRAPHQL_PORT}/graphql`
+  endpoint = `ws://localhost:${process.env.SVELTE_APP_GRAPHQL_PORT}/graphql`
 } else if (endpoint === '') {
   endpoint = window.location.origin.replace('http', 'ws') + '/graphql'
 }

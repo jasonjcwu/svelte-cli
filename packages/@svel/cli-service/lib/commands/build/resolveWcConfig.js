@@ -3,7 +3,7 @@ const { resolveEntry, fileToComponentName } = require('./resolveWcEntry')
 
 module.exports = (api, { target, entry, name }) => {
   // Disable CSS extraction and turn on CSS shadow mode for vue-style-loader
-  process.env.VUE_CLI_CSS_SHADOW_MODE = true
+  process.env.SVELTE_CLI_CSS_SHADOW_MODE = true
 
   const { log, error } = require('@svel/cli-shared-utils')
   const abort = msg => {

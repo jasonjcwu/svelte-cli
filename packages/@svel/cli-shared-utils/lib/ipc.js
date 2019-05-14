@@ -1,6 +1,6 @@
 const ipc = require('node-ipc')
 
-const DEFAULT_ID = process.env.VUE_CLI_IPC || 'vue-cli'
+const DEFAULT_ID = process.env.SVELTE_CLI_IPC || 'vue-cli'
 const DEFAULT_IDLE_TIMEOUT = 3000
 const DEFAULT_OPTIONS = {
   networkId: DEFAULT_ID,
@@ -10,7 +10,7 @@ const DEFAULT_OPTIONS = {
   namespaceOnProject: true
 }
 
-const PROJECT_ID = process.env.VUE_CLI_PROJECT_ID
+const PROJECT_ID = process.env.SVELTE_CLI_PROJECT_ID
 
 exports.IpcMessenger = class IpcMessenger {
   constructor (options = {}) {

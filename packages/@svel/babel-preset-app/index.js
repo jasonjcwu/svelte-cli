@@ -30,7 +30,7 @@ function getPolyfills (targets, includes, { ignoreBrowserslistConfig, configPath
 module.exports = (context, options = {}) => {
   const presets = []
   const plugins = []
-  const defaultEntryFiles = JSON.parse(process.env.VUE_CLI_ENTRY_FILES || '[]')
+  const defaultEntryFiles = JSON.parse(process.env.SVELTE_CLI_ENTRY_FILES || '[]')
 
   const runtimePath = path.dirname(require.resolve('@babel/runtime/package.json'))
   const {
@@ -41,7 +41,7 @@ module.exports = (context, options = {}) => {
     modules = false,
     targets: rawTargets,
     spec,
-    ignoreBrowserslistConfig = !!process.env.VUE_CLI_MODERN_BUILD,
+    ignoreBrowserslistConfig = !!process.env.SVELTE_CLI_MODERN_BUILD,
     configPath,
     include,
     exclude,
@@ -63,10 +63,10 @@ module.exports = (context, options = {}) => {
 
   // resolve targets
   let targets
-  if (process.env.VUE_CLI_BABEL_TARGET_NODE) {
+  if (process.env.SVELTE_CLI_BABEL_TARGET_NODE) {
     // running tests in Node.js
     targets = { node: 'current' }
-  } else if (process.env.VUE_CLI_BUILD_TARGET === 'wc' || process.env.VUE_CLI_BUILD_TARGET === 'wc-async') {
+  } else if (process.env.SVELTE_CLI_BUILD_TARGET === 'wc' || process.env.SVELTE_CLI_BUILD_TARGET === 'wc-async') {
     // targeting browsers that at least support ES2015 classes
     // https://github.com/babel/babel/blob/master/packages/babel-preset-env/data/plugins.json#L52-L61
     targets = {
@@ -79,7 +79,7 @@ module.exports = (context, options = {}) => {
         'Electron >= 0.36'
       ]
     }
-  } else if (process.env.VUE_CLI_MODERN_BUILD) {
+  } else if (process.env.SVELTE_CLI_MODERN_BUILD) {
     // targeting browsers that support <script type="module">
     targets = { esmodules: true }
   } else {
@@ -91,12 +91,12 @@ module.exports = (context, options = {}) => {
   // useBuiltIns: 'usage' we won't be running Babel on these deps, they need to
   // be force-included.
   let polyfills
-  const buildTarget = process.env.VUE_CLI_BUILD_TARGET || 'app'
+  const buildTarget = process.env.SVELTE_CLI_BUILD_TARGET || 'app'
   if (
     buildTarget === 'app' &&
     useBuiltIns === 'usage' &&
-    !process.env.VUE_CLI_BABEL_TARGET_NODE &&
-    !process.env.VUE_CLI_MODERN_BUILD
+    !process.env.SVELTE_CLI_BABEL_TARGET_NODE &&
+    !process.env.SVELTE_CLI_MODERN_BUILD
   ) {
     polyfills = getPolyfills(targets, userPolyfills || defaultPolyfills, {
       ignoreBrowserslistConfig,
@@ -126,7 +126,7 @@ module.exports = (context, options = {}) => {
   }
 
   // cli-plugin-jest sets this to true because Jest runs without bundling
-  if (process.env.VUE_CLI_BABEL_TRANSPILE_MODULES) {
+  if (process.env.SVELTE_CLI_BABEL_TRANSPILE_MODULES) {
     envOptions.modules = 'commonjs'
     // necessary for dynamic import to work in tests
     plugins.push(require('babel-plugin-dynamic-import-node'))
@@ -155,7 +155,7 @@ module.exports = (context, options = {}) => {
     corejs: false,
 
     helpers: useBuiltIns === 'usage',
-    useESModules: !process.env.VUE_CLI_BABEL_TRANSPILE_MODULES,
+    useESModules: !process.env.SVELTE_CLI_BABEL_TRANSPILE_MODULES,
 
     absoluteRuntime
   }])
@@ -166,7 +166,7 @@ module.exports = (context, options = {}) => {
   // this extra plugin can be removed once one of the two issues resolves:
   // https://github.com/babel/babel/issues/7597
   // https://github.com/babel/babel/issues/9903
-  if (useBuiltIns === 'usage' && !process.env.VUE_CLI_MODERN_BUILD) {
+  if (useBuiltIns === 'usage' && !process.env.SVELTE_CLI_MODERN_BUILD) {
     const runtimeCoreJs2Path = path.dirname(require.resolve('@babel/runtime-corejs2/package.json'))
     plugins.push([require('babel-plugin-module-resolver'), {
       alias: {

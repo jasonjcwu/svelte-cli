@@ -87,7 +87,7 @@ async function addRegistryToArgs (command, args, cliRegistry) {
 
 function executeCommand (command, args, targetDir) {
   return new Promise((resolve, reject) => {
-    const apiMode = process.env.VUE_CLI_API_MODE
+    const apiMode = process.env.SVELTE_CLI_API_MODE
 
     progress.enabled = false
 

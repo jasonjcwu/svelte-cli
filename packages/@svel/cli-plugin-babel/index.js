@@ -50,7 +50,7 @@ module.exports = (api, options) => {
             '@babel/core': require('@babel/core/package.json').version,
             '@svel/babel-preset-app': require('@svel/babel-preset-app/package.json').version,
             'babel-loader': require('babel-loader/package.json').version,
-            modern: !!process.env.VUE_CLI_MODERN_BUILD,
+            modern: !!process.env.SVELTE_CLI_MODERN_BUILD,
             browserslist: api.service.pkg.browserslist
           }, [
             'babel.config.js',

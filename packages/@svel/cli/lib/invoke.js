@@ -118,7 +118,7 @@ async function invoke (pluginName, options = {}, context = process.cwd()) {
 }
 
 async function runGenerator (context, plugin, pkg = getPkg(context)) {
-  const isTestOrDebug = process.env.VUE_CLI_TEST || process.env.VUE_CLI_DEBUG
+  const isTestOrDebug = process.env.SVELTE_CLI_TEST || process.env.SVELTE_CLI_DEBUG
   const createCompleteCbs = []
   const generator = new Generator(context, {
     pkg,
@@ -159,7 +159,7 @@ async function runGenerator (context, plugin, pkg = getPkg(context)) {
   }
 
   log(`${chalk.green('✔')}  Successfully invoked generator for plugin: ${chalk.cyan(plugin.id)}`)
-  if (!process.env.VUE_CLI_TEST && hasProjectGit(context)) {
+  if (!process.env.SVELTE_CLI_TEST && hasProjectGit(context)) {
     const { stdout } = await execa('git', [
       'ls-files',
       '--exclude-standard',
@@ -194,7 +194,7 @@ async function runGenerator (context, plugin, pkg = getPkg(context)) {
 module.exports = (...args) => {
   return invoke(...args).catch(err => {
     error(err)
-    if (!process.env.VUE_CLI_TEST) {
+    if (!process.env.SVELTE_CLI_TEST) {
       process.exit(1)
     }
   })

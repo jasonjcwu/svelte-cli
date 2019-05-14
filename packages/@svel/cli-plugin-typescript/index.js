@@ -31,7 +31,7 @@ module.exports = (api, options) => {
       options: api.genCacheConfig('ts-loader', {
         'ts-loader': require('ts-loader/package.json').version,
         'typescript': require('typescript/package.json').version,
-        modern: !!process.env.VUE_CLI_MODERN_BUILD
+        modern: !!process.env.SVELTE_CLI_MODERN_BUILD
       }, 'tsconfig.json')
     })
 
@@ -67,7 +67,7 @@ module.exports = (api, options) => {
       return options
     })
 
-    if (!process.env.VUE_CLI_TEST) {
+    if (!process.env.SVELTE_CLI_TEST) {
       // this plugin does not play well with jest + cypress setup (tsPluginE2e.spec.js) somehow
       // so temporarily disabled for vue-cli tests
       config

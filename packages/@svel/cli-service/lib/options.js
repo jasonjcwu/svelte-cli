@@ -103,7 +103,7 @@ exports.defaults = () => ({
   ],
 
   // sourceMap for production build?
-  productionSourceMap: !process.env.VUE_CLI_TEST,
+  productionSourceMap: !process.env.SVELTE_CLI_TEST,
 
   // use thread-loader for babel & TS in production build
   // enabled by default if the machine has more than 1 cores

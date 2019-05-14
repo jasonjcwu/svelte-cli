@@ -61,7 +61,7 @@ module.exports = async function shouldUseTaobao (command) {
     return save(false)
   }
 
-  if (process.env.VUE_CLI_API_MODE) {
+  if (process.env.SVELTE_CLI_API_MODE) {
     return save(true)
   }
 

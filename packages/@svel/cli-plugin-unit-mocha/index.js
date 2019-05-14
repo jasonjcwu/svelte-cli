@@ -43,7 +43,7 @@ module.exports = api => {
       nodeArgs = rawArgv.splice(inspectPos, inspectPos + 1)
     }
     // for @svel/babel-preset-app
-    process.env.VUE_CLI_BABEL_TARGET_NODE = true
+    process.env.SVELTE_CLI_BABEL_TARGET_NODE = true
     // start runner
     const { execa } = require('@svel/cli-shared-utils')
     const bin = require.resolve('mocha-webpack/bin/mocha-webpack')

@@ -172,7 +172,7 @@ class PluginAPI {
       'cli-service': require('../package.json').version,
       'cache-loader': require('cache-loader/package.json').version,
       env: process.env.NODE_ENV,
-      test: !!process.env.VUE_CLI_TEST,
+      test: !!process.env.SVELTE_CLI_TEST,
       config: [
         fmtFunc(this.service.projectOptions.chainWebpack),
         fmtFunc(this.service.projectOptions.configureWebpack)

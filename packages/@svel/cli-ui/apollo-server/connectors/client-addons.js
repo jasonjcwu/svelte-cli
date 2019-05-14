@@ -6,9 +6,9 @@ const { resolveModuleRoot } = require('../util/resolve-path')
 
 let addons = []
 
-let baseUrl = process.env.VUE_APP_CLI_UI_URL
+let baseUrl = process.env.SVELTE_APP_CLI_UI_URL
 if (typeof baseUrl === 'undefined') {
-  baseUrl = `http://localhost:${process.env.VUE_APP_GRAPHQL_PORT}`
+  baseUrl = `http://localhost:${process.env.SVELTE_APP_GRAPHQL_PORT}`
 } else {
   baseUrl = baseUrl.replace(/ws:\/\/([a-z0-9_-]+:\d+).*/i, 'http://$1')
 }

@@ -6,7 +6,7 @@ const EventEmitter = require('events')
 exports.events = new EventEmitter()
 
 function _log (type, tag, message) {
-  if (process.env.VUE_CLI_API_MODE && message) {
+  if (process.env.SVELTE_CLI_API_MODE && message) {
     exports.events.emit('log', {
       message,
       type,
@@ -67,6 +67,6 @@ exports.clearConsole = title => {
 }
 
 // silent all logs except errors during tests and keep record
-if (process.env.VUE_CLI_TEST) {
+if (process.env.SVELTE_CLI_TEST) {
   require('./_silence')('logs', exports)
 }

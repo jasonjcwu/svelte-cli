@@ -48,10 +48,10 @@ module.exports = (api, options) => {
       args.entry = args.entry || 'src/App.vue'
     }
 
-    process.env.VUE_CLI_BUILD_TARGET = args.target
+    process.env.SVELTE_CLI_BUILD_TARGET = args.target
     if (args.modern && args.target === 'app') {
-      process.env.VUE_CLI_MODERN_MODE = true
-      if (!process.env.VUE_CLI_MODERN_BUILD) {
+      process.env.SVELTE_CLI_MODERN_MODE = true
+      if (!process.env.SVELTE_CLI_MODERN_BUILD) {
         // main-process for legacy build
         await build(Object.assign({}, args, {
           modernBuild: false,
@@ -63,7 +63,7 @@ module.exports = (api, options) => {
         await execa(cliBin, ['build', ...rawArgs], {
           stdio: 'inherit',
           env: {
-            VUE_CLI_MODERN_BUILD: true
+            SVELTE_CLI_MODERN_BUILD: true
           }
         })
       } else {
@@ -73,7 +73,7 @@ module.exports = (api, options) => {
           clean: false
         }), api, options)
       }
-      delete process.env.VUE_CLI_MODERN_MODE
+      delete process.env.SVELTE_CLI_MODERN_MODE
     } else {
       if (args.modern) {
         const { warn } = require('@svel/cli-shared-utils')
@@ -85,7 +85,7 @@ module.exports = (api, options) => {
       }
       await build(args, api, options)
     }
-    delete process.env.VUE_CLI_BUILD_TARGET
+    delete process.env.SVELTE_CLI_BUILD_TARGET
   })
 }
 
@@ -217,7 +217,7 @@ async function build (args, api, options) {
       }
 
       // test-only signal
-      if (process.env.VUE_CLI_TEST) {
+      if (process.env.SVELTE_CLI_TEST) {
         console.log('Build complete.')
       }
 

@@ -1,6 +1,6 @@
 module.exports = (api, options) => {
   api.chainWebpack(webpackConfig => {
-    const target = process.env.VUE_CLI_BUILD_TARGET
+    const target = process.env.SVELTE_CLI_BUILD_TARGET
     if (target && target !== 'app') {
       return
     }

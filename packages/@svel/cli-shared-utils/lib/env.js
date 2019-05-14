@@ -17,7 +17,7 @@ const _gitProjects = new LRU({
 
 // env detection
 exports.hasYarn = () => {
-  if (process.env.VUE_CLI_TEST) {
+  if (process.env.SVELTE_CLI_TEST) {
     return true
   }
   if (_hasYarn != null) {
@@ -48,7 +48,7 @@ function checkYarn (result) {
 }
 
 exports.hasGit = () => {
-  if (process.env.VUE_CLI_TEST) {
+  if (process.env.SVELTE_CLI_TEST) {
     return true
   }
   if (_hasGit != null) {
@@ -86,7 +86,7 @@ const _pnpmProjects = new LRU({
 })
 
 exports.hasPnpm3OrLater = () => {
-  if (process.env.VUE_CLI_TEST) {
+  if (process.env.SVELTE_CLI_TEST) {
     return true
   }
   if (_hasPnpm3orLater != null) {

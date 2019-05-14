@@ -1,7 +1,7 @@
 module.exports = (api, options) => {
   api.chainWebpack(webpackConfig => {
     if (process.env.NODE_ENV === 'production') {
-      const isLegacyBundle = process.env.VUE_CLI_MODERN_MODE && !process.env.VUE_CLI_MODERN_BUILD
+      const isLegacyBundle = process.env.SVELTE_CLI_MODERN_MODE && !process.env.SVELTE_CLI_MODERN_BUILD
       const getAssetPath = require('../util/getAssetPath')
       const filename = getAssetPath(
         options,
@@ -23,7 +23,7 @@ module.exports = (api, options) => {
           }])
 
       // disable optimization during tests to speed things up
-      if (process.env.VUE_CLI_TEST) {
+      if (process.env.SVELTE_CLI_TEST) {
         webpackConfig.optimization.minimize(false)
       } else {
         const TerserPlugin = require('terser-webpack-plugin')

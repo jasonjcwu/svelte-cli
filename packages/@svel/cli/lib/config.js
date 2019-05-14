@@ -78,7 +78,7 @@ async function config (value, options) {
 module.exports = (...args) => {
   return config(...args).catch(err => {
     error(err)
-    if (!process.env.VUE_CLI_TEST) {
+    if (!process.env.SVELTE_CLI_TEST) {
       process.exit(1)
     }
   })

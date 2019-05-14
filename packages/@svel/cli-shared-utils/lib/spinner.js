@@ -44,6 +44,6 @@ exports.resumeSpinner = () => {
 }
 
 // silent all logs except errors during tests and keep record
-if (process.env.VUE_CLI_TEST) {
+if (process.env.SVELTE_CLI_TEST) {
   require('./_silence')('spinner', exports)
 }

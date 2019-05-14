@@ -3,7 +3,7 @@ const path = require('path')
 const execa = require('execa')
 
 module.exports = function createTestProject (name, preset, cwd, initGit) {
-  delete process.env.VUE_CLI_SKIP_WRITE
+  delete process.env.SVELTE_CLI_SKIP_WRITE
 
   cwd = cwd || path.resolve(__dirname, '../../test')
 

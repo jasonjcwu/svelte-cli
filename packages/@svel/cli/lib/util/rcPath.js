@@ -40,7 +40,7 @@ const migrateWindowsConfigPath = file => {
 exports.getRcPath = file => {
   migrateWindowsConfigPath(file)
   return (
-    process.env.VUE_CLI_CONFIG_PATH ||
+    process.env.SVELTE_CLI_CONFIG_PATH ||
     xdgConfigPath(file) ||
     path.join(os.homedir(), file)
   )

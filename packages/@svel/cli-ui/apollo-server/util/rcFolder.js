@@ -5,16 +5,16 @@ const { getRcPath } = require('@svel/cli/lib/util/rcPath')
 
 let folder
 
-if (process.env.VUE_CLI_UI_TEST) {
+if (process.env.SVELTE_CLI_UI_TEST) {
   folder = path.resolve(__dirname, '../../live-test')
   // Clean DB
   fs.removeSync(path.resolve(__dirname, folder))
-} else if (process.env.VUE_APP_CLI_UI_DEV) {
+} else if (process.env.SVELTE_APP_CLI_UI_DEV) {
   folder = path.resolve(__dirname, '../../live')
 } else {
   folder =
-    (process.env.VUE_CLI_UI_DB_PATH &&
-      path.resolve(__dirname, process.env.VUE_CLI_UI_DB_PATH)) ||
+    (process.env.SVELTE_CLI_UI_DB_PATH &&
+      path.resolve(__dirname, process.env.SVELTE_CLI_UI_DB_PATH)) ||
     getRcPath('.vue-cli-ui')
 }
 

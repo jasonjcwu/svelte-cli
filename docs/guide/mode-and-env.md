@@ -43,7 +43,7 @@ An env file simply contains key=value pairs of environment variables:
 
 ```
 FOO=bar
-VUE_APP_SECRET=secret
+SVELTE_APP_SECRET=secret
 ```
 
 For more detailed env parsing rules, please refer to [the documentation of `dotenv`](https://github.com/motdotla/dotenv#rules). We also use [dotenv-expand](https://github.com/motdotla/dotenv-expand) for variable expansion (available in Vue CLI 3.5+).
@@ -62,33 +62,33 @@ In addition, environment variables that already exist when Vue CLI is executed h
 Assuming we have an app with the following `.env` file:
 
 ```
-VUE_APP_TITLE=My App
+SVELTE_APP_TITLE=My App
 ```
 
 And the following `.env.staging` file:
 
 ```
 NODE_ENV=production
-VUE_APP_TITLE=My App (staging)
+SVELTE_APP_TITLE=My App (staging)
 ```
 
 - `vue-cli-service build` builds a production app, loading `.env`, `.env.production` and `.env.production.local` if they are present;
 
 - `vue-cli-service build --mode staging` builds a production app in staging mode, using `.env`, `.env.staging` and `.env.staging.local` if they are present.
 
-In both cases, the app is built as a production app because of the `NODE_ENV`, but in the staging version, `process.env.VUE_APP_TITLE` is overwritten with a different value.
+In both cases, the app is built as a production app because of the `NODE_ENV`, but in the staging version, `process.env.SVELTE_APP_TITLE` is overwritten with a different value.
 
 ### Using Env Variables in Client-side Code
 
-Only variables that start with `VUE_APP_` will be statically embedded into the client bundle with `webpack.DefinePlugin`. You can access them in your application code:
+Only variables that start with `SVELTE_APP_` will be statically embedded into the client bundle with `webpack.DefinePlugin`. You can access them in your application code:
 
 ``` js
-console.log(process.env.VUE_APP_SECRET)
+console.log(process.env.SVELTE_APP_SECRET)
 ```
 
-During build, `process.env.VUE_APP_SECRET` will be replaced by the corresponding value. In the case of `VUE_APP_SECRET=secret`, it will be replaced by `"secret"`.
+During build, `process.env.SVELTE_APP_SECRET` will be replaced by the corresponding value. In the case of `SVELTE_APP_SECRET=secret`, it will be replaced by `"secret"`.
 
-In addition to `VUE_APP_*` variables, there are also two special variables that will always be available in your app code:
+In addition to `SVELTE_APP_*` variables, there are also two special variables that will always be available in your app code:
 
 - `NODE_ENV` - this will be one of `"development"`, `"production"` or `"test"` depending on the [mode](#modes) the app is running in.
 - `BASE_URL` - this corresponds to the `publicPath` option in `svelte.config.js` and is the base path your app is deployed at.
@@ -96,10 +96,10 @@ In addition to `VUE_APP_*` variables, there are also two special variables that 
 All resolved env variables will be available inside `public/index.html` as discussed in [HTML - Interpolation](./html-and-static-assets.md#interpolation).
 
 ::: tip
-You can have computed env vars in your `svelte.config.js` file. They still need to be prefixed with `VUE_APP_`. This is useful for version info
+You can have computed env vars in your `svelte.config.js` file. They still need to be prefixed with `SVELTE_APP_`. This is useful for version info
 
 ```js
-process.env.VUE_APP_VERSION = require('./package.json').version
+process.env.SVELTE_APP_VERSION = require('./package.json').version
 
 module.exports = {
   // config

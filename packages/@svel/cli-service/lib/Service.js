@@ -15,7 +15,7 @@ const { defaults, validate } = require('./options')
 
 module.exports = class Service {
   constructor (context, { plugins, pkg, inlineOptions, useBuiltIn } = {}) {
-    process.VUE_CLI_SERVICE = this
+    process.SVELTE_CLI_SERVICE = this
     this.initialized = false
     this.context = context
     this.inlineOptions = inlineOptions
@@ -55,7 +55,7 @@ module.exports = class Service {
     }
   }
 
-  init (mode = process.env.VUE_CLI_MODE) {
+  init (mode = process.env.SVELTE_CLI_MODE) {
     if (this.initialized) {
       return
     }
@@ -117,8 +117,8 @@ module.exports = class Service {
       // always set NODE_ENV during tests
       // as that is necessary for tests to not be affected by each other
       const shouldForceDefaultEnv = (
-        process.env.VUE_CLI_TEST &&
-        !process.env.VUE_CLI_TEST_TESTING_ENV
+        process.env.SVELTE_CLI_TEST &&
+        !process.env.SVELTE_CLI_TEST_TESTING_ENV
       )
       const defaultNodeEnv = (mode === 'production' || mode === 'test')
         ? mode
@@ -258,9 +258,9 @@ module.exports = class Service {
     }
 
     // check if the user has manually mutated output.publicPath
-    const target = process.env.VUE_CLI_BUILD_TARGET
+    const target = process.env.SVELTE_CLI_BUILD_TARGET
     if (
-      !process.env.VUE_CLI_TEST &&
+      !process.env.SVELTE_CLI_TEST &&
       (target && target !== 'app') &&
       config.output.publicPath !== this.projectOptions.publicPath
     ) {
@@ -283,7 +283,7 @@ module.exports = class Service {
       }
 
       entryFiles = entryFiles.map(file => path.resolve(this.context, file))
-      process.env.VUE_CLI_ENTRY_FILES = JSON.stringify(entryFiles)
+      process.env.SVELTE_CLI_ENTRY_FILES = JSON.stringify(entryFiles)
     }
 
     return config
@@ -293,7 +293,7 @@ module.exports = class Service {
     // svelte.config.js
     let fileConfig, pkgConfig, resolved, resolvedFrom
     const configPath = (
-      process.env.VUE_CLI_SERVICE_CONFIG_PATH ||
+      process.env.SVELTE_CLI_SERVICE_CONFIG_PATH ||
       path.resolve(this.context, 'svelte.config.js')
     )
     if (fs.existsSync(configPath)) {

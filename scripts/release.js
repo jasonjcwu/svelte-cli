@@ -30,7 +30,7 @@ Note: eslint-config-* packages should be released separately & manually.
 
 */
 
-process.env.VUE_CLI_RELEASE = true
+process.env.SVELTE_CLI_RELEASE = true
 
 const execa = require('execa')
 const semver = require('semver')

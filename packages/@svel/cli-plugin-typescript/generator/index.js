@@ -77,7 +77,7 @@ module.exports = (api, {
   }
 
   api.render('./template', {
-    isTest: process.env.VUE_CLI_TEST || process.env.VUE_CLI_DEBUG,
+    isTest: process.env.SVELTE_CLI_TEST || process.env.SVELTE_CLI_DEBUG,
     hasMocha: api.hasPlugin('unit-mocha'),
     hasJest: api.hasPlugin('unit-jest')
   })

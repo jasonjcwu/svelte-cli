@@ -12,7 +12,7 @@ module.exports = cli => {
     name: 'cssPreprocessor',
     when: answers => answers.features.includes('css-preprocessor'),
     type: 'list',
-    message: `Pick a CSS pre-processor${process.env.VUE_CLI_API_MODE ? '' : ` (${notice})`}:`,
+    message: `Pick a CSS pre-processor${process.env.SVELTE_CLI_API_MODE ? '' : ` (${notice})`}:`,
     description: `${notice}.`,
     choices: [
       // In Vue CLI <= 3.3, the value of Sass option in 'sass' an means 'node-sass'.

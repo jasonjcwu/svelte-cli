@@ -12,7 +12,7 @@ const findExisting = (context, files) => {
 module.exports = (api, options) => {
   api.chainWebpack(webpackConfig => {
     const getAssetPath = require('../util/getAssetPath')
-    const shadowMode = !!process.env.VUE_CLI_CSS_SHADOW_MODE
+    const shadowMode = !!process.env.SVELTE_CLI_CSS_SHADOW_MODE
     const isProd = process.env.NODE_ENV === 'production'
 
     const defaultSassLoaderOptions = {}
@@ -39,7 +39,7 @@ module.exports = (api, options) => {
     }, extract && typeof extract === 'object' ? extract : {})
 
     // use relative publicPath in extracted CSS based on extract location
-    const cssPublicPath = process.env.VUE_CLI_BUILD_TARGET === 'lib'
+    const cssPublicPath = process.env.SVELTE_CLI_BUILD_TARGET === 'lib'
       // in lib mode, CSS is extracted to dist root.
       ? './'
       : '../'.repeat(

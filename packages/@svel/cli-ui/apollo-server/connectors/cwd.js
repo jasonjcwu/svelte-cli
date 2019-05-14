@@ -19,7 +19,7 @@ module.exports = {
     value = normalize(value)
     if (!fs.existsSync(value)) return
     cwd = value
-    process.env.VUE_CLI_CONTEXT = value
+    process.env.SVELTE_CLI_CONTEXT = value
     context.pubsub.publish(channels.CWD_CHANGED, { cwdChanged: value })
     try {
       process.chdir(value)

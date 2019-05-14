@@ -13,7 +13,7 @@ const genCoreJSImportRegExp = mod => {
 }
 
 beforeEach(() => {
-  process.env.VUE_CLI_ENTRY_FILES = JSON.stringify([path.join(process.cwd(), 'test-entry-file.js')])
+  process.env.SVELTE_CLI_ENTRY_FILES = JSON.stringify([path.join(process.cwd(), 'test-entry-file.js')])
 })
 
 test('polyfill detection', () => {
@@ -49,7 +49,7 @@ test('polyfill detection', () => {
 })
 
 test('modern mode always skips polyfills', () => {
-  process.env.VUE_CLI_MODERN_BUILD = true
+  process.env.SVELTE_CLI_MODERN_BUILD = true
   let { code } = babel.transformSync(`
     const a = new Map()
   `.trim(), {
@@ -79,7 +79,7 @@ test('modern mode always skips polyfills', () => {
   expect(code).not.toMatch(genCoreJSImportRegExp('es6.promise'))
   // usage-based detection
   expect(code).not.toMatch(/import "core-js\/modules\/es6.map"/)
-  delete process.env.VUE_CLI_MODERN_BUILD
+  delete process.env.SVELTE_CLI_MODERN_BUILD
 })
 
 test('object spread', () => {

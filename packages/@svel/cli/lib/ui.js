@@ -11,7 +11,7 @@ async function ui (options = {}, context = process.cwd()) {
   }
 
   // Config
-  process.env.VUE_APP_CLI_UI_URL = ''
+  process.env.SVELTE_APP_CLI_UI_URL = ''
 
   // Optimize express
   const nodeEnv = process.env.NODE_ENV
@@ -19,12 +19,12 @@ async function ui (options = {}, context = process.cwd()) {
 
   // Dev mode
   if (options.dev) {
-    process.env.VUE_APP_CLI_UI_DEBUG = true
+    process.env.SVELTE_APP_CLI_UI_DEBUG = true
   }
 
-  if (!process.env.VUE_CLI_IPC) {
+  if (!process.env.SVELTE_CLI_IPC) {
     // Prevent IPC id conflicts
-    process.env.VUE_CLI_IPC = `vue-cli-${shortid()}`
+    process.env.SVELTE_CLI_IPC = `vue-cli-${shortid()}`
   }
 
   if (!options.quiet) log(`🚀  Starting GUI...`)
@@ -71,7 +71,7 @@ async function ui (options = {}, context = process.cwd()) {
 module.exports = (...args) => {
   return ui(...args).catch(err => {
     error(err)
-    if (!process.env.VUE_CLI_TEST) {
+    if (!process.env.SVELTE_CLI_TEST) {
       process.exit(1)
     }
   })

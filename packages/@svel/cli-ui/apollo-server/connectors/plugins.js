@@ -235,7 +235,7 @@ function runPluginApi (id, pluginApi, context, filename = 'ui') {
   try {
     module = loadModule(`${id}/${filename}`, pluginApi.cwd, true)
   } catch (e) {
-    if (process.env.VUE_CLI_DEBUG) {
+    if (process.env.SVELTE_CLI_DEBUG) {
       console.error(e)
     }
   }
@@ -331,7 +331,7 @@ function install (id, context) {
     })
     currentPluginId = id
     installationStep = 'install'
-    if (process.env.VUE_CLI_DEBUG && isOfficialPlugin(id)) {
+    if (process.env.SVELTE_CLI_DEBUG && isOfficialPlugin(id)) {
       mockInstall(id, context)
     } else {
       await installPackage(cwd.get(), getCommand(cwd.get()), null, id)
@@ -409,7 +409,7 @@ function uninstall (id, context) {
     })
     installationStep = 'uninstall'
     currentPluginId = id
-    if (process.env.VUE_CLI_DEBUG && isOfficialPlugin(id)) {
+    if (process.env.SVELTE_CLI_DEBUG && isOfficialPlugin(id)) {
       mockUninstall(id, context)
     } else {
       await uninstallPackage(cwd.get(), getCommand(cwd.get()), null, id)

@@ -8,14 +8,14 @@ exports.generateTitle = async function (checkUpdate) {
 
   let title = chalk.bold.blue(`Vue CLI v${current}`)
 
-  if (process.env.VUE_CLI_TEST) {
+  if (process.env.SVELTE_CLI_TEST) {
     title += ' ' + chalk.blue.bold('TEST')
   }
-  if (process.env.VUE_CLI_DEBUG) {
+  if (process.env.SVELTE_CLI_DEBUG) {
     title += ' ' + chalk.magenta.bold('DEBUG')
   }
   if (checkUpdate && semver.gt(latest, current)) {
-    if (process.env.VUE_CLI_API_MODE) {
+    if (process.env.SVELTE_CLI_API_MODE) {
       title += chalk.green(` 🌟️ Update available: ${latest}`)
     } else {
       title += chalk.green(`
