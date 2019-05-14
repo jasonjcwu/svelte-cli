@@ -1,7 +1,7 @@
 {
   "name": "@svel/eslint-config-airbnb",
-  "version": "4.0.0",
-  "description": "eslint-config-airbnb for vue-cli",
+  "version": "1.0.0",
+  "description": "eslint-config-airbnb for svelte-cli",
   "main": "index.js",
   "publishConfig": {
     "access": "public"
@@ -12,7 +12,7 @@
     "directory": "packages/@svel/eslint-config-airbnb"
   },
   "keywords": [
-    "vue",
+    "svelte",
     "cli"
   ],
   "author": "Evan You",

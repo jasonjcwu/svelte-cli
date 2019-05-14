@@ -1,7 +1,7 @@
 {
   "name": "@svel/eslint-config-prettier",
-  "version": "4.0.1",
-  "description": "eslint-config-prettier for vue-cli",
+  "version": "1.0.0",
+  "description": "eslint-config-prettier for svelte-cli",
   "main": "index.js",
   "publishConfig": {
     "access": "public"
@@ -12,7 +12,7 @@
     "directory": "packages/@svel/eslint-config-prettier"
   },
   "keywords": [
-    "vue",
+    "svelte",
     "cli"
   ],
   "author": "Evan You",

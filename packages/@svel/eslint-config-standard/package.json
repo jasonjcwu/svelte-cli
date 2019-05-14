@@ -1,7 +1,7 @@
 {
   "name": "@svel/eslint-config-standard",
-  "version": "4.0.0",
-  "description": "eslint-config-standard for vue-cli",
+  "version": "0.0.0",
+  "description": "eslint-config-standard for svelte-cli",
   "main": "index.js",
   "publishConfig": {
     "access": "public"
@@ -12,7 +12,7 @@
     "directory": "packages/@svel/eslint-config-standard"
   },
   "keywords": [
-    "vue",
+    "svelte",
     "cli"
   ],
   "author": "Evan You",

@@ -1,7 +1,7 @@
 {
   "name": "@svel/eslint-config-typescript",
-  "version": "4.0.0",
-  "description": "eslint-config-typescript for vue-cli",
+  "version": "0.0.0",
+  "description": "eslint-config-typescript for svelte-cli",
   "main": "index.js",
   "publishConfig": {
     "access": "public"
@@ -12,7 +12,7 @@
     "directory": "packages/@svel/eslint-config-typescript"
   },
   "keywords": [
-    "vue",
+    "svelte",
     "cli"
   ],
   "author": "Evan You",
