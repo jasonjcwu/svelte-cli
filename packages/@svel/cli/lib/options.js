@@ -5,7 +5,7 @@ const { exit } = require('@svel/cli-shared-utils/lib/exit')
 const { error } = require('@svel/cli-shared-utils/lib/logger')
 const { createSchema, validate } = require('@svel/cli-shared-utils/lib/validate')
 
-const rcPath = exports.rcPath = getRcPath('.vuerc')
+const rcPath = exports.rcPath = getRcPath('.svelterc')
 
 const presetSchema = createSchema(joi => joi.object().keys({
   bare: joi.boolean(),
@@ -68,7 +68,7 @@ exports.loadOptions = () => {
     } catch (e) {
       error(
         `Error loading saved preferences: ` +
-        `~/.vuerc may be corrupted or have syntax errors. ` +
+        `~/.svelterc may be corrupted or have syntax errors. ` +
         `Please fix/delete it and re-run vue-cli in manual mode.\n` +
         `(${e.message})`,
       )
@@ -76,7 +76,7 @@ exports.loadOptions = () => {
     }
     validate(cachedOptions, schema, () => {
       error(
-        `~/.vuerc may be outdated. ` +
+        `~/.svelterc may be outdated. ` +
         `Please delete it and re-run vue-cli in manual mode.`
       )
     })

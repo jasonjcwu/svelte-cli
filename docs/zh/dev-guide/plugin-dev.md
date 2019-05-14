@@ -152,7 +152,7 @@ module.exports = {
 
 1. 一个 `GeneratorAPI` 实例：
 
-2. 这个插件的 generator 选项。这些选项会在项目创建对话过程中被解析，或从一个保存在 `~/.vuerc` 中的 preset 中加载。例如，如果保存好的 `~/.vuerc` 像如下的这样：
+2. 这个插件的 generator 选项。这些选项会在项目创建对话过程中被解析，或从一个保存在 `~/.svelterc` 中的 preset 中加载。例如，如果保存好的 `~/.svelterc` 像如下的这样：
 
     ``` json
     {

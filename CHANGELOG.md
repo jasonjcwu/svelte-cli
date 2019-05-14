@@ -1397,7 +1397,7 @@ altogether.
 * **create:** Commands added by plugin (through preset) won't have description in README' ([#1910](https://github.com/vuejs/vue-cli/issues/1910)) ([e9d01eb](https://github.com/vuejs/vue-cli/commit/e9d01eb))
 * **create:** fix force git init ([967f99a](https://github.com/vuejs/vue-cli/commit/967f99a))
 * **create:** fix shouldInitGit check ([#1901](https://github.com/vuejs/vue-cli/issues/1901)) ([7e6c37c](https://github.com/vuejs/vue-cli/commit/7e6c37c))
-* **create:** prioritize preset name present in ~/.vuerc ([#1874](https://github.com/vuejs/vue-cli/issues/1874)) ([87a6272](https://github.com/vuejs/vue-cli/commit/87a6272)), closes [#1871](https://github.com/vuejs/vue-cli/issues/1871)
+* **create:** prioritize preset name present in ~/.svelterc ([#1874](https://github.com/vuejs/vue-cli/issues/1874)) ([87a6272](https://github.com/vuejs/vue-cli/commit/87a6272)), closes [#1871](https://github.com/vuejs/vue-cli/issues/1871)
 
 ## cli-plugin-eslint
 

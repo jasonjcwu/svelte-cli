@@ -8,7 +8,7 @@ sidebar: auto
 
 ## Global CLI Config
 
-Some global configurations for `@svel/cli`, such as your preferred package manager and your locally saved presets, are stored in a JSON file named `.vuerc` in your home directory. You can edit this file directly with your editor of choice to change the saved options.
+Some global configurations for `@svel/cli`, such as your preferred package manager and your locally saved presets, are stored in a JSON file named `.svelterc` in your home directory. You can edit this file directly with your editor of choice to change the saved options.
 
 You can also use the `vue config` command to inspect or modify the global CLI config.
 

@@ -43,7 +43,7 @@ function shouldUseYarn () {
     return true
   }
 
-  // fallback to packageManager field in ~/.vuerc
+  // fallback to packageManager field in ~/.svelterc
   const { packageManager } = loadOptions()
   if (packageManager) {
     return packageManager === 'yarn'

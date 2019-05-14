@@ -24,10 +24,10 @@ vue create hello-world
 
 如果你决定手动选择特性，在操作提示的最后你可以选择将已选项保存为一个将来可复用的 preset。我们会在下一个章节讨论 preset 和插件。
 
-::: tip ~/.vuerc
-被保存的 preset 将会存在用户的 home 目录下一个名为 `.vuerc` 的 JSON 文件里。如果你想要修改被保存的 preset / 选项，可以编辑这个文件。
+::: tip ~/.svelterc
+被保存的 preset 将会存在用户的 home 目录下一个名为 `.svelterc` 的 JSON 文件里。如果你想要修改被保存的 preset / 选项，可以编辑这个文件。
 
-在项目创建的过程中，你也会被提示选择喜欢的包管理器或使用[淘宝 npm 镜像源](https://npm.taobao.org/)以更快地安装依赖。这些选择也将会存入 `~/.vuerc`。
+在项目创建的过程中，你也会被提示选择喜欢的包管理器或使用[淘宝 npm 镜像源](https://npm.taobao.org/)以更快地安装依赖。这些选择也将会存入 `~/.svelterc`。
 :::
 
 `vue create` 命令有一些可选项，你可以通过运行以下命令进行探索：

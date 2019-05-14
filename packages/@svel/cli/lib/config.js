@@ -4,7 +4,7 @@ const homedir = require('os').homedir()
 const { get, set, unset, error, launch } = require('@svel/cli-shared-utils')
 
 async function config (value, options) {
-  const file = path.resolve(homedir, '.vuerc')
+  const file = path.resolve(homedir, '.svelterc')
   const config = await fs.readJson(file)
 
   if (!options.delete && !options.get && !options.edit && !options.set) {

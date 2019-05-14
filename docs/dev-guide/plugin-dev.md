@@ -86,7 +86,7 @@ A generator should export a function which receives three arguments:
 
 1. A [GeneratorAPI](generator-api.md) instance;
 
-2. The generator options for this plugin. These options are resolved during the [prompt](#prompts) phase of project creation, or loaded from a saved preset in `~/.vuerc`. For example, if the saved `~/.vuerc` looks like this:
+2. The generator options for this plugin. These options are resolved during the [prompt](#prompts) phase of project creation, or loaded from a saved preset in `~/.svelterc`. For example, if the saved `~/.svelterc` looks like this:
 
 ``` json
 {

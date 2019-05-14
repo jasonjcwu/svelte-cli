@@ -25,10 +25,10 @@ The default setup is great for quickly prototyping a new project, while the manu
 
 If you chose to manually select features, at the end of the prompts you also have the option to save your selections as a preset so that you can reuse it in the future. We will discuss presets and plugins in the next section.
 
-::: tip ~/.vuerc
-Saved presets will be stored in a JSON file named `.vuerc` in your user home directory. If you wish to modify saved presets / options, you can do so by editing this file.
+::: tip ~/.svelterc
+Saved presets will be stored in a JSON file named `.svelterc` in your user home directory. If you wish to modify saved presets / options, you can do so by editing this file.
 
-During the project creation process, you may also be prompted to select a preferred package manager, or use the [Taobao npm registry mirror](https://npm.taobao.org/) for faster dependency installation. Your choices will also be saved in `~/.vuerc`.
+During the project creation process, you may also be prompted to select a preferred package manager, or use the [Taobao npm registry mirror](https://npm.taobao.org/) for faster dependency installation. Your choices will also be saved in `~/.svelterc`.
 :::
 
 The `vue create` command has a number of options and you can explore them all by running:
