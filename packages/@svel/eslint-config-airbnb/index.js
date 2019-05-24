@@ -1,4 +1,8 @@
 module.exports = {
+  env: {
+    browser: true,
+    es6: true
+  },
   extends: [
     require.resolve('eslint-config-airbnb-base')
   ],
@@ -24,5 +28,16 @@ module.exports = {
       ts: 'never',
       tsx: 'never'
     }]
-  }
+  },
+  overrides: [
+    {
+      files: '*.svelte',
+      rules: {
+        'import/first': 'off',
+        'import/no-duplicates': 'off',
+        'import/no-mutable-exports': 'off',
+        'import/prefer-default-export': 'off'
+      }
+    }
+  ]
 }
