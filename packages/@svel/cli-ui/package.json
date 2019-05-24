@@ -1,6 +1,6 @@
 {
   "name": "@svel/cli-ui",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wmzy/svelte-cli.git",
@@ -34,7 +34,7 @@
   ],
   "dependencies": {
     "@akryum/winattr": "^3.0.0",
-    "@svel/cli-shared-utils": "^0.2.1",
+    "@svel/cli-shared-utils": "^0.3.0",
     "chalk": "^2.4.1",
     "clone": "^2.1.1",
     "deepmerge": "^3.2.0",
@@ -64,10 +64,10 @@
     "watch": "^1.0.2"
   },
   "devDependencies": {
-    "@svel/cli-plugin-babel": "^0.2.1",
-    "@svel/cli-plugin-e2e-cypress": "^0.2.1",
-    "@svel/cli-plugin-eslint": "^0.2.1",
-    "@svel/cli-service": "^0.2.1",
+    "@svel/cli-plugin-babel": "^0.3.0",
+    "@svel/cli-plugin-e2e-cypress": "^0.3.0",
+    "@svel/cli-plugin-eslint": "^0.3.0",
+    "@svel/cli-service": "^0.3.0",
     "@svel/eslint-config-standard": "^4.0.0",
     "@vue/ui": "^0.9.1",
     "ansi_up": "^3.0.0",

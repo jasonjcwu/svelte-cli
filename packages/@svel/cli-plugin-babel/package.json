@@ -1,6 +1,6 @@
 {
   "name": "@svel/cli-plugin-babel",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "babel plugin for vue-cli",
   "main": "index.js",
   "repository": {
@@ -21,8 +21,8 @@
   "homepage": "https://github.com/wmzy/svelte-cli/tree/dev/packages/@svel/cli-plugin-babel#readme",
   "dependencies": {
     "@babel/core": "^7.0.0",
-    "@svel/babel-preset-app": "^0.2.1",
-    "@svel/cli-shared-utils": "^0.2.1",
+    "@svel/babel-preset-app": "^0.3.0",
+    "@svel/cli-shared-utils": "^0.3.0",
     "babel-loader": "^8.0.5",
     "webpack": ">=4 < 4.29"
   },
