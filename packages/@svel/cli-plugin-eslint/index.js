@@ -45,7 +45,7 @@ module.exports = (api, options) => {
             .add(/node_modules/)
             .add(require('path').dirname(require.resolve('@svel/cli-service')))
             .end()
-          .test(/\.(vue|(j|t)sx?)$/)
+          .test(/\.(svelte|(j|t)sx?)$/)
           .use('eslint-loader')
             .loader('eslint-loader')
             .options({

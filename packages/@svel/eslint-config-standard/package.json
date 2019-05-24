@@ -1,6 +1,6 @@
 {
   "name": "@svel/eslint-config-standard",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "eslint-config-standard for svelte-cli",
   "main": "index.js",
   "publishConfig": {
