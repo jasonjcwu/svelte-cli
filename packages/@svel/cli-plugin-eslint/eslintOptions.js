@@ -10,9 +10,7 @@ exports.config = api => {
     }
   }
   if (!api.hasPlugin('typescript')) {
-    config.parserOptions = {
-      parser: 'babel-eslint'
-    }
+    config.parser = 'babel-eslint'
   }
   return config
 }

@@ -20,7 +20,7 @@ module.exports = (api, { config, lintOn = [] }, _, invoking) => {
     devDependencies: {
       'babel-eslint': '^10.0.1',
       'eslint': '^5.16.0',
-      'eslint-plugin-svelte3': '^1.0.0'
+      'eslint-plugin-svelte3': '^1.2.3'
     }
   }
 
