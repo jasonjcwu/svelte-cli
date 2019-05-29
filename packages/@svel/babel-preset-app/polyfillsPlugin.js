@@ -20,7 +20,7 @@ module.exports = (
   { polyfills, entryFiles = [], useAbsolutePath }
 ) => {
   return {
-    name: 'vue-cli-inject-polyfills',
+    name: 'svelte-cli-inject-polyfills',
     visitor: {
       Program (path, state) {
         if (!entryFiles.includes(state.filename)) {
