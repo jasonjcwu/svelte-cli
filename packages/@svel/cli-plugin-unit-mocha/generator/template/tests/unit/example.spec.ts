@@ -1,25 +1,35 @@
 <%_ if (hasTS) { _%>
 import { expect } from 'chai'
-import { shallowMount } from '@vue/test-utils'
 <%_ if (!rootOptions.bare) { _%>
-import HelloWorld from '@/components/HelloWorld.vue'
+import HelloWorld from '@/components/HelloWorld.svelte'
 
-describe('HelloWorld.vue', () => {
-  it('renders props.msg when passed', () => {
-    const msg = 'new message'
-    const wrapper = shallowMount(HelloWorld, {
-      propsData: { msg }
+describe('HelloWorld.svelte', () => {
+  afterEach(function () {
+    this.instance.$destroy()
+  })
+
+  it('renders props.message when passed', function () {
+    const message = 'new message'
+    this.instance = new HelloWorld({
+      target: document.body,
+      props: { message }
     })
-    expect(wrapper.text()).to.include(msg)
+    expect(document.body.textContent).to.include(message)
   })
 })
 <%_ } else { _%>
-import App from '@/App.vue'
+import App from '@/App.svelte'
 
 describe('App', () => {
-  it('should work', () => {
-    const wrapper = shallowMount(App)
-    expect(wrapper.text()).to.include(`Welcome to Your Vue.js + TypeScript App`)
+  afterEach(function () {
+    this.instance.$destroy()
+  })
+
+  it('should work', function () {
+    this.instance = new App({
+      target: document.body
+    })
+    expect(document.body.textContent).to.include(`Welcome to Your Svelte.js App + TypeScript App`)
   })
 })
 <%_ } _%>

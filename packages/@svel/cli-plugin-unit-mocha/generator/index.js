@@ -5,11 +5,10 @@ module.exports = (api, _, __, invoking) => {
 
   api.extendPackage({
     devDependencies: {
-      '@vue/test-utils': '1.0.0-beta.29',
       'chai': '^4.1.2'
     },
     scripts: {
-      'test:unit': 'vue-cli-service test:unit'
+      'test:unit': 'svelte-cli-service test:unit'
     }
   })
 

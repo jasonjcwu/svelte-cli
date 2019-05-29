@@ -5,22 +5,12 @@ module.exports = api => {
         target: 'node',
         devtool: 'inline-cheap-module-source-map'
       })
-
-      // when target === 'node', vue-loader will attempt to generate
-      // SSR-optimized code. We need to turn that off here.
-      webpackConfig.module
-        .rule('vue')
-          .use('vue-loader')
-          .tap(options => {
-            options.optimizeSSR = false
-            return options
-          })
     }
   })
 
   api.registerCommand('test:unit', {
     description: 'run unit tests with mocha-webpack',
-    usage: 'vue-cli-service test:unit [options] [...files]',
+    usage: 'svelte-cli-service test:unit [options] [...files]',
     options: {
       '--watch, -w': 'run in watch mode',
       '--grep, -g': 'only run tests matching <pattern>',
