@@ -1,7 +1,7 @@
 {
   "name": "@svel/cli-plugin-e2e-nightwatch",
   "version": "0.4.0",
-  "description": "e2e-nightwatch plugin for vue-cli",
+  "description": "e2e-nightwatch plugin for svelte-cli",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -9,7 +9,7 @@
     "directory": "packages/@svel/cli-plugin-e2e-nightwatch"
   },
   "keywords": [
-    "vue",
+    "svelte",
     "cli",
     "e2e-nightwatch"
   ],

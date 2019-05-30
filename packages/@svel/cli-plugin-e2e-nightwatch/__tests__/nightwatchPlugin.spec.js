@@ -9,5 +9,5 @@ test('should work', async () => {
       '@svel/cli-plugin-e2e-nightwatch': {}
     }
   })
-  await project.run(`vue-cli-service test:e2e`)
+  await project.run(`svelte-cli-service test:e2e`)
 })

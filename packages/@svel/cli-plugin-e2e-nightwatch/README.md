@@ -4,7 +4,7 @@
 
 ## Injected Commands
 
-- **`vue-cli-service test:e2e`**
+- **`svelte-cli-service test:e2e`**
 
   run e2e tests with [NightwatchJS](http://nightwatchjs.org).
 

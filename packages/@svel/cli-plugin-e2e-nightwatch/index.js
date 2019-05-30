@@ -1,7 +1,7 @@
 module.exports = (api, options) => {
   api.registerCommand('test:e2e', {
     description: 'run e2e tests with nightwatch',
-    usage: 'vue-cli-service test:e2e [options]',
+    usage: 'svelte-cli-service test:e2e [options]',
     options: {
       '--url': 'run e2e tests against given url instead of auto-starting dev server',
       '--config': 'use custom nightwatch config file (overrides internals)',
@@ -22,7 +22,7 @@ module.exports = (api, options) => {
 
     return serverPromise.then(({ server, url }) => {
       // expose dev server url to tests
-      process.env.VUE_DEV_SERVER_URL = url
+      process.env.SVELTE_DEV_SERVER_URL = url
       if (rawArgs.indexOf('--config') === -1) {
         // expose user options to config file
         const fs = require('fs')
@@ -32,7 +32,7 @@ module.exports = (api, options) => {
         } else if (fs.existsSync(userOptionsPath = api.resolve('nightwatch.json'))) {
           userOptions = require(userOptionsPath)
         }
-        process.env.VUE_NIGHTWATCH_USER_OPTIONS = JSON.stringify(userOptions || {})
+        process.env.SVELTE_NIGHTWATCH_USER_OPTIONS = JSON.stringify(userOptions || {})
 
         rawArgs.push('--config', require.resolve('./nightwatch.config.js'))
       }
@@ -62,7 +62,7 @@ module.exports = (api, options) => {
   // TODO remove in RC
   api.registerCommand('e2e', (args, rawArgv) => {
     const { warn } = require('@svel/cli-shared-utils')
-    warn(`Deprecation Warning: "vue-cli-service e2e" has been renamed to "vue-cli-service test:e2e".`)
+    warn(`Deprecation Warning: "svelte-cli-service e2e" has been renamed to "svelte-cli-service test:e2e".`)
     return api.service.run('test:e2e', args, rawArgv)
   })
 }

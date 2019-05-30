@@ -19,9 +19,9 @@ test('should work', async () => {
   await project.write('cypress.json', JSON.stringify(config))
 
   if (!process.env.CI) {
-    await project.run(`vue-cli-service test:e2e`)
+    await project.run(`svelte-cli-service test:e2e`)
   } else if (!process.env.APPVEYOR) {
-    await project.run(`vue-cli-service test:e2e --headless`)
+    await project.run(`svelte-cli-service test:e2e --headless`)
   }
 })
 
@@ -42,8 +42,8 @@ test('should work with TS', async () => {
   await project.write('cypress.json', JSON.stringify(config))
 
   if (!process.env.CI) {
-    await project.run(`vue-cli-service test:e2e`)
+    await project.run(`svelte-cli-service test:e2e`)
   } else if (!process.env.APPVEYOR) {
-    await project.run(`vue-cli-service test:e2e --headless`)
+    await project.run(`svelte-cli-service test:e2e --headless`)
   }
 })

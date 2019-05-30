@@ -3,7 +3,7 @@ module.exports = (api, options) => {
 
   api.registerCommand('test:e2e', {
     description: 'run e2e tests with Cypress',
-    usage: 'vue-cli-service test:e2e [options]',
+    usage: 'svelte-cli-service test:e2e [options]',
     options: {
       '--headless': 'run in headless mode without GUI',
       '--mode': 'specify the mode the dev server should run in. (default: production)',
@@ -46,13 +46,6 @@ module.exports = (api, options) => {
     }
 
     return runner
-  })
-
-  // TODO remove in RC
-  api.registerCommand('e2e', (args, rawArgv) => {
-    const { warn } = require('@svel/cli-shared-utils')
-    warn(`Deprecation Warning: "vue-cli-service e2e" has been renamed to "vue-cli-service test:e2e".`)
-    return api.service.run('test:e2e', args, rawArgv)
   })
 }
 
