@@ -9,7 +9,7 @@
     "directory": "packages/@svel/cli-plugin-eslint"
   },
   "keywords": [
-    "vue",
+    "svelte",
     "cli",
     "eslint"
   ],

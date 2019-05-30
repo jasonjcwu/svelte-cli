@@ -9,7 +9,7 @@
     "directory": "packages/@svel/cli-plugin-babel"
   },
   "keywords": [
-    "vue",
+    "svelte",
     "cli",
     "babel"
   ],

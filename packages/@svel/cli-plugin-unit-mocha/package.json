@@ -9,7 +9,7 @@
     "directory": "packages/@svel/cli-plugin-unit-mocha"
   },
   "keywords": [
-    "vue",
+    "svelte",
     "vue-cli",
     "mocha",
     "webpack",

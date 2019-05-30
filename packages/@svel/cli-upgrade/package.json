@@ -12,7 +12,7 @@
     "directory": "packages/@svel/cli-upgrade"
   },
   "keywords": [
-    "vue",
+    "svelte",
     "cli",
     "upgrade",
     "update"

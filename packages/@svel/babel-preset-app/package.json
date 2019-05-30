@@ -12,7 +12,7 @@
     "directory": "packages/@svel/babel-preset-app"
   },
   "keywords": [
-    "vue",
+    "svelte",
     "cli"
   ],
   "author": "Evan You",

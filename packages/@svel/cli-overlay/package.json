@@ -12,7 +12,7 @@
     "directory": "packages/@svel/cli-overlay"
   },
   "keywords": [
-    "vue",
+    "svelte",
     "cli",
     "cli-overlay"
   ],

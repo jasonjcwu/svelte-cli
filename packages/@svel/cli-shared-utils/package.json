@@ -9,7 +9,7 @@
     "directory": "packages/@svel/cli-shared-utils"
   },
   "keywords": [
-    "vue",
+    "svelte",
     "cli",
     "cli-shared-utils"
   ],

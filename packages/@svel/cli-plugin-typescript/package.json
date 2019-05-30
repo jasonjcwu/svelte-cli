@@ -9,7 +9,7 @@
     "directory": "packages/@svel/cli-plugin-typescript"
   },
   "keywords": [
-    "vue",
+    "svelte",
     "cli",
     "typescript"
   ],

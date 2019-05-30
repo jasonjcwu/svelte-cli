@@ -9,7 +9,7 @@
     "directory": "packages/@svel/cli-plugin-unit-jest"
   },
   "keywords": [
-    "vue",
+    "svelte",
     "cli",
     "unit-jest"
   ],

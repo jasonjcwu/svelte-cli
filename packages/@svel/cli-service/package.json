@@ -13,7 +13,7 @@
     "directory": "packages/@svel/cli-service"
   },
   "keywords": [
-    "vue",
+    "svelte",
     "cli"
   ],
   "author": "Evan You",

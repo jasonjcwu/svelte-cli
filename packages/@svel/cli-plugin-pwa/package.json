@@ -9,7 +9,7 @@
     "directory": "packages/@svel/cli-plugin-pwa"
   },
   "keywords": [
-    "vue",
+    "svelte",
     "cli",
     "pwa"
   ],
