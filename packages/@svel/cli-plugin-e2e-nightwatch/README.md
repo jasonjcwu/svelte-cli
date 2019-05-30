@@ -24,7 +24,7 @@
 
 ## Configuration
 
-We've pre-configured Nightwatch to run with Chrome by default. If you wish to run e2e tests in additional browsers, you will need to add a `nightwatch.config.js` or `nightwatch.json` in your project root to configure additional browsers. The config will be merged into the [internal Nightwatch config](https://github.com/vuejs/svelte-cli/blob/dev/packages/%40vue/cli-plugin-e2e-nightwatch/nightwatch.config.js).
+We've pre-configured Nightwatch to run with Chrome by default. If you wish to run e2e tests in additional browsers, you will need to add a `nightwatch.config.js` or `nightwatch.json` in your project root to configure additional browsers. The config will be merged into the [internal Nightwatch config](https://github.com/wmzy/svelte-cli/blob/dev/packages/%40svel/cli-plugin-e2e-nightwatch/nightwatch.config.js).
 
 Alternatively, you can completely replace the internal config with a custom config file using the `--config` option.
 

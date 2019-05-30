@@ -423,7 +423,7 @@ async function run (id, context) {
 
     child.on('error', error => {
       const duration = Date.now() - task.time
-      // hackish workaround for https://github.com/vuejs/svelte-cli/issues/2096
+      // hackish workaround for https://github.com/vuejs/vue-cli/issues/2096
       if (process.platform === 'win32' && error.code === 'ENOENT' && duration > WIN_ENOENT_THRESHOLD) {
         return onExit(null)
       }

@@ -14,7 +14,7 @@ module.exports = {
     // https://github.com/typescript-eslint/typescript-eslint/issues/46
     // '@typescript-eslint/no-unused-vars': 'error',
 
-    // temporary fix for https://github.com/vuejs/svelte-cli/issues/1922
+    // temporary fix for https://github.com/vuejs/vue-cli/issues/1922
     // very strange as somehow this rule gets different behaviors depending
     // on the presence of @typescript-eslint/parser...
     'strict': 'off'

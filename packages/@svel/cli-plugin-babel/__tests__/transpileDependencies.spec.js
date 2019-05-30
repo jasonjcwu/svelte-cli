@@ -79,7 +79,7 @@ test('dep from node_modules should been transpiled', async () => {
   expect(await readVendorFile()).toMatch('return "__SCOPE_TEST__"')
 })
 
-// https://github.com/vuejs/svelte-cli/issues/3057
+// https://github.com/vuejs/vue-cli/issues/3057
 test('only transpile package with same name specified in transpileDependencies', async () => {
   await project.write(
     'svelte.config.js',

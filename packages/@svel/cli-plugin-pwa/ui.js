@@ -6,7 +6,7 @@ module.exports = api => {
     id: CONFIG,
     name: 'PWA',
     description: 'org.vue.pwa.config.pwa.description',
-    link: 'https://github.com/vuejs/svelte-cli/tree/dev/packages/%40vue/cli-plugin-pwa#configuration',
+    link: 'https://github.com/wmzy/svelte-cli/tree/dev/packages/%40svel/cli-plugin-pwa#configuration',
     files: {
       vue: {
         js: ['svelte.config.js']

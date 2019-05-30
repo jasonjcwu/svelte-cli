@@ -4,7 +4,7 @@ module.exports = cli => {
     value: 'e2e',
     short: 'E2E',
     description: 'Add an End-to-End testing solution to the app like Cypress or Nightwatch',
-    link: 'https://github.com/vuejs/svelte-cli/tree/dev/docs#e2e-testing',
+    link: 'https://github.com/wmzy/svelte-cli/tree/dev/docs#e2e-testing',
     plugins: ['e2e-cypress', 'e2e-nightwatch']
   })
 

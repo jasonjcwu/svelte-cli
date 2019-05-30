@@ -43,7 +43,7 @@ exports.matchesPluginId = (input, full) => {
 
 exports.getPluginLink = id => {
   if (officialRE.test(id)) {
-    return `https://github.com/vuejs/svelte-cli/tree/dev/packages/%40vue/cli-plugin-${
+    return `https://github.com/wmzy/svelte-cli/tree/dev/packages/%40svel/cli-plugin-${
       exports.toShortPluginId(id)
     }`
   }

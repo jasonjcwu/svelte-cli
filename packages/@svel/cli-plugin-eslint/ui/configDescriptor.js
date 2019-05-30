@@ -110,7 +110,7 @@ function onRead ({ data, cwd }) {
             type: 'confirm',
             message: 'org.vue.eslint.config.eslint.general.lintOnSave.message',
             description: 'org.vue.eslint.config.eslint.general.lintOnSave.description',
-            link: 'https://github.com/vuejs/svelte-cli/tree/dev/packages/%40vue/cli-plugin-eslint#configuration',
+            link: 'https://github.com/wmzy/svelte-cli/tree/dev/packages/%40svel/cli-plugin-eslint#configuration',
             default: true,
             value: data.vue && data.vue.lintOnSave
           },
