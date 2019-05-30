@@ -3,7 +3,7 @@ const invoke = require('@svel/cli/lib/invoke')
 
 const ROUTER = 'org.vue.vue-router-add'
 const VUEX = 'org.vue.vuex-add'
-const VUE_CONFIG_OPEN = 'org.vue.vue-config-open'
+const SVELTE_CONFIG_OPEN = 'org.vue.vue-config-open'
 
 module.exports = api => {
   api.onViewOpen(({ view }) => {
@@ -38,7 +38,7 @@ module.exports = api => {
     }
 
     if (view.id !== 'vue-project-configurations') {
-      api.removeSuggestion(VUE_CONFIG_OPEN)
+      api.removeSuggestion(SVELTE_CONFIG_OPEN)
     }
   })
 
@@ -46,7 +46,7 @@ module.exports = api => {
     if (config.id === 'org.vue.vue-cli') {
       if (config.foundFiles.vue) {
         api.addSuggestion({
-          id: VUE_CONFIG_OPEN,
+          id: SVELTE_CONFIG_OPEN,
           type: 'action',
           label: 'org.vue.vue-webpack.suggestions.vue-config-open',
           handler () {
@@ -62,7 +62,7 @@ module.exports = api => {
         return
       }
     }
-    api.removeSuggestion(VUE_CONFIG_OPEN)
+    api.removeSuggestion(SVELTE_CONFIG_OPEN)
   })
 }
 

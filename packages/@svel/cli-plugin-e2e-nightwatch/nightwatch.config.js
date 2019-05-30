@@ -1,7 +1,7 @@
 // http://nightwatchjs.org/gettingstarted#settings-file
 
 const deepmerge = require('deepmerge')
-const userOptions = JSON.parse(process.env.VUE_NIGHTWATCH_USER_OPTIONS || '{}')
+const userOptions = JSON.parse(process.env.SVELTE_NIGHTWATCH_USER_OPTIONS || '{}')
 
 module.exports = deepmerge({
   src_folders: ['tests/e2e/specs'],
