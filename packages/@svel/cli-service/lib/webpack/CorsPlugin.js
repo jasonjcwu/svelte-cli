@@ -6,7 +6,7 @@ module.exports = class CorsPlugin {
   }
 
   apply (compiler) {
-    const ID = `vue-cli-cors-plugin`
+    const ID = `svelte-cli-cors-plugin`
     compiler.hooks.compilation.tap(ID, compilation => {
       const ssri = require('ssri')
 

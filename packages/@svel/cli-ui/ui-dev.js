@@ -16,10 +16,10 @@ module.exports = api => {
 
   // Shared data example to store a value (for example a setting)
   api.onProjectOpen(() => {
-    api.setSharedData('test-data', api.storageGet('vue-cli.test-data'))
+    api.setSharedData('test-data', api.storageGet('svelte-cli.test-data'))
   })
   api.watchSharedData('test-data', value => {
-    api.storageSet('vue-cli.test-data', value)
+    api.storageSet('svelte-cli.test-data', value)
     console.log('test-data value saved')
   })
 

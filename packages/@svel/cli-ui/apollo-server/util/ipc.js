@@ -2,7 +2,7 @@ const ipc = require('node-ipc')
 // Utils
 const { log, dumpObject } = require('../util/logger')
 
-ipc.config.id = process.env.SVELTE_CLI_IPC || 'vue-cli'
+ipc.config.id = process.env.SVELTE_CLI_IPC || 'svelte-cli'
 ipc.config.retry = 1500
 ipc.config.silent = true
 

@@ -3,8 +3,8 @@
 ### Local development
 
 Before starting a local cli-ui instance,
-consider following the [contributing guide](https://github.com/vuejs/vue-cli/blob/dev/.github/CONTRIBUTING.md)
-in order to download all required dependencies of vue-cli's packages.
+consider following the [contributing guide](https://github.com/vuejs/svelte-cli/blob/dev/.github/CONTRIBUTING.md)
+in order to download all required dependencies of svelte-cli's packages.
 
 Just after, you should build once then serve `@svel/cli-ui-addon-webpack` by running:
 ```bash

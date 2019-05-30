@@ -1,7 +1,7 @@
 {
   "name": "@svel/cli-plugin-pwa",
   "version": "0.4.0",
-  "description": "pwa plugin for vue-cli",
+  "description": "pwa plugin for svelte-cli",
   "main": "index.js",
   "repository": {
     "type": "git",

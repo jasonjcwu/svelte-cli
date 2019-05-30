@@ -407,12 +407,12 @@ test('api: hasPlugin', () => {
         expect(api.hasPlugin('foo')).toBe(true)
         expect(api.hasPlugin('bar')).toBe(true)
         expect(api.hasPlugin('baz')).toBe(true)
-        expect(api.hasPlugin('vue-cli-plugin-bar')).toBe(true)
+        expect(api.hasPlugin('svelte-cli-plugin-bar')).toBe(true)
         expect(api.hasPlugin('@svel/cli-plugin-baz')).toBe(true)
       }
     },
     {
-      id: 'vue-cli-plugin-bar',
+      id: 'svelte-cli-plugin-bar',
       apply: () => {}
     },
     {

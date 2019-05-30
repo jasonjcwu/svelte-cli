@@ -71,7 +71,7 @@ module.exports = function lint (args = {}, api) {
 
   // mock process.cwd before executing
   // See:
-  // https://github.com/vuejs/vue-cli/issues/2554
+  // https://github.com/vuejs/svelte-cli/issues/2554
   // https://github.com/benmosher/eslint-plugin-import/issues/602
   // https://github.com/eslint/eslint/issues/11218
   const processCwd = process.cwd

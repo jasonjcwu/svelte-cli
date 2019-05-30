@@ -5,7 +5,7 @@ const readline = require('readline')
 const registries = require('./registries')
 const shouldUseTaobao = require('./shouldUseTaobao')
 
-const debug = require('debug')('vue-cli:install')
+const debug = require('debug')('svelte-cli:install')
 
 const taobaoDistURL = 'https://npm.taobao.org/dist'
 

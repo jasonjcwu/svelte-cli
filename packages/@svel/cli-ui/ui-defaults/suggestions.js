@@ -43,7 +43,7 @@ module.exports = api => {
   })
 
   api.onConfigRead(({ config }) => {
-    if (config.id === 'org.vue.vue-cli') {
+    if (config.id === 'org.vue.svelte-cli') {
       if (config.foundFiles.vue) {
         api.addSuggestion({
           id: SVELTE_CONFIG_OPEN,

@@ -1,7 +1,7 @@
 {
   "name": "@svel/cli-service",
   "version": "0.4.0",
-  "description": "local service for vue-cli projects",
+  "description": "local service for svelte-cli projects",
   "main": "lib/Service.js",
   "typings": "types/index.d.ts",
   "bin": {

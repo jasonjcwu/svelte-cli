@@ -123,7 +123,7 @@ module.exports = async function vueCliUpgrade (semverLevel = 'minor') {
   console.log(table.toString())
   console.log(
     `\nView complete changelog at ${chalk.blue(
-      'https://github.com/vuejs/vue-cli/blob/dev/CHANGELOG.md'
+      'https://github.com/vuejs/svelte-cli/blob/dev/CHANGELOG.md'
     )}\n`
   )
 

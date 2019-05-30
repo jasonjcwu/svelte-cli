@@ -1,6 +1,6 @@
 const ipc = require('node-ipc')
 
-const DEFAULT_ID = process.env.SVELTE_CLI_IPC || 'vue-cli'
+const DEFAULT_ID = process.env.SVELTE_CLI_IPC || 'svelte-cli'
 const DEFAULT_IDLE_TIMEOUT = 3000
 const DEFAULT_OPTIONS = {
   networkId: DEFAULT_ID,

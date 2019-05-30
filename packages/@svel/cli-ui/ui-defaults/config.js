@@ -1,15 +1,15 @@
 module.exports = api => {
   api.describeConfig({
-    id: 'org.vue.vue-cli',
+    id: 'org.vue.svelte-cli',
     name: 'Vue CLI',
-    description: 'org.vue.vue-webpack.config.vue-cli.description',
+    description: 'org.vue.vue-webpack.config.svelte-cli.description',
     link: 'https://cli.vuejs.org/config/',
     files: {
       vue: {
         js: ['svelte.config.js']
       }
     },
-    icon: '/public/vue-cli.png',
+    icon: '/public/svelte-cli.png',
     onRead: ({ data }) => ({
       prompts: [
         {
@@ -17,9 +17,9 @@ module.exports = api => {
           type: 'input',
           default: '/',
           value: data.vue && (data.vue.publicPath || data.vue.baseUrl), // fallback to baseUrl for compatibility
-          message: 'org.vue.vue-webpack.config.vue-cli.publicPath.label',
-          description: 'org.vue.vue-webpack.config.vue-cli.publicPath.description',
-          group: 'org.vue.vue-webpack.config.vue-cli.groups.general',
+          message: 'org.vue.vue-webpack.config.svelte-cli.publicPath.label',
+          description: 'org.vue.vue-webpack.config.svelte-cli.publicPath.description',
+          group: 'org.vue.vue-webpack.config.svelte-cli.groups.general',
           link: 'https://cli.vuejs.org/config/#publicPath'
         },
         {
@@ -28,9 +28,9 @@ module.exports = api => {
           default: 'dist',
           value: data.vue && data.vue.outputDir,
           validate: input => !!input,
-          message: 'org.vue.vue-webpack.config.vue-cli.outputDir.label',
-          description: 'org.vue.vue-webpack.config.vue-cli.outputDir.description',
-          group: 'org.vue.vue-webpack.config.vue-cli.groups.general',
+          message: 'org.vue.vue-webpack.config.svelte-cli.outputDir.label',
+          description: 'org.vue.vue-webpack.config.svelte-cli.outputDir.description',
+          group: 'org.vue.vue-webpack.config.svelte-cli.groups.general',
           link: 'https://cli.vuejs.org/config/#outputdir'
         },
         {
@@ -38,9 +38,9 @@ module.exports = api => {
           type: 'input',
           default: '',
           value: data.vue && data.vue.assetsDir,
-          message: 'org.vue.vue-webpack.config.vue-cli.assetsDir.label',
-          description: 'org.vue.vue-webpack.config.vue-cli.assetsDir.description',
-          group: 'org.vue.vue-webpack.config.vue-cli.groups.general',
+          message: 'org.vue.vue-webpack.config.svelte-cli.assetsDir.label',
+          description: 'org.vue.vue-webpack.config.svelte-cli.assetsDir.description',
+          group: 'org.vue.vue-webpack.config.svelte-cli.groups.general',
           link: 'https://cli.vuejs.org/config/#assetsdir'
         },
         {
@@ -48,9 +48,9 @@ module.exports = api => {
           type: 'confirm',
           default: false,
           value: data.vue && data.vue.runtimeCompiler,
-          message: 'org.vue.vue-webpack.config.vue-cli.runtimeCompiler.label',
-          description: 'org.vue.vue-webpack.config.vue-cli.runtimeCompiler.description',
-          group: 'org.vue.vue-webpack.config.vue-cli.groups.general',
+          message: 'org.vue.vue-webpack.config.svelte-cli.runtimeCompiler.label',
+          description: 'org.vue.vue-webpack.config.svelte-cli.runtimeCompiler.description',
+          group: 'org.vue.vue-webpack.config.svelte-cli.groups.general',
           link: 'https://cli.vuejs.org/config/#runtimecompiler'
         },
         {
@@ -58,9 +58,9 @@ module.exports = api => {
           type: 'confirm',
           default: true,
           value: data.vue && data.vue.productionSourceMap,
-          message: 'org.vue.vue-webpack.config.vue-cli.productionSourceMap.label',
-          description: 'org.vue.vue-webpack.config.vue-cli.productionSourceMap.description',
-          group: 'org.vue.vue-webpack.config.vue-cli.groups.general',
+          message: 'org.vue.vue-webpack.config.svelte-cli.productionSourceMap.label',
+          description: 'org.vue.vue-webpack.config.svelte-cli.productionSourceMap.description',
+          group: 'org.vue.vue-webpack.config.svelte-cli.groups.general',
           link: 'https://cli.vuejs.org/config/#productionsourcemap'
         },
         {
@@ -68,9 +68,9 @@ module.exports = api => {
           type: 'confirm',
           default: require('os').cpus().length > 1,
           value: data.vue && data.vue.parallel,
-          message: 'org.vue.vue-webpack.config.vue-cli.parallel.label',
-          description: 'org.vue.vue-webpack.config.vue-cli.parallel.description',
-          group: 'org.vue.vue-webpack.config.vue-cli.groups.general',
+          message: 'org.vue.vue-webpack.config.svelte-cli.parallel.label',
+          description: 'org.vue.vue-webpack.config.svelte-cli.parallel.description',
+          group: 'org.vue.vue-webpack.config.svelte-cli.groups.general',
           link: 'https://cli.vuejs.org/config/#parallel'
         },
         {
@@ -78,9 +78,9 @@ module.exports = api => {
           type: 'confirm',
           default: false,
           value: data.vue && data.vue.css && data.vue.css.modules,
-          message: 'org.vue.vue-webpack.config.vue-cli.css.modules.label',
-          description: 'org.vue.vue-webpack.config.vue-cli.css.modules.description',
-          group: 'org.vue.vue-webpack.config.vue-cli.groups.css',
+          message: 'org.vue.vue-webpack.config.svelte-cli.css.modules.label',
+          description: 'org.vue.vue-webpack.config.svelte-cli.css.modules.description',
+          group: 'org.vue.vue-webpack.config.svelte-cli.groups.css',
           link: 'https://cli.vuejs.org/config/#css-modules'
         },
         {
@@ -88,9 +88,9 @@ module.exports = api => {
           type: 'confirm',
           default: true,
           value: data.vue && data.vue.css && data.vue.css.extract,
-          message: 'org.vue.vue-webpack.config.vue-cli.css.extract.label',
-          description: 'org.vue.vue-webpack.config.vue-cli.css.extract.description',
-          group: 'org.vue.vue-webpack.config.vue-cli.groups.css',
+          message: 'org.vue.vue-webpack.config.svelte-cli.css.extract.label',
+          description: 'org.vue.vue-webpack.config.svelte-cli.css.extract.description',
+          group: 'org.vue.vue-webpack.config.svelte-cli.groups.css',
           link: 'https://cli.vuejs.org/config/#css-extract'
         },
         {
@@ -98,9 +98,9 @@ module.exports = api => {
           type: 'confirm',
           default: false,
           value: data.vue && data.vue.css && data.vue.css.sourceMap,
-          message: 'org.vue.vue-webpack.config.vue-cli.css.sourceMap.label',
-          description: 'org.vue.vue-webpack.config.vue-cli.css.sourceMap.description',
-          group: 'org.vue.vue-webpack.config.vue-cli.groups.css',
+          message: 'org.vue.vue-webpack.config.svelte-cli.css.sourceMap.label',
+          description: 'org.vue.vue-webpack.config.svelte-cli.css.sourceMap.description',
+          group: 'org.vue.vue-webpack.config.svelte-cli.groups.css',
           link: 'https://cli.vuejs.org/config/#css-sourcemap'
         }
       ]

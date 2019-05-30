@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueApollo from 'vue-apollo'
-import { createApolloClient } from 'vue-cli-plugin-apollo/graphql-client'
+import { createApolloClient } from 'svelte-cli-plugin-apollo/graphql-client'
 import clientStateDefaults from './state/defaults'
 import clientStateResolvers from './state/resolvers'
 import clientStateTypeDefs from './state/typeDefs'

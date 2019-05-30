@@ -1,6 +1,6 @@
 jest.mock('fs')
 jest.mock('/svelte.config.js', () => ({ lintOnSave: false }), { virtual: true })
-jest.mock('vue-cli-plugin-foo', () => () => {}, { virtual: true })
+jest.mock('svelte-cli-plugin-foo', () => () => {}, { virtual: true })
 
 const fs = require('fs')
 const path = require('path')
@@ -65,12 +65,12 @@ test('loading plugins from package.json', () => {
     devDependencies: {
       'bar': '^1.0.0',
       '@svel/cli-plugin-babel': '^3.7.0',
-      'vue-cli-plugin-foo': '^1.0.0'
+      'svelte-cli-plugin-foo': '^1.0.0'
     }
   })
   const service = new Service('/') // this one needs to read from package.json
   expect(service.plugins.some(({ id }) => id === '@svel/cli-plugin-babel')).toBe(true)
-  expect(service.plugins.some(({ id }) => id === 'vue-cli-plugin-foo')).toBe(true)
+  expect(service.plugins.some(({ id }) => id === 'svelte-cli-plugin-foo')).toBe(true)
   expect(service.plugins.some(({ id }) => id === 'bar')).toBe(false)
 })
 
@@ -356,7 +356,7 @@ test('api: resolve', () => {
 test('api: hasPlugin', () => {
   createMockService([
     {
-      id: 'vue-cli-plugin-foo',
+      id: 'svelte-cli-plugin-foo',
       apply: api => {
         expect(api.hasPlugin('bar')).toBe(true)
         expect(api.hasPlugin('@svel/cli-plugin-bar')).toBe(true)
@@ -366,7 +366,7 @@ test('api: hasPlugin', () => {
       id: '@svel/cli-plugin-bar',
       apply: api => {
         expect(api.hasPlugin('foo')).toBe(true)
-        expect(api.hasPlugin('vue-cli-plugin-foo')).toBe(true)
+        expect(api.hasPlugin('svelte-cli-plugin-foo')).toBe(true)
       }
     }
   ])

@@ -251,7 +251,7 @@ module.exports = class Creator extends EventEmitter {
       await clearConsole(true)
       answers = await inquirer.prompt(this.resolveFinalPrompts())
     }
-    debug('vue-cli:answers')(answers)
+    debug('svelte-cli:answers')(answers)
 
     if (answers.packageManager) {
       saveOptions({
@@ -281,7 +281,7 @@ module.exports = class Creator extends EventEmitter {
       savePreset(answers.saveName, preset)
     }
 
-    debug('vue-cli:preset')(preset)
+    debug('svelte-cli:preset')(preset)
     return preset
   }
 
@@ -318,7 +318,7 @@ module.exports = class Creator extends EventEmitter {
         log(`available presets:\n${presets.join(`\n`)}`)
       } else {
         log(`you don't seem to have any saved preset.`)
-        log(`run vue-cli in manual mode to create a preset.`)
+        log(`run svelte-cli in manual mode to create a preset.`)
       }
       exit(1)
     }
@@ -470,7 +470,7 @@ module.exports = class Creator extends EventEmitter {
       ...this.injectedPrompts,
       ...this.outroPrompts
     ]
-    debug('vue-cli:prompts')(prompts)
+    debug('svelte-cli:prompts')(prompts)
     return prompts
   }
 

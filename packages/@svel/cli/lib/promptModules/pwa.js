@@ -4,7 +4,7 @@ module.exports = cli => {
     value: 'pwa',
     short: 'PWA',
     description: 'Improve performances with features like Web manifest and Service workers',
-    link: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa'
+    link: 'https://github.com/vuejs/svelte-cli/tree/dev/packages/%40vue/cli-plugin-pwa'
   })
 
   cli.onPromptComplete((answers, options) => {

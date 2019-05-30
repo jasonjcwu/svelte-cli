@@ -1,7 +1,7 @@
 const task = {
   match: /svelte-cli-service lint/,
   description: 'org.vue.eslint.tasks.lint.description',
-  link: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint#injected-commands',
+  link: 'https://github.com/vuejs/svelte-cli/tree/dev/packages/%40vue/cli-plugin-eslint#injected-commands',
   prompts: [
     {
       name: 'noFix',

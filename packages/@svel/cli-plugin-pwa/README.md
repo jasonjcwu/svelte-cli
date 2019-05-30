@@ -1,6 +1,6 @@
 # @svel/cli-plugin-pwa
 
-> pwa plugin for vue-cli
+> pwa plugin for svelte-cli
 
 The service worker added with this plugin is only enabled in the production environment (e.g. only if you run `npm run build` or `yarn build`). Enabling service worker in a development mode is not a recommended practice, because it can lead to the situation when previously cached assets are used and the latest local changes are not included.
 
@@ -92,7 +92,7 @@ file, or the `"vue"` field in `package.json`.
 ```js
 // Inside svelte.config.js
 module.exports = {
-  // ...other vue-cli plugin options...
+  // ...other svelte-cli plugin options...
   pwa: {
     name: 'My App',
     themeColor: '#4DBA87',

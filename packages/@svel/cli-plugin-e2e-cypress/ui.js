@@ -2,7 +2,7 @@ module.exports = api => {
   api.describeTask({
     match: /svelte-cli-service test:e2e/,
     description: 'org.vue.cypress.tasks.test.description',
-    link: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-e2e-cypress#injected-commands',
+    link: 'https://github.com/vuejs/svelte-cli/tree/dev/packages/%40vue/cli-plugin-e2e-cypress#injected-commands',
     prompts: [
       {
         name: 'headless',

@@ -1,4 +1,4 @@
-const ID = 'vue-cli:pwa-html-plugin'
+const ID = 'svelte-cli:pwa-html-plugin'
 
 const defaults = {
   name: 'PWA app',

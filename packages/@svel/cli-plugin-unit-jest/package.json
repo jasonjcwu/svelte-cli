@@ -1,7 +1,7 @@
 {
   "name": "@svel/cli-plugin-unit-jest",
   "version": "0.4.0",
-  "description": "unit-jest plugin for vue-cli",
+  "description": "unit-jest plugin for svelte-cli",
   "main": "index.js",
   "repository": {
     "type": "git",

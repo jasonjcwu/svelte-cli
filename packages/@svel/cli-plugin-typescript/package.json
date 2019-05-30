@@ -1,7 +1,7 @@
 {
   "name": "@svel/cli-plugin-typescript",
   "version": "0.4.0",
-  "description": "typescript plugin for vue-cli",
+  "description": "typescript plugin for svelte-cli",
   "main": "index.js",
   "repository": {
     "type": "git",

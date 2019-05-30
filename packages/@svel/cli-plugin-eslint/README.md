@@ -1,6 +1,6 @@
 # @svel/cli-plugin-eslint
 
-> eslint plugin for vue-cli
+> eslint plugin for svelte-cli
 
 ## Injected Commands
 

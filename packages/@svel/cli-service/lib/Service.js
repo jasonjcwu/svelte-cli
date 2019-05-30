@@ -320,7 +320,7 @@ module.exports = class Service {
     pkgConfig = this.pkg.vue
     if (pkgConfig && typeof pkgConfig !== 'object') {
       error(
-        `Error loading vue-cli config in ${chalk.bold(`package.json`)}: ` +
+        `Error loading svelte-cli config in ${chalk.bold(`package.json`)}: ` +
         `the "vue" field should be an object.`
       )
       pkgConfig = null

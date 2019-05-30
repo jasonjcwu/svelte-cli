@@ -21,7 +21,7 @@ class ModernModePlugin {
   }
 
   applyLegacy (compiler) {
-    const ID = `vue-cli-legacy-bundle`
+    const ID = `svelte-cli-legacy-bundle`
     compiler.hooks.compilation.tap(ID, compilation => {
       compilation.hooks.htmlWebpackPluginAlterAssetTags.tapAsync(ID, async (data, cb) => {
         // get stats, write to disk
@@ -38,7 +38,7 @@ class ModernModePlugin {
   }
 
   applyModern (compiler) {
-    const ID = `vue-cli-modern-bundle`
+    const ID = `svelte-cli-modern-bundle`
     compiler.hooks.compilation.tap(ID, compilation => {
       compilation.hooks.htmlWebpackPluginAlterAssetTags.tapAsync(ID, async (data, cb) => {
         // use <script type="module"> for modern assets

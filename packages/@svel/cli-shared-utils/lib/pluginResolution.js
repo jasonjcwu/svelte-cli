@@ -10,7 +10,7 @@ exports.toShortPluginId = id => id.replace(pluginRE, '')
 
 exports.resolvePluginId = id => {
   // already full id
-  // e.g. vue-cli-plugin-foo, @svel/cli-plugin-foo, @bar/vue-cli-plugin-foo
+  // e.g. svelte-cli-plugin-foo, @svel/cli-plugin-foo, @bar/svelte-cli-plugin-foo
   if (pluginRE.test(id)) {
     return id
   }
@@ -26,7 +26,7 @@ exports.resolvePluginId = id => {
   }
   // default short
   // e.g. foo
-  return `vue-cli-plugin-${id}`
+  return `svelte-cli-plugin-${id}`
 }
 
 exports.matchesPluginId = (input, full) => {
@@ -43,7 +43,7 @@ exports.matchesPluginId = (input, full) => {
 
 exports.getPluginLink = id => {
   if (officialRE.test(id)) {
-    return `https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-${
+    return `https://github.com/vuejs/svelte-cli/tree/dev/packages/%40vue/cli-plugin-${
       exports.toShortPluginId(id)
     }`
   }

@@ -1,6 +1,6 @@
 # @svel/cli-plugin-unit-jest
 
-> unit-jest plugin for vue-cli
+> unit-jest plugin for svelte-cli
 
 ## Injected Commands
 

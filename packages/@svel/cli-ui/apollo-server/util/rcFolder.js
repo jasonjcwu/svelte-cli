@@ -15,7 +15,7 @@ if (process.env.SVELTE_CLI_UI_TEST) {
   folder =
     (process.env.SVELTE_CLI_UI_DB_PATH &&
       path.resolve(__dirname, process.env.SVELTE_CLI_UI_DB_PATH)) ||
-    getRcPath('.vue-cli-ui')
+    getRcPath('.svelte-cli-ui')
 }
 
 fs.ensureDirSync(path.resolve(__dirname, folder))

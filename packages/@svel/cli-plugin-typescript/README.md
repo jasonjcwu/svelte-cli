@@ -1,6 +1,6 @@
 # @svel/cli-plugin-typescript
 
-> typescript plugin for vue-cli
+> typescript plugin for svelte-cli
 
 Uses TypeScript + `ts-loader` + [fork-ts-checker-webpack-plugin](https://github.com/Realytics/fork-ts-checker-webpack-plugin) for faster off-thread type checking.
 

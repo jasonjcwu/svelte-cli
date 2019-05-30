@@ -69,7 +69,7 @@ exports.loadOptions = () => {
       error(
         `Error loading saved preferences: ` +
         `~/.svelterc may be corrupted or have syntax errors. ` +
-        `Please fix/delete it and re-run vue-cli in manual mode.\n` +
+        `Please fix/delete it and re-run svelte-cli in manual mode.\n` +
         `(${e.message})`,
       )
       exit(1)
@@ -77,7 +77,7 @@ exports.loadOptions = () => {
     validate(cachedOptions, schema, () => {
       error(
         `~/.svelterc may be outdated. ` +
-        `Please delete it and re-run vue-cli in manual mode.`
+        `Please delete it and re-run svelte-cli in manual mode.`
       )
     })
     return cachedOptions

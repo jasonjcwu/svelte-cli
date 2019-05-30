@@ -24,7 +24,7 @@ async function ui (options = {}, context = process.cwd()) {
 
   if (!process.env.SVELTE_CLI_IPC) {
     // Prevent IPC id conflicts
-    process.env.SVELTE_CLI_IPC = `vue-cli-${shortid()}`
+    process.env.SVELTE_CLI_IPC = `svelte-cli-${shortid()}`
   }
 
   if (!options.quiet) log(`🚀  Starting GUI...`)

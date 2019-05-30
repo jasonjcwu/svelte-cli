@@ -5,7 +5,7 @@ module.exports = async function fetchRemotePreset (name, clone) {
   const os = require('os')
   const path = require('path')
   const download = require('download-git-repo')
-  const tmpdir = path.join(os.tmpdir(), 'vue-cli')
+  const tmpdir = path.join(os.tmpdir(), 'svelte-cli')
 
   // clone will fail if tmpdir already exists
   // https://github.com/flipxfx/download-git-repo/issues/41

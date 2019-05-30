@@ -1,7 +1,7 @@
 {
   "name": "@svel/cli-plugin-unit-mocha",
   "version": "0.4.0",
-  "description": "mocha unit testing plugin for vue-cli",
+  "description": "mocha unit testing plugin for svelte-cli",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -10,7 +10,7 @@
   },
   "keywords": [
     "svelte",
-    "vue-cli",
+    "svelte-cli",
     "mocha",
     "webpack",
     "unit-testing"

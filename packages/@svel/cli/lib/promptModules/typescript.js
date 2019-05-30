@@ -4,7 +4,7 @@ module.exports = cli => {
     value: 'ts',
     short: 'TS',
     description: 'Add support for the TypeScript language',
-    link: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-typescript',
+    link: 'https://github.com/vuejs/svelte-cli/tree/dev/packages/%40vue/cli-plugin-typescript',
     plugins: ['typescript']
   })
 

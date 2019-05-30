@@ -69,7 +69,7 @@ module.exports = (api, options) => {
 
     if (!process.env.SVELTE_CLI_TEST) {
       // this plugin does not play well with jest + cypress setup (tsPluginE2e.spec.js) somehow
-      // so temporarily disabled for vue-cli tests
+      // so temporarily disabled for svelte-cli tests
       config
         .plugin('fork-ts-checker')
           .use(require('fork-ts-checker-webpack-plugin'), [{

@@ -34,7 +34,7 @@ export default class ClientAddonApi {
    * For example, addRoutes('foo', [ { path: '' }, { path: 'bar' } ])
    * will add the /addon/foo/ and the /addon/foo/bar routes to vue-router.
    *
-   * @param {string} id Routes pack id (generally the vue-cli plugin id)
+   * @param {string} id Routes pack id (generally the svelte-cli plugin id)
    * @param {any} routes vue-router route definitions
    */
   addRoutes (id, routes) {

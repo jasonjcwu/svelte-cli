@@ -10,7 +10,7 @@ const webpack = require('webpack')
 const { IpcMessenger } = require('@svel/cli-shared-utils')
 const { analyzeBundle } = require('./analyzeBundle')
 
-const ID = 'vue-cli-dashboard-plugin'
+const ID = 'svelte-cli-dashboard-plugin'
 const ONE_SECOND = 1000
 const FILENAME_QUERY_REGEXP = /\?.*$/
 

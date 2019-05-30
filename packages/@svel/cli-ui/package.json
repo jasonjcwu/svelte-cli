@@ -12,8 +12,8 @@
     "lint": "svelte-cli-service lint src apollo-server",
     "apollo": "cross-env SVELTE_APP_CLI_UI_DEV=true SVELTE_APP_CLI_UI_DEBUG=true SVELTE_APP_GRAPHQL_PORT=4030 svelte-cli-service apollo:watch",
     "apollo:debug": "cross-env SVELTE_CLI_DEBUG=true yarn run apollo",
-    "apollo:run": "cross-env SVELTE_CLI_PLUGIN_DEV=true SVELTE_CLI_IPC=vue-cli-dev svelte-cli-service apollo:run",
-    "apollo:run:test": "cross-env SVELTE_CLI_DEBUG=true SVELTE_CLI_UI_TEST=true SVELTE_APP_GRAPHQL_PORT=4040 SVELTE_APP_CLI_UI_URL=ws://localhost:4040/graphql SVELTE_CLI_IPC=vue-cli-test svelte-cli-service apollo:watch --mode production",
+    "apollo:run": "cross-env SVELTE_CLI_PLUGIN_DEV=true SVELTE_CLI_IPC=svelte-cli-dev svelte-cli-service apollo:run",
+    "apollo:run:test": "cross-env SVELTE_CLI_DEBUG=true SVELTE_CLI_UI_TEST=true SVELTE_APP_GRAPHQL_PORT=4040 SVELTE_APP_CLI_UI_URL=ws://localhost:4040/graphql SVELTE_CLI_IPC=svelte-cli-test svelte-cli-service apollo:watch --mode production",
     "// prepublishOnly": "yarn run lint --no-fix && yarn run build",
     "test:e2e": "yarn run test:clear && start-server-and-test apollo:run:test http://localhost:4040/.well-known/apollo/server-health test:e2e:dev",
     "test:run": "yarn run test:clear && start-server-and-test apollo:run:test http://localhost:4040/.well-known/apollo/server-health test:e2e:run",
@@ -60,7 +60,7 @@
     "rss-parser": "^3.7.0",
     "semver": "^6.0.0",
     "shortid": "^2.2.11",
-    "vue-cli-plugin-apollo": "^0.19.2",
+    "svelte-cli-plugin-apollo": "^0.19.2",
     "watch": "^1.0.2"
   },
   "devDependencies": {

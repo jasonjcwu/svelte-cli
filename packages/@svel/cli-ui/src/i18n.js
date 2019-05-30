@@ -23,7 +23,7 @@ function detectLanguage () {
 
 async function autoInstallLocale (lang) {
   try {
-    let response = await fetch(`https://unpkg.com/vue-cli-locales/locales/${lang}.json`)
+    let response = await fetch(`https://unpkg.com/svelte-cli-locales/locales/${lang}.json`)
     if (response.ok) {
       const data = await response.json()
       mergeLocale(lang, data)
