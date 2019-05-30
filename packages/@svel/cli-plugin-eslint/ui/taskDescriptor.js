@@ -1,5 +1,5 @@
 const task = {
-  match: /vue-cli-service lint/,
+  match: /svelte-cli-service lint/,
   description: 'org.vue.eslint.tasks.lint.description',
   link: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint#injected-commands',
   prompts: [

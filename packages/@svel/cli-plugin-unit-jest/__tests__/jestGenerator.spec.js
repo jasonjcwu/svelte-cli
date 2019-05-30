@@ -20,7 +20,7 @@ test('base', async () => {
     }
   ])
 
-  expect(pkg.scripts['test:unit']).toBe('vue-cli-service test:unit')
+  expect(pkg.scripts['test:unit']).toBe('svelte-cli-service test:unit')
   expect(pkg.devDependencies).toHaveProperty('@vue/test-utils')
 
   // should inject babel-jest

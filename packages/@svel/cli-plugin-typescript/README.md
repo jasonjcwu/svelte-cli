@@ -14,7 +14,7 @@ This plugin can be used alongside `@svel/cli-plugin-babel`. When used with Babel
 
 ## Injected Commands
 
-If opted to use [TSLint](https://palantir.github.io/tslint/) during project creation, `vue-cli-service lint` will be injected.
+If opted to use [TSLint](https://palantir.github.io/tslint/) during project creation, `svelte-cli-service lint` will be injected.
 
 ## Caching
 

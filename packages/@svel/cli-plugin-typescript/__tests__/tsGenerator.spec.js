@@ -74,12 +74,12 @@ test('lint', async () => {
     }
   ])
 
-  expect(pkg.scripts.lint).toBe(`vue-cli-service lint`)
+  expect(pkg.scripts.lint).toBe(`svelte-cli-service lint`)
   expect(pkg.devDependencies).toHaveProperty('lint-staged')
   expect(pkg.gitHooks).toEqual({ 'pre-commit': 'lint-staged' })
   expect(pkg['lint-staged']).toEqual({
-    '*.ts': ['vue-cli-service lint', 'git add'],
-    '*.vue': ['vue-cli-service lint', 'git add']
+    '*.ts': ['svelte-cli-service lint', 'git add'],
+    '*.vue': ['svelte-cli-service lint', 'git add']
   })
 
   expect(files['tslint.json']).toBeTruthy()

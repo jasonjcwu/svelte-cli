@@ -1,6 +1,6 @@
 module.exports = api => {
   api.describeTask({
-    match: /vue-cli-service test:unit/,
+    match: /svelte-cli-service test:unit/,
     description: 'org.vue.jest.tasks.test.description',
     link: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-unit-jest#injected-commands',
     prompts: [

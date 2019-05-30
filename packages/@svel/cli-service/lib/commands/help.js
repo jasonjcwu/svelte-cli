@@ -14,7 +14,7 @@ module.exports = (api, options) => {
 
   function logMainHelp () {
     console.log(
-      `\n  Usage: vue-cli-service <command> [options]\n` +
+      `\n  Usage: svelte-cli-service <command> [options]\n` +
       `\n  Commands:\n`
     )
     const commands = api.service.commands
@@ -30,7 +30,7 @@ module.exports = (api, options) => {
       }
     }
     console.log(`\n  run ${
-      chalk.green(`vue-cli-service help [command]`)
+      chalk.green(`svelte-cli-service help [command]`)
     } for usage of a specific command.\n`)
   }
 

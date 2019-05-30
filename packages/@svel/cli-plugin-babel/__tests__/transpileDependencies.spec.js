@@ -64,7 +64,7 @@ beforeAll(async () => {
 })
 
 test('dep from node_modules should not been transpiled', async () => {
-  await project.run('vue-cli-service build')
+  await project.run('svelte-cli-service build')
   expect(await readVendorFile()).toMatch('() => "__TEST__"')
 })
 
@@ -73,7 +73,7 @@ test('dep from node_modules should been transpiled', async () => {
     'svelte.config.js',
     `module.exports = { transpileDependencies: ['external-dep', '@scope/external-dep'] }`
   )
-  await project.run('vue-cli-service build')
+  await project.run('svelte-cli-service build')
   expect(await readVendorFile()).toMatch('return "__TEST__"')
 
   expect(await readVendorFile()).toMatch('return "__SCOPE_TEST__"')
@@ -86,7 +86,7 @@ test('only transpile package with same name specified in transpileDependencies',
     `module.exports = { transpileDependencies: ['babel-transpile-deps'] }`
   )
   try {
-    await project.run('vue-cli-service build')
+    await project.run('svelte-cli-service build')
   } catch (e) {}
   expect(await readVendorFile()).toMatch('() => "__TEST__"')
   expect(await readVendorFile()).toMatch('() => "__SCOPE_TEST__"')

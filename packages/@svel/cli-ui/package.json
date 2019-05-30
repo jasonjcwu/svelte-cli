@@ -7,18 +7,18 @@
     "directory": "packages/@svel/cli-ui"
   },
   "scripts": {
-    "serve": "cross-env SVELTE_APP_CLI_UI_URL=ws://localhost:4030/graphql SVELTE_APP_GRAPHQL_PORT=4030 vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint src apollo-server",
-    "apollo": "cross-env SVELTE_APP_CLI_UI_DEV=true SVELTE_APP_CLI_UI_DEBUG=true SVELTE_APP_GRAPHQL_PORT=4030 vue-cli-service apollo:watch",
+    "serve": "cross-env SVELTE_APP_CLI_UI_URL=ws://localhost:4030/graphql SVELTE_APP_GRAPHQL_PORT=4030 svelte-cli-service serve",
+    "build": "svelte-cli-service build",
+    "lint": "svelte-cli-service lint src apollo-server",
+    "apollo": "cross-env SVELTE_APP_CLI_UI_DEV=true SVELTE_APP_CLI_UI_DEBUG=true SVELTE_APP_GRAPHQL_PORT=4030 svelte-cli-service apollo:watch",
     "apollo:debug": "cross-env SVELTE_CLI_DEBUG=true yarn run apollo",
-    "apollo:run": "cross-env SVELTE_CLI_PLUGIN_DEV=true SVELTE_CLI_IPC=vue-cli-dev vue-cli-service apollo:run",
-    "apollo:run:test": "cross-env SVELTE_CLI_DEBUG=true SVELTE_CLI_UI_TEST=true SVELTE_APP_GRAPHQL_PORT=4040 SVELTE_APP_CLI_UI_URL=ws://localhost:4040/graphql SVELTE_CLI_IPC=vue-cli-test vue-cli-service apollo:watch --mode production",
+    "apollo:run": "cross-env SVELTE_CLI_PLUGIN_DEV=true SVELTE_CLI_IPC=vue-cli-dev svelte-cli-service apollo:run",
+    "apollo:run:test": "cross-env SVELTE_CLI_DEBUG=true SVELTE_CLI_UI_TEST=true SVELTE_APP_GRAPHQL_PORT=4040 SVELTE_APP_CLI_UI_URL=ws://localhost:4040/graphql SVELTE_CLI_IPC=vue-cli-test svelte-cli-service apollo:watch --mode production",
     "// prepublishOnly": "yarn run lint --no-fix && yarn run build",
     "test:e2e": "yarn run test:clear && start-server-and-test apollo:run:test http://localhost:4040/.well-known/apollo/server-health test:e2e:dev",
     "test:run": "yarn run test:clear && start-server-and-test apollo:run:test http://localhost:4040/.well-known/apollo/server-health test:e2e:run",
-    "test:e2e:dev": "cross-env SVELTE_APP_CLI_UI_URL=ws://localhost:4040/graphql vue-cli-service test:e2e --mode development",
-    "test:e2e:run": "vue-cli-service test:e2e --mode production --headless --url=http://localhost:4040",
+    "test:e2e:dev": "cross-env SVELTE_APP_CLI_UI_URL=ws://localhost:4040/graphql svelte-cli-service test:e2e --mode development",
+    "test:e2e:run": "svelte-cli-service test:e2e --mode production --headless --url=http://localhost:4040",
     "test:clear": "rimraf ../../test/cli-ui-test && rimraf ./live-test",
     "test": "yarn run build && cd ../cli-ui-addon-webpack && yarn run build && cd ../cli-ui-addon-widgets && yarn run build && cd ../cli-ui && yarn run test:run"
   },
@@ -112,11 +112,11 @@
   },
   "lint-staged": {
     "*.js": [
-      "vue-cli-service lint",
+      "svelte-cli-service lint",
       "git add"
     ],
     "*.vue": [
-      "vue-cli-service lint",
+      "svelte-cli-service lint",
       "git add"
     ]
   },

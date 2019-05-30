@@ -12,7 +12,7 @@ test('serve', async () => {
   const project = await create('e2e-serve', defaultPreset)
 
   await serve(
-    () => project.run('vue-cli-service serve'),
+    () => project.run('svelte-cli-service serve'),
     async ({ nextUpdate, helpers }) => {
       const msg = `Welcome to Your Vue.js App`
       expect(await helpers.getText('h1')).toMatch(msg)
@@ -33,7 +33,7 @@ test('serve with router', async () => {
   }))
 
   await serve(
-    () => project.run('vue-cli-service serve'),
+    () => project.run('svelte-cli-service serve'),
     async ({ page, helpers }) => {
       expect(await helpers.getText('h1')).toMatch(`Welcome to Your Vue.js App`)
       expect(await helpers.hasElement('#nav')).toBe(true)
@@ -58,7 +58,7 @@ test('serve with inline entry', async () => {
   )
 
   await serve(
-    () => project.run('vue-cli-service serve src/index.js'),
+    () => project.run('svelte-cli-service serve src/index.js'),
     async ({ nextUpdate, helpers }) => {
       const msg = `Welcome to Your Vue.js App`
       expect(await helpers.getText('h1')).toMatch(msg)
@@ -79,7 +79,7 @@ test('serve with no public dir', async () => {
   await fs.remove(path.resolve(project.dir, 'public'))
 
   await serve(
-    () => project.run('vue-cli-service serve'),
+    () => project.run('svelte-cli-service serve'),
     async ({ nextUpdate, helpers }) => {
       const msg = `Welcome to Your Vue.js App`
       expect(await helpers.getText('h1')).toMatch(msg)
@@ -102,5 +102,5 @@ test('dart sass', async () => {
   })
 
   // should build successfully
-  await project.run('vue-cli-service build')
+  await project.run('svelte-cli-service build')
 })

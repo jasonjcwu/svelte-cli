@@ -12,7 +12,7 @@ exports.assertServe = async (name, options) => {
     const project = await create(name, options)
 
     await serve(
-      () => project.run('vue-cli-service serve'),
+      () => project.run('svelte-cli-service serve'),
       async ({ nextUpdate, helpers }) => {
         const msg = `Welcome to Your Vue.js + TypeScript App`
         expect(await helpers.getText('h1')).toMatch(msg)
@@ -33,7 +33,7 @@ exports.assertBuild = async (name, options, customAssert) => {
   test('build', async () => {
     const project = await create(name, options)
 
-    const { stdout } = await project.run('vue-cli-service build')
+    const { stdout } = await project.run('svelte-cli-service build')
     expect(stdout).toMatch('Build complete.')
 
     const port = await portfinder.getPortPromise()

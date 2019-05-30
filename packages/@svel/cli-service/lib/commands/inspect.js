@@ -3,7 +3,7 @@ module.exports = (api, options) => {
     'inspect',
     {
       description: 'inspect internal webpack config',
-      usage: 'vue-cli-service inspect [options] [...paths]',
+      usage: 'svelte-cli-service inspect [options] [...paths]',
       options: {
         '--mode': 'specify env mode (default: development)',
         '--rule <ruleName>': 'inspect a specific module rule',
@@ -62,7 +62,7 @@ module.exports = (api, options) => {
           'chainWebpack()'
         )} (recommended).
     You can run ${chalk.green(
-    'vue-cli-service inspect'
+    'svelte-cli-service inspect'
   )} without any arguments to inspect the full config and read these rules' config.`)
       }
     }

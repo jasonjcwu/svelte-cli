@@ -10,7 +10,7 @@ beforeAll(async () => {
 })
 
 test('build as lib with default formats', async () => {
-  const { stdout } = await project.run('vue-cli-service build --target lib --name testLib src/components/HelloWorld.vue')
+  const { stdout } = await project.run('svelte-cli-service build --target lib --name testLib src/components/HelloWorld.vue')
   expect(stdout).toMatch('Build complete.')
 
   expect(project.has('dist/demo.html')).toBe(true)
@@ -20,7 +20,7 @@ test('build as lib with default formats', async () => {
   expect(project.has('dist/testLib.css')).toBe(true)
 })
 test('build as lib with formats commonjs and umd', async () => {
-  const { stdout } = await project.run('vue-cli-service build --target lib --formats commonjs,umd --name testLib src/components/HelloWorld.vue')
+  const { stdout } = await project.run('svelte-cli-service build --target lib --formats commonjs,umd --name testLib src/components/HelloWorld.vue')
   expect(stdout).toMatch('Build complete.')
 
   expect(project.has('dist/demo.html')).toBe(true)
@@ -31,7 +31,7 @@ test('build as lib with formats commonjs and umd', async () => {
 })
 
 test('build as lib with format umd-min', async () => {
-  const { stdout } = await project.run('vue-cli-service build --target lib --formats umd-min --name testLib src/components/HelloWorld.vue')
+  const { stdout } = await project.run('svelte-cli-service build --target lib --formats umd-min --name testLib src/components/HelloWorld.vue')
   expect(stdout).toMatch('Build complete.')
 
   expect(project.has('dist/demo.html')).toBe(false)
@@ -43,7 +43,7 @@ test('build as lib with format umd-min', async () => {
 
 test('build as lib with unknown formats throws an error', async () => {
   try {
-    await project.run('vue-cli-service build --target lib --formats umd,x,y --name testLib src/components/HelloWorld.vue')
+    await project.run('svelte-cli-service build --target lib --formats umd,x,y --name testLib src/components/HelloWorld.vue')
   } catch (e) {
     expect(e.code).toBe(1)
     expect(e.failed).toBeTruthy()

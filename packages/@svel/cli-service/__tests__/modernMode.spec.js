@@ -12,7 +12,7 @@ let server, browser
 test('modern mode', async () => {
   const project = await create('modern-mode', defaultPreset)
 
-  const { stdout } = await project.run('vue-cli-service build --modern')
+  const { stdout } = await project.run('svelte-cli-service build --modern')
   expect(stdout).toMatch('Build complete.')
 
   // assert correct bundle files
@@ -49,7 +49,7 @@ test('modern mode', async () => {
 
   // Test crossorigin="use-credentials"
   await project.write('svelte.config.js', `module.exports = { crossorigin: 'use-credentials' }`)
-  const { stdout: stdout2 } = await project.run('vue-cli-service build --modern')
+  const { stdout: stdout2 } = await project.run('svelte-cli-service build --modern')
   expect(stdout2).toMatch('Build complete.')
   const index2 = await project.read('dist/index.html')
   // should use <script type="module" crossorigin=use-credentials> for modern bundle
@@ -85,7 +85,7 @@ test('modern mode', async () => {
 test('no-unsafe-inline', async () => {
   const project = await create('no-unsafe-inline', defaultPreset)
 
-  const { stdout } = await project.run('vue-cli-service build --modern --no-unsafe-inline')
+  const { stdout } = await project.run('svelte-cli-service build --modern --no-unsafe-inline')
   expect(stdout).toMatch('Build complete.')
 
   // should output a seperate safari-nomodule-fix bundle

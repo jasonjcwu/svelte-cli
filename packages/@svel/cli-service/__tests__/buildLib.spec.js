@@ -21,7 +21,7 @@ afterEach(async () => {
 test('build as lib', async () => {
   const project = await create('build-lib', defaultPreset)
 
-  const { stdout } = await project.run('vue-cli-service build --target lib --name testLib src/components/HelloWorld.vue')
+  const { stdout } = await project.run('svelte-cli-service build --target lib --name testLib src/components/HelloWorld.vue')
   expect(stdout).toMatch('Build complete.')
 
   expect(project.has('dist/demo.html')).toBe(true)
@@ -61,7 +61,7 @@ test('build as lib (js)', async () => {
     export default { foo: 1 }
     export const bar = 2
   `)
-  const { stdout } = await project.run('vue-cli-service build --target lib --name testLib src/main.js')
+  const { stdout } = await project.run('svelte-cli-service build --target lib --name testLib src/main.js')
   expect(stdout).toMatch('Build complete.')
 
   expect(project.has('dist/demo.html')).toBe(true)
@@ -120,7 +120,7 @@ test('build as lib with webpackConfiguration depending on target (js)', async ()
     }
   `)
 
-  const { stdout } = await project.run('vue-cli-service build --target lib --name testLib src/main.js')
+  const { stdout } = await project.run('svelte-cli-service build --target lib --name testLib src/main.js')
   expect(stdout).toMatch('Build complete.')
 
   expect(project.has('dist/testLib.umd.js')).toBe(true)
@@ -139,7 +139,7 @@ test('build as lib with --filename option', async () => {
       export default { foo: 1 }
       export const bar = 2
     `)
-  const { stdout } = await project.run('vue-cli-service build --target lib --name testLib --filename test-lib src/main.js')
+  const { stdout } = await project.run('svelte-cli-service build --target lib --name testLib --filename test-lib src/main.js')
   expect(stdout).toMatch('Build complete.')
 
   expect(project.has('dist/demo.html')).toBe(true)

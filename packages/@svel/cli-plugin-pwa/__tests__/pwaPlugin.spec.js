@@ -14,7 +14,7 @@ test('pwa', async () => {
   const project = await create('pwa-build', defaultPreset)
   expect(project.has('src/registerServiceWorker.js')).toBe(true)
 
-  const { stdout } = await project.run('vue-cli-service build')
+  const { stdout } = await project.run('svelte-cli-service build')
   expect(stdout).toMatch('Build complete.')
 
   expect(project.has('dist/index.html')).toBe(true)

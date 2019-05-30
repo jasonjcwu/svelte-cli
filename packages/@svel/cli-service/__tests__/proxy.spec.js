@@ -68,7 +68,7 @@ test('serve with single proxy', async () => {
   `)
 
   await serve(
-    () => project.run('vue-cli-service serve'),
+    () => project.run('svelte-cli-service serve'),
     ({ url }) => assertProxy(url, 'server-one'),
     true /* no need for puppeteer */
   )
@@ -99,7 +99,7 @@ test('serve with multi proxies', async () => {
   `)
 
   await serve(
-    () => project.run('vue-cli-service serve'),
+    () => project.run('svelte-cli-service serve'),
     async ({ url }) => {
       await assertProxy(`${url}one/`, 'server-one')
       await assertProxy(`${url}two/`, 'server-two')

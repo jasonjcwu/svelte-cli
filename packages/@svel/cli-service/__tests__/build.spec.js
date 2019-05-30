@@ -16,7 +16,7 @@ test('build', async () => {
   // make sure that only /public/index.html is skipped (#3119)
   project.write('public/subfolder/index.html', '1')
 
-  const { stdout } = await project.run('vue-cli-service build')
+  const { stdout } = await project.run('svelte-cli-service build')
   expect(stdout).toMatch('Build complete.')
 
   expect(project.has('dist/index.html')).toBe(true)

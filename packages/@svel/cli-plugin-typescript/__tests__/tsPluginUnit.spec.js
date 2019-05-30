@@ -9,7 +9,7 @@ test('mocha', async () => {
       '@svel/cli-plugin-unit-mocha': {}
     }
   })
-  await project.run(`vue-cli-service test:unit`)
+  await project.run(`svelte-cli-service test:unit`)
 })
 
 test('jest', async () => {
@@ -19,7 +19,7 @@ test('jest', async () => {
       '@svel/cli-plugin-unit-jest': {}
     }
   })
-  await project.run(`vue-cli-service test:unit`)
+  await project.run(`svelte-cli-service test:unit`)
 })
 
 test('jest w/ babel', async () => {
@@ -30,5 +30,5 @@ test('jest w/ babel', async () => {
       '@svel/cli-plugin-unit-jest': {}
     }
   })
-  await project.run(`vue-cli-service test:unit`)
+  await project.run(`svelte-cli-service test:unit`)
 })

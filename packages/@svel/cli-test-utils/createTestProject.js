@@ -33,9 +33,9 @@ module.exports = function createTestProject (name, preset, cwd, initGit) {
 
   const run = (command, args) => {
     [command, ...args] = command.split(/\s+/)
-    if (command === 'vue-cli-service') {
+    if (command === 'svelte-cli-service') {
       // appveyor has problem with paths sometimes
-      command = require.resolve('@svel/cli-service/bin/vue-cli-service')
+      command = require.resolve('@svel/cli-service/bin/svelte-cli-service')
     }
     return execa(command, args, { cwd: projectRoot })
   }

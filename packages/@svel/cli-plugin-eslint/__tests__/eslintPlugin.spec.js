@@ -30,7 +30,7 @@ test('should work', async () => {
   const updatedMain = main.replace(/;/g, '')
   await write('src/main.js', updatedMain)
   // lint
-  await run('vue-cli-service lint')
+  await run('svelte-cli-service lint')
   expect(await read('src/main.js')).toMatch(';')
 
   // lint-on-commit
@@ -67,7 +67,7 @@ test('should work', async () => {
   const updatedApp = app.replace(/;/, '')
   await write('src/App.vue', updatedApp)
 
-  const server = run('vue-cli-service serve')
+  const server = run('svelte-cli-service serve')
 
   let isFirstMsg = true
   server.stdout.on('data', data => {
@@ -111,7 +111,7 @@ test('should not fix with --no-fix option', async () => {
 
   // lint with no fix should fail
   try {
-    await run('vue-cli-service lint --no-fix')
+    await run('svelte-cli-service lint --no-fix')
   } catch (e) {
     expect(e.code).toBe(1)
     expect(e.failed).toBeTruthy()
@@ -138,5 +138,5 @@ test('should not throw when src folder is ignored by .eslintignore', async () =>
   await write('.eslintignore', 'src\n.eslintrc.js')
 
   // should not throw
-  await run('vue-cli-service lint')
+  await run('svelte-cli-service lint')
 })

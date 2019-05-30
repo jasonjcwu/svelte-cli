@@ -80,8 +80,8 @@ test('warn if run plain `vue build` or `vue serve` alongside a `package.json` fi
     "name": "hello-world",
     "version": "1.0.0",
     "scripts": {
-      "serve": "vue-cli-service serve",
-      "build": "vue-cli-service build"
+      "serve": "svelte-cli-service serve",
+      "build": "svelte-cli-service build"
     }
   }`)
 

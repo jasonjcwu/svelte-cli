@@ -12,12 +12,12 @@ module.exports = function inspect (paths, args) {
     const { error } = require('@svel/cli-shared-utils')
     error(
       `Failed to locate @svel/cli-service.\n` +
-      `Note that \`vue inspect\` is an alias of \`vue-cli-service inspect\`\n` +
+      `Note that \`vue inspect\` is an alias of \`svelte-cli-service inspect\`\n` +
       `and can only be used in a project where @svel/cli-service is locally installed.`
     )
     process.exit(1)
   }
-  const binPath = path.resolve(servicePath, '../../bin/vue-cli-service.js')
+  const binPath = path.resolve(servicePath, '../../bin/svelte-cli-service.js')
   if (fs.existsSync(binPath)) {
     execa('node', [
       binPath,

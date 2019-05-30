@@ -11,7 +11,7 @@ const { matchesPluginId } = require('@svel/cli-shared-utils')
 class PluginAPI {
   /**
    * @param {string} id - Id of the plugin.
-   * @param {Service} service - A vue-cli-service instance.
+   * @param {Service} service - A svelte-cli-service instance.
    */
   constructor (id, service) {
     this.id = id
@@ -74,7 +74,7 @@ class PluginAPI {
   }
 
   /**
-   * Register a command that will become available as `vue-cli-service [name]`.
+   * Register a command that will become available as `svelte-cli-service [name]`.
    *
    * @param {string} name
    * @param {object} [opts]

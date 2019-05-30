@@ -11,7 +11,7 @@ let server, browser, page
 test('build as wc in async mode', async () => {
   const project = await create('build-wc-async', defaultPreset)
 
-  const { stdout } = await project.run(`vue-cli-service build --target wc-async **/*.vue`)
+  const { stdout } = await project.run(`svelte-cli-service build --target wc-async **/*.vue`)
   expect(stdout).toMatch('Build complete.')
 
   expect(project.has('dist/demo.html')).toBe(true)

@@ -67,7 +67,7 @@ module.exports = (api, options) => {
     'lint',
     {
       description: 'lint and fix source files',
-      usage: 'vue-cli-service lint [options] [...files]',
+      usage: 'svelte-cli-service lint [options] [...files]',
       options: {
         '--format [formatter]': 'specify formatter (default: codeframe)',
         '--no-fix': 'do not fix errors or warnings',

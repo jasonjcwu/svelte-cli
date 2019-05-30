@@ -25,7 +25,7 @@ module.exports = (api, {
   if (tsLint) {
     api.extendPackage({
       scripts: {
-        lint: 'vue-cli-service lint'
+        lint: 'svelte-cli-service lint'
       }
     })
 
@@ -46,8 +46,8 @@ module.exports = (api, {
           'pre-commit': 'lint-staged'
         },
         'lint-staged': {
-          '*.ts': ['vue-cli-service lint', 'git add'],
-          '*.vue': ['vue-cli-service lint', 'git add']
+          '*.ts': ['svelte-cli-service lint', 'git add'],
+          '*.vue': ['svelte-cli-service lint', 'git add']
         }
       })
     }

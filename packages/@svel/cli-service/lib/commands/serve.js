@@ -15,7 +15,7 @@ const defaults = {
 module.exports = (api, options) => {
   api.registerCommand('serve', {
     description: 'start development server',
-    usage: 'vue-cli-service serve [options] [entry]',
+    usage: 'svelte-cli-service serve [options] [entry]',
     options: {
       '--open': `open browser on server start`,
       '--copy': `copy url to clipboard on server start`,
@@ -191,7 +191,7 @@ module.exports = (api, options) => {
     return new Promise((resolve, reject) => {
       // log instructions & open browser on first compilation complete
       let isFirstCompile = true
-      compiler.hooks.done.tap('vue-cli-service serve', stats => {
+      compiler.hooks.done.tap('svelte-cli-service serve', stats => {
         if (stats.hasErrors()) {
           return
         }

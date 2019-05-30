@@ -11,9 +11,9 @@
     "src"
   ],
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
+    "serve": "svelte-cli-service serve",
+    "build": "svelte-cli-service build",
+    "lint": "svelte-cli-service lint",
     "// prepublishOnly": "yarn run lint --no-fix && yarn run build"
   },
   "license": "MIT",

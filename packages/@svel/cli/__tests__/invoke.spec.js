@@ -35,7 +35,7 @@ async function createAndInstall (name) {
 
 async function assertUpdates (project) {
   const updatedPkg = JSON.parse(await project.read('package.json'))
-  expect(updatedPkg.scripts.lint).toBe('vue-cli-service lint')
+  expect(updatedPkg.scripts.lint).toBe('svelte-cli-service lint')
   expect(updatedPkg.devDependencies).toHaveProperty('lint-staged')
   expect(updatedPkg.gitHooks).toEqual({
     'pre-commit': 'lint-staged'

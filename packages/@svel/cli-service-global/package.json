@@ -1,7 +1,7 @@
 {
   "name": "@svel/cli-service-global",
   "version": "0.4.0",
-  "description": "vue-cli-service global addon for vue-cli",
+  "description": "svelte-cli-service global addon for vue-cli",
   "main": "index.js",
   "publishConfig": {
     "access": "public"

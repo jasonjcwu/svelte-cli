@@ -60,7 +60,7 @@ test('serve w/ multi page', async () => {
   await makeProjectMultiPage(project)
 
   await serve(
-    () => project.run('vue-cli-service serve'),
+    () => project.run('svelte-cli-service serve'),
     async ({ page, url, helpers }) => {
       expect(await helpers.getText('h1')).toMatch(`Welcome to Your Vue.js App`)
 
@@ -88,7 +88,7 @@ test('build w/ multi page', async () => {
 
   await makeProjectMultiPage(project)
 
-  const { stdout } = await project.run('vue-cli-service build')
+  const { stdout } = await project.run('svelte-cli-service build')
   expect(stdout).toMatch('Build complete.')
 
   // should generate the HTML pages

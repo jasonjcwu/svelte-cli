@@ -85,7 +85,7 @@ module.exports = (api, options) => {
   if (!api.hasPlugin('eslint')) {
     api.registerCommand('lint', {
       description: 'lint source files with TSLint',
-      usage: 'vue-cli-service lint [options] [...files]',
+      usage: 'svelte-cli-service lint [options] [...files]',
       options: {
         '--format [formatter]': 'specify formatter (default: codeFrame)',
         '--no-fix': 'do not fix errors',

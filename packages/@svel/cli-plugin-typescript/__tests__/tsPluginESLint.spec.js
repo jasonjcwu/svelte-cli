@@ -27,7 +27,7 @@ test('should work', async () => {
   })
   await write('src/App.vue', updatedApp)
   // lint
-  await run('vue-cli-service lint')
+  await run('svelte-cli-service lint')
   expect(await read('src/main.ts')).toMatch(';')
 
   const lintedApp = await read('src/App.vue')

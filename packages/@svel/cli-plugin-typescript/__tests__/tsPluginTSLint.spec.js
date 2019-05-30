@@ -24,7 +24,7 @@ test('should work', async () => {
   })
   await write('src/App.vue', updatedApp)
   // lint
-  await run('vue-cli-service lint')
+  await run('svelte-cli-service lint')
   expect(await read('src/main.ts')).toMatch(';')
 
   const lintedApp = await read('src/App.vue')
@@ -57,7 +57,7 @@ test('should not fix with --no-fix option', async () => {
 
   // lint with no fix should fail
   try {
-    await run('vue-cli-service lint --no-fix')
+    await run('svelte-cli-service lint --no-fix')
   } catch (e) {
     expect(e.code).toBe(1)
     expect(e.failed).toBeTruthy()
@@ -85,7 +85,7 @@ test('should ignore issues in node_modules', async () => {
   await write('node_modules/bad.ts', updatedMain)
 
   // lint
-  await run('vue-cli-service lint')
+  await run('svelte-cli-service lint')
   expect(await read('node_modules/bad.ts')).toMatch(updatedMain)
 })
 
@@ -108,8 +108,8 @@ test('should be able to fix mixed line endings', async () => {
   // Try twice to fix the file.
   // For now, it will fail the first time, which corresponds to the behaviour of tslint.
   try {
-    await run('vue-cli-service lint -- src/bad.vue')
+    await run('svelte-cli-service lint -- src/bad.vue')
   } catch (e) { }
 
-  await run('vue-cli-service lint -- src/bad.vue')
+  await run('svelte-cli-service lint -- src/bad.vue')
 })

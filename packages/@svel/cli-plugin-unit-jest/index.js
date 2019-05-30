@@ -1,7 +1,7 @@
 module.exports = api => {
   api.registerCommand('test:unit', {
     description: 'run unit tests with jest',
-    usage: 'vue-cli-service test:unit [options] <regexForTestFiles>',
+    usage: 'svelte-cli-service test:unit [options] <regexForTestFiles>',
     options: {
       '--watch': 'run tests in watch mode'
     },

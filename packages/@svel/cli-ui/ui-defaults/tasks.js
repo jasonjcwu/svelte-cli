@@ -161,9 +161,9 @@ module.exports = api => {
     defaultView: 'org.vue.webpack.views.dashboard'
   }
   api.describeTask({
-    match: /vue-cli-service serve(\s+--\S+(\s+\S+)?)*$/,
+    match: /svelte-cli-service serve(\s+--\S+(\s+\S+)?)*$/,
     description: 'org.vue.vue-webpack.tasks.serve.description',
-    link: 'https://cli.vuejs.org/guide/cli-service.html#vue-cli-service-serve',
+    link: 'https://cli.vuejs.org/guide/cli-service.html#svelte-cli-service-serve',
     icon: '/public/webpack-logo.png',
     prompts: [
       {
@@ -239,9 +239,9 @@ module.exports = api => {
     ...views
   })
   api.describeTask({
-    match: /vue-cli-service build(\s+--\S+(\s+\S+)?)*$/,
+    match: /svelte-cli-service build(\s+--\S+(\s+\S+)?)*$/,
     description: 'org.vue.vue-webpack.tasks.build.description',
-    link: 'https://cli.vuejs.org/guide/cli-service.html#vue-cli-service-build',
+    link: 'https://cli.vuejs.org/guide/cli-service.html#svelte-cli-service-build',
     icon: '/public/webpack-logo.png',
     prompts: [
       {
@@ -345,7 +345,7 @@ module.exports = api => {
   // vue inspect
   api.addTask({
     name: 'inspect',
-    command: 'vue-cli-service inspect',
+    command: 'svelte-cli-service inspect',
     description: 'org.vue.vue-webpack.tasks.inspect.description',
     link: 'https://cli.vuejs.org/guide/webpack.html#inspecting-the-project-s-webpack-config',
     icon: '/public/webpack-inspect-logo.png',

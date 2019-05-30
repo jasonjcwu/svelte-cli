@@ -4,10 +4,10 @@
 
 ## Injected Commands
 
-- **`vue-cli-service lint`**
+- **`svelte-cli-service lint`**
 
   ```
-  Usage: vue-cli-service lint [options] [...files]
+  Usage: svelte-cli-service lint [options] [...files]
 
   Options:
 

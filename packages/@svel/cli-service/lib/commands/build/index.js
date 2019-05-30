@@ -22,7 +22,7 @@ const modifyConfig = (config, fn) => {
 module.exports = (api, options) => {
   api.registerCommand('build', {
     description: 'build for production',
-    usage: 'vue-cli-service build [options] [entry|pattern]',
+    usage: 'svelte-cli-service build [options] [entry|pattern]',
     options: {
       '--mode': `specify env mode (default: production)`,
       '--dest': `specify output directory (default: ${options.outputDir})`,
@@ -59,7 +59,7 @@ module.exports = (api, options) => {
         }), api, options)
         // spawn sub-process of self for modern build
         const { execa } = require('@svel/cli-shared-utils')
-        const cliBin = require('path').resolve(__dirname, '../../../bin/vue-cli-service.js')
+        const cliBin = require('path').resolve(__dirname, '../../../bin/svelte-cli-service.js')
         await execa(cliBin, ['build', ...rawArgs], {
           stdio: 'inherit',
           env: {

@@ -18,7 +18,7 @@ test('build', async () => {
     }
   `)
 
-  const { stdout } = await project.run('vue-cli-service build')
+  const { stdout } = await project.run('svelte-cli-service build')
   expect(stdout).toMatch('Build complete.')
 
   const index = await project.read('dist/index.html')
