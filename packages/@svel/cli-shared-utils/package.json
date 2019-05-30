@@ -1,6 +1,6 @@
 {
   "name": "@svel/cli-shared-utils",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "shared utilities for svelte-cli packages",
   "main": "index.js",
   "repository": {
